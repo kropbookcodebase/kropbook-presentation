@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Overview | Kropbook Agritech</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/overview.css">
   <script src="js/effects.js"></script>
 </head>
+
 <body>
 
-<svg style="display:none" aria-hidden="true">
-  <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
-    <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
-    <feComponentTransfer in="turbulence" result="mapped">
-      <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5"/>
-      <feFuncG type="gamma" amplitude="0" exponent="1" offset="0"/>
-      <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5"/>
-    </feComponentTransfer>
-    <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap"/>
-    <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lightingColor="white" result="specLight">
-      <fePointLight x="-200" y="-200" z="300"/>
-    </feSpecularLighting>
-    <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage"/>
-    <feDisplacementMap in="SourceGraphic" in2="softMap" scale="200" xChannelSelector="R" yChannelSelector="G"/>
-  </filter>
-</svg>
+  <svg style="display:none" aria-hidden="true">
+    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence" />
+      <feComponentTransfer in="turbulence" result="mapped">
+        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+      </feComponentTransfer>
+      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+      <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100"
+        lightingColor="white" result="specLight">
+        <fePointLight x="-200" y="-200" z="300" />
+      </feSpecularLighting>
+      <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+      <feDisplacementMap in="SourceGraphic" in2="softMap" scale="200" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
 
   <div id="scroll-progress"></div>
   <div id="navbar-container"></div>
@@ -41,7 +46,8 @@
     <section class="hero-section" id="hero" style="position:relative;overflow:hidden;">
 
       <!-- Wave sphere canvas — fills hero, scroll-animated via JS -->
-      <canvas id="wave-sphere" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.6;"></canvas>
+      <canvas id="wave-sphere"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.6;"></canvas>
 
       <!-- Background layers -->
       <div class="hero-bg-gradient"></div>
@@ -49,62 +55,55 @@
 
       <!-- Floating decorative shapes -->
       <div class="floating-shape hero-shape-1" data-opacity="0.07"
-           style="--rot:12deg; animation-delay:0s; animation-duration:14s;"></div>
+        style="--rot:12deg; animation-delay:0s; animation-duration:14s;"></div>
       <div class="floating-shape hero-shape-2" data-opacity="0.05"
-           style="--rot:-15deg; animation-delay:2s; animation-duration:18s;"></div>
+        style="--rot:-15deg; animation-delay:2s; animation-duration:18s;"></div>
       <div class="floating-shape hero-shape-3" data-opacity="0.06"
-           style="--rot:-8deg; animation-delay:1s; animation-duration:16s;"></div>
+        style="--rot:-8deg; animation-delay:1s; animation-duration:16s;"></div>
       <div class="floating-shape hero-shape-4" data-opacity="0.08"
-           style="--rot:20deg; animation-delay:3s; animation-duration:12s;"></div>
+        style="--rot:20deg; animation-delay:3s; animation-duration:12s;"></div>
 
       <!-- Hero content -->
       <div class="hero-content">
 
-        <div class="hero-badge-wrap"
-             style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.1s;">
+        <div class="hero-badge-wrap" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.1s;">
           <div class="confidential-badge">
             <span class="dot"></span>
             Institutional Briefing &middot; 2026 &middot; Confidential
           </div>
         </div>
 
-        <div class="hero-logo-wrap"
-             style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.3s;">
-          <img src="images/kblogo.png" alt="Kropbook Agritech" width="56" height="56"
-               class="hero-logo-img">
+        <div class="hero-logo-wrap" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.3s;">
+          <img src="images/kblogo.png" alt="Kropbook Agritech" width="56" height="56" class="hero-logo-img">
         </div>
 
         <h1 class="hero-wordmark font-display"
-            style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.45s;">
+          style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.45s;">
           KROPBOOK
         </h1>
 
-        <p class="hero-company-name"
-           style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.55s;">
+        <p class="hero-company-name" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.55s;">
           Agritech Private Limited
         </p>
 
-        <div class="hero-headline-wrap"
-             style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.7s;">
+        <div class="hero-headline-wrap" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.7s;">
           <h2 class="hero-headline-main font-display">The Operating System</h2>
           <h2 class="hero-headline-gold font-display text-gold-gradient">of the Global Food Economy</h2>
         </div>
 
-        <p class="hero-tagline"
-           style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.85s;">
+        <p class="hero-tagline" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.85s;">
           Built in India. Designed for the Planet.
         </p>
 
         <!-- Morphing intelligence layer text -->
-        <div class="hero-morphing-wrap"
-             style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:1s;">
+        <div class="hero-morphing-wrap" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:1s;">
           <span class="hero-morphing-label">Currently powering:</span>
           <span class="hero-morphing-text" id="morphing-text">Intelligence Layer</span>
         </div>
 
         <!-- Scroll indicator -->
         <div class="hero-scroll-indicator"
-             style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:1.2s;">
+          style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:1.2s;">
           <div class="scroll-arrow-line"></div>
           <span class="scroll-arrow-icon">&#8595;</span>
           <span class="scroll-label">Scroll to explore</span>
@@ -129,42 +128,55 @@
           <p class="metrics-subheading text-muted">Every figure audited. Every number real.</p>
         </div>
 
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;">
+          <div style="flex:1;height:1px;background:var(--border-light);"></div>
+          <span
+            style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);padding:0.25rem 0.875rem;border-radius:100px;white-space:nowrap;">FY
+            2024&ndash;25 &middot; Previous Year</span>
+          <div style="flex:1;height:1px;background:var(--border-light);"></div>
+        </div>
+
         <div class="grid-4 metrics-grid">
 
+
+
           <article class="metric-card anim-hidden" data-delay="0.1">
+
             <div class="metric-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
                 <polyline points="17 6 23 6 23 12"></polyline>
               </svg>
             </div>
             <div class="metric-label">Revenue FY 2024&ndash;25</div>
             <div class="metric-value">
-              <span data-counter data-target="59.18" data-decimals="2" data-prefix="&#8377;" data-suffix=" Cr">&#8377;59.18 Cr</span>
+              <span data-counter data-target="59.18" data-decimals="2" data-prefix="&#8377;"
+                data-suffix=" Cr">&#8377;59.18 Cr</span>
             </div>
             <div class="metric-note">+112% YoY</div>
           </article>
 
           <article class="metric-card anim-hidden" data-delay="0.2">
             <div class="metric-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="1" x2="12" y2="23"></line>
                 <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
               </svg>
             </div>
             <div class="metric-label">Net Profit FY 2024&ndash;25</div>
             <div class="metric-value">
-              <span data-counter data-target="7.80" data-decimals="2" data-prefix="&#8377;" data-suffix=" Cr">&#8377;7.80 Cr</span>
+              <span data-counter data-target="7.80" data-decimals="2" data-prefix="&#8377;"
+                data-suffix=" Cr">&#8377;7.80 Cr</span>
             </div>
             <div class="metric-note">13.2% Net Margin</div>
           </article>
 
           <article class="metric-card anim-hidden" data-delay="0.3">
             <div class="metric-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
                 <line x1="8" y1="21" x2="16" y2="21"></line>
                 <line x1="12" y1="17" x2="12" y2="21"></line>
@@ -172,15 +184,16 @@
             </div>
             <div class="metric-label">Total Assets FY 2024&ndash;25</div>
             <div class="metric-value">
-              <span data-counter data-target="16.87" data-decimals="2" data-prefix="&#8377;" data-suffix=" Cr">&#8377;16.87 Cr</span>
+              <span data-counter data-target="16.87" data-decimals="2" data-prefix="&#8377;"
+                data-suffix=" Cr">&#8377;16.87 Cr</span>
             </div>
             <div class="metric-note">+196% YoY</div>
           </article>
 
           <article class="metric-card anim-hidden" data-delay="0.4">
             <div class="metric-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 2L11 13"></path>
                 <path d="M22 2L15 22 11 13 2 9l20-7z"></path>
               </svg>
@@ -198,45 +211,61 @@
         <div class="anim-hidden" data-delay="0.5" style="margin-top:2rem;">
           <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;">
             <div style="flex:1;height:1px;background:var(--border-light);"></div>
-            <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);padding:0.25rem 0.875rem;border-radius:100px;white-space:nowrap;">FY 2025&ndash;26 &middot; Current Year &middot; Provisional</span>
+            <span
+              style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);padding:0.25rem 0.875rem;border-radius:100px;white-space:nowrap;">FY
+              2025&ndash;26 &middot; Current Year</span>
             <div style="flex:1;height:1px;background:var(--border-light);"></div>
           </div>
           <div class="grid-3">
 
-            <article class="metric-card" style="border-color:rgba(201,162,39,0.25);background:linear-gradient(135deg,rgba(201,162,39,0.05),rgba(27,77,62,0.02));position:relative;overflow:hidden;">
-              <div style="position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px;">Current</div>
+            <article class="metric-card"
+              style="border-color:rgba(201,162,39,0.25);background:linear-gradient(135deg,rgba(201,162,39,0.05),rgba(27,77,62,0.02));position:relative;overflow:hidden;">
+              <div
+                style="position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px;">
+                Current</div>
               <div class="metric-icon" style="color:var(--accent-gold);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
                 </svg>
               </div>
-              <div class="metric-label">Revenue FY 2025&ndash;26*</div>
+              <div class="metric-label">Revenue FY 2025&ndash;26</div>
               <div class="metric-value metric-value-gold">&#8377;92.50 Cr</div>
-              <div class="metric-note">Provisional &middot; Unaudited</div>
+
             </article>
 
-            <article class="metric-card" style="border-color:rgba(201,162,39,0.25);background:linear-gradient(135deg,rgba(201,162,39,0.05),rgba(27,77,62,0.02));position:relative;overflow:hidden;">
-              <div style="position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px;">Current</div>
+            <article class="metric-card"
+              style="border-color:rgba(201,162,39,0.25);background:linear-gradient(135deg,rgba(201,162,39,0.05),rgba(27,77,62,0.02));position:relative;overflow:hidden;">
+              <div
+                style="position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px;">
+                Current</div>
               <div class="metric-icon" style="color:var(--accent-gold);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                 </svg>
               </div>
-              <div class="metric-label">Net Profit FY 2025&ndash;26*</div>
+              <div class="metric-label">Net Profit FY 2025&ndash;26</div>
               <div class="metric-value metric-value-gold">&#8377;13.20 Cr</div>
-              <div class="metric-note">Provisional &middot; Unaudited</div>
             </article>
 
-            <article class="metric-card" style="border-color:rgba(201,162,39,0.25);background:linear-gradient(135deg,rgba(201,162,39,0.05),rgba(27,77,62,0.02));position:relative;overflow:hidden;">
-              <div style="position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px;">Current</div>
+            <article class="metric-card"
+              style="border-color:rgba(201,162,39,0.25);background:linear-gradient(135deg,rgba(201,162,39,0.05),rgba(27,77,62,0.02));position:relative;overflow:hidden;">
+              <div
+                style="position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px;">
+                Current</div>
               <div class="metric-icon" style="color:var(--accent-gold);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
                 </svg>
               </div>
-              <div class="metric-label">Current Assets FY 2025&ndash;26*</div>
+              <div class="metric-label">Current Assets FY 2025&ndash;26</div>
               <div class="metric-value metric-value-gold">&#8377;28.41 Cr</div>
-              <div class="metric-note">Provisional &middot; Unaudited</div>
             </article>
 
           </div>
@@ -341,7 +370,7 @@
 
           <blockquote class="palantir-quote anim-hidden" data-delay="0.35">
             <p>"Every new farmer enriches the data. Every new buyer strengthens the rail.
-            The gap widens every day."</p>
+              The gap widens every day."</p>
           </blockquote>
 
         </div>
@@ -471,15 +500,22 @@
           <article class="glass-card achievement-card anim-hidden border-beam-wrap" data-delay="0.1">
             <div class="achievement-icon-wrap">
               <div class="achievement-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"></path>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z">
+                  </path>
                   <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"></path>
-                  <path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"></path>
+                  <path
+                    d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z">
+                  </path>
                   <path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"></path>
-                  <path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"></path>
+                  <path
+                    d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z">
+                  </path>
                   <path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"></path>
-                  <path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"></path>
+                  <path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z">
+                  </path>
                   <path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"></path>
                 </svg>
               </div>
@@ -496,8 +532,8 @@
           <article class="glass-card achievement-card anim-hidden border-beam-wrap" data-delay="0.2">
             <div class="achievement-icon-wrap">
               <div class="achievement-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
                   <polyline points="16 7 22 7 22 13"></polyline>
                 </svg>
@@ -515,8 +551,8 @@
           <article class="glass-card achievement-card anim-hidden border-beam-wrap" data-delay="0.3">
             <div class="achievement-icon-wrap">
               <div class="achievement-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                   <circle cx="9" cy="7" r="4"></circle>
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -646,43 +682,67 @@
         </div>
 
         <!-- Patent Document — Embedded Open -->
-        <div class="anim-hidden" data-delay="0.1" style="margin-bottom:2.5rem;border-radius:18px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 4px 24px rgba(0,0,0,0.07);">
-          <div style="background:var(--bg-secondary);padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;">
+        <div class="anim-hidden" data-delay="0.1"
+          style="margin-bottom:2.5rem;border-radius:18px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+          <div
+            style="background:var(--bg-secondary);padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;">
             <div style="display:flex;align-items:center;gap:0.875rem;">
-              <div style="width:44px;height:44px;border-radius:10px;background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <div
+                style="width:44px;height:44px;border-radius:10px;background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                 <img src="icons/GIF/patent IP Protection.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
               </div>
               <div>
-                <div style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;">Intellectual Property</div>
-                <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-top:0.1rem;">Kropbook Patent Application</div>
+                <div
+                  style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;">
+                  Intellectual Property</div>
+                <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-top:0.1rem;">Kropbook
+                  Patent Application</div>
               </div>
             </div>
             <div style="display:flex;align-items:center;gap:0.75rem;">
-              <span style="background:rgba(201,162,39,0.1);border:1px solid rgba(201,162,39,0.25);color:var(--accent-gold);font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.625rem;border-radius:100px;letter-spacing:0.1em;">FILED &middot; PENDING APPROVAL</span>
-              <a href="documents/Kropbook Patient.pdf" download style="background:var(--brand-green);color:#fff;font-size:0.7rem;font-family:'JetBrains Mono',monospace;padding:0.35rem 0.875rem;border-radius:100px;text-decoration:none;letter-spacing:0.06em;">&#8595; Download</a>
+              <span
+                style="background:rgba(201,162,39,0.1);border:1px solid rgba(201,162,39,0.25);color:var(--accent-gold);font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.625rem;border-radius:100px;letter-spacing:0.1em;">FILED
+                &middot; PENDING APPROVAL</span>
+              <a href="documents/Kropbook Patient.pdf" download
+                style="background:var(--brand-green);color:#fff;font-size:0.7rem;font-family:'JetBrains Mono',monospace;padding:0.35rem 0.875rem;border-radius:100px;text-decoration:none;letter-spacing:0.06em;">&#8595;
+                Download</a>
             </div>
           </div>
-          <iframe src="documents/Kropbook Patient.pdf" style="width:100%;height:82vh;border:none;display:block;background:#f5f5f0;" title="Kropbook Patent Application" loading="lazy"></iframe>
+          <iframe src="documents/Kropbook Patient.pdf"
+            style="width:100%;height:82vh;border:none;display:block;background:#f5f5f0;"
+            title="Kropbook Patent Application" loading="lazy"></iframe>
         </div>
 
         <!-- Certificate of Incorporation — Embedded Open -->
-        <div class="anim-hidden" data-delay="0.2" style="border-radius:18px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 4px 24px rgba(0,0,0,0.07);">
-          <div style="background:var(--bg-secondary);padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;">
+        <div class="anim-hidden" data-delay="0.2"
+          style="border-radius:18px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+          <div
+            style="background:var(--bg-secondary);padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;">
             <div style="display:flex;align-items:center;gap:0.875rem;">
-              <div style="width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <div
+                style="width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                 <img src="icons/GIF/legal.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
               </div>
               <div>
-                <div style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;">Company KYC &middot; MCA</div>
-                <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-top:0.1rem;">Certificate of Incorporation</div>
+                <div
+                  style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;">
+                  Company KYC &middot; MCA</div>
+                <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-top:0.1rem;">Certificate
+                  of Incorporation</div>
               </div>
             </div>
             <div style="display:flex;align-items:center;gap:0.75rem;">
-              <span style="background:rgba(27,77,62,0.08);border:1px solid rgba(27,77,62,0.15);color:var(--brand-green);font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.625rem;border-radius:100px;letter-spacing:0.1em;">ACTIVE &middot; ROC VERIFIED</span>
-              <a href="documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf" download style="background:var(--brand-green);color:#fff;font-size:0.7rem;font-family:'JetBrains Mono',monospace;padding:0.35rem 0.875rem;border-radius:100px;text-decoration:none;letter-spacing:0.06em;">&#8595; Download</a>
+              <span
+                style="background:rgba(27,77,62,0.08);border:1px solid rgba(27,77,62,0.15);color:var(--brand-green);font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.625rem;border-radius:100px;letter-spacing:0.1em;">ACTIVE
+                &middot; ROC VERIFIED</span>
+              <a href="documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf" download
+                style="background:var(--brand-green);color:#fff;font-size:0.7rem;font-family:'JetBrains Mono',monospace;padding:0.35rem 0.875rem;border-radius:100px;text-decoration:none;letter-spacing:0.06em;">&#8595;
+                Download</a>
             </div>
           </div>
-          <iframe src="documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf" style="width:100%;height:70vh;border:none;display:block;background:#f5f5f0;" title="Certificate of Incorporation" loading="lazy"></iframe>
+          <iframe src="documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf"
+            style="width:100%;height:70vh;border:none;display:block;background:#f5f5f0;"
+            title="Certificate of Incorporation" loading="lazy"></iframe>
         </div>
 
       </div>
@@ -703,4 +763,5 @@
   </script>
 
 </body>
+
 </html>
