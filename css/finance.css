@@ -1,0 +1,877 @@
+/* ============================================================
+   FINANCE PAGE — Page-specific styles (Page 07)
+   Supplement to global.css — do not duplicate global rules
+   ============================================================ */
+
+/* ── SECTION 7.1 · HERO ─────────────────────────────────── */
+
+.finance-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-primary);
+  padding: 0 1.5rem 6rem;
+}
+
+.finance-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(27,77,62,0.06), transparent 70%),
+              radial-gradient(ellipse 60% 40% at 80% 80%, rgba(201,162,39,0.04), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.finance-hero .bg-grid { z-index: 2; }
+
+.finance-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding-top: 6rem;
+}
+
+.finance-hero-badge {
+  margin-bottom: 2.5rem;
+}
+
+.finance-hero h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3.25rem, 8vw, 6rem);
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.finance-hero-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 560px;
+  margin-bottom: 3rem;
+}
+
+.finance-hero-auditor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  background: rgba(27,77,62,0.04);
+  border: 1px solid rgba(27,77,62,0.12);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.finance-hero-auditor .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.finance-hero-bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, transparent, var(--bg-primary));
+  pointer-events: none;
+  z-index: 8;
+}
+
+/* ── SECTION 7.2 · HEADLINE METRICS ─────────────────────── */
+
+.finance-metrics-section {
+  background: var(--bg-primary);
+}
+
+.finance-section-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.finance-section-header {
+  margin-bottom: 3rem;
+}
+
+.finance-section-header h2 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Large metric card variant */
+.finance-metric-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.finance-metric-card:hover {
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-3px);
+}
+
+.finance-metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--brand-green), var(--accent-gold));
+  opacity: 0.5;
+}
+
+.finance-metric-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.finance-metric-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 0.625rem;
+}
+
+.finance-metric-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  font-weight: 500;
+  background: rgba(201,162,39,0.08);
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-full);
+}
+
+/* 3-Year comparison table */
+.year-comparison {
+  margin-top: 3rem;
+}
+
+.year-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.year-comparison-table thead tr {
+  border-bottom: 2px solid var(--border-light);
+}
+
+.year-comparison-table thead th {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.year-comparison-table thead th:first-child {
+  width: 20%;
+}
+
+.year-comparison-table thead th.th-highlight {
+  background: var(--brand-green);
+  color: var(--accent-gold-light);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.year-comparison-table thead th.th-provisional {
+  border: 1px dashed var(--border-gold);
+  border-bottom: none;
+  color: var(--accent-gold);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.year-comparison-table tbody tr {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.year-comparison-table tbody tr:hover {
+  background: rgba(27,77,62,0.02);
+}
+
+.year-comparison-table tbody td {
+  padding: 1rem 1rem;
+  vertical-align: top;
+}
+
+.year-comparison-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.year-comparison-table tbody td.td-highlight {
+  background: rgba(27,77,62,0.03);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.year-comparison-table tbody td.td-provisional {
+  border-left: 1px dashed var(--border-gold);
+  border-right: 1px dashed var(--border-gold);
+}
+
+.year-comparison-table tbody tr:last-child td.td-provisional {
+  border-bottom: 1px dashed var(--border-gold);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.cell-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.cell-value-highlight {
+  color: var(--brand-green);
+}
+
+.cell-value-gold {
+  color: var(--accent-gold);
+}
+
+.cell-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-green-light);
+  color: var(--brand-green);
+  margin-bottom: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.06em;
+}
+
+.cell-badge-gold {
+  background: rgba(201,162,39,0.1);
+  color: var(--accent-gold);
+}
+
+/* Progress bar */
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background: var(--border-light);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 2px;
+  background: var(--brand-green);
+  transition: width 1.2s cubic-bezier(0.25, 0.4, 0.25, 1);
+}
+
+.progress-fill-gold {
+  background: linear-gradient(to right, var(--accent-gold), var(--accent-gold-light));
+}
+
+.progress-fill-highlight {
+  background: linear-gradient(to right, var(--brand-green), var(--brand-green-mid));
+}
+
+/* ── SECTION 7.3 · REVENUE CHART ────────────────────────── */
+
+.finance-chart-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-light);
+}
+
+.chart-wrapper {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-canvas-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.legend-swatch {
+  width: 14px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── SECTION 7.4 · ASSET CHART ──────────────────────────── */
+
+.finance-asset-section {
+  background: var(--bg-primary);
+}
+
+.asset-chart-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--accent-gold);
+  margin-top: 0.5rem;
+}
+
+/* ── SECTION 7.5 · P&L TABLE ────────────────────────────── */
+
+.finance-pl-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-light);
+}
+
+.pl-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.pl-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  min-width: 700px;
+}
+
+.pl-table thead tr {
+  background: var(--brand-green);
+}
+
+.pl-table thead th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  color: rgba(255,255,255,0.65);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pl-table thead th.pl-th-highlight {
+  background: rgba(201,162,39,0.18);
+  color: var(--accent-gold-light);
+}
+
+.pl-table thead th.pl-th-provisional {
+  color: var(--accent-gold);
+  border-bottom: 2px dashed rgba(201,162,39,0.4);
+}
+
+.pl-table tbody tr {
+  border-bottom: 1px solid var(--border-light);
+  transition: background var(--transition-fast);
+}
+
+.pl-table tbody tr:nth-child(even) {
+  background: rgba(247,249,248,0.8);
+}
+
+.pl-table tbody tr:hover {
+  background: rgba(27,77,62,0.03);
+}
+
+.pl-table tbody tr.pl-row-key {
+  font-weight: 700;
+}
+
+.pl-table tbody tr.pl-row-key td {
+  border-top: 1px solid var(--border-medium);
+}
+
+.pl-table tbody td {
+  padding: 0.875rem 1.25rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.pl-table tbody td:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+  white-space: normal;
+}
+
+.pl-table tbody td.pl-td-highlight {
+  background: rgba(27,77,62,0.04);
+  color: var(--brand-green);
+  font-weight: 700;
+}
+
+.pl-table tbody td.pl-td-provisional {
+  color: var(--accent-gold);
+  font-weight: 600;
+  border-left: 1px dashed rgba(201,162,39,0.25);
+  border-right: 1px dashed rgba(201,162,39,0.25);
+}
+
+.pl-table tbody td.pl-td-growth {
+  color: var(--brand-green);
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+}
+
+.pl-table tbody td.pl-td-growth-gold {
+  color: var(--accent-gold);
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+}
+
+.pl-table-footer {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+  background: rgba(247,249,248,0.5);
+  line-height: 1.6;
+}
+
+/* ── SECTION 7.6 · KEY RATIOS ───────────────────────────── */
+
+.finance-ratios-section {
+  background: var(--bg-primary);
+}
+
+.ratio-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.ratio-card:hover {
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-3px);
+}
+
+.ratio-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--brand-green), var(--accent-gold));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.ratio-card:hover::after {
+  opacity: 1;
+}
+
+.ratio-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.ratio-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--brand-green);
+  line-height: 1;
+}
+
+.ratio-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── SECTION 7.7 · BALANCE SHEET ────────────────────────── */
+
+.finance-bs-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-light);
+}
+
+.bs-highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.bs-highlight-card {
+  background: var(--brand-green);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.bs-highlight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(27,77,62,0.25);
+}
+
+.bs-highlight-card::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(201,162,39,0.06);
+  pointer-events: none;
+}
+
+.bs-hl-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.75rem;
+}
+
+.bs-hl-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--accent-gold);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.bs-hl-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+}
+
+/* Balance sheet summary table */
+.bs-summary-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.bs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.bs-table thead tr {
+  background: var(--brand-green);
+}
+
+.bs-table thead th {
+  padding: 0.875rem 1.25rem;
+  text-align: left;
+  color: rgba(255,255,255,0.65);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.bs-table thead th.bs-th-val {
+  color: var(--accent-gold-light);
+  text-align: right;
+}
+
+.bs-table tbody tr {
+  border-bottom: 1px solid var(--border-light);
+  transition: background var(--transition-fast);
+}
+
+.bs-table tbody tr:nth-child(even) {
+  background: rgba(247,249,248,0.7);
+}
+
+.bs-table tbody tr:hover {
+  background: rgba(27,77,62,0.03);
+}
+
+.bs-table tbody td {
+  padding: 0.875rem 1.25rem;
+  color: var(--text-muted);
+}
+
+.bs-table tbody td:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.bs-table tbody td.bs-td-val {
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--brand-green);
+}
+
+/* ── SECTION 7.8 · AUDITOR NOTE ─────────────────────────── */
+
+.finance-auditor-section {
+  background: var(--bg-primary);
+}
+
+.auditor-card {
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 3rem;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.auditor-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--brand-green);
+}
+
+.auditor-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.auditor-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.auditor-detail-row {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.auditor-detail-row span {
+  color: var(--text-muted);
+}
+
+.auditor-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-gold);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.auditor-link:hover {
+  color: var(--accent-gold-dark);
+  gap: 0.75rem;
+}
+
+/* ── SECTION 7.9 · CTA ───────────────────────────────────── */
+
+.finance-cta-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-light);
+}
+
+.finance-callout {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.callout-card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.callout-text-block {
+  flex: 1;
+}
+
+.callout-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 0.875rem;
+}
+
+.callout-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 0.875rem;
+}
+
+.callout-body {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.callout-action {
+  flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .year-comparison-table {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .finance-hero-content {
+    padding-top: 5rem;
+  }
+
+  .bs-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .callout-card-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .callout-body {
+    max-width: 100%;
+  }
+
+  .auditor-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .chart-wrapper {
+    padding: 1.25rem;
+  }
+
+  .year-comparison {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .year-comparison-table {
+    min-width: 580px;
+  }
+}
+
+@media (max-width: 480px) {
+  .finance-hero h1 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .ratio-value {
+    font-size: 2.25rem;
+  }
+
+  .bs-highlight-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .pl-table-footer {
+    font-size: 0.65rem;
+  }
+}

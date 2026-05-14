@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financials | Kropbook Agritech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/finance.css">
+  <script src="js/effects.js"></script>
+</head>
+
+<body>
+  <svg style="display:none" aria-hidden="true">
+    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence" />
+      <feComponentTransfer in="turbulence" result="mapped">
+        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+      </feComponentTransfer>
+      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+      <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100"
+        lightingColor="white" result="specLight">
+        <fePointLight x="-200" y="-200" z="300" />
+      </feSpecularLighting>
+      <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+      <feDisplacementMap in="SourceGraphic" in2="softMap" scale="200" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+  <div id="scroll-progress"></div>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 7.1 · HERO
+         ══════════════════════════════════════════════════════════ -->
+    <section class="finance-hero">
+      <div class="finance-hero-bg"></div>
+      <div class="bg-grid"></div>
+
+      <!-- Floating decorative shapes -->
+      <div class="floating-shape" data-opacity="0.05"
+        style="width:540px;height:120px;background:linear-gradient(135deg,rgba(27,77,62,0.18),rgba(45,107,85,0.06));top:8%;left:-120px;">
+      </div>
+      <div class="floating-shape" data-opacity="0.05"
+        style="width:440px;height:100px;background:linear-gradient(135deg,rgba(201,162,39,0.12),rgba(232,200,74,0.04));top:22%;right:-90px;animation-delay:-4s;">
+      </div>
+      <div class="floating-shape" data-opacity="0.04"
+        style="width:280px;height:70px;background:linear-gradient(135deg,rgba(27,77,62,0.12),rgba(27,77,62,0.03));bottom:20%;left:4%;animation-delay:-8s;">
+      </div>
+
+      <div class="finance-hero-content">
+
+        <div class="finance-hero-badge anim-hidden" data-delay="0.1">
+          <div class="confidential-badge">
+            <span class="dot"></span>
+            Confidential · Institutional Presentation
+          </div>
+        </div>
+
+        <div class="anim-hidden" data-delay="0.2">
+          <span class="section-label">07 · Finance</span>
+        </div>
+
+        <h1 class="anim-hidden" data-delay="0.3">
+          <span class="text-dark-gradient">Three years.</span><br>
+          <span class="text-gold-gradient">Verified performance.</span>
+        </h1>
+
+        <div class="finance-hero-auditor anim-hidden" data-delay="0.55">
+          <span class="dot"></span>
+          Akshay M Jhawar and Associates &nbsp;·&nbsp; FRN: 150528W &nbsp;·&nbsp; CIN: U01100PN2018PTC180049
+        </div>
+
+      </div>
+
+      <div class="finance-hero-bottom-fade"></div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 7.2 · FY 2024-25 HEADLINE METRICS
+         ══════════════════════════════════════════════════════════ -->
+    <section class="section finance-metrics-section">
+      <div class="finance-section-inner">
+
+        <div class="finance-section-header anim-hidden">
+          <span class="section-label">07 · FY 2024-25 Highlights</span>
+          <h2>Current year at a glance.</h2>
+        </div>
+
+        <!-- 3 Large metric cards -->
+        <div class="grid-3" style="margin-bottom: 3rem;">
+
+          <div class="finance-metric-card anim-hidden" data-delay="0.1">
+            <div class="finance-metric-label">Revenue from Operations</div>
+            <div class="finance-metric-value">
+              <span data-counter data-target="59.18" data-decimals="2" data-prefix="₹" data-suffix=" Cr">₹59.18
+                Cr</span>
+            </div>
+            <div class="finance-metric-note">+112% YoY</div>
+          </div>
+
+          <div class="finance-metric-card anim-hidden" data-delay="0.2">
+            <div class="finance-metric-label">Net Profit</div>
+            <div class="finance-metric-value">
+              <span data-counter data-target="7.80" data-decimals="2" data-prefix="₹" data-suffix=" Cr">₹7.80 Cr</span>
+            </div>
+            <div class="finance-metric-note">13.2% Net Margin</div>
+          </div>
+
+          <div class="finance-metric-card anim-hidden" data-delay="0.3">
+            <div class="finance-metric-label">Total Assets</div>
+            <div class="finance-metric-value">
+              <span data-counter data-target="16.87" data-decimals="2" data-prefix="₹" data-suffix=" Cr">₹16.87
+                Cr</span>
+            </div>
+            <div class="finance-metric-note">+196% YoY</div>
+          </div>
+
+        </div>
+
+        <!-- 4-Column year comparison table -->
+        <div class="year-comparison anim-hidden" data-delay="0.15">
+          <div class="progress-container" style="display:none;"></div><!-- trigger for initProgressBars observer -->
+          <table class="year-comparison-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>FY 2022-23</th>
+                <th>FY 2023-24</th>
+                <th class="th-highlight">FY 2024-25</th>
+                <th class="th-provisional">FY 2025-26*</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- Revenue -->
+              <tr>
+                <td>Revenue</td>
+                <td>
+                  <span class="cell-value">₹24.47 Cr</span>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-width="26%"></div>
+                  </div>
+                </td>
+                <td>
+                  <span class="cell-value">₹27.90 Cr</span>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-width="30%"></div>
+                  </div>
+                </td>
+                <td class="td-highlight">
+                  <span class="cell-value cell-value-highlight">₹59.18 Cr</span>
+                  <span class="cell-badge">+112% YoY</span>
+                  <div class="progress-container">
+                    <div class="progress-fill progress-fill-highlight" data-width="64%"></div>
+                  </div>
+                </td>
+                <td class="td-provisional">
+                  <span class="cell-value cell-value-gold">₹92.50 Cr*</span>
+                  <span class="cell-badge cell-badge-gold">Projected</span>
+                  <div class="progress-container">
+                    <div class="progress-fill progress-fill-gold" data-width="100%"></div>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Net Profit -->
+              <tr>
+                <td>Net Profit</td>
+                <td>
+                  <span class="cell-value">₹60.74 L</span>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-width="5%"></div>
+                  </div>
+                </td>
+                <td>
+                  <span class="cell-value">₹4.72 Cr</span>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-width="36%"></div>
+                  </div>
+                </td>
+                <td class="td-highlight">
+                  <span class="cell-value cell-value-highlight">₹7.80 Cr</span>
+                  <span class="cell-badge">+65% YoY</span>
+                  <div class="progress-container">
+                    <div class="progress-fill progress-fill-highlight" data-width="59%"></div>
+                  </div>
+                </td>
+                <td class="td-provisional">
+                  <span class="cell-value cell-value-gold">₹13.20 Cr*</span>
+                  <span class="cell-badge cell-badge-gold">Projected</span>
+                  <div class="progress-container">
+                    <div class="progress-fill progress-fill-gold" data-width="100%"></div>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Total Assets -->
+              <tr>
+                <td>Total Assets</td>
+                <td>
+                  <span class="cell-value">₹1.49 Cr</span>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-width="5%"></div>
+                  </div>
+                </td>
+                <td>
+                  <span class="cell-value">₹5.69 Cr</span>
+                  <div class="progress-container">
+                    <div class="progress-fill" data-width="20%"></div>
+                  </div>
+                </td>
+                <td class="td-highlight">
+                  <span class="cell-value cell-value-highlight">₹16.87 Cr</span>
+                  <span class="cell-badge">+196% YoY</span>
+                  <div class="progress-container">
+                    <div class="progress-fill progress-fill-highlight" data-width="59%"></div>
+                  </div>
+                </td>
+                <td class="td-provisional">
+                  <span class="cell-value cell-value-gold">₹28.41 Cr*</span>
+                  <span class="cell-badge cell-badge-gold">Projected</span>
+                  <div class="progress-container">
+                    <div class="progress-fill progress-fill-gold" data-width="100%"></div>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 7.3 · REVENUE & PROFIT CHART
+         ══════════════════════════════════════════════════════════ -->
+    <section class="section finance-chart-section">
+      <div class="finance-section-inner">
+
+        <div class="finance-section-header anim-hidden">
+          <span class="section-label">07 · 3-Year Growth</span>
+          <h2>Revenue, Gross Profit &amp; Net Profit</h2>
+        </div>
+
+        <div class="chart-wrapper anim-hidden" data-delay="0.1">
+          <div class="chart-canvas-wrap">
+            <canvas id="revenue-chart" style="width:100%;height:380px;display:block;"></canvas>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#1B4D3E;"></div>
+              Revenue
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#2d6b55;"></div>
+              Gross Profit
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#C9A227;"></div>
+              Net Profit
+            </div>
+            <div class="legend-item"
+              style="margin-left:auto;font-style:italic;color:var(--text-muted);font-family:'Inter',sans-serif;font-size:0.7rem;">
+              * FY 2025-26 provisional &amp; unaudited
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 7.4 · ASSET GROWTH CHART
+         ══════════════════════════════════════════════════════════ -->
+    <section class="section finance-asset-section">
+      <div class="finance-section-inner">
+
+        <div class="finance-section-header anim-hidden">
+          <span class="section-label">07 · Balance Sheet Growth</span>
+          <h2>Total Asset Trajectory</h2>
+          <p class="asset-chart-subtitle">11.3× growth &nbsp;·&nbsp; FY23 → FY25</p>
+        </div>
+
+        <div class="chart-wrapper anim-hidden" data-delay="0.1">
+          <div class="chart-canvas-wrap">
+            <canvas id="asset-chart" style="width:100%;height:300px;display:block;"></canvas>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#1B4D3E;border-radius:3px;"></div>
+              Revenue (₹ Cr)
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#C9A227;border-radius:3px;"></div>
+              Net Profit (₹ Cr)
+            </div>
+            <div class="legend-item"
+              style="margin-left:auto;font-style:italic;color:var(--text-muted);font-family:'Inter',sans-serif;font-size:0.7rem;">
+              * FY 2025-26 provisional &amp; unaudited
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 7.5 · P&L TABLE
+         ══════════════════════════════════════════════════════════ -->
+    <section class="section finance-pl-section">
+      <div class="finance-section-inner">
+
+        <div class="finance-section-header anim-hidden">
+          <span class="section-label">07 · Profit &amp; Loss</span>
+          <h2>3-Year P&amp;L at a Glance</h2>
+        </div>
+
+        <div class="glass-card pl-card anim-hidden" data-delay="0.1">
+          <div class="pl-table-wrap">
+            <table class="pl-table">
+              <thead>
+                <tr>
+                  <th style="width:28%;">Particulars</th>
+                  <th>FY 2022-23</th>
+                  <th>FY 2023-24</th>
+                  <th class="pl-th-highlight">FY 2024-25</th>
+                  <th class="pl-th-provisional">FY 2025-26*</th>
+                  <th>Growth</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr class="pl-row-key">
+                  <td>Revenue from Operations</td>
+                  <td>₹24.47 Cr</td>
+                  <td>₹27.90 Cr</td>
+                  <td class="pl-td-highlight">₹59.18 Cr</td>
+                  <td class="pl-td-provisional">₹92.50 Cr*</td>
+                  <td class="pl-td-growth">+112%</td>
+                </tr>
+
+                <tr>
+                  <td>Cost of Goods Sold</td>
+                  <td>₹23.01 Cr</td>
+                  <td>₹21.48 Cr</td>
+                  <td class="pl-td-highlight">₹37.48 Cr</td>
+                  <td class="pl-td-provisional">—</td>
+                  <td>—</td>
+                </tr>
+
+                <tr class="pl-row-key">
+                  <td>Gross Profit</td>
+                  <td>₹1.47 Cr</td>
+                  <td>₹6.43 Cr</td>
+                  <td class="pl-td-highlight">₹21.70 Cr</td>
+                  <td class="pl-td-provisional">₹37.00 Cr*</td>
+                  <td class="pl-td-growth">+237%</td>
+                </tr>
+
+                <tr>
+                  <td>Employee Expenses</td>
+                  <td>₹14.18 L</td>
+                  <td>₹22.11 L</td>
+                  <td class="pl-td-highlight">₹67.99 L</td>
+                  <td class="pl-td-provisional">—</td>
+                  <td>—</td>
+                </tr>
+
+                <tr>
+                  <td>Depreciation</td>
+                  <td>₹85.17 K</td>
+                  <td>₹1.88 L</td>
+                  <td class="pl-td-highlight">₹5.15 L</td>
+                  <td class="pl-td-provisional">—</td>
+                  <td>—</td>
+                </tr>
+
+                <tr class="pl-row-key">
+                  <td>Net Profit</td>
+                  <td>₹60.74 L</td>
+                  <td>₹4.72 Cr</td>
+                  <td class="pl-td-highlight">₹7.80 Cr</td>
+                  <td class="pl-td-provisional">₹13.20 Cr*</td>
+                  <td class="pl-td-growth">+65%</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <div class="pl-table-footer">
+            All figures in Indian Rupees. &nbsp;CIN: U01100PN2018PTC180049.
+            &nbsp;* FY 2025-26 figures are provisional and unaudited.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 7.6 · KEY RATIOS
+         ══════════════════════════════════════════════════════════ -->
+    <section class="section finance-ratios-section">
+      <div class="finance-section-inner">
+
+        <div class="finance-section-header anim-hidden">
+          <span class="section-label">07 · Key Ratios FY 2024-25</span>
+          <h2>Performance at a glance.</h2>
+        </div>
+
+        <div class="grid-4">
+
+          <div class="ratio-card anim-hidden" data-delay="0.1">
+            <div class="ratio-label">Gross Margin</div>
+            <div class="ratio-value">36.7%</div>
+            <div class="ratio-note">vs 6.0% in FY23</div>
+          </div>
+
+          <div class="ratio-card anim-hidden" data-delay="0.2">
+            <div class="ratio-label">Net Margin</div>
+            <div class="ratio-value">13.2%</div>
+            <div class="ratio-note">vs 2.5% in FY23</div>
+          </div>
+
+          <div class="ratio-card anim-hidden" data-delay="0.3">
+            <div class="ratio-label">Asset Growth</div>
+            <div class="ratio-value">11.3×</div>
+            <div class="ratio-note">FY23 to FY25</div>
+          </div>
+
+          <div class="ratio-card anim-hidden" data-delay="0.4">
+            <div class="ratio-label">Trade Receivables</div>
+            <div class="ratio-value" style="font-size:clamp(1.6rem,3vw,2.25rem);">₹15.21 Cr</div>
+            <div class="ratio-note">Institutional buyers</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 7.7 · BALANCE SHEET HIGHLIGHTS
+         ══════════════════════════════════════════════════════════ -->
+    <section class="section finance-bs-section">
+      <div class="finance-section-inner">
+
+        <div class="finance-section-header anim-hidden">
+          <span class="section-label">07 · Balance Sheet</span>
+          <h2>Where the assets are.</h2>
+        </div>
+
+        <!-- 2 Large highlight cards -->
+        <div class="bs-highlights-grid">
+
+          <div class="bs-highlight-card anim-left" data-delay="0.1">
+            <div class="bs-hl-label">Trade Receivables</div>
+            <div class="bs-hl-value">₹15.21 Cr</div>
+            <p class="bs-hl-desc">
+              Institutional buyer relationships. ITC, Metro, Zomato, Swiggy.
+              Verified receivables from India's most creditworthy buyers.
+            </p>
+          </div>
+
+          <div class="bs-highlight-card anim-right" data-delay="0.2">
+            <div class="bs-hl-label">Cash &amp; Bank</div>
+            <div class="bs-hl-value">₹84.83 Lakh</div>
+            <p class="bs-hl-desc">
+              Lean operations. Capital efficiency.
+              Growth funded through operating cash flow.
+            </p>
+          </div>
+
+        </div>
+
+
+
+        <!-- ══════════════════════════════════════════════════════════
+         SECTION 7.8 · AUDITOR NOTE
+         ══════════════════════════════════════════════════════════ -->
+        <section class="section finance-auditor-section">
+          <div class="finance-section-inner">
+
+            <div class="auditor-card glass-card anim-hidden" data-delay="0.1">
+
+              <div class="auditor-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4" />
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                </svg>
+              </div>
+
+              <h3>Auditor &amp; Compliance</h3>
+
+              <div class="auditor-details">
+                <div class="auditor-detail-row">
+                  <span>Accounting standard:</span> &nbsp; All financial statements prepared under Indian GAAP
+                </div>
+                <div class="auditor-detail-row">
+                  <span>CIN:</span> &nbsp; U01100PN2018PTC180049 &nbsp;·&nbsp; <span>Founded:</span> &nbsp; 2018
+                </div>
+              </div>
+
+              <a href="financial-statements.html" class="auditor-link">
+                View Full Statements &nbsp;→
+              </a>
+
+            </div>
+
+          </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════════════════════════
+         SECTION 7.9 · FINANCIAL DOCUMENT QUICK ACCESS
+         ══════════════════════════════════════════════════════════ -->
+        <section class="section finance-docs-section" style="padding-top:0;">
+          <div class="finance-section-inner">
+
+            <div class="finance-section-header anim-hidden">
+              <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem;">
+                <div style="width:48px;height:48px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <img src="icons/GIF/Financial Rails.gif" alt="" style="width:32px;height:32px;object-fit:contain;">
+                </div>
+                <span class="section-label">07 &middot; Financial Documents</span>
+              </div>
+              <h2>Direct access to all statements.</h2>
+              <p style="color:var(--text-muted);font-size:0.9rem;margin-top:0.5rem;">Audited statements and provisional financials — open directly from here.</p>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;" class="anim-hidden" data-delay="0.1">
+
+              <!-- FY 2022-23 -->
+              <div style="background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all 0.2s ease;"
+                onclick="openPdfModal('documents/KB FY 2022-23.pdf','FY 2022-23 Financial Statement')"
+                onmouseenter="this.style.borderColor='var(--border-gold)';this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-gold)';"
+                onmouseleave="this.style.borderColor='var(--border-light)';this.style.transform='translateY(0)';this.style.boxShadow='none';">
+                <div style="width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                  <img src="icons/GIF/document-calculator.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+                </div>
+                <div style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Annual Report</div>
+                <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.25rem;">FY 2022-23</div>
+                <div style="font-size:0.7rem;color:var(--text-muted);">Audited &middot; Kropbook Agritech</div>
+                <div style="margin-top:1rem;font-size:0.7rem;color:var(--brand-green);font-weight:600;">View Document &rarr;</div>
+              </div>
+
+              <!-- FY 2023-24 -->
+              <div style="background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all 0.2s ease;"
+                onclick="openPdfModal('documents/KB FY 2023-24.pdf','FY 2023-24 Financial Statement')"
+                onmouseenter="this.style.borderColor='var(--border-gold)';this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-gold)';"
+                onmouseleave="this.style.borderColor='var(--border-light)';this.style.transform='translateY(0)';this.style.boxShadow='none';">
+                <div style="width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                  <img src="icons/GIF/document-calculator.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+                </div>
+                <div style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Annual Report</div>
+                <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.25rem;">FY 2023-24</div>
+                <div style="font-size:0.7rem;color:var(--text-muted);">Audited &middot; Kropbook Agritech</div>
+                <div style="margin-top:1rem;font-size:0.7rem;color:var(--brand-green);font-weight:600;">View Document &rarr;</div>
+              </div>
+
+              <!-- FY 2024-25 -->
+              <div style="background:linear-gradient(135deg,rgba(27,77,62,0.04),rgba(201,162,39,0.03));border:1px solid rgba(201,162,39,0.25);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all 0.2s ease;"
+                onclick="openPdfModal('documents/KB FY 2024-25.pdf','FY 2024-25 Financial Statement')"
+                onmouseenter="this.style.borderColor='var(--accent-gold)';this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-gold)';"
+                onmouseleave="this.style.borderColor='rgba(201,162,39,0.25)';this.style.transform='translateY(0)';this.style.boxShadow='none';">
+                <div style="width:44px;height:44px;border-radius:10px;background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                  <img src="icons/GIF/Financial Rails.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+                </div>
+                <div style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;color:var(--accent-gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Latest Audited</div>
+                <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.25rem;">FY 2024-25</div>
+                <div style="font-size:0.7rem;color:var(--text-muted);">&#8377;59.18 Cr Revenue &middot; +112% YoY</div>
+                <div style="margin-top:1rem;font-size:0.7rem;color:var(--accent-gold);font-weight:600;">View Document &rarr;</div>
+              </div>
+
+              <!-- FY 2025-26 Provisional -->
+              <div style="background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all 0.2s ease;"
+                onclick="openPdfModal('documents/08_KROPBOOK Provisionals.pdf','FY 2025-26 Provisional Financials')"
+                onmouseenter="this.style.borderColor='var(--border-gold)';this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-gold)';"
+                onmouseleave="this.style.borderColor='var(--border-light)';this.style.transform='translateY(0)';this.style.boxShadow='none';">
+                <div style="width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                  <img src="icons/GIF/presentation.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+                </div>
+                <div style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Provisional</div>
+                <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.25rem;">FY 2025-26</div>
+                <div style="font-size:0.7rem;color:var(--text-muted);">Management Estimates &middot; Subject to Audit</div>
+                <div style="margin-top:1rem;font-size:0.7rem;color:var(--brand-green);font-weight:600;">View Document &rarr;</div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════════════════════════
+         SECTION 7.10 · CTA
+         ══════════════════════════════════════════════════════════ -->
+        <section class="section finance-cta-section">
+          <div class="finance-callout">
+            <div class="callout-card anim-hidden" data-delay="0.1">
+              <div class="callout-card-inner">
+
+                <div class="callout-text-block">
+                  <div class="callout-eyebrow">Full Financial Statements</div>
+                  <h3 class="callout-heading">Every number, fully documented.</h3>
+                  <p class="callout-body">
+                    View full audited financial statements — balance sheets, P&amp;L accounts,
+                    and all supporting schedules.
+                  </p>
+                </div>
+
+                <div class="callout-action">
+                  <a href="financial-statements.html" class="btn btn-primary" style="white-space:nowrap;">
+                    View Financial Statements &nbsp;→
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/finance.js"></script>
+</body>
+
+</html>

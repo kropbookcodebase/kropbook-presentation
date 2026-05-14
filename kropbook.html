@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KropBook Technology | Kropbook Agritech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/kropbook.css">
+  <script src="js/effects.js"></script>
+  <style>
+    .process-gif {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+  <svg style="display:none" aria-hidden="true">
+    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence" />
+      <feComponentTransfer in="turbulence" result="mapped">
+        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+      </feComponentTransfer>
+      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+      <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100"
+        lightingColor="white" result="specLight">
+        <fePointLight x="-200" y="-200" z="300" />
+      </feSpecularLighting>
+      <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+      <feDisplacementMap in="SourceGraphic" in2="softMap" scale="200" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+  <div id="scroll-progress"></div>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════
+         4.1 — HERO
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="kb-hero section">
+      <div class="kb-hero__bg-grid bg-grid"></div>
+      <div class="kb-hero__radial"></div>
+
+      <!-- Floating shapes -->
+      <div class="floating-shape kb-shape-1" data-opacity="0.05"></div>
+      <div class="floating-shape kb-shape-2" data-opacity="0.04"></div>
+
+      <div class="container kb-hero__inner">
+        <div class="kb-hero__content">
+          <div class="section-label anim-hidden" data-delay="0">04 · Company</div>
+
+          <h1 class="kb-hero__h1 anim-hidden" data-delay="0.1">
+            <span class="text-dark">Scientific intelligence,</span><br>
+            <span class="text-gold-gradient">agri&#8209;technology.</span>
+          </h1>
+
+          <p class="kb-hero__subtitle anim-hidden" data-delay="0.25">
+            The research and technology arm of the ecosystem.<br>
+            Where data becomes decisions.
+          </p>
+
+          <div class="kb-hero__badges anim-hidden" data-delay="0.35">
+            <span class="confidential-badge">
+              <span class="dot"></span>
+              Patent Upheld · DoD Challenged
+            </span>
+            <span class="badge badge-green">8 Revenue Streams</span>
+            <span class="badge badge-gold">3-Minute Analysis</span>
+          </div>
+        </div>
+
+        <!-- Decorative data card -->
+        <div class="kb-hero__card anim-right" data-delay="0.2">
+          <div class="kb-hero-card__label">Live Analysis</div>
+          <div class="kb-hero-card__params">
+            <span>pH</span><span>N</span><span>P</span><span>K</span><span>EC</span><span>Micro</span>
+          </div>
+          <div class="kb-hero-card__timer">
+            <span class="kb-timer-number">3</span>
+            <span class="kb-timer-unit">minutes</span>
+          </div>
+          <div class="kb-hero-card__sub">Farm to intelligence</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         4.2 — NOT WHAT IT LOOKS LIKE
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt kb-reveal">
+      <div class="container">
+        <div class="kb-reveal__inner">
+
+          <p class="kb-reveal__premise anim-hidden" data-delay="0">
+            At a superficial level, this appears to be a soil testing business.
+          </p>
+
+          <p class="kb-reveal__challenge anim-hidden" data-delay="0.1">
+            Here is where every observer's perspective is wrong.
+          </p>
+
+          <div class="kb-reveal__strike-wrap anim-hidden" data-delay="0.2">
+            <span class="kb-reveal__strikethrough" id="strikethrough-text">soil testing business</span>
+          </div>
+
+          <div class="kb-reveal__arrow anim-hidden" data-delay="0.35">
+            <svg width="24" height="48" viewBox="0 0 24 48" fill="none">
+              <path d="M12 2 L12 40 M4 32 L12 44 L20 32" stroke="#C9A227" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+
+          <div class="kb-reveal__truth anim-hidden" data-delay="0.45">
+            <span class="text-gold-gradient">This is a DATA company.</span>
+          </div>
+
+          <p class="kb-reveal__elaboration anim-hidden" data-delay="0.55">
+            Every soil test creates a permanent, unique data asset. At scale, this becomes the most comprehensive
+            agricultural intelligence database ever assembled.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         4.3 — THE SOIL TESTING PROCESS
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section kb-process">
+      <div class="container">
+        <div class="kb-process__header anim-hidden" data-delay="0">
+          <div class="section-label">04 · Process</div>
+          <h2>From soil to intelligence<br><em>in 3 minutes.</em></h2>
+        </div>
+
+        <!-- Process flow grid -->
+        <div class="kb-process__flow" id="process-flow">
+          <div class="kb-process-step anim-hidden" data-delay="0.05" data-step="1">
+            <div class="kb-process-step__number">01</div>
+            <div class="kb-process-step__node">
+              <span class="kb-process-step__icon"><img src="icons/GIF/tractor gif.gif" alt=""
+                  class="process-gif"></span>
+            </div>
+            <div class="kb-process-step__content">
+              <div class="kb-process-step__title">Farm Didi Collects</div>
+              <div class="kb-process-step__desc">QR-tagged bag per farmer</div>
+            </div>
+          </div>
+
+          <div class="kb-process-step anim-hidden" data-delay="0.1" data-step="2">
+            <div class="kb-process-step__number">02</div>
+            <div class="kb-process-step__node">
+              <span class="kb-process-step__icon"><img src="icons/GIF/earth.gif" alt="" class="process-gif"></span>
+            </div>
+            <div class="kb-process-step__content">
+              <div class="kb-process-step__title">Transport</div>
+              <div class="kb-process-step__desc">Same-day collection</div>
+            </div>
+          </div>
+
+          <div class="kb-process-step anim-hidden" data-delay="0.15" data-step="3">
+            <div class="kb-process-step__number">03</div>
+            <div class="kb-process-step__node">
+              <span class="kb-process-step__icon"><img src="icons/GIF/folder.gif" alt="" class="process-gif"></span>
+            </div>
+            <div class="kb-process-step__content">
+              <div class="kb-process-step__title">QR Scan</div>
+              <div class="kb-process-step__desc">Farmer ID auto-identified</div>
+            </div>
+          </div>
+
+          <div class="kb-process-step anim-hidden" data-delay="0.2" data-step="4">
+            <div class="kb-process-step__number">04</div>
+            <div class="kb-process-step__node kb-process-step__node--active">
+              <span class="kb-process-step__icon"><img src="icons/GIF/farm-tech gif.gif" alt=""
+                  class="process-gif"></span>
+            </div>
+            <div class="kb-process-step__content">
+              <div class="kb-process-step__title">Machine Activates</div>
+              <div class="kb-process-step__desc">3-minute analysis begins</div>
+            </div>
+          </div>
+
+          <div class="kb-process-step anim-hidden" data-delay="0.25" data-step="5">
+            <div class="kb-process-step__number">05</div>
+            <div class="kb-process-step__node">
+              <span class="kb-process-step__icon"><img src="icons/GIF/microscope.gif" alt="" class="process-gif"></span>
+            </div>
+            <div class="kb-process-step__content">
+              <div class="kb-process-step__title">Parameters Measured</div>
+              <div class="kb-process-step__desc">EC · pH · N · P · K · Micronutrients</div>
+            </div>
+          </div>
+
+          <div class="kb-process-step anim-hidden" data-delay="0.3" data-step="6">
+            <div class="kb-process-step__number">06</div>
+            <div class="kb-process-step__node">
+              <span class="kb-process-step__icon"><img src="icons/GIF/presentation.gif" alt=""
+                  class="process-gif"></span>
+            </div>
+            <div class="kb-process-step__content">
+              <div class="kb-process-step__title">Data Auto-Sent</div>
+              <div class="kb-process-step__desc">With farmer ID attached</div>
+            </div>
+          </div>
+
+          <div class="kb-process-step anim-hidden" data-delay="0.35" data-step="7">
+            <div class="kb-process-step__number">07</div>
+            <div class="kb-process-step__node">
+              <span class="kb-process-step__icon"><img src="icons/GIF/diagram.gif" alt="" class="process-gif"></span>
+            </div>
+            <div class="kb-process-step__content">
+              <div class="kb-process-step__title">Report Generated</div>
+              <div class="kb-process-step__desc">Automated, standardised</div>
+            </div>
+          </div>
+
+          <div class="kb-process-step anim-hidden" data-delay="0.4" data-step="8">
+            <div class="kb-process-step__number">08</div>
+            <div class="kb-process-step__node">
+              <span class="kb-process-step__icon"><img src="icons/GIF/purse.gif" alt="" class="process-gif"></span>
+            </div>
+            <div class="kb-process-step__content">
+              <div class="kb-process-step__title">Delivered to Farmer</div>
+              <div class="kb-process-step__desc">Instant notification</div>
+            </div>
+          </div>
+
+          <div class="kb-process-step anim-hidden" data-delay="0.45" data-step="9">
+            <div class="kb-process-step__number">09</div>
+            <div class="kb-process-step__node kb-process-step__node--gold">
+              <span class="kb-process-step__icon"><img src="icons/GIF/seeds-bag gif.gif" alt=""
+                  class="process-gif"></span>
+            </div>
+            <div class="kb-process-step__content">
+              <div class="kb-process-step__title">Advisory Sent</div>
+              <div class="kb-process-step__desc">Fertiliser & pesticide recommendations</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Process summary bar -->
+        <div class="kb-process__summary anim-hidden" data-delay="0.5">
+          <div class="kb-process__summary-item">
+            <span class="kb-process__summary-label">Total time</span>
+            <span class="kb-process__summary-value">3 minutes</span>
+          </div>
+          <div class="kb-process__summary-divider"></div>
+          <div class="kb-process__summary-item">
+            <span class="kb-process__summary-label">Operator</span>
+            <span class="kb-process__summary-value">Non-scientist</span>
+          </div>
+          <div class="kb-process__summary-divider"></div>
+          <div class="kb-process__summary-item">
+            <span class="kb-process__summary-label">Parameters</span>
+            <span class="kb-process__summary-value">6 + micro</span>
+          </div>
+          <div class="kb-process__summary-divider"></div>
+          <div class="kb-process__summary-item">
+            <span class="kb-process__summary-label">Data delivery</span>
+            <span class="kb-process__summary-value">Instant · Automated</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         4.4 — THE DATA THESIS
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt kb-thesis">
+      <div class="container">
+        <div class="kb-thesis__header anim-hidden" data-delay="0">
+          <div class="section-label">04 · Thesis</div>
+          <h2>Not soil testing.<br><em>Intelligence infrastructure.</em></h2>
+        </div>
+
+        <div class="kb-thesis__grid">
+
+          <!-- Card 1 -->
+          <div class="kb-flip-card anim-hidden" data-delay="0.1">
+            <div class="kb-flip-card__inner">
+              <div class="kb-flip-card__front">
+                <div class="kb-flip-card__icon">🌍</div>
+                <h3 class="kb-flip-card__title">Soil Intelligence</h3>
+                <p class="kb-flip-card__text">Every farm's soil profile, permanently recorded. At national scale, this
+                  becomes an unmatchable dataset for agricultural advisory, policy, and financial decision-making.</p>
+                <div class="kb-flip-card__hint">Hover to reveal →</div>
+              </div>
+              <div class="kb-flip-card__back">
+                <div class="kb-flip-card__back-label">What it looks like</div>
+                <p class="kb-flip-card__back-surface">A government soil health card scheme.</p>
+                <div class="kb-flip-card__divider"></div>
+                <div class="kb-flip-card__back-label kb-flip-card__back-label--gold">What it is</div>
+                <p class="kb-flip-card__back-truth">The most granular agricultural soil database on earth — farm-level,
+                  GPS-tagged, permanently owned. No competitor can replicate a 7-year head start.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="kb-flip-card anim-hidden" data-delay="0.2">
+            <div class="kb-flip-card__inner">
+              <div class="kb-flip-card__front">
+                <div class="kb-flip-card__icon">💼</div>
+                <h3 class="kb-flip-card__title">Advisory Revenue</h3>
+                <p class="kb-flip-card__text">Data-driven fertiliser and input recommendations to large manufacturers.
+                  Companies pay for access to verified, granular soil data across millions of farms.</p>
+                <div class="kb-flip-card__hint">Hover to reveal →</div>
+              </div>
+              <div class="kb-flip-card__back">
+                <div class="kb-flip-card__back-label">What it looks like</div>
+                <p class="kb-flip-card__back-surface">Selling fertiliser recommendations.</p>
+                <div class="kb-flip-card__divider"></div>
+                <div class="kb-flip-card__back-label kb-flip-card__back-label--gold">What it is</div>
+                <p class="kb-flip-card__back-truth">A B2B data licensing business. Agri-input manufacturers —
+                  Coromandel, UPL, IFFCO — pay premium for verified demand signals from 140 million farmers. Near-zero
+                  marginal cost.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="kb-flip-card anim-hidden" data-delay="0.3">
+            <div class="kb-flip-card__inner">
+              <div class="kb-flip-card__front">
+                <div class="kb-flip-card__icon">🧠</div>
+                <h3 class="kb-flip-card__title">The McKinsey of Agriculture</h3>
+                <p class="kb-flip-card__text">Institutional intelligence platform for subscribers: lenders, insurers,
+                  governments, international organisations. Bloomberg Terminal for the global food system.</p>
+                <div class="kb-flip-card__hint">Hover to reveal →</div>
+              </div>
+              <div class="kb-flip-card__back">
+                <div class="kb-flip-card__back-label">What it looks like</div>
+                <p class="kb-flip-card__back-surface">A subscription analytics product.</p>
+                <div class="kb-flip-card__divider"></div>
+                <div class="kb-flip-card__back-label kb-flip-card__back-label--gold">What it is</div>
+                <p class="kb-flip-card__back-truth">The irreplaceable intelligence layer for $2T in global agricultural
+                  finance. World Bank, FAO, ADB, sovereign lenders — all operating blind without verified ground-truth
+                  data. Kropbook ends that.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         4.5 — SCIENTIFIC VALIDATION
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section kb-validation">
+      <div class="container">
+        <div class="section-label anim-hidden" data-delay="0">04 · Validation</div>
+
+        <div class="callout-card kb-validation__card anim-hidden" data-delay="0.1">
+          <!-- Patent seal -->
+          <div class="kb-patent-seal">
+            <div class="kb-patent-seal__inner">
+              <div class="kb-patent-seal__top">PATENT</div>
+              <div class="kb-patent-seal__main">UPHELD</div>
+              <div class="kb-patent-seal__sub">International<br>Adjudication</div>
+            </div>
+          </div>
+
+          <div class="kb-validation__content">
+            <p class="kb-validation__headline">
+              The United States Department of Defense challenged Kropbook's patent.
+            </p>
+            <p class="kb-validation__result text-gold-gradient">
+              Kropbook won.
+            </p>
+            <p class="kb-validation__subtext">
+              This is not a legal result. It is proof that Kropbook's innovation is genuinely original. Confirmed by
+              international adjudication against the most rigorous challenger in the world.
+            </p>
+
+            <div class="kb-validation__tags">
+              <span class="badge badge-gold">Genuine Innovation</span>
+              <span class="badge badge-gold">Internationally Adjudicated</span>
+              <span class="badge badge-gold">DoD Challenge Defeated</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         4.6 — HARDWARE DEVICES
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt kb-hardware">
+      <div class="container">
+        <div class="kb-hardware__header anim-hidden" data-delay="0">
+          <div class="section-label">04 · Hardware</div>
+          <h2>Proprietary sensing<br><em>infrastructure.</em></h2>
+        </div>
+
+        <div class="kb-hardware__grid">
+
+          <!-- Device 1 -->
+          <div class="glass-card kb-device-card anim-hidden" data-delay="0.1">
+            <div class="kb-device-card__header">
+              <div class="kb-device-card__icon-wrap">
+                <span class="kb-device-card__icon">🔬</span>
+              </div>
+              <div class="kb-device-card__time-badge">3 minutes</div>
+            </div>
+            <h3 class="kb-device-card__title">Soil Analysis Device</h3>
+            <p class="kb-device-card__desc">Farm-scale, village-level operation. Operated by non-scientists. Results in
+              3 minutes. Data auto-sent.</p>
+            <div class="kb-device-card__params">
+              <span class="kb-param-tag">pH</span>
+              <span class="kb-param-tag">N</span>
+              <span class="kb-param-tag">P</span>
+              <span class="kb-param-tag">K</span>
+              <span class="kb-param-tag">EC</span>
+              <span class="kb-param-tag">Micronutrients</span>
+            </div>
+          </div>
+
+          <!-- Device 2 -->
+          <div class="glass-card kb-device-card anim-hidden" data-delay="0.2">
+            <div class="kb-device-card__header">
+              <div class="kb-device-card__icon-wrap">
+                <span class="kb-device-card__icon">🛡️</span>
+              </div>
+              <div class="kb-device-card__market-badge">Export Grade</div>
+            </div>
+            <h3 class="kb-device-card__title">Residue Analysis Device</h3>
+            <p class="kb-device-card__desc">Farm-gate pesticide and chemical residue detection. Turns rejection into
+              prevention. Farmers know before the buyer rejects.</p>
+            <div class="kb-device-card__market">
+              <span class="kb-market-tag">Export Compliance</span>
+              <span class="kb-market-tag">Premium Market Access</span>
+            </div>
+          </div>
+
+          <!-- Device 3 — R&D -->
+          <div class="glass-card kb-device-card kb-device-card--pipeline anim-hidden" data-delay="0.3">
+            <div class="kb-device-card__header">
+              <div class="kb-device-card__icon-wrap kb-device-card__icon-wrap--pipeline">
+                <span class="kb-device-card__icon">💡</span>
+              </div>
+              <div class="kb-device-card__pipeline-badge">R&amp;D Pipeline</div>
+            </div>
+            <h3 class="kb-device-card__title">Future Devices</h3>
+            <ul class="kb-pipeline-list">
+              <li>
+                <span class="kb-pipeline-dot"></span>
+                Seed viability detection
+              </li>
+              <li>
+                <span class="kb-pipeline-dot"></span>
+                Pathogen detection
+              </li>
+              <li>
+                <span class="kb-pipeline-dot"></span>
+                Micro-climate prediction
+              </li>
+              <li>
+                <span class="kb-pipeline-dot"></span>
+                Pest forecasting
+              </li>
+              <li>
+                <span class="kb-pipeline-dot"></span>
+                Post-harvest analysis
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         4.7 — THE 8 BUSINESS MODELS
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section kb-revenue">
+      <div class="container">
+        <div class="kb-revenue__header anim-hidden" data-delay="0">
+          <div class="section-label">04 · Revenue Architecture</div>
+          <h2>Eight revenue streams.<br><em>One integrated platform.</em></h2>
+        </div>
+
+        <div class="kb-revenue__grid">
+
+          <!-- 1 -->
+          <div class="kb-biz-card anim-hidden" data-delay="0.05">
+            <div class="kb-biz-card__number">01</div>
+            <div class="kb-biz-card__body">
+              <div class="kb-biz-card__header-row">
+                <h3 class="kb-biz-card__title">Agricultural Supply Chain Operations</h3>
+                <span class="badge badge-green kb-biz-card__badge">Active</span>
+              </div>
+              <p class="kb-biz-card__since">Active since 2018</p>
+              <p class="kb-biz-card__desc">End-to-end from farm to institutional buyer. Non-negotiable for buyers
+                requiring consistent quality.</p>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="kb-biz-card anim-hidden" data-delay="0.1">
+            <div class="kb-biz-card__number">02</div>
+            <div class="kb-biz-card__body">
+              <div class="kb-biz-card__header-row">
+                <h3 class="kb-biz-card__title">Payment Rail &amp; Financial Identity</h3>
+                <span class="badge badge-green kb-biz-card__badge">Active</span>
+              </div>
+              <p class="kb-biz-card__since">Active</p>
+              <p class="kb-biz-card__desc">Instant farmer payments. GST-compliant documentation. Financial identity
+                creation.</p>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="kb-biz-card anim-hidden" data-delay="0.15">
+            <div class="kb-biz-card__number">03</div>
+            <div class="kb-biz-card__body">
+              <div class="kb-biz-card__header-row">
+                <h3 class="kb-biz-card__title">AgriOS Platform Licensing</h3>
+                <span class="badge badge-gold kb-biz-card__badge">In Development</span>
+              </div>
+              <p class="kb-biz-card__since">In Development</p>
+              <p class="kb-biz-card__desc">Annual SaaS contracts for institutional buyers, lenders, insurers,
+                governments.</p>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="kb-biz-card anim-hidden" data-delay="0.2">
+            <div class="kb-biz-card__number">04</div>
+            <div class="kb-biz-card__body">
+              <div class="kb-biz-card__header-row">
+                <h3 class="kb-biz-card__title">Agricultural Credit Intelligence</h3>
+                <span class="badge badge-gold kb-biz-card__badge">In Development</span>
+              </div>
+              <p class="kb-biz-card__since">In Development</p>
+              <p class="kb-biz-card__desc">NPA reduction for banks through verified farmer data. Pure data licensing.
+              </p>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="kb-biz-card anim-hidden" data-delay="0.25">
+            <div class="kb-biz-card__number">05</div>
+            <div class="kb-biz-card__body">
+              <div class="kb-biz-card__header-row">
+                <h3 class="kb-biz-card__title">Government &amp; Policy Contracts</h3>
+                <span class="badge badge-gold kb-biz-card__badge">In Development</span>
+              </div>
+              <p class="kb-biz-card__since">In Development</p>
+              <p class="kb-biz-card__desc">State + central + multilateral: World Bank, FAO, ADB.</p>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="kb-biz-card kb-biz-card--planned anim-hidden" data-delay="0.3">
+            <div class="kb-biz-card__number">06</div>
+            <div class="kb-biz-card__body">
+              <div class="kb-biz-card__header-row">
+                <h3 class="kb-biz-card__title">Global Export Traceability</h3>
+                <span class="kb-biz-card__badge kb-biz-card__badge--outline">Planned</span>
+              </div>
+              <p class="kb-biz-card__since">Planned</p>
+              <p class="kb-biz-card__desc">EU Farm to Fork · UK due diligence · US FSMA compliance.</p>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="kb-biz-card kb-biz-card--planned anim-hidden" data-delay="0.35">
+            <div class="kb-biz-card__number">07</div>
+            <div class="kb-biz-card__body">
+              <div class="kb-biz-card__header-row">
+                <h3 class="kb-biz-card__title">Carbon &amp; Climate Intelligence</h3>
+                <span class="kb-biz-card__badge kb-biz-card__badge--outline">Planned</span>
+              </div>
+              <p class="kb-biz-card__since">Planned</p>
+              <p class="kb-biz-card__desc">Verified soil carbon credits for the $50T ESG institutional market.</p>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="kb-biz-card kb-biz-card--future anim-hidden" data-delay="0.4">
+            <div class="kb-biz-card__number">08</div>
+            <div class="kb-biz-card__body">
+              <div class="kb-biz-card__header-row">
+                <h3 class="kb-biz-card__title">Global Intelligence Subscriptions</h3>
+                <span class="kb-biz-card__badge kb-biz-card__badge--outline kb-biz-card__badge--future">Future</span>
+              </div>
+              <p class="kb-biz-card__since">Future</p>
+              <p class="kb-biz-card__desc">Bloomberg Terminal of agriculture. 85% gross margin target.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         4.8 — CTA
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt kb-cta">
+      <div class="container">
+        <div class="kb-cta__card anim-hidden" data-delay="0.1">
+          <div class="kb-cta__content">
+            <div class="section-label" style="color:rgba(201,162,39,0.7);">Continue</div>
+            <h2 class="kb-cta__heading">Explore the AgriOS Platform</h2>
+            <p class="kb-cta__sub">The operating system layer that powers every revenue stream.</p>
+          </div>
+          <a href="systems.html" class="btn btn-primary kb-cta__btn">
+            Explore the AgriOS Platform
+            <span class="kb-cta__arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="patent-viewer-section" style="padding: 5rem 1.5rem; background: #F7F9F8;">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <span class="section-label">PATENT DOCUMENTATION</span>
+        <h2 style="margin-bottom: 0.5rem;">Patent</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1rem;">
+          Kropbook's soil testing device patent application — directly visible below. No download required.
+        </p>
+        <div style="
+          border: 2px solid var(--border-gold);
+          border-radius: var(--radius-lg);
+          overflow: hidden;
+          box-shadow: var(--shadow-lg);
+          background: #fff;
+        ">
+          <div style="
+            background: var(--brand-green);
+            color: #fff;
+            padding: 0.875rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          ">
+            <span style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em;">
+              📄 Kropbook Patent Application — IoT Soil Testing Device
+            </span>
+            <a href="documents/Kropbook Patient.pdf" download style="
+              color: var(--accent-gold);
+              font-size: 0.75rem;
+              text-decoration: none;
+              border: 1px solid var(--accent-gold);
+              padding: 0.3rem 0.75rem;
+              border-radius: 100px;
+              transition: all 200ms ease;
+            ">⬇ Download PDF</a>
+          </div>
+          <iframe src="documents/Kropbook Patient.pdf" style="width: 100%; height: 800px; border: none; display: block;"
+            title="Kropbook Patent Application">
+            <p>Your browser doesn't support PDF embedding. <a href="documents/Kropbook Patient.pdf">Download the patent
+                PDF here</a>.</p>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/kropbook.js"></script>
+</body>
+
+</html>

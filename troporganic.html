@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TropOrganic | Kropbook Agritech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/troporganic.css">
+</head>
+<body>
+<svg style="display:none" aria-hidden="true">
+  <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+    <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
+    <feComponentTransfer in="turbulence" result="mapped">
+      <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5"/>
+      <feFuncG type="gamma" amplitude="0" exponent="1" offset="0"/>
+      <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5"/>
+    </feComponentTransfer>
+    <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap"/>
+    <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lightingColor="white" result="specLight">
+      <fePointLight x="-200" y="-200" z="300"/>
+    </feSpecularLighting>
+    <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage"/>
+    <feDisplacementMap in="SourceGraphic" in2="softMap" scale="200" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+  <div id="scroll-progress"></div>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════
+         3.0 — BREADCRUMB
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="to-breadcrumb-bar">
+      <div class="container">
+        <div class="to-breadcrumb-inner">
+          <span class="to-breadcrumb-label">Part of the Kropbook ecosystem</span>
+          <div class="to-breadcrumb-links">
+            <a href="founder.html" class="to-breadcrumb-link">Founder →</a>
+            <a href="kropbook.html" class="to-breadcrumb-link">KropBook →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         3.1 — HERO
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="to-hero section">
+      <div class="bg-grid to-hero__bg-grid"></div>
+      <div class="to-hero__radial"></div>
+
+      <!-- Floating decorative shapes -->
+      <div class="floating-shape to-shape-1" data-opacity="0.05"></div>
+      <div class="floating-shape to-shape-2" data-opacity="0.04"></div>
+
+      <div class="container to-hero__inner">
+        <div class="to-hero__content">
+
+          <div class="section-label anim-hidden" data-delay="0">03 · TropOrganic</div>
+
+          <h1 class="to-hero__h1 anim-hidden" data-delay="0.1">
+            <span class="text-dark">The Ground</span><br>
+            <span class="text-gold-gradient">Reality.</span>
+          </h1>
+
+          <div class="to-hero__h2 anim-hidden" data-delay="0.18">
+            TropOrganic <span class="to-hero__x">×</span> Kropbook
+          </div>
+
+          <p class="to-hero__subtitle anim-hidden" data-delay="0.28">
+            The last-mile operations arm that makes agricultural intelligence possible.
+            Farmer trust is not built from an app. It is built in person, in the field, village by village.
+          </p>
+
+          <div class="to-hero__badges anim-hidden" data-delay="0.4">
+            <span class="to-hero__state-badge">
+              <span class="to-state-dot"></span>
+              3 States &middot; Maharashtra &middot; Tamil Nadu &middot; Karnataka
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Side decorative card -->
+        <div class="to-hero__card anim-right" data-delay="0.2">
+          <div class="to-hero-card__label">Ground Operations</div>
+          <div class="to-hero-card__stack">
+            <div class="to-hero-card__layer to-hero-card__layer--top">
+              <span class="to-hero-card__icon">🤝</span>
+              <span>Farmer Relationships</span>
+            </div>
+            <div class="to-hero-card__connector"></div>
+            <div class="to-hero-card__layer to-hero-card__layer--mid">
+              <span class="to-hero-card__icon">🌾</span>
+              <span>Soil Operations</span>
+            </div>
+            <div class="to-hero-card__connector"></div>
+            <div class="to-hero-card__layer to-hero-card__layer--bot">
+              <span class="to-hero-card__icon">📡</span>
+              <span>Kropbook Platform</span>
+            </div>
+          </div>
+          <div class="to-hero-card__footer">Since 2018 · Maharashtra</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         3.2 — THE RELATIONSHIP
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt to-relationship">
+      <div class="container" style="max-width:var(--max-w);margin:0 auto;">
+
+        <div class="section-label anim-hidden" data-delay="0">03 · Relationship</div>
+        <h2 class="anim-hidden" data-delay="0.1">Two entities. One mission.</h2>
+
+        <div class="to-rel-grid">
+
+          <!-- Left: statement -->
+          <div class="to-rel-text anim-left" data-delay="0.15">
+            <p class="to-rel-statement">
+              TropOrganic is not a separate company. It is the human infrastructure of the Kropbook ecosystem.
+            </p>
+            <p class="to-rel-body">
+              Every soil sample that becomes data began with a relationship that TropOrganic built. Every farmer in the Kropbook financial system is there because TropOrganic earned their trust first.
+            </p>
+            <div class="to-rel-divider"></div>
+            <p class="to-rel-body" style="font-style:italic;color:var(--text-muted);">
+              Without TropOrganic, there is no data.<br>Without data, there is no Kropbook.
+            </p>
+          </div>
+
+          <!-- Right: architecture diagram -->
+          <div class="to-arch-diagram anim-right" data-delay="0.2">
+            <div class="to-arch-node to-arch-node--top glass-card">
+              <div class="to-arch-node__title">TropOrganic</div>
+              <div class="to-arch-node__items">
+                <span>Farmer Relationships</span>
+                <span>Soil Collection</span>
+                <span>Community Trust</span>
+              </div>
+            </div>
+
+            <div class="to-arch-arrow">
+              <div class="to-arch-arrow__line"></div>
+              <div class="to-arch-arrow__tip">&#8595;</div>
+            </div>
+
+            <div class="to-arch-node to-arch-node--mid glass-card">
+              <div class="to-arch-node__title to-arch-node__title--green">KROPBOOK</div>
+              <div class="to-arch-node__items">
+                <span>Data Processing</span>
+                <span>Supply Chain</span>
+                <span>Financial Rails</span>
+              </div>
+            </div>
+
+            <div class="to-arch-arrow">
+              <div class="to-arch-arrow__line"></div>
+              <div class="to-arch-arrow__tip">&#8595;</div>
+            </div>
+
+            <div class="to-arch-node to-arch-node--bot glass-card">
+              <div class="to-arch-node__title to-arch-node__title--gold">Institutional Buyers</div>
+              <div class="to-arch-node__items to-arch-node__items--gold">
+                <span>ITC</span>
+                <span>Metro</span>
+                <span>Zomato</span>
+                <span>Swiggy</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         3.3 — WHAT TROPORGANIC DOES
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section to-operations">
+      <div class="container" style="max-width:var(--max-w);margin:0 auto;">
+
+        <div class="section-label anim-hidden" data-delay="0">03 · Operations</div>
+        <h2 class="anim-hidden" data-delay="0.1">What TropOrganic does.</h2>
+
+        <div class="grid-3 to-ops-grid" style="margin-top:2.5rem;">
+
+          <!-- Card 1: Farmer Relationships -->
+          <div class="glass-card to-ops-card anim-hidden" data-delay="0.15">
+            <div class="to-ops-card__icon">🤝</div>
+            <h3 class="to-ops-card__title">Farmer Relationships</h3>
+            <p class="to-ops-card__body">
+              Personal, trust-based relationships with farming communities across Maharashtra, Tamil Nadu, and Karnataka.
+            </p>
+            <p class="to-ops-card__body" style="margin-top:0.75rem;">
+              Credibility is built in person. Face value is credit value. This took years.
+            </p>
+            <div class="to-ops-card__metric">
+              <span class="to-ops-card__metric-label">Key Metric</span>
+              <span class="to-ops-card__metric-value">3 States of Operation</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Agricultural Operations -->
+          <div class="glass-card to-ops-card anim-hidden" data-delay="0.25">
+            <div class="to-ops-card__icon">🌾</div>
+            <h3 class="to-ops-card__title">Agricultural Operations</h3>
+            <p class="to-ops-card__body">
+              End-to-end agricultural operations: crop planning, harvest coordination, quality management, logistics.
+            </p>
+            <p class="to-ops-card__body" style="margin-top:0.75rem;">
+              The supply chain starts with the farmer. TropOrganic is that starting point.
+            </p>
+            <div class="to-ops-card__metric">
+              <span class="to-ops-card__metric-label">Key Metric</span>
+              <span class="to-ops-card__metric-value">Farm-to-Institution Pipeline</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Community Trust -->
+          <div class="glass-card to-ops-card anim-hidden" data-delay="0.35">
+            <div class="to-ops-card__icon">🏘️</div>
+            <h3 class="to-ops-card__title">Community Trust</h3>
+            <p class="to-ops-card__body">
+              Village-level community presence. The 'Farm Didi' network for soil sample collection is built on TropOrganic's community relationships.
+            </p>
+            <p class="to-ops-card__body" style="margin-top:0.75rem;">
+              Trust cannot be purchased. It is earned through consistent presence and service.
+            </p>
+            <div class="to-ops-card__metric">
+              <span class="to-ops-card__metric-label">Network</span>
+              <span class="to-ops-card__metric-value">Farm Didi Network</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         3.4 — DIRECTORS
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt to-directors">
+      <div class="container" style="max-width:var(--max-w);margin:0 auto;">
+
+        <div class="section-label anim-hidden" data-delay="0">03 · Leadership</div>
+        <h2 class="anim-hidden" data-delay="0.1">The ground operation directors.</h2>
+
+        <div class="to-dir-grid">
+
+          <!-- Director 1: Kanifnath Pund -->
+          <div class="glass-card to-dir-card anim-left" data-delay="0.15">
+            <div class="to-dir-card__top">
+              <div class="to-dir-avatar">KP</div>
+              <div class="to-dir-meta">
+                <div class="to-dir-name">KANIFNATH PUND</div>
+                <div class="to-dir-role">Director · TropOrganic</div>
+                <div class="to-dir-domain">Ground Operations &amp; Farmer Trust</div>
+              </div>
+            </div>
+            <p class="to-dir-desc">
+              Responsible for ground-level farmer relationships and community operations. Deep roots in the agricultural communities of Maharashtra. Builds the trust that data collection requires.
+            </p>
+            <div class="to-dir-tags">
+              <span class="badge badge-green">Ground Operations</span>
+              <span class="badge badge-green">Farmer Trust</span>
+              <span class="badge badge-gold">Maharashtra</span>
+            </div>
+          </div>
+
+          <!-- Director 2: Bharat Bankar -->
+          <div class="glass-card to-dir-card anim-right" data-delay="0.2">
+            <div class="to-dir-card__top">
+              <div class="to-dir-avatar">BB</div>
+              <div class="to-dir-meta">
+                <div class="to-dir-name">BHARAT BANKAR</div>
+                <div class="to-dir-role">Director · TropOrganic</div>
+                <div class="to-dir-domain">Agricultural Operations &amp; Community</div>
+              </div>
+            </div>
+            <p class="to-dir-desc">
+              Agricultural operations leadership and community engagement. Coordinates the supply chain from farm level through to institutional delivery. Regional expertise across multiple states.
+            </p>
+            <div class="to-dir-tags">
+              <span class="badge badge-green">Agricultural Ops</span>
+              <span class="badge badge-green">Community Engagement</span>
+              <span class="badge badge-gold">Multi-State</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         3.5 — THE SYMBIOSIS
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section to-symbiosis">
+      <div class="container" style="max-width:var(--max-w);margin:0 auto;">
+
+        <div class="section-label anim-hidden" data-delay="0">03 · Integration</div>
+        <h2 class="anim-hidden" data-delay="0.1">How TropOrganic feeds the platform.</h2>
+
+        <!-- Key quote -->
+        <div class="to-symbiosis-quote anim-hidden" data-delay="0.2">
+          <div class="to-symbiosis-quote__bar"></div>
+          <blockquote class="to-symbiosis-quote__text">
+            "Every soil test requires a farmer's consent, a physical sample, and a trusted face to explain the value. TropOrganic provides all three."
+          </blockquote>
+        </div>
+
+        <!-- 4-step flow -->
+        <div class="to-flow" id="to-flow">
+          <div class="to-flow-step anim-hidden" data-delay="0.1">
+            <div class="to-flow-step__node">🌱</div>
+            <div class="to-flow-step__arrow">→</div>
+            <div class="to-flow-step__content">
+              <div class="to-flow-step__title">Farmer Trust</div>
+              <div class="to-flow-step__body">TropOrganic's community relationships open the door</div>
+            </div>
+          </div>
+
+          <div class="to-flow-step anim-hidden" data-delay="0.2">
+            <div class="to-flow-step__node">📦</div>
+            <div class="to-flow-step__arrow">→</div>
+            <div class="to-flow-step__content">
+              <div class="to-flow-step__title">Sample Collection</div>
+              <div class="to-flow-step__body">Farm Didi collects QR-tagged soil samples</div>
+            </div>
+          </div>
+
+          <div class="to-flow-step anim-hidden" data-delay="0.3">
+            <div class="to-flow-step__node">🔬</div>
+            <div class="to-flow-step__arrow">→</div>
+            <div class="to-flow-step__content">
+              <div class="to-flow-step__title">Data Entry</div>
+              <div class="to-flow-step__body">Kropbook's sensors generate soil intelligence</div>
+            </div>
+          </div>
+
+          <div class="to-flow-step anim-hidden" data-delay="0.4">
+            <div class="to-flow-step__node">💡</div>
+            <div class="to-flow-step__arrow to-flow-step__arrow--last"></div>
+            <div class="to-flow-step__content">
+              <div class="to-flow-step__title">Value Return</div>
+              <div class="to-flow-step__body">Farmer receives report, recommendation, payment identity</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         3.6 — STATES OF OPERATION
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt to-states">
+      <div class="container" style="max-width:var(--max-w);margin:0 auto;">
+
+        <div class="section-label anim-hidden" data-delay="0">03 · Geography</div>
+        <h2 class="anim-hidden" data-delay="0.1">Where TropOrganic operates.</h2>
+
+        <div class="grid-3 to-states-grid" style="margin-top:2.5rem;">
+
+          <!-- Maharashtra -->
+          <div class="glass-card to-state-card to-state-card--primary anim-hidden" data-delay="0.15">
+            <div class="to-state-card__header">
+              <div class="to-state-flag">🇮🇳</div>
+              <div class="to-state-info">
+                <div class="to-state-name">Maharashtra</div>
+                <div class="to-state-badge to-state-badge--operational">
+                  <span class="to-state-dot--live"></span>
+                  Operational — Full Scale
+                </div>
+              </div>
+            </div>
+            <div class="to-state-section">
+              <div class="to-state-section-label">Key Cities</div>
+              <div class="to-state-chips">
+                <span>Ahmednagar</span>
+                <span>Pune</span>
+                <span>Nashik</span>
+                <span>Vashi APMC</span>
+              </div>
+            </div>
+            <div class="to-state-section">
+              <div class="to-state-section-label">Operations</div>
+              <div class="to-state-ops">
+                <span>Soil collection</span>
+                <span>Farmer relationships</span>
+                <span>Supply chain</span>
+              </div>
+            </div>
+            <div class="to-state-note">
+              Home state. Deepest roots. Operational since 2018.
+            </div>
+          </div>
+
+          <!-- Tamil Nadu -->
+          <div class="glass-card to-state-card anim-hidden" data-delay="0.25">
+            <div class="to-state-card__header">
+              <div class="to-state-flag">🌾</div>
+              <div class="to-state-info">
+                <div class="to-state-name">Tamil Nadu</div>
+                <div class="to-state-badge to-state-badge--active">
+                  <span class="to-state-dot--active"></span>
+                  Operational
+                </div>
+              </div>
+            </div>
+            <div class="to-state-section">
+              <div class="to-state-section-label">Key Crops</div>
+              <div class="to-state-chips">
+                <span>Rice</span>
+                <span>Vegetables</span>
+                <span>Export produce</span>
+              </div>
+            </div>
+            <div class="to-state-section">
+              <div class="to-state-section-label">Community Lead</div>
+              <div class="to-state-lead">Manisha Shirsath</div>
+            </div>
+            <div class="to-state-type">Expanded Operations</div>
+          </div>
+
+          <!-- Karnataka -->
+          <div class="glass-card to-state-card anim-hidden" data-delay="0.35">
+            <div class="to-state-card__header">
+              <div class="to-state-flag">☕</div>
+              <div class="to-state-info">
+                <div class="to-state-name">Karnataka</div>
+                <div class="to-state-badge to-state-badge--active">
+                  <span class="to-state-dot--active"></span>
+                  Operational
+                </div>
+              </div>
+            </div>
+            <div class="to-state-section">
+              <div class="to-state-section-label">Key Crops</div>
+              <div class="to-state-chips">
+                <span>Coffee</span>
+                <span>Pulses</span>
+                <span>Horticulture</span>
+              </div>
+            </div>
+            <div class="to-state-section">
+              <div class="to-state-section-label">Community Lead</div>
+              <div class="to-state-lead">Manisha Shirsath</div>
+            </div>
+            <div class="to-state-type">Expanded Operations</div>
+          </div>
+
+        </div>
+
+        <div class="to-states-expansion anim-hidden" data-delay="0.4">
+          <div class="to-states-expansion__icon">🗺</div>
+          <p>Three states today. Scale to national footprint as AgriOS infrastructure matures.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         3.7 — FARM DIDI NETWORK
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section to-farmdidi">
+      <div class="container" style="max-width:var(--max-w);margin:0 auto;">
+
+        <div class="section-label anim-hidden" data-delay="0">03 · Farm Didi</div>
+        <h2 class="anim-hidden" data-delay="0.1">Specially trained women,<br>transforming agriculture.</h2>
+
+        <!-- Dark quote card -->
+        <div class="to-didi-quote anim-hidden" data-delay="0.2">
+          <div class="to-didi-quote__glow"></div>
+          <div class="to-didi-quote__inner">
+            <div class="to-didi-quote__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="currentColor" opacity="0.5"/>
+              </svg>
+            </div>
+            <blockquote class="to-didi-quote__text">
+              Farm Didi are specially trained women who collect soil samples from farms across India. They are not scientists — they are trusted community members who carry a QR-tagged bag to a farmer's field. They are the first link in the chain that ends with national-scale agricultural intelligence.
+            </blockquote>
+            <div class="to-didi-quote__note">Farm Didi Network · TropOrganic Ground Operations</div>
+          </div>
+        </div>
+
+        <!-- 3 aspects grid -->
+        <div class="grid-3 to-didi-aspects" style="margin-top:2.5rem;">
+
+          <div class="glass-card to-didi-aspect anim-hidden" data-delay="0.1">
+            <div class="to-didi-aspect__icon">👩‍🌾</div>
+            <h3 class="to-didi-aspect__title">Who they are</h3>
+            <p class="to-didi-aspect__body">
+              Specially trained women from local farming communities. Trusted, accessible, reliable.
+            </p>
+          </div>
+
+          <div class="glass-card to-didi-aspect anim-hidden" data-delay="0.2">
+            <div class="to-didi-aspect__icon">📋</div>
+            <h3 class="to-didi-aspect__title">What they do</h3>
+            <p class="to-didi-aspect__body">
+              Soil sample collection with QR-tagged bags, QR-linked to farmer identity. Accurate, standardized, scalable.
+            </p>
+          </div>
+
+          <div class="glass-card to-didi-aspect anim-hidden" data-delay="0.3">
+            <div class="to-didi-aspect__icon">🔗</div>
+            <h3 class="to-didi-aspect__title">Why it works</h3>
+            <p class="to-didi-aspect__body">
+              Trust cannot be automated. In rural India, a familiar face changes everything.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         3.8 — CTA
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt to-cta">
+      <div class="container" style="max-width:var(--max-w);margin:0 auto;">
+        <div class="to-cta-inner anim-hidden" data-delay="0.1">
+          <div class="to-cta__label section-label">03 · Next</div>
+          <h2 class="to-cta__heading">Data becomes intelligence.</h2>
+          <p class="to-cta__body">
+            TropOrganic builds the ground truth. Kropbook transforms it into actionable agricultural intelligence.
+          </p>
+          <a href="kropbook.html" class="to-cta__link">
+            See how TropOrganic's data becomes Kropbook's intelligence
+            <span class="to-cta__arrow">→</span>
+          </a>
+          <div class="to-cta__related">
+            <span class="to-cta__related-label">Related:</span>
+            <a href="founder.html" class="to-cta__related-link">Founder</a>
+            <span class="to-cta__sep">·</span>
+            <a href="kropbook.html" class="to-cta__related-link">KropBook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/effects.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/troporganic.js"></script>
+</body>
+</html>

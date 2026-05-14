@@ -1,0 +1,1066 @@
+/* ============================================================
+   FINANCIAL STATEMENTS PAGE — Page-specific styles (Page 11)
+   Supplement to global.css — do not duplicate global rules
+   ============================================================ */
+
+/* ── SECTION 11.1 · HERO ────────────────────────────────── */
+
+.fs-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-primary);
+  padding: 0 1.5rem 6rem;
+}
+
+.fs-hero-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 0%, rgba(27,77,62,0.07), transparent 70%),
+    radial-gradient(ellipse 55% 35% at 85% 85%, rgba(201,162,39,0.05), transparent 60%),
+    radial-gradient(ellipse 40% 30% at 15% 70%, rgba(27,77,62,0.04), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fs-hero .bg-grid { z-index: 2; }
+
+/* Floating decorative shapes */
+.fs-shape-1 {
+  top: 10%;
+  left: -80px;
+  width: 320px;
+  height: 320px;
+  background: linear-gradient(135deg, rgba(27,77,62,0.08), rgba(201,162,39,0.04));
+  z-index: 3;
+}
+.fs-shape-2 {
+  top: 30%;
+  right: -100px;
+  width: 400px;
+  height: 280px;
+  background: linear-gradient(225deg, rgba(201,162,39,0.06), transparent);
+  z-index: 3;
+}
+.fs-shape-3 {
+  bottom: 20%;
+  left: 15%;
+  width: 180px;
+  height: 180px;
+  background: rgba(27,77,62,0.05);
+  z-index: 3;
+}
+
+.fs-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding-top: 7rem;
+}
+
+.fs-hero-badge-wrap {
+  margin-bottom: 2.5rem;
+}
+
+.fs-hero-h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.fs-hero-h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.fs-hero-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 540px;
+  margin-bottom: 2.5rem;
+}
+
+/* Quick stats row */
+.fs-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.fs-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.fs-stat-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brand-green);
+  line-height: 1;
+}
+
+.fs-stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.fs-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border-medium);
+  flex-shrink: 0;
+}
+
+/* Scroll indicator */
+.fs-scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--text-muted);
+}
+
+.scroll-arrow-line {
+  width: 1px;
+  height: 24px;
+  background: linear-gradient(to bottom, transparent, var(--text-muted));
+}
+
+.scroll-arrow-icon {
+  font-size: 0.875rem;
+  animation: bounceDown 2s ease-in-out infinite;
+}
+
+.scroll-label {
+  font-size: 0.65rem;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.fs-hero-bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, transparent, var(--bg-primary));
+  pointer-events: none;
+  z-index: 8;
+}
+
+/* ── SECTION SHARED ─────────────────────────────────────── */
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.fs-section-subtext {
+  font-size: 0.95rem;
+  max-width: 560px;
+  line-height: 1.7;
+  margin-top: 0.5rem;
+}
+
+/* ── SECTION 11.2 · TAB SYSTEM ──────────────────────────── */
+
+/* Tab group wraps both nav and panels */
+.tab-group {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Tab navigation row */
+.tab-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-secondary);
+  flex-wrap: wrap;
+}
+
+/* Tab buttons */
+.tab-btn {
+  padding: 0.625rem 1.25rem;
+  border: 1px solid rgba(27,77,62,0.12);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #7A9690;
+  background: transparent;
+  cursor: pointer;
+  transition: all 150ms ease;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.tab-btn:hover:not(.active) {
+  background: rgba(27,77,62,0.04);
+  color: var(--text-secondary);
+  border-color: rgba(27,77,62,0.2);
+}
+
+.tab-btn.active {
+  background: #1B4D3E;
+  color: #C9A227;
+  border-color: #1B4D3E;
+  box-shadow: 0 2px 8px rgba(27,77,62,0.2);
+}
+
+/* Tab panels — hidden/visible */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Inner content of a tab panel */
+.fy-panel-inner {
+  padding: 2rem 2rem 2.5rem;
+}
+
+/* Year label badge */
+.fy-year-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(27,77,62,0.06);
+  border: 1px solid rgba(27,77,62,0.12);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.fy-year-badge-latest {
+  background: rgba(201,162,39,0.08);
+  border-color: rgba(201,162,39,0.2);
+  color: var(--accent-gold);
+}
+
+/* Metrics grid in tab panel */
+.fy-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Individual metric card inside tab panel */
+.fy-metric-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.fy-metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--brand-green), var(--accent-gold));
+  opacity: 0.4;
+}
+
+.fy-metric-card:hover {
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.fy-metric-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-green);
+  margin-bottom: 0.25rem;
+}
+
+.fy-metric-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.fy-metric-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.fy-metric-note {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(201,162,39,0.08);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+/* Panel action row */
+.fy-panel-action {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.fs-view-btn {
+  flex-shrink: 0;
+}
+
+.fy-auditor-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* ── DOC CARD META (extends global .doc-card) ───────────── */
+
+.fs-doc-grid {
+  gap: 1.5rem;
+}
+
+.fs-doc-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.fs-doc-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: var(--bg-green-light);
+  color: var(--brand-green);
+}
+
+.fs-doc-badge-latest {
+  background: rgba(201,162,39,0.1);
+  color: var(--accent-gold);
+}
+
+.fs-doc-badge-provisional {
+  background: rgba(201,162,39,0.08);
+  color: var(--accent-gold);
+  border: 1px dashed rgba(201,162,39,0.3);
+}
+
+.fs-doc-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+/* Compliance certificate badges */
+.fs-cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.fs-cert-active {
+  background: var(--bg-green-light);
+  color: var(--brand-green);
+  border: 1px solid rgba(27,77,62,0.15);
+}
+
+.fs-cert-active::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--brand-green);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+/* ── SECTION 11.6 · CONFIDENTIAL NOTICE ────────────────── */
+
+.fs-confidential-card {
+  background: #fff;
+  border: 2px dashed rgba(201,162,39,0.4);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 3rem;
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.fs-confidential-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 0% 0%, rgba(201,162,39,0.04), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 100% 100%, rgba(27,77,62,0.03), transparent 60%);
+  pointer-events: none;
+}
+
+.fs-conf-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fs-conf-shield {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  background: rgba(201,162,39,0.08);
+  border: 1px solid rgba(201,162,39,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+.fs-conf-badge-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.fs-conf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(201,162,39,0.08);
+  border: 1px solid rgba(201,162,39,0.3);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+.fs-conf-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  animation: pulseDot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.fs-conf-body {
+  position: relative;
+  z-index: 1;
+}
+
+.fs-conf-primary {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.fs-conf-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+}
+
+.fs-conf-list li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+}
+
+.fs-conf-list li::before {
+  content: '—';
+  position: absolute;
+  left: -1rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+.fs-conf-footer-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.fs-conf-cin,
+.fs-conf-auditor {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.fs-conf-sep {
+  color: var(--border-medium);
+  font-size: 0.875rem;
+}
+
+/* ── KEY METRICS SUMMARY (Section 2) ────────────────────── */
+
+.fs-metrics-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.fs-kpi-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.fs-kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--brand-green), transparent);
+  opacity: 0.5;
+}
+
+.fs-kpi-card:hover {
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.fs-kpi-card-highlight {
+  border-color: rgba(201,162,39,0.25);
+  background: rgba(201,162,39,0.03);
+}
+
+.fs-kpi-card-highlight::before {
+  background: linear-gradient(to right, var(--accent-gold), transparent);
+  opacity: 0.7;
+}
+
+.fs-kpi-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--bg-green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-green);
+  margin-bottom: 0.25rem;
+}
+
+.fs-kpi-card-highlight .fs-kpi-icon {
+  background: rgba(201,162,39,0.1);
+  color: var(--accent-gold);
+}
+
+.fs-kpi-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.fs-kpi-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.fs-kpi-value-sm {
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+}
+
+.fs-kpi-card-highlight .fs-kpi-value {
+  color: var(--accent-gold);
+}
+
+.fs-kpi-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ── NEW DOC CARD STYLE ──────────────────────────────────── */
+
+/* Override for new card structure with glass-card base */
+.doc-card.fs-doc-card-new {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.doc-card.fs-doc-card-new:hover {
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-3px);
+}
+
+.doc-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--bg-green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-green);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.doc-card.fs-doc-card-new:hover .doc-card-icon {
+  background: rgba(201,162,39,0.1);
+  color: var(--accent-gold);
+}
+
+.doc-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.doc-card-category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.doc-card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.doc-card-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.doc-card-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.doc-card-action {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  opacity: 0.7;
+  margin-top: 0.5rem;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.02em;
+}
+
+.doc-card.fs-doc-card-new:hover .doc-card-action {
+  opacity: 1;
+  gap: 0.375rem;
+}
+
+/* 2x2 government certificates grid */
+.fs-doc-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* ── PROVISIONAL HIGHLIGHT CARD ──────────────────────────── */
+
+.fs-provisional-wrap {
+  margin-top: 1.5rem;
+}
+
+.doc-card.fs-doc-card-provisional {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 2rem 2rem;
+  background: rgba(201,162,39,0.03);
+  border: 1px solid rgba(201,162,39,0.3);
+  border-radius: var(--radius-xl);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 4px 24px rgba(201,162,39,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.doc-card.fs-doc-card-provisional::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--accent-gold), var(--accent-gold-light), var(--accent-gold));
+}
+
+.doc-card.fs-doc-card-provisional:hover {
+  border-color: rgba(201,162,39,0.5);
+  box-shadow: 0 8px 40px rgba(201,162,39,0.15);
+  transform: translateY(-2px);
+}
+
+.fs-provisional-icon {
+  background: rgba(201,162,39,0.1) !important;
+  color: var(--accent-gold) !important;
+  width: 52px !important;
+  height: 52px !important;
+}
+
+.doc-card.fs-doc-card-provisional .doc-card-title {
+  font-size: 1.125rem;
+}
+
+/* ── PATENT FULL-WIDTH CARD ───────────────────────────────── */
+
+.fs-patent-wrap {
+  /* full width */
+}
+
+.doc-card.fs-doc-card-patent {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.doc-card.fs-doc-card-patent:hover {
+  border-color: rgba(201,162,39,0.35);
+  box-shadow: 0 12px 48px rgba(201,162,39,0.12);
+  transform: translateY(-3px);
+}
+
+.fs-patent-left {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem 2rem;
+  flex: 1;
+}
+
+.fs-patent-icon {
+  width: 56px !important;
+  height: 56px !important;
+  background: rgba(201,162,39,0.08) !important;
+  color: var(--accent-gold) !important;
+  flex-shrink: 0;
+}
+
+.doc-card.fs-doc-card-patent:hover .fs-patent-icon {
+  background: rgba(201,162,39,0.15) !important;
+}
+
+.fs-patent-note {
+  width: 280px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(27,77,62,0.04), rgba(201,162,39,0.04));
+  border-left: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.fs-patent-note-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fs-patent-note-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.fs-patent-note-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.fs-patent-note-divider {
+  height: 1px;
+  background: var(--border-light);
+  margin: 0.5rem 0;
+}
+
+/* Patent badge */
+.fs-doc-badge-patent {
+  background: rgba(201,162,39,0.08);
+  color: var(--accent-gold);
+  border: 1px dashed rgba(201,162,39,0.4);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .fy-metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .fs-metrics-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fs-patent-note {
+    width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fs-hero-content {
+    padding-top: 5rem;
+  }
+
+  .fs-hero-stats {
+    gap: 1.25rem;
+  }
+
+  .fs-stat-value {
+    font-size: 1.5rem;
+  }
+
+  .fy-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .fy-panel-inner {
+    padding: 1.5rem;
+  }
+
+  .tab-nav {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .tab-btn {
+    font-size: 0.72rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .fs-confidential-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .fs-conf-footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.375rem;
+  }
+
+  .fs-conf-sep {
+    display: none;
+  }
+
+  .fy-panel-action {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fs-metrics-summary {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .fs-doc-grid-2x2 {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-card.fs-doc-card-patent {
+    flex-direction: column;
+  }
+
+  .fs-patent-left {
+    padding: 1.5rem;
+  }
+
+  .fs-patent-note {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--border-light);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .doc-card.fs-doc-card-provisional {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .doc-card.fs-doc-card-new {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fs-hero-h1 {
+    font-size: clamp(2.25rem, 10vw, 3.5rem);
+  }
+
+  .fs-hero-h2 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+
+  .fs-hero-stats {
+    gap: 0.875rem;
+  }
+
+  .fs-stat-divider {
+    height: 28px;
+  }
+
+  .fs-confidential-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .fy-metric-value {
+    font-size: 1.5rem;
+  }
+
+  .fs-metrics-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .fs-patent-left {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

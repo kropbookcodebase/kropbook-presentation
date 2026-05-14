@@ -1,0 +1,632 @@
+/* ============================================================
+   KROPBOOK AGRITECH — STRATEGIC Q&A PAGE (Page 10)
+   strategic-qa.css
+   ============================================================ */
+
+/* ── Hero Section ───────────────────────────────────────────── */
+.sqa-hero {
+  position: relative;
+  padding: 10rem 1.5rem 7rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.hero-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(27,77,62,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.sqa-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sqa-hero-badge {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.sqa-hero-h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.05;
+  margin-bottom: 0.25rem;
+}
+
+.sqa-hero-h2 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 600;
+  line-height: 1.05;
+  margin-bottom: 2rem;
+}
+
+.sqa-hero-subtitle {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.7;
+}
+
+.sqa-hero-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  background: var(--bg-secondary);
+}
+
+.sqa-hero-note-icon {
+  color: var(--accent-gold);
+  font-size: 0.5rem;
+}
+
+/* Floating shapes */
+.sqa-shape-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 70%);
+  top: -100px; right: -100px;
+}
+.sqa-shape-2 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(27,77,62,0.06) 0%, transparent 70%);
+  bottom: 0; left: -80px;
+}
+.sqa-shape-3 {
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(201,162,39,0.05) 0%, transparent 70%);
+  top: 40%; left: 10%;
+}
+
+/* ── Intro Quote Section ─────────────────────────────────────── */
+.sqa-intro-section {
+  border-top: 1px solid var(--border-light);
+}
+
+.sqa-quote-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  padding: 3rem 3.5rem;
+  position: relative;
+  box-shadow: var(--shadow-gold);
+  text-align: center;
+}
+
+.sqa-quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 6rem;
+  line-height: 0.7;
+  color: var(--accent-gold);
+  opacity: 0.3;
+  margin-bottom: 0.5rem;
+  display: block;
+  user-select: none;
+}
+
+.sqa-quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.55;
+  quotes: none;
+}
+
+/* ── Accordion Section ───────────────────────────────────────── */
+.sqa-accordion-section {
+  background: #fff;
+}
+
+.sqa-section-header {
+  margin-bottom: 2.5rem;
+}
+
+.sqa-section-header h2 {
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+/* ── Category Filter Bar ─────────────────────────────────────── */
+.sqa-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.sqa-filter-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-medium);
+  color: var(--text-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sqa-filter-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background: rgba(201,162,39,0.06);
+}
+
+.sqa-filter-btn.active {
+  background: var(--brand-green);
+  border-color: var(--brand-green);
+  color: #fff;
+}
+
+/* ── Accordion Items ─────────────────────────────────────────── */
+.sqa-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sqa-accordion-item {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-base);
+}
+
+.sqa-accordion-item:hover {
+  border-color: var(--border-medium);
+}
+
+.sqa-accordion-item.open {
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Hidden state for category filter */
+.sqa-accordion-item.sqa-hidden {
+  display: none;
+}
+
+/* ── Accordion Trigger ───────────────────────────────────────── */
+.sqa-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  gap: 1rem;
+}
+
+.sqa-trigger:hover {
+  background: var(--bg-secondary);
+}
+
+.sqa-accordion-item.open .sqa-trigger {
+  background: rgba(201,162,39,0.03);
+}
+
+.sqa-trigger-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Question Number Badge ───────────────────────────────────── */
+.sqa-q-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  background: rgba(201,162,39,0.1);
+  border: 1px solid rgba(201,162,39,0.2);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 36px;
+  text-align: center;
+  margin-top: 0.15rem;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.sqa-accordion-item.open .sqa-q-number {
+  background: var(--accent-gold);
+  color: var(--brand-green-dark);
+  border-color: var(--accent-gold);
+}
+
+.sqa-trigger-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.sqa-trigger-text h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-top: 0.35rem;
+}
+
+/* ── Category Tags ───────────────────────────────────────────── */
+.sqa-category-tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.35rem;
+}
+
+.sqa-cat-competitive {
+  background: rgba(27,77,62,0.08);
+  color: var(--brand-green);
+  border: 1px solid rgba(27,77,62,0.15);
+}
+
+.sqa-cat-financial {
+  background: rgba(201,162,39,0.1);
+  color: var(--accent-gold);
+  border: 1px solid rgba(201,162,39,0.2);
+}
+
+.sqa-cat-technology {
+  background: rgba(45,107,85,0.08);
+  color: var(--brand-green-mid);
+  border: 1px solid rgba(45,107,85,0.15);
+}
+
+.sqa-cat-strategic {
+  background: rgba(10,26,20,0.06);
+  color: var(--text-secondary);
+  border: 1px solid rgba(10,26,20,0.1);
+}
+
+/* ── Answer Content ──────────────────────────────────────────── */
+.sqa-answer {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  padding: 1.25rem 1.5rem 1.5rem;
+  border-top: 1px solid var(--border-light);
+  /* Offset left to align with question text past number badge */
+  padding-left: calc(1.5rem + 36px + 1.25rem);
+}
+
+@media (max-width: 600px) {
+  .sqa-answer {
+    padding-left: 1.5rem;
+  }
+}
+
+/* ── Closing Statement Section ───────────────────────────────── */
+.sqa-closing-section {
+  border-top: 1px solid var(--border-light);
+}
+
+.sqa-closing-header {
+  margin-bottom: 2.5rem;
+}
+
+.sqa-closing-header h2 {
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+.sqa-closing-card {
+  background: var(--brand-green);
+  border-radius: var(--radius-xl);
+  padding: 3.5rem;
+  border: 1px solid rgba(201,162,39,0.2);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.sqa-closing-card::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(201,162,39,0.04);
+  pointer-events: none;
+}
+
+.sqa-closing-card::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(201,162,39,0.03);
+  pointer-events: none;
+}
+
+.sqa-closing-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  max-width: 700px;
+}
+
+.sqa-closing-statement {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.sqa-closing-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sqa-closing-cta-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+.sqa-closing-email {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-gold-light);
+  border-bottom: 1px solid rgba(201,162,39,0.4);
+  padding-bottom: 2px;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.sqa-closing-email:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.6);
+}
+
+.sqa-closing-deco {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sqa-closing-deco-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255,255,255,0.04);
+  user-select: none;
+  letter-spacing: -0.05em;
+}
+
+/* ── CTA Section ─────────────────────────────────────────────── */
+.sqa-cta-section {
+  background: #fff;
+}
+
+.sqa-cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.sqa-cta-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.sqa-cta-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(201,162,39,0.03), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.sqa-cta-card:hover {
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-3px);
+}
+
+.sqa-cta-card:hover::before {
+  opacity: 1;
+}
+
+.sqa-cta-card-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--bg-green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-green);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.sqa-cta-card:hover .sqa-cta-card-icon {
+  background: rgba(201,162,39,0.1);
+  color: var(--accent-gold);
+}
+
+.sqa-cta-card-body {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.sqa-cta-card-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.sqa-cta-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.sqa-cta-card-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.sqa-cta-card-arrow {
+  font-size: 1.25rem;
+  color: var(--accent-gold);
+  opacity: 0.5;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  position: relative;
+  z-index: 1;
+}
+
+.sqa-cta-card:hover .sqa-cta-card-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .sqa-hero {
+    padding: 8rem 1rem 5rem;
+  }
+
+  .sqa-quote-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .sqa-quote-mark {
+    font-size: 4rem;
+  }
+
+  .sqa-closing-card {
+    padding: 2.5rem 2rem;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sqa-closing-deco {
+    display: none;
+  }
+
+  .sqa-cta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sqa-trigger-inner {
+    gap: 0.75rem;
+  }
+
+  .sqa-trigger-text h3 {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sqa-hero-h1,
+  .sqa-hero-h2 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .sqa-filter-bar {
+    gap: 0.4rem;
+  }
+
+  .sqa-filter-btn {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .sqa-trigger {
+    padding: 1rem 1rem;
+  }
+
+  .sqa-cta-card {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+/* ── Keyboard navigation focus visible ─────────────────────── */
+.accordion-trigger:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: -2px;
+}
+
+.sqa-filter-btn:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}

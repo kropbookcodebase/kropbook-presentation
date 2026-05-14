@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team | Kropbook Agritech</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/team.css">
+  <script src="js/effects.js"></script>
+</head>
+
+<body>
+  <svg style="display:none" aria-hidden="true">
+    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence" />
+      <feComponentTransfer in="turbulence" result="mapped">
+        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+      </feComponentTransfer>
+      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+      <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100"
+        lightingColor="white" result="specLight">
+        <fePointLight x="-200" y="-200" z="300" />
+      </feSpecularLighting>
+      <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+      <feDisplacementMap in="SourceGraphic" in2="softMap" scale="200" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
+  <div id="scroll-progress"></div>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5.1 · HERO
+    ══════════════════════════════════════════════════════════ -->
+    <section class="team-hero" id="hero">
+      <div class="team-hero-bg-gradient"></div>
+      <div class="bg-grid"></div>
+
+      <div class="floating-shape team-shape-1" data-opacity="0.06"
+        style="--rot:12deg; animation-delay:0s; animation-duration:14s;"></div>
+      <div class="floating-shape team-shape-2" data-opacity="0.04"
+        style="--rot:-15deg; animation-delay:2s; animation-duration:18s;"></div>
+      <div class="floating-shape team-shape-3" data-opacity="0.05"
+        style="--rot:-8deg; animation-delay:1s; animation-duration:16s;"></div>
+
+      <div class="team-hero-content">
+        <div class="hero-badge-wrap" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.1s;">
+          <div class="confidential-badge">
+            <span class="dot"></span>
+            Institutional Briefing &middot; 2026 &middot; Confidential
+          </div>
+        </div>
+
+        <div style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.25s;">
+          <span class="section-label">05 &middot; Team</span>
+        </div>
+
+        <h1 class="team-hero-h1 font-display"
+          style="opacity:0; animation: fadeUp 0.8s ease forwards; animation-delay:0.4s;">
+          An institution,<br><em>not a founder.</em>
+        </h1>
+
+        <p class="team-hero-subtitle" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.6s;">
+          A structure of capable people, clear systems, and documented processes. Every domain covered.
+        </p>
+
+        <div class="team-hero-stats" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.8s;">
+          <div class="team-hero-stat">
+            <span class="team-hero-stat-num font-display">24</span>
+            <span class="team-hero-stat-label">Team Members</span>
+          </div>
+          <div class="team-hero-stat-divider"></div>
+          <div class="team-hero-stat">
+            <span class="team-hero-stat-num font-display">6</span>
+            <span class="team-hero-stat-label">Domains Covered</span>
+          </div>
+          <div class="team-hero-stat-divider"></div>
+          <div class="team-hero-stat">
+            <span class="team-hero-stat-num font-display">2</span>
+            <span class="team-hero-stat-label">PhD Scientists</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-hero-scroll-hint" style="opacity:0; animation: fadeIn 1s ease forwards; animation-delay:1.2s;">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5.2 · ORG CHART
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="org-chart">
+      <div class="container">
+        <div class="section-header anim-hidden" data-delay="0">
+          <span class="section-label">05 &middot; Organizational Structure</span>
+          <h2 class="font-display">The architecture of accountability.</h2>
+        </div>
+
+        <div class="org-chart" id="org-chart-visual">
+
+          <!-- SVG Connecting Lines -->
+          <svg class="org-svg" id="org-svg" aria-hidden="true"></svg>
+
+          <!-- Tier 1: CEO -->
+          <div class="org-tier org-tier-1">
+            <div class="org-node org-node-ceo anim-hidden" data-delay="0.1" data-org-id="ceo">
+              <div class="org-node-avatar">
+                <img src="images/manoj.png" alt="Manoj Avhad"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <span class="org-initials" style="display:none;">MA</span>
+              </div>
+              <div class="org-node-info">
+                <p class="org-node-name">Manoj Avhad</p>
+                <p class="org-node-role">CEO</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 2: Directors -->
+          <div class="org-tier org-tier-2">
+            <div class="org-node org-node-dir anim-hidden" data-delay="0.25" data-org-id="kiran">
+              <div class="org-node-avatar">
+                <img src="images/kiran.png" alt="Dr. Kiran Avhad"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <span class="org-initials" style="display:none;">KA</span>
+              </div>
+              <div class="org-node-info">
+                <p class="org-node-name">Dr. Kiran Avhad</p>
+                <p class="org-node-role">Scientific Advisor &amp; Director</p>
+              </div>
+            </div>
+            <div class="org-node org-node-dir anim-hidden" data-delay="0.3" data-org-id="kunal">
+              <div class="org-node-avatar">
+                <img src="images/kunal.png" alt="Dr. Kunal Pingale"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <span class="org-initials" style="display:none;">KP</span>
+              </div>
+              <div class="org-node-info">
+                <p class="org-node-name">Dr. Kunal Pingale</p>
+                <p class="org-node-role">CTO &amp; Director</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Tier 3: Operations -->
+          <div class="org-tier org-tier-3">
+            <div class="org-node org-node-ops anim-hidden" data-delay="0.5">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">CS</div>
+              <div class="org-node-info">
+                <p class="org-node-name">CA Shahana</p>
+                <p class="org-node-role">Financial Governance</p>
+              </div>
+            </div>
+            <div class="org-node org-node-ops anim-hidden" data-delay="0.55">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">YA</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Er. Yashodhan</p>
+                <p class="org-node-role">Operations &amp; Systems</p>
+              </div>
+            </div>
+            <div class="org-node org-node-ops anim-hidden" data-delay="0.6">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">DD</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Deepak Deshmukh</p>
+                <p class="org-node-role">Head of Operations</p>
+              </div>
+            </div>
+            <div class="org-node org-node-ops anim-hidden" data-delay="0.65">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">SS</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Sikandar Singh</p>
+                <p class="org-node-role">Procurement Head</p>
+              </div>
+            </div>
+            <div class="org-node org-node-ops anim-hidden" data-delay="0.7">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">JS</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Jaskaran Singh</p>
+                <p class="org-node-role">Admin: Mandi Network</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 4: Legal -->
+          <div class="org-tier org-tier-4">
+            <div class="org-node org-node-legal anim-hidden" data-delay="0.8">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">GK</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Geetanjali Khanna</p>
+                <p class="org-node-role">Sr. Forensic Auditor</p>
+              </div>
+            </div>
+            <div class="org-node org-node-legal anim-hidden" data-delay="0.85">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">SS</div>
+              <div class="org-node-info">
+                <p class="org-node-name">CA Shashank</p>
+                <p class="org-node-role">Sr. Advisor &amp; Taxation</p>
+              </div>
+            </div>
+            <div class="org-node org-node-legal anim-hidden" data-delay="0.9">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">TK</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Adv. Tarun Khurana</p>
+                <p class="org-node-role">IP &amp; Corporate Lawyer</p>
+              </div>
+            </div>
+            <div class="org-node org-node-legal anim-hidden" data-delay="0.95">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">AK</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Adv. Anubhav Kumar</p>
+                <p class="org-node-role">Criminal &amp; Civil Lawyer</p>
+              </div>
+            </div>
+            <div class="org-node org-node-legal anim-hidden" data-delay="1.0">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">PK</div>
+              <div class="org-node-info">
+                <p class="org-node-name">CS Pralhad Kumar</p>
+                <p class="org-node-role">Company Secretary</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 5: Community -->
+          <div class="org-tier org-tier-5">
+            <div class="org-node org-node-comm anim-hidden" data-delay="1.1">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">SO</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Sonali Sanap</p>
+                <p class="org-node-role">Community Engagement Lead</p>
+              </div>
+            </div>
+            <div class="org-node org-node-comm anim-hidden" data-delay="1.15">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">MS</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Manisha Shirsath</p>
+                <p class="org-node-role">Community Engagement</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 6: Technology & Engineering -->
+          <div class="org-tier org-tier-6">
+            <div class="org-node org-node-tech anim-hidden" data-delay="1.3">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">PR</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Prerna Rai</p>
+                <p class="org-node-role">AIML Engineer</p>
+              </div>
+            </div>
+            <div class="org-node org-node-tech anim-hidden" data-delay="1.35">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">LR</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Lakshmi Rai</p>
+                <p class="org-node-role">Web Developer</p>
+              </div>
+            </div>
+            <div class="org-node org-node-tech anim-hidden" data-delay="1.4">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">HD</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Harsh Dagade</p>
+                <p class="org-node-role">Data Analysis HoD</p>
+              </div>
+            </div>
+            <div class="org-node org-node-tech anim-hidden" data-delay="1.45">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">RK</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Reet Kukreja</p>
+                <p class="org-node-role">Frontend Designer</p>
+              </div>
+            </div>
+            <div class="org-node org-node-tech anim-hidden" data-delay="1.5">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">BG</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Bhuvan Gowada</p>
+                <p class="org-node-role">Full-Stack Engineer</p>
+              </div>
+            </div>
+            <div class="org-node org-node-tech anim-hidden" data-delay="1.55">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">SS</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Shreya Shinghal</p>
+                <p class="org-node-role">Research Engineer</p>
+              </div>
+            </div>
+            <div class="org-node org-node-tech anim-hidden" data-delay="1.6">
+              <div class="org-node-avatar org-initials-avatar org-avatar-sm">UK</div>
+              <div class="org-node-info">
+                <p class="org-node-name">Ujjwal Kumar</p>
+                <p class="org-node-role">Systems Engineer</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Org Chart Legend -->
+          <div class="org-legend anim-hidden" data-delay="1.7">
+            <span class="org-legend-item org-legend-ceo">Founder &amp; CEO</span>
+            <span class="org-legend-item org-legend-dir">Board / Directors</span>
+            <span class="org-legend-item org-legend-ops">Operations</span>
+            <span class="org-legend-item org-legend-legal">Legal &amp; Compliance</span>
+            <span class="org-legend-item org-legend-comm">Community</span>
+            <span class="org-legend-item org-legend-tech">Technology &amp; Engineering</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5.3 · BOARD OF DIRECTORS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section" id="board">
+      <div class="container">
+        <div class="section-header anim-hidden" data-delay="0">
+          <span class="section-label">05 &middot; Board</span>
+          <h2 class="font-display">Board of Directors.</h2>
+          <p class="section-subtitle">Five directors. Three companies. One aligned mission.</p>
+        </div>
+
+        <div class="board-grid">
+
+
+
+
+
+
+
+          <!-- Dr. Kiran Avhad -->
+          <div class="board-card border-beam-wrap anim-hidden" data-delay="0.4">
+            <div class="board-card-photo-wrap">
+              <div class="board-photo-circle">
+                <img src="images/kiran.png" alt="Dr. Kiran Avhad"
+                  onerror="this.style.display='none';this.parentElement.querySelector('.board-initials').style.display='flex'">
+                <span class="board-initials" style="display:none;">KA</span>
+              </div>
+              <div class="board-card-badge board-badge-sci">Scientific</div>
+            </div>
+            <div class="board-card-body">
+              <h3 class="board-card-name">Dr. Kiran Avhad</h3>
+              <p class="board-card-role">Director &middot; Kropbook</p>
+              <p class="board-card-company">Kropbook Agritech</p>
+              <div class="board-card-domains">
+                <span class="domain-tag">Scientific Operations</span>
+                <span class="domain-tag">PhD Chem. Sciences</span>
+                <span class="domain-tag">Nano-Urea Patents</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dr. Kunal Pingale -->
+          <div class="board-card border-beam-wrap anim-hidden" data-delay="0.5">
+            <div class="board-card-photo-wrap">
+              <div class="board-photo-circle">
+                <img src="images/kunal.png" alt="Dr. Kunal Pingale"
+                  onerror="this.style.display='none';this.parentElement.querySelector('.board-initials').style.display='flex'">
+                <span class="board-initials" style="display:none;">KP</span>
+              </div>
+              <div class="board-card-badge board-badge-tech">CTO</div>
+            </div>
+            <div class="board-card-body">
+              <h3 class="board-card-name">Dr. Kunal Pingale</h3>
+              <p class="board-card-role">CTO &amp; Director</p>
+              <p class="board-card-company">Kropbook Agritech</p>
+              <div class="board-card-domains">
+                <span class="domain-tag">Technology &amp; Systems</span>
+                <span class="domain-tag domain-tag-jj">J&amp;J Alumni</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Manoj Avhad -->
+          <div class="board-card border-beam-wrap anim-hidden" data-delay="0.1">
+            <div class="board-card-photo-wrap">
+              <div class="board-photo-circle">
+                <img src="images/manoj.png" alt="Manoj Avhad"
+                  onerror="this.style.display='none';this.parentElement.querySelector('.board-initials').style.display='flex'">
+                <span class="board-initials" style="display:none;">MA</span>
+              </div>
+              <div class="board-card-badge board-badge-ceo">CEO </div>
+            </div>
+            <div class="board-card-body">
+              <h3 class="board-card-name">Manoj Avhad</h3>
+              <p class="board-card-role">CEO</p>
+              <p class="board-card-company">Kropbook Agritech</p>
+              <div class="board-card-domains">
+                <span class="domain-tag">Strategy</span>
+                <span class="domain-tag">Operations</span>
+                <span class="domain-tag">Institutional Vision</span>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5.4 · OPERATIONS TEAM
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="operations">
+      <div class="container">
+        <div class="section-header anim-hidden" data-delay="0">
+          <span class="section-label">05 &middot; Operations</span>
+          <h2 class="font-display">Operational leadership.</h2>
+          <p class="section-subtitle">The people who execute. On the ground, every day.</p>
+        </div>
+
+        <div class="ops-grid">
+
+          <div class="team-card ops-card anim-hidden" data-delay="0.1">
+            <div class="team-avatar ops-avatar">CS</div>
+            <div class="ops-card-badge-wrap">
+              <span class="ops-bg-badge">BDO India</span>
+            </div>
+            <p class="team-name">CA Shahana</p>
+            <p class="team-role">Financial Governance</p>
+            <p class="team-bg ops-desc">Financial controls, auditing standards, and institutional-grade reporting.</p>
+            <div class="ops-tag-row">
+              <span class="ops-tag">Finance</span>
+              <span class="ops-tag">Audit</span>
+            </div>
+          </div>
+
+          <div class="team-card ops-card anim-hidden" data-delay="0.2">
+            <div class="team-avatar ops-avatar">YA</div>
+            <div class="ops-card-badge-wrap">
+              <span class="ops-bg-badge ops-bg-jpm">JPMorgan Chase</span>
+            </div>
+            <p class="team-name">Er. Yashodhan</p>
+            <p class="team-role">Operations &amp; Systems</p>
+            <p class="team-bg ops-desc">Enterprise-grade operations and financial systems architecture.</p>
+            <div class="ops-tag-row">
+              <span class="ops-tag">Operations</span>
+              <span class="ops-tag">Systems</span>
+            </div>
+          </div>
+
+          <div class="team-card ops-card anim-hidden" data-delay="0.3">
+            <div class="team-avatar ops-avatar">DD</div>
+            <div class="ops-card-badge-wrap">
+              <span class="ops-bg-badge ops-bg-exec">Execution</span>
+            </div>
+            <p class="team-name">Deepak Deshmukh</p>
+            <p class="team-role">Head of Operations</p>
+            <p class="team-bg ops-desc">End-to-end execution, implementation oversight and ground-level coordination.
+            </p>
+            <div class="ops-tag-row">
+              <span class="ops-tag">Execution</span>
+              <span class="ops-tag">Implementation</span>
+            </div>
+          </div>
+
+          <div class="team-card ops-card anim-hidden" data-delay="0.4">
+            <div class="team-avatar ops-avatar">SS</div>
+            <div class="ops-card-badge-wrap">
+              <span class="ops-bg-badge ops-bg-supply">Supply Chain</span>
+            </div>
+            <p class="team-name">Sikandar Singh</p>
+            <p class="team-role">Procurement Head</p>
+            <p class="team-bg ops-desc">Multi-state commodity sourcing, vendor management, and supply chain integrity.
+            </p>
+            <div class="ops-tag-row">
+              <span class="ops-tag">Procurement</span>
+              <span class="ops-tag">Supply Chain</span>
+            </div>
+          </div>
+
+          <div class="team-card ops-card anim-hidden" data-delay="0.5">
+            <div class="team-avatar ops-avatar">JS</div>
+            <div class="ops-card-badge-wrap">
+              <span class="ops-bg-badge ops-bg-logistics">Logistics</span>
+            </div>
+            <p class="team-name">Jaskaran Singh</p>
+            <p class="team-role">Admin: Mandi Network</p>
+            <p class="team-bg ops-desc">Mandi-to-market logistics, distribution channels, and last-mile coordination.
+            </p>
+            <div class="ops-tag-row">
+              <span class="ops-tag">Logistics</span>
+              <span class="ops-tag">Distribution</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5.5 · LEGAL, AUDIT & COMPLIANCE
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section" id="legal">
+      <div class="container">
+        <div class="section-header anim-hidden" data-delay="0">
+          <span class="section-label">05 &middot; Legal &amp; Compliance</span>
+          <h2 class="font-display">The legal backbone.</h2>
+          <p class="section-subtitle">Forensic auditing, IP protection, corporate governance — built in from day one.
+          </p>
+        </div>
+
+        <div class="legal-grid">
+
+          <div class="legal-card anim-hidden" data-delay="0.1">
+            <div class="legal-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="legal-card-body">
+              <p class="legal-card-name">Geetanjali Khanna</p>
+              <p class="legal-card-role">Sr. Forensic Auditor</p>
+              <p class="legal-card-desc">Audit &amp; Risk Control &middot; Forensic accounting expertise</p>
+              <div class="legal-tag-row">
+                <span class="legal-tag">Forensic Audit</span>
+                <span class="legal-tag">Risk Control</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="legal-card anim-hidden" data-delay="0.2">
+            <div class="legal-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+              </svg>
+            </div>
+            <div class="legal-card-body">
+              <p class="legal-card-name">CA Shashank Suvarnapathki</p>
+              <p class="legal-card-role">Sr. Advisor &amp; Taxation</p>
+              <p class="legal-card-desc">Tax strategy &amp; compliance optimization</p>
+              <div class="legal-tag-row">
+                <span class="legal-tag">Taxation</span>
+                <span class="legal-tag">Compliance</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="legal-card anim-hidden" data-delay="0.3">
+            <div class="legal-icon-wrap legal-icon-gold">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <div class="legal-card-body">
+              <p class="legal-card-name">Adv. Tarun Khurana</p>
+              <p class="legal-card-role">IP &amp; Corporate Lawyer</p>
+              <p class="legal-card-desc">Patent defense record &middot; Won vs US DoD</p>
+              <div class="legal-tag-row">
+                <span class="legal-tag legal-tag-gold">Patent Defense</span>
+                <span class="legal-tag">IP Law</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="legal-card anim-hidden" data-delay="0.4">
+            <div class="legal-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 6h18M3 12h18M3 18h18" />
+              </svg>
+            </div>
+            <div class="legal-card-body">
+              <p class="legal-card-name">Adv. Anubhav Kumar</p>
+              <p class="legal-card-role">Lawyer: Criminal &amp; Civil</p>
+              <p class="legal-card-desc">Litigation &amp; legal risk management</p>
+              <div class="legal-tag-row">
+                <span class="legal-tag">Litigation</span>
+                <span class="legal-tag">Legal Risk</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="legal-card anim-hidden" data-delay="0.5">
+            <div class="legal-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div class="legal-card-body">
+              <p class="legal-card-name">CS Pralhad Kumar</p>
+              <p class="legal-card-role">Company Secretary</p>
+              <p class="legal-card-desc">Corporate governance &middot; Regulatory compliance</p>
+              <div class="legal-tag-row">
+                <span class="legal-tag">Governance</span>
+                <span class="legal-tag">Regulatory</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5.6 · COMMUNITY ENGAGEMENT
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="community">
+      <div class="container">
+        <div class="section-header anim-hidden" data-delay="0">
+          <span class="section-label">05 &middot; Community</span>
+          <h2 class="font-display">On the ground, in every state.</h2>
+        </div>
+
+        <div class="community-layout">
+
+          <div class="community-profiles">
+            <div class="community-card anim-left" data-delay="0.2">
+              <div class="community-photo">
+                <span class="community-initials">SO</span>
+              </div>
+              <div class="community-info">
+                <p class="community-name">Sonali Sanap</p>
+                <p class="community-role">Community Engagement Lead</p>
+                <p class="community-region">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  Maharashtra Region
+                </p>
+                <p class="community-desc">Primary interface with farming communities across Maharashtra. Leads
+                  trust-building, adoption, and farmer education programs.</p>
+              </div>
+            </div>
+
+            <div class="community-card anim-right" data-delay="0.3">
+              <div class="community-photo">
+                <span class="community-initials">MS</span>
+              </div>
+              <div class="community-info">
+                <p class="community-name">Manisha Shirsath</p>
+                <p class="community-role">Community Engagement</p>
+                <p class="community-region">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  Tamil Nadu &amp; Karnataka Regions
+                </p>
+                <p class="community-desc">Extends TropOrganic's network into South India, managing relationships with
+                  farmers and cooperatives across two states.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="community-statement anim-hidden" data-delay="0.4">
+            <div class="community-statement-inner">
+              <div class="community-statement-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <p class="community-statement-text">
+                TropOrganic's community network bridges the gap between institutional infrastructure and individual
+                farmers. Trust built one interaction at a time.
+              </p>
+              <div class="community-states">
+                <span class="state-badge">Maharashtra</span>
+                <span class="state-badge">Tamil Nadu</span>
+                <span class="state-badge">Karnataka</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5.7 · TECHNOLOGY & ENGINEERING
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section" id="technology">
+      <div class="container">
+        <div class="section-header anim-hidden" data-delay="0">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+            <div style="width:52px;height:52px;border-radius:12px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <img src="icons/GIF/CTO.gif" alt="" style="width:36px;height:36px;object-fit:contain;">
+            </div>
+            <span class="section-label">05 &middot; Technology &amp; Engineering</span>
+          </div>
+          <h2 class="font-display">The builders.</h2>
+          <p class="section-subtitle">AI/ML, full-stack, data science &mdash; IIT-calibre talent powering the KropBook platform.</p>
+        </div>
+
+        <div class="tech-grid">
+
+          <!-- Prerna Rai -->
+          <div class="team-card tech-card anim-hidden" data-delay="0.1">
+            <div class="team-avatar tech-avatar">PR</div>
+            <div class="tech-card-badge-wrap">
+              <span class="tech-bg-badge tech-bg-ai">
+                <img src="icons/GIF/Intelligence.gif" alt="" style="width:12px;height:12px;object-fit:contain;vertical-align:middle;margin-right:3px;">
+                AI &amp; Machine Learning
+              </span>
+            </div>
+            <p class="team-name">Prerna Rai</p>
+            <p class="team-role">AIML Engineer</p>
+            <p class="team-bg tech-desc">Machine learning systems for agricultural quality prediction, yield intelligence, and autonomous data pipelines.</p>
+            <div class="tech-tag-row">
+              <span class="tech-tag">AI</span>
+              <span class="tech-tag">Machine Learning</span>
+            </div>
+          </div>
+
+          <!-- Lakshmi Rai -->
+          <div class="team-card tech-card anim-hidden" data-delay="0.15">
+            <div class="team-avatar tech-avatar">LR</div>
+            <div class="tech-card-badge-wrap">
+              <span class="tech-bg-badge tech-bg-frontend">Frontend Development</span>
+            </div>
+            <p class="team-name">Lakshmi Rai</p>
+            <p class="team-role">Web Developer</p>
+            <p class="team-bg tech-desc">Frontend development and responsive web interfaces for KropBook's institutional-grade platform.</p>
+            <div class="tech-tag-row">
+              <span class="tech-tag">Frontend</span>
+              <span class="tech-tag">Web</span>
+            </div>
+          </div>
+
+          <!-- Harsh Dagade -->
+          <div class="team-card tech-card anim-hidden" data-delay="0.2">
+            <div class="team-avatar tech-avatar">HD</div>
+            <div class="tech-card-badge-wrap">
+              <span class="tech-bg-badge tech-bg-data">Data Analytics Head</span>
+            </div>
+            <p class="team-name">Harsh Dagade</p>
+            <p class="team-role">Data Analysis HoD</p>
+            <p class="team-bg tech-desc">Leads all data analytics initiatives, building intelligence from platform data streams and agricultural market patterns.</p>
+            <div class="tech-tag-row">
+              <span class="tech-tag">Analytics</span>
+              <span class="tech-tag">Intelligence</span>
+            </div>
+          </div>
+
+          <!-- Reet Kukreja -->
+          <div class="team-card tech-card anim-hidden" data-delay="0.25">
+            <div class="team-avatar tech-avatar">RK</div>
+            <div class="tech-card-badge-wrap">
+              <span class="tech-bg-badge tech-bg-frontend">UI/UX Design</span>
+            </div>
+            <p class="team-name">Reet Kukreja</p>
+            <p class="team-role">Frontend Designer</p>
+            <p class="team-bg tech-desc">UI/UX design and design systems for KropBook's institutional interface, ensuring clarity at every touchpoint.</p>
+            <div class="tech-tag-row">
+              <span class="tech-tag">UI/UX</span>
+              <span class="tech-tag">Design Systems</span>
+            </div>
+          </div>
+
+          <!-- Bhuvan Gowada -->
+          <div class="team-card tech-card anim-hidden" data-delay="0.3">
+            <div class="team-avatar tech-avatar">BG</div>
+            <div class="tech-card-badge-wrap">
+              <span class="tech-bg-badge tech-bg-iit">IIT Bombay</span>
+            </div>
+            <p class="team-name">Bhuvan Gowada</p>
+            <p class="team-role">Full-Stack Engineer</p>
+            <p class="team-bg tech-desc">Full-stack engineering across backend APIs, databases, and system integration. IIT Bombay. Builds the infrastructure KropBook runs on.</p>
+            <div class="tech-tag-row">
+              <span class="tech-tag">Full-Stack</span>
+              <span class="tech-tag">IIT Bombay</span>
+            </div>
+          </div>
+
+          <!-- Shreya Shinghal -->
+          <div class="team-card tech-card anim-hidden" data-delay="0.35">
+            <div class="team-avatar tech-avatar">SS</div>
+            <div class="tech-card-badge-wrap">
+              <span class="tech-bg-badge tech-bg-iit">IIT Kharagpur</span>
+            </div>
+            <p class="team-name">Shreya Shinghal</p>
+            <p class="team-role">Research Engineer</p>
+            <p class="team-bg tech-desc">Research engineering and algorithm development. IIT Kharagpur. Drives core scientific and systems research for the platform.</p>
+            <div class="tech-tag-row">
+              <span class="tech-tag">Research</span>
+              <span class="tech-tag">IIT Kharagpur</span>
+            </div>
+          </div>
+
+          <!-- Ujjwal Kumar -->
+          <div class="team-card tech-card anim-hidden" data-delay="0.4">
+            <div class="team-avatar tech-avatar">UK</div>
+            <div class="tech-card-badge-wrap">
+              <span class="tech-bg-badge tech-bg-iit">IIT Kharagpur</span>
+            </div>
+            <p class="team-name">Ujjwal Kumar</p>
+            <p class="team-role">Systems Engineer</p>
+            <p class="team-bg tech-desc">Systems engineering and infrastructure design for scale. IIT Kharagpur. Ensures platform reliability and performance at every layer.</p>
+            <div class="tech-tag-row">
+              <span class="tech-tag">Systems</span>
+              <span class="tech-tag">IIT Kharagpur</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5.8 · INSTITUTIONAL QUOTE
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section team-quote-section" id="quote">
+      <div class="container">
+        <div class="team-quote-wrap anim-hidden" data-delay="0.1">
+          <div class="team-quote-mark">&ldquo;</div>
+          <blockquote class="team-quote font-display">
+            We did not build a team around a founder. We built an institution around a mission. Every person here holds
+            a piece of the architecture.
+          </blockquote>
+          <div class="team-quote-attribution">
+            <div class="team-quote-avatar">
+              <img src="images/manoj.png" alt="Manoj Avhad"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span style="display:none;">MA</span>
+            </div>
+            <div>
+              <p class="team-quote-name">Manoj Avhad</p>
+              <p class="team-quote-title">CEO, Kropbook Agritech</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/team.js"></script>
+</body>
+
+</html>

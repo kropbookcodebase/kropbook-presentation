@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funding | Kropbook Agritech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/funding.css">
+  <script src="js/effects.js"></script>
+</head>
+
+<body>
+
+  <!-- SVG Glass Filter -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden;"
+    aria-hidden="true">
+    <defs>
+      <filter id="glass-blur">
+        <feGaussianBlur stdDeviation="8" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div id="scroll-progress"></div>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 8.1 · HERO
+         ══════════════════════════════════════════════════════════ -->
+    <section class="funding-hero">
+      <div class="funding-hero-bg"></div>
+      <div class="bg-grid"></div>
+
+      <!-- Floating decorative shapes -->
+      <div class="floating-shape" data-opacity="0.06"
+        style="width:600px;height:140px;background:linear-gradient(135deg,rgba(27,77,62,0.22),rgba(45,107,85,0.06));top:6%;left:-140px;">
+      </div>
+      <div class="floating-shape" data-opacity="0.05"
+        style="width:480px;height:110px;background:linear-gradient(135deg,rgba(201,162,39,0.14),rgba(232,200,74,0.04));top:20%;right:-100px;animation-delay:-4s;">
+      </div>
+      <div class="floating-shape" data-opacity="0.04"
+        style="width:300px;height:80px;background:linear-gradient(135deg,rgba(27,77,62,0.14),rgba(27,77,62,0.03));bottom:18%;left:5%;animation-delay:-8s;">
+      </div>
+
+      <div class="funding-hero-content">
+
+        <div class="funding-hero-badge anim-hidden" data-delay="0.1">
+          <div class="confidential-badge">
+            <span class="dot"></span>
+            Private Placement &nbsp;·&nbsp; Institutional Investors Only
+          </div>
+        </div>
+
+        <div class="anim-hidden" data-delay="0.2">
+          <span class="section-label">08 · Capital Requirements</span>
+        </div>
+
+        <h1 class="anim-hidden" data-delay="0.3">
+          <span class="text-dark-gradient">Strategic Investment</span><br>
+          <span class="text-gold-gradient">Opportunity</span>
+        </h1>
+
+        <div class="funding-ask-pill anim-hidden" data-delay="0.4">
+          <span class="pill-label">GROWTH CAPITAL ROUND</span>
+          <span class="pill-amount">₹15–18 Crore</span>
+        </div>
+
+        <p class="funding-hero-subtitle anim-hidden" data-delay="0.5">
+          Kropbook Agritech seeks strategic investment to scale our vertically integrated agri-supply-chain and
+          manufacturing operations. Two structured options available.
+        </p>
+
+        <div class="funding-hero-cin anim-hidden" data-delay="0.6">
+          <span class="dot"></span>
+          Kropbook Agritech Private Limited &nbsp;·&nbsp; CIN: U01100PN2018PTC180049
+        </div>
+
+      </div>
+
+      <div class="funding-hero-bottom-fade"></div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 8.2 · TWO FUNDING OPTIONS
+         ══════════════════════════════════════════════════════════ -->
+    <section class="section funding-options-section">
+      <div class="funding-section-inner">
+
+        <div class="funding-section-header anim-hidden">
+          <span class="section-label">08 · Funding Structure</span>
+          <h2>Two structured options.</h2>
+          <p class="section-subtext">Both options generate compelling returns. Option A provides the full operational
+            runway for maximum growth velocity.</p>
+        </div>
+
+        <div class="options-grid">
+
+          <!-- Option A -->
+          <div class="option-card option-card-preferred glass-card anim-left" data-delay="0.1">
+            <div class="option-preferred-badge">PREFERRED OPTION</div>
+            <div class="option-header">
+              <div class="option-letter">A</div>
+              <div class="option-meta">
+                <div class="option-title">Full Stack</div>
+                <div class="option-ask">₹18,00,00,000</div>
+              </div>
+            </div>
+            <div class="option-total-label">Total Capital Ask: <strong>₹18 Crore</strong></div>
+
+            <div class="allocation-tree">
+              <div class="alloc-branch alloc-primary">
+                <div class="alloc-connector"></div>
+                <div class="alloc-node">
+                  <div class="alloc-name">Working Capital</div>
+                  <div class="alloc-amount">₹15–17 Cr</div>
+                  <div class="alloc-pct">83–94%</div>
+                </div>
+                <ul class="alloc-children">
+                  <li>Farmer procurement advance payments</li>
+                  <li>Cold storage &amp; logistics expansion</li>
+                  <li>Inventory for institutional clients</li>
+                  <li>90-day working capital buffer</li>
+                </ul>
+              </div>
+              <div class="alloc-branch alloc-secondary">
+                <div class="alloc-connector"></div>
+                <div class="alloc-node">
+                  <div class="alloc-name">Machinery &amp; Equipment</div>
+                  <div class="alloc-amount">₹1–3 Cr</div>
+                  <div class="alloc-pct">6–17%</div>
+                </div>
+                <ul class="alloc-children">
+                  <li>Soil testing device assembly line</li>
+                  <li>Quality grading equipment</li>
+                  <li>Cold chain infrastructure</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="option-bar-wrap">
+              <div class="option-bar-label">Working Capital</div>
+              <div class="progress-container option-progress">
+                <div class="progress-fill progress-fill-highlight" data-width="89%"></div>
+              </div>
+              <span class="option-bar-pct">89%</span>
+            </div>
+            <div class="option-bar-wrap">
+              <div class="option-bar-label">Machinery</div>
+              <div class="progress-container option-progress">
+                <div class="progress-fill progress-fill-gold" data-width="11%"></div>
+              </div>
+              <span class="option-bar-pct">11%</span>
+            </div>
+          </div>
+
+          <!-- Option B -->
+          <div class="option-card glass-card anim-right" data-delay="0.2">
+            <div class="option-header">
+              <div class="option-letter option-letter-b">B</div>
+              <div class="option-meta">
+                <div class="option-title">Focused</div>
+                <div class="option-ask option-ask-b">₹15,00,00,000</div>
+              </div>
+            </div>
+            <div class="option-total-label">Total Capital Ask: <strong>₹15 Crore</strong></div>
+
+            <div class="allocation-tree">
+              <div class="alloc-branch alloc-primary">
+                <div class="alloc-connector"></div>
+                <div class="alloc-node">
+                  <div class="alloc-name">Working Capital</div>
+                  <div class="alloc-amount">₹13 Cr</div>
+                  <div class="alloc-pct">87%</div>
+                </div>
+                <ul class="alloc-children">
+                  <li>Procurement &amp; distribution float</li>
+                  <li>Client credit extension</li>
+                  <li>Operational buffer</li>
+                </ul>
+              </div>
+              <div class="alloc-branch alloc-secondary">
+                <div class="alloc-connector"></div>
+                <div class="alloc-node">
+                  <div class="alloc-name">Machinery + R&amp;D</div>
+                  <div class="alloc-amount">₹2 Cr</div>
+                  <div class="alloc-pct">13%</div>
+                </div>
+                <ul class="alloc-children">
+                  <li>Soil testing device components</li>
+                  <li>R&amp;D instruments &amp; calibration</li>
+                  <li>Engineer salaries (6 months)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="option-bar-wrap">
+              <div class="option-bar-label">Working Capital</div>
+              <div class="progress-container option-progress">
+                <div class="progress-fill progress-fill-highlight" data-width="87%"></div>
+              </div>
+              <span class="option-bar-pct">87%</span>
+            </div>
+            <div class="option-bar-wrap">
+              <div class="option-bar-label">Machinery + R&amp;D</div>
+              <div class="progress-container option-progress">
+                <div class="progress-fill progress-fill-gold" data-width="13%"></div>
+              </div>
+              <span class="option-bar-pct">13%</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 8.3 · FUND UTILIZATION BREAKDOWN
+         ══════════════════════════════════════════════════════════ -->
+    <section class="section funding-utilization-section">
+      <div class="funding-section-inner">
+
+        <div class="funding-section-header anim-hidden">
+          <span class="section-label">08 · Where Your Money Goes</span>
+          <h2>Capital Deployment Plan</h2>
+          <p class="section-subtext">Every rupee allocated with discipline and strategic intent.</p>
+        </div>
+
+        <div class="utilization-grid">
+
+          <div class="util-row glass-card anim-hidden" data-delay="0.05">
+            <div class="util-left">
+              <div class="util-number">01</div>
+              <div class="util-info">
+                <div class="util-name">Working Capital Float</div>
+                <div class="util-amount">₹13–15 Cr</div>
+              </div>
+            </div>
+            <div class="util-right">
+              <div class="util-desc">Farmer procurement advances, inventory financing, and institutional client credit
+                extension</div>
+              <div class="util-bar-wrap">
+                <div class="progress-container util-progress">
+                  <div class="progress-fill progress-fill-highlight" data-width="80%"></div>
+                </div>
+                <span class="util-pct">80%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="util-row glass-card anim-hidden" data-delay="0.1">
+            <div class="util-left">
+              <div class="util-number">02</div>
+              <div class="util-info">
+                <div class="util-name">Manufacturing Infrastructure</div>
+                <div class="util-amount">₹1.5–2 Cr</div>
+              </div>
+            </div>
+            <div class="util-right">
+              <div class="util-desc">High-precision assembly line for Kropbook IoT soil testing devices. NVIDIA H100
+                chipsets for AI-enabled soil analysis processing.</div>
+              <div class="util-bar-wrap">
+                <div class="progress-container util-progress">
+                  <div class="progress-fill progress-fill-highlight" data-width="10%"></div>
+                </div>
+                <span class="util-pct">10%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="util-row glass-card anim-hidden" data-delay="0.15">
+            <div class="util-left">
+              <div class="util-number">03</div>
+              <div class="util-info">
+                <div class="util-name">R&amp;D &amp; Calibration</div>
+                <div class="util-amount">₹0.5–1 Cr</div>
+              </div>
+            </div>
+            <div class="util-right">
+              <div class="util-desc">Laboratory-grade calibration instruments, soil chemistry reference databases,
+                device accuracy validation</div>
+              <div class="util-bar-wrap">
+                <div class="progress-container util-progress">
+                  <div class="progress-fill progress-fill-gold" data-width="5%"></div>
+                </div>
+                <span class="util-pct">5%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="util-row glass-card anim-hidden" data-delay="0.2">
+            <div class="util-left">
+              <div class="util-number">04</div>
+              <div class="util-info">
+                <div class="util-name">Engineering Talent</div>
+                <div class="util-amount">₹0.5–0.75 Cr</div>
+              </div>
+            </div>
+            <div class="util-right">
+              <div class="util-desc">6-month salaries for 4 hardware engineers + 2 ML engineers to build the device
+                manufacturing process</div>
+              <div class="util-bar-wrap">
+                <div class="progress-container util-progress">
+                  <div class="progress-fill progress-fill-gold" data-width="4%"></div>
+                </div>
+                <span class="util-pct">4%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="util-row glass-card anim-hidden" data-delay="0.25">
+            <div class="util-left">
+              <div class="util-number">05</div>
+              <div class="util-info">
+                <div class="util-name">Contingency &amp; Admin</div>
+                <div class="util-amount">₹0.25 Cr</div>
+              </div>
+            </div>
+            <div class="util-right">
+              <div class="util-desc">Legal, compliance, and operational buffer</div>
+              <div class="util-bar-wrap">
+                <div class="progress-container util-progress">
+                  <div class="progress-fill" data-width="1%"></div>
+                </div>
+                <span class="util-pct">1%</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 8.4 · GOVERNMENT CONTRACT OPPORTUNITY
+         ══════════════════════════════════════════════════════════ -->
+    <section class="section funding-govt-section">
+      <div class="funding-section-inner">
+
+        <div class="funding-section-header anim-hidden">
+          <span class="section-label">08 · Market Opportunity</span>
+          <h2 class="govt-heading">₹3,800 Crore <span class="govt-arrow">→</span> ₹500 Crore</h2>
+          <p class="govt-subheading">How Our Patent Device Transforms Government Soil Testing</p>
+        </div>
+
+        <!-- Big quote stat -->
+        <div class="govt-quote-block anim-hidden" data-delay="0.1">
+          <div class="govt-quote-line"></div>
+          <blockquote class="govt-quote-text">
+            "One government contract cycle could generate revenues exceeding our cumulative 5-year operating revenue."
+          </blockquote>
+          <div class="govt-quote-line"></div>
+        </div>
+
+        <!-- Comparison grid -->
+        <div class="govt-comparison-grid">
+
+          <!-- Current State -->
+          <div class="govt-card govt-card-problem glass-card anim-left" data-delay="0.15">
+            <div class="govt-card-header">
+              <div class="govt-card-icon govt-icon-problem">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              </div>
+              <div class="govt-card-label">Current State · Problem</div>
+            </div>
+            <div class="govt-stat-hero">₹3,800 Cr</div>
+            <div class="govt-stat-caption">Government annual spend on soil testing</div>
+            <div class="govt-facts-list">
+              <div class="govt-fact">
+                <span class="govt-fact-icon govt-fact-bad">✕</span>
+                <div>
+                  <strong>Method:</strong> Kjeldahl laboratory analysis
+                </div>
+              </div>
+              <div class="govt-fact">
+                <span class="govt-fact-icon govt-fact-bad">✕</span>
+                <div>
+                  <strong>Time:</strong> 7 days per sample
+                </div>
+              </div>
+              <div class="govt-fact">
+                <span class="govt-fact-icon govt-fact-bad">✕</span>
+                <div>
+                  <strong>Cost:</strong> ₹500–1,500 per test
+                </div>
+              </div>
+              <div class="govt-fact">
+                <span class="govt-fact-icon govt-fact-bad">✕</span>
+                <div>
+                  <strong>Scale:</strong> Cannot handle India's 140M farms
+                </div>
+              </div>
+              <div class="govt-fact">
+                <span class="govt-fact-icon govt-fact-bad">✕</span>
+                <div>
+                  <strong>Coverage:</strong> Only 5% of Indian farmland tested
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- VS Divider -->
+          <div class="govt-vs-divider anim-hidden" data-delay="0.2">
+            <div class="vs-line"></div>
+            <div class="vs-label">VS</div>
+            <div class="vs-line"></div>
+          </div>
+
+          <!-- Kropbook Solution -->
+          <div class="govt-card govt-card-solution glass-card anim-right" data-delay="0.25">
+            <div class="govt-card-header">
+              <div class="govt-card-icon govt-icon-solution">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22,4 12,14.01 9,11.01" />
+                </svg>
+              </div>
+              <div class="govt-card-label">Kropbook Solution</div>
+            </div>
+            <div class="govt-stat-hero govt-stat-hero-gold">₹500 Cr</div>
+            <div class="govt-stat-caption">Projected government cost with Kropbook devices</div>
+            <div class="govt-facts-list">
+              <div class="govt-fact">
+                <span class="govt-fact-icon govt-fact-good">✓</span>
+                <div>
+                  <strong>Time:</strong> 3-minute field test using IoT device
+                </div>
+              </div>
+              <div class="govt-fact">
+                <span class="govt-fact-icon govt-fact-good">✓</span>
+                <div>
+                  <strong>Cost:</strong> ₹50–150 per test (10× cheaper)
+                </div>
+              </div>
+              <div class="govt-fact">
+                <span class="govt-fact-icon govt-fact-good">✓</span>
+                <div>
+                  <strong>Scale:</strong> 500+ samples per device per day
+                </div>
+              </div>
+              <div class="govt-fact">
+                <span class="govt-fact-icon govt-fact-good">✓</span>
+                <div>
+                  <strong>Accuracy:</strong> 94% of lab-standard precision
+                </div>
+              </div>
+              <div class="govt-fact">
+                <span class="govt-fact-icon govt-fact-good">✓</span>
+                <div>
+                  <strong>Data:</strong> Real-time GPS-tagged reporting
+                </div>
+              </div>
+              <div class="govt-fact">
+                <span class="govt-fact-icon govt-fact-good">✓</span>
+                <div>
+                  <strong>IP:</strong> Patent filed, approval pending
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- The Math -->
+        <div class="govt-math-block anim-hidden" data-delay="0.1">
+          <div class="govt-math-header">The Math</div>
+          <div class="govt-math-grid">
+            <div class="govt-math-item">
+              <div class="govt-math-label">Government Saves Per Cycle</div>
+              <div class="govt-math-value">₹3,300 Cr</div>
+              <div class="govt-math-note">₹3,800 Cr current → ₹500 Cr with Kropbook</div>
+            </div>
+            <div class="govt-math-divider"></div>
+            <div class="govt-math-item">
+              <div class="govt-math-label">Kropbook Revenue at Scale</div>
+              <div class="govt-math-value">₹800–1,200 Cr</div>
+              <div class="govt-math-note">Device sales + data license revenue</div>
+            </div>
+            <div class="govt-math-divider"></div>
+            <div class="govt-math-item">
+              <div class="govt-math-label">Contract Pathway</div>
+              <div class="govt-math-value">ICAR · NABARD</div>
+              <div class="govt-math-note">State Agriculture Departments</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 8.5 · REVENUE PROJECTIONS POST-FUNDING
+         ══════════════════════════════════════════════════════════ -->
+    <section class="section funding-projections-section">
+      <div class="funding-section-inner">
+
+        <div class="funding-section-header anim-hidden">
+          <span class="section-label">08 · Financial Projections</span>
+          <h2>Use of Funds → Growth Trajectory</h2>
+          <p class="section-subtext">Post-funding projections assume ₹15–18 Cr capital deployment by Q2 FY 26-27.</p>
+        </div>
+
+        <!-- Bar Chart Canvas -->
+        <div class="chart-wrapper anim-hidden" data-delay="0.1" style="margin-bottom:3rem;">
+          <div class="chart-canvas-wrap">
+            <canvas id="funding-chart" style="width:100%;height:380px;display:block;"></canvas>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#1B4D3E;"></div>
+              Revenue
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#2d6b55;"></div>
+              Gross Profit
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:#C9A227;"></div>
+              Net Profit
+            </div>
+            <div class="legend-item"
+              style="margin-left:auto;font-style:italic;color:var(--text-muted);font-family:'Inter',sans-serif;font-size:0.7rem;">
+              * FY 25-26 projection unaudited &nbsp;·&nbsp; Post-funding estimates per management plan
+            </div>
+          </div>
+        </div>
+
+        <!-- Projection Table -->
+        <div class="glass-card proj-card anim-hidden" data-delay="0.15">
+          <div class="proj-table-wrap">
+            <table class="proj-table">
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th class="proj-th-current">FY 25-26*</th>
+                  <th class="proj-th-highlight">FY 26-27 (Post-Funding)</th>
+                  <th class="proj-th-future">FY 27-28</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="proj-row-key">
+                  <td>Revenue</td>
+                  <td class="proj-td-current">₹92.5 Cr</td>
+                  <td class="proj-td-highlight">₹160–180 Cr</td>
+                  <td class="proj-td-future">₹280–320 Cr</td>
+                </tr>
+                <tr>
+                  <td>Gross Profit</td>
+                  <td class="proj-td-current">₹37 Cr</td>
+                  <td class="proj-td-highlight">₹65–75 Cr</td>
+                  <td class="proj-td-future">₹120–140 Cr</td>
+                </tr>
+                <tr class="proj-row-key">
+                  <td>Net Profit</td>
+                  <td class="proj-td-current">₹13.2 Cr</td>
+                  <td class="proj-td-highlight">₹22–28 Cr</td>
+                  <td class="proj-td-future">₹45–60 Cr</td>
+                </tr>
+                <tr>
+                  <td>Active Farmers</td>
+                  <td class="proj-td-current">800+</td>
+                  <td class="proj-td-highlight">1,500+</td>
+                  <td class="proj-td-future">2,500+</td>
+                </tr>
+                <tr>
+                  <td>Institutional Clients</td>
+                  <td class="proj-td-current">15+</td>
+                  <td class="proj-td-highlight">35+</td>
+                  <td class="proj-td-future">60+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="proj-table-footer">
+            All figures in Indian Rupees. &nbsp;CIN: U01100PN2018PTC180049.
+            &nbsp;* FY 2025-26 figures are projected on current trajectory and unaudited.
+            &nbsp;Post-funding projections assume ₹15–18 Cr capital deployment by Q2 FY 26-27.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 8.6 · WHY INVEST NOW
+         ══════════════════════════════════════════════════════════ -->
+    <section class="section funding-why-section">
+      <div class="funding-section-inner">
+
+        <div class="funding-section-header anim-hidden">
+          <span class="section-label">08 · Investment Thesis</span>
+          <h2>Why invest now.</h2>
+        </div>
+
+        <div class="why-grid">
+
+          <div class="why-card glass-card anim-hidden" data-delay="0.1">
+            <div class="why-icon why-icon-green">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                <polyline points="17 6 23 6 23 12" />
+              </svg>
+            </div>
+            <div class="why-num">01</div>
+            <h3 class="why-title">Profitable Today</h3>
+            <p class="why-desc">₹7.8 Cr net profit FY 2024-25. Not a loss-making startup. Capital accelerates a business
+              that already works.</p>
+            <div class="why-metric">
+              <span data-counter data-target="7.8" data-decimals="1" data-prefix="₹" data-suffix=" Cr Net Profit">₹7.8
+                Cr Net Profit</span>
+            </div>
+          </div>
+
+          <div class="why-card glass-card anim-hidden" data-delay="0.2">
+            <div class="why-icon why-icon-gold">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <line x1="9" y1="9" x2="15" y2="15" />
+                <line x1="15" y1="9" x2="9" y2="15" />
+              </svg>
+            </div>
+            <div class="why-num">02</div>
+            <h3 class="why-title">Asset-Light Model</h3>
+            <p class="why-desc">No farm ownership. We operate on procurement + distribution margins. Capital multiplies
+              through trade cycles, not fixed assets.</p>
+            <div class="why-metric">Zero Owned Farmland</div>
+          </div>
+
+          <div class="why-card glass-card anim-hidden" data-delay="0.3">
+            <div class="why-icon why-icon-green">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <div class="why-num">03</div>
+            <h3 class="why-title">Technology Moat</h3>
+            <p class="why-desc">Patent-pending soil testing device. 3 years of proprietary farmer data. Defensible
+              competitive advantage in a fragmented market.</p>
+            <div class="why-metric">Patent Filed · 3 Yrs Data</div>
+          </div>
+
+          <div class="why-card glass-card anim-hidden" data-delay="0.4">
+            <div class="why-icon why-icon-gold">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <div class="why-num">04</div>
+            <h3 class="why-title">Government Tailwind</h3>
+            <p class="why-desc">PM Kisan, Soil Health Card Scheme, Digital Agriculture Mission all align. Policy
+              environment creates structural demand for our solution.</p>
+            <div class="why-metric">3 Govt. Schemes Aligned</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 8.7 · TERMS & CONTACT
+         ══════════════════════════════════════════════════════════ -->
+    <section class="section funding-contact-section">
+      <div class="funding-section-inner">
+
+        <div class="funding-section-header anim-hidden">
+          <span class="section-label">08 · Next Steps</span>
+          <h2>Express Your Interest</h2>
+          <p class="section-subtext">We respond within 24 business hours to all qualified investor enquiries.</p>
+        </div>
+
+        <!-- Contact details block -->
+        <div class="contact-details-block glass-card anim-hidden" data-delay="0.1">
+          <div class="contact-row">
+            <div class="contact-item">
+              <div class="contact-label">Chief Executive Officer</div>
+              <div class="contact-value">Manoj Avhad</div>
+              <a href="mailto:ceo@kropbook.com" class="contact-link">ceo@kropbook.com</a>
+            </div>
+            <div class="contact-divider"></div>
+            <div class="contact-item">
+              <div class="contact-label">Company</div>
+              <div class="contact-value">Kropbook Agritech Private Limited</div>
+              <div class="contact-cin">CIN: U01100PN2018PTC180049</div>
+            </div>
+            <div class="contact-divider"></div>
+            <div class="contact-item">
+              <div class="contact-label">Registered Office</div>
+              <div class="contact-value">Vashi, Navi Mumbai</div>
+              <div class="contact-cin">Maharashtra, India</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action cards -->
+        <div class="action-cards-grid">
+
+          <a href="financial-statements.html" class="action-card glass-card anim-hidden" data-delay="0.15">
+            <div class="action-card-icon action-icon-green">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            </div>
+            <h4 class="action-card-title">Request Detailed Financials</h4>
+            <p class="action-card-desc">Full audited statements — P&amp;L, balance sheet, and all supporting schedules
+            </p>
+            <div class="action-card-arrow">View Financial Statements →</div>
+          </a>
+
+          <a href="mailto:ceo@kropbook.com?subject=Kropbook%20Investment%20Enquiry%20-%20Meeting%20Request"
+            class="action-card glass-card anim-hidden" data-delay="0.2">
+            <div class="action-card-icon action-icon-gold">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+            </div>
+            <h4 class="action-card-title">Schedule Management Meeting</h4>
+            <p class="action-card-desc">Direct conversation with Manoj Bhosale, Founder &amp; CEO of Kropbook Agritech
+            </p>
+            <div class="action-card-arrow">Send Meeting Request →</div>
+          </a>
+
+          <a href="documents/" class="action-card glass-card anim-hidden" data-delay="0.25">
+            <div class="action-card-icon action-icon-green">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+            </div>
+            <h4 class="action-card-title">Download Full Prospectus</h4>
+            <p class="action-card-desc">Complete investor documentation package including DD materials and projections
+            </p>
+            <div class="action-card-arrow">Access Documents →</div>
+          </a>
+
+        </div>
+
+        <!-- Legal disclaimer -->
+        <div class="funding-disclaimer anim-hidden" data-delay="0.3">
+          <div class="disclaimer-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+          </div>
+          <p>
+            This document contains forward-looking statements. Projections are based on management estimates and market
+            analysis.
+            Past performance does not guarantee future results. This is a private placement — not for public
+            distribution.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/funding.js"></script>
+</body>
+
+</html>

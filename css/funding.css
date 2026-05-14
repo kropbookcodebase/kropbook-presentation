@@ -1,0 +1,1408 @@
+/* ============================================================
+   FUNDING PAGE — Page-specific styles (Page 08)
+   Supplement to global.css — do not duplicate global rules
+   ============================================================ */
+
+/* ── SECTION 8.1 · HERO ─────────────────────────────────── */
+
+.funding-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--brand-green-dark);
+  padding: 0 1.5rem 6rem;
+}
+
+.funding-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(27,77,62,0.55), transparent 65%),
+    radial-gradient(ellipse 55% 40% at 85% 85%, rgba(201,162,39,0.08), transparent 55%),
+    radial-gradient(ellipse 40% 30% at 15% 60%, rgba(27,77,62,0.2), transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.funding-hero .bg-grid {
+  z-index: 2;
+  opacity: 0.03;
+}
+
+.funding-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding-top: 6rem;
+}
+
+.funding-hero-badge {
+  margin-bottom: 2.5rem;
+}
+
+.funding-hero h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3.25rem, 8vw, 6rem);
+  font-weight: 600;
+  line-height: 1.08;
+  margin-bottom: 1.75rem;
+  color: #fff;
+}
+
+.funding-hero h1 .text-dark-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.85) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.funding-hero h1 .text-gold-gradient {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Rupee pill */
+.funding-ask-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(201,162,39,0.1);
+  border: 1px solid rgba(201,162,39,0.35);
+  border-radius: var(--radius-full);
+  padding: 0.625rem 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.pill-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+.pill-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  line-height: 1;
+}
+
+.funding-hero-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  max-width: 580px;
+  margin-bottom: 2.5rem;
+}
+
+.funding-hero-cin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+.funding-hero-cin .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.funding-hero-bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent, var(--bg-primary));
+  pointer-events: none;
+  z-index: 8;
+}
+
+/* ── SHARED LAYOUT ────────────────────────────────────────── */
+
+.funding-section-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.funding-section-header {
+  margin-bottom: 3rem;
+}
+
+.funding-section-header h2 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtext {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 600px;
+  margin-top: 0.5rem;
+}
+
+/* chart-wrapper, chart-legend, legend-* are shared from finance.css via global — redefine just in case */
+.chart-wrapper {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-canvas-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.legend-swatch {
+  width: 14px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Shared progress bar */
+.progress-container {
+  width: 100%;
+  height: 5px;
+  background: var(--border-light);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 3px;
+  background: var(--brand-green);
+  transition: width 1.3s cubic-bezier(0.25, 0.4, 0.25, 1);
+}
+
+.progress-fill-gold {
+  background: linear-gradient(to right, var(--accent-gold), var(--accent-gold-light));
+}
+
+.progress-fill-highlight {
+  background: linear-gradient(to right, var(--brand-green), var(--brand-green-mid));
+}
+
+/* ── SECTION 8.2 · FUNDING OPTIONS ───────────────────────── */
+
+.funding-options-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-light);
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.option-card {
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  position: relative;
+  border: 1px solid var(--border-light);
+  background: #fff;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.option-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.option-card-preferred {
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 0 0 1px rgba(201,162,39,0.08), var(--shadow-gold);
+}
+
+.option-preferred-badge {
+  position: absolute;
+  top: -1px;
+  right: 2rem;
+  background: var(--accent-gold);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  padding: 0.35rem 0.875rem;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.option-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.option-letter {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  background: var(--brand-green);
+  color: var(--accent-gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.option-letter-b {
+  background: var(--bg-green-light);
+  color: var(--brand-green);
+}
+
+.option-meta {
+  flex: 1;
+}
+
+.option-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.375rem;
+}
+
+.option-ask {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: var(--brand-green);
+  line-height: 1;
+}
+
+.option-ask-b {
+  color: var(--text-primary);
+}
+
+.option-total-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.option-total-label strong {
+  color: var(--text-primary);
+}
+
+/* Allocation tree */
+.allocation-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.alloc-branch {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.alloc-branch::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 2px;
+}
+
+.alloc-primary::before {
+  background: var(--brand-green);
+}
+
+.alloc-secondary::before {
+  background: var(--accent-gold);
+}
+
+.alloc-node {
+  display: flex;
+  align-items: baseline;
+  gap: 0.625rem;
+  margin-bottom: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.alloc-name {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.alloc-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--brand-green);
+}
+
+.alloc-pct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-gold);
+  background: rgba(201,162,39,0.08);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.alloc-children {
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.alloc-children li {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.alloc-children li::before {
+  content: '├─';
+  position: absolute;
+  left: -0.125rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--border-medium);
+}
+
+.alloc-children li:last-child::before {
+  content: '└─';
+}
+
+/* Option progress bars */
+.option-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.option-bar-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.option-progress {
+  flex: 1;
+  height: 6px;
+}
+
+.option-bar-pct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  width: 32px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── SECTION 8.3 · UTILIZATION ───────────────────────────── */
+
+.funding-utilization-section {
+  background: var(--bg-primary);
+}
+
+.utilization-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.util-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  background: #fff;
+  transition: all var(--transition-base);
+}
+
+.util-row:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
+}
+
+.util-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.util-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  background: var(--bg-green-light);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.util-info {
+  flex: 1;
+}
+
+.util-name {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.util-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--brand-green);
+  line-height: 1;
+}
+
+.util-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  justify-content: center;
+}
+
+.util-desc {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.util-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.util-progress {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+.util-pct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--brand-green);
+  width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── SECTION 8.4 · GOVERNMENT CONTRACT ───────────────────── */
+
+.funding-govt-section {
+  background: var(--bg-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.funding-govt-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(27,77,62,0.6), transparent 60%),
+    radial-gradient(ellipse 40% 30% at 90% 90%, rgba(201,162,39,0.06), transparent 50%);
+  pointer-events: none;
+}
+
+.funding-govt-section .funding-section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.funding-govt-section .funding-section-header h2 {
+  color: #fff;
+}
+
+.funding-govt-section .funding-section-header .section-label {
+  color: rgba(255,255,255,0.45);
+}
+
+.funding-govt-section .section-subtext {
+  color: rgba(255,255,255,0.5);
+}
+
+/* Government heading */
+.govt-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.govt-arrow {
+  color: var(--accent-gold);
+  font-style: normal;
+}
+
+.govt-subheading {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+/* Quote block */
+.govt-quote-block {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2.5rem 0 3rem;
+}
+
+.govt-quote-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(201,162,39,0.25);
+}
+
+.govt-quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  max-width: 700px;
+  line-height: 1.7;
+  flex-shrink: 0;
+  padding: 0 1rem;
+}
+
+/* Comparison grid */
+.govt-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.govt-card {
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.govt-card.glass-card {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.govt-card-problem {
+  border-color: rgba(220, 60, 60, 0.25);
+}
+
+.govt-card-solution {
+  border-color: rgba(201,162,39,0.4);
+  box-shadow: 0 0 40px rgba(201,162,39,0.07);
+}
+
+.govt-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.govt-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.govt-icon-problem {
+  background: rgba(220, 60, 60, 0.12);
+  color: #e05555;
+}
+
+.govt-icon-solution {
+  background: rgba(201,162,39,0.12);
+  color: var(--accent-gold);
+}
+
+.govt-card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+.govt-stat-hero {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.75rem, 5vw, 4rem);
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.govt-stat-hero-gold {
+  color: var(--accent-gold);
+}
+
+.govt-stat-caption {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Fact list */
+.govt-facts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.govt-fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.55;
+}
+
+.govt-fact strong {
+  color: rgba(255,255,255,0.85);
+}
+
+.govt-fact-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+.govt-fact-bad {
+  background: rgba(220, 60, 60, 0.15);
+  color: #e05555;
+}
+
+.govt-fact-good {
+  background: rgba(201,162,39,0.15);
+  color: var(--accent-gold);
+}
+
+/* VS Divider */
+.govt-vs-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0 1.5rem;
+  align-self: center;
+  padding-top: 8rem;
+}
+
+.vs-line {
+  width: 1px;
+  height: 60px;
+  background: rgba(255,255,255,0.12);
+}
+
+.vs-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.25);
+  font-weight: 600;
+}
+
+/* The Math */
+.govt-math-block {
+  background: rgba(201,162,39,0.06);
+  border: 1px solid rgba(201,162,39,0.2);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+}
+
+.govt-math-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 1.75rem;
+}
+
+.govt-math-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0;
+  align-items: center;
+}
+
+.govt-math-item {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.govt-math-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 0.5rem;
+}
+
+.govt-math-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: var(--accent-gold);
+  line-height: 1;
+  margin-bottom: 0.375rem;
+}
+
+.govt-math-note {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.5;
+}
+
+.govt-math-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(201,162,39,0.2);
+}
+
+/* ── SECTION 8.5 · PROJECTIONS ───────────────────────────── */
+
+.funding-projections-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-light);
+}
+
+.proj-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.proj-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.proj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  min-width: 620px;
+}
+
+.proj-table thead tr {
+  background: var(--brand-green);
+}
+
+.proj-table thead th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  color: rgba(255,255,255,0.65);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.proj-table thead th:first-child {
+  width: 22%;
+}
+
+.proj-th-current {
+  color: rgba(255,255,255,0.55) !important;
+  border-bottom: 2px dashed rgba(255,255,255,0.15);
+}
+
+.proj-th-highlight {
+  background: rgba(201,162,39,0.18) !important;
+  color: var(--accent-gold-light) !important;
+}
+
+.proj-th-future {
+  color: rgba(201,162,39,0.6) !important;
+}
+
+.proj-table tbody tr {
+  border-bottom: 1px solid var(--border-light);
+  transition: background var(--transition-fast);
+}
+
+.proj-table tbody tr:nth-child(even) {
+  background: rgba(247,249,248,0.8);
+}
+
+.proj-table tbody tr:hover {
+  background: rgba(27,77,62,0.03);
+}
+
+.proj-table tbody tr.proj-row-key {
+  font-weight: 700;
+}
+
+.proj-table tbody tr.proj-row-key td {
+  border-top: 1px solid var(--border-medium);
+}
+
+.proj-table tbody td {
+  padding: 0.875rem 1.25rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.proj-table tbody td:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+  white-space: normal;
+}
+
+.proj-td-current {
+  color: var(--text-secondary) !important;
+  font-style: italic;
+}
+
+.proj-td-highlight {
+  background: rgba(27,77,62,0.04) !important;
+  color: var(--brand-green) !important;
+  font-weight: 700 !important;
+}
+
+.proj-td-future {
+  color: var(--accent-gold) !important;
+  font-weight: 600 !important;
+}
+
+.proj-table-footer {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+  background: rgba(247,249,248,0.5);
+  line-height: 1.6;
+}
+
+/* ── SECTION 8.6 · WHY INVEST ────────────────────────────── */
+
+.funding-why-section {
+  background: var(--bg-primary);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.why-card {
+  border-radius: var(--radius-xl);
+  padding: 2rem 1.75rem;
+  border: 1px solid var(--border-light);
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all var(--transition-base);
+}
+
+.why-card:hover {
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-4px);
+}
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--brand-green), var(--accent-gold));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.why-card:hover::before {
+  opacity: 1;
+}
+
+.why-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.why-icon-green {
+  background: var(--bg-green-light);
+  color: var(--brand-green);
+}
+
+.why-icon-gold {
+  background: rgba(201,162,39,0.08);
+  color: var(--accent-gold);
+}
+
+.why-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+.why-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.why-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.why-metric {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--brand-green);
+  background: var(--bg-green-light);
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+/* ── SECTION 8.7 · CONTACT ───────────────────────────────── */
+
+.funding-contact-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-light);
+}
+
+.contact-details-block {
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  border: 1px solid var(--border-light);
+  background: #fff;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.contact-item {
+  padding: 0 1.5rem;
+}
+
+.contact-item:first-child {
+  padding-left: 0;
+}
+
+.contact-item:last-child {
+  padding-right: 0;
+}
+
+.contact-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.contact-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.contact-link {
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color var(--transition-fast), color var(--transition-fast);
+}
+
+.contact-link:hover {
+  color: var(--accent-gold-dark);
+  text-decoration-color: var(--accent-gold);
+}
+
+.contact-cin {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.contact-divider {
+  width: 1px;
+  height: 60px;
+  background: var(--border-light);
+  align-self: center;
+}
+
+/* Action cards */
+.action-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.action-card {
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  border: 1px solid var(--border-light);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.action-card:hover {
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-4px);
+}
+
+.action-card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-icon-green {
+  background: var(--bg-green-light);
+  color: var(--brand-green);
+}
+
+.action-icon-gold {
+  background: rgba(201,162,39,0.08);
+  color: var(--accent-gold);
+}
+
+.action-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.action-card-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.action-card-arrow {
+  font-size: 0.78rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  margin-top: 0.25rem;
+  transition: letter-spacing var(--transition-fast);
+}
+
+.action-card:hover .action-card-arrow {
+  letter-spacing: 0.02em;
+}
+
+/* Disclaimer */
+.funding-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(247,249,248,0.8);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+}
+
+.disclaimer-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.funding-disclaimer p {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 1200px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .govt-math-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .govt-math-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .govt-comparison-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .govt-vs-divider {
+    display: none;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .contact-divider {
+    display: none;
+  }
+
+  .contact-item {
+    padding: 0;
+  }
+
+  .util-row {
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .funding-hero-content {
+    padding-top: 5rem;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .govt-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .action-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .util-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .govt-quote-block {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .govt-quote-line {
+    width: 100%;
+    height: 1px;
+  }
+
+  .govt-math-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: left;
+  }
+
+  .govt-math-item {
+    text-align: left;
+    padding: 0;
+  }
+
+  .chart-wrapper {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .funding-hero h1 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .option-card {
+    padding: 1.75rem;
+  }
+
+  .govt-card {
+    padding: 1.75rem;
+  }
+
+  .govt-stat-hero {
+    font-size: 2.5rem;
+  }
+
+  .option-letter {
+    width: 46px;
+    height: 46px;
+    font-size: 1.625rem;
+  }
+
+  .govt-heading {
+    font-size: 2.25rem;
+  }
+}

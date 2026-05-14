@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategic Q&amp;A | Kropbook Agritech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/strategic-qa.css">
+</head>
+<body>
+<svg style="display:none" aria-hidden="true">
+  <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+    <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
+    <feComponentTransfer in="turbulence" result="mapped">
+      <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5"/>
+      <feFuncG type="gamma" amplitude="0" exponent="1" offset="0"/>
+      <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5"/>
+    </feComponentTransfer>
+    <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap"/>
+    <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lightingColor="white" result="specLight">
+      <fePointLight x="-200" y="-200" z="300"/>
+    </feSpecularLighting>
+    <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage"/>
+    <feDisplacementMap in="SourceGraphic" in2="softMap" scale="200" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+  <div id="scroll-progress"></div>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 10.1 · HERO
+    ══════════════════════════════════════════════════════════ -->
+    <section class="sqa-hero" id="hero">
+      <div class="hero-bg-gradient"></div>
+      <div class="bg-grid"></div>
+
+      <!-- Floating shapes -->
+      <div class="floating-shape sqa-shape-1" data-opacity="0.06"
+           style="--rot:15deg; animation-delay:0s; animation-duration:16s;"></div>
+      <div class="floating-shape sqa-shape-2" data-opacity="0.04"
+           style="--rot:-12deg; animation-delay:2.5s; animation-duration:20s;"></div>
+      <div class="floating-shape sqa-shape-3" data-opacity="0.05"
+           style="--rot:8deg; animation-delay:1s; animation-duration:14s;"></div>
+
+      <div class="sqa-hero-inner">
+        <div class="sqa-hero-badge"
+             style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.1s;">
+          <span class="section-label">10 · Strategic Q&amp;A</span>
+        </div>
+
+        <h1 class="sqa-hero-h1 font-display"
+            style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.3s;">
+          Hard questions.
+        </h1>
+
+        <h2 class="sqa-hero-h2 font-display text-gold-gradient"
+            style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.5s;">
+          Direct answers.
+        </h2>
+
+        <p class="sqa-hero-subtitle"
+           style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.7s;">
+          Pre-emptive responses to the questions every serious investor and banker asks.
+          Transparent. Specific. Evidenced.
+        </p>
+
+        <div class="sqa-hero-note"
+             style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.9s;">
+          <span class="sqa-hero-note-icon">◆</span>
+          10 questions &middot; Every answer backed by verified data
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 10.2 · INTRO STATEMENT
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt sqa-intro-section" id="intro">
+      <div class="container">
+        <div class="sqa-quote-card anim-hidden" data-delay="0.1">
+          <div class="sqa-quote-mark">"</div>
+          <blockquote class="sqa-quote-text">
+            We do not ask you to trust us. We ask you to interrogate the evidence. The answers to your hardest questions are here.
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 10.3 · Q&A ACCORDION
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section sqa-accordion-section" id="questions">
+      <div class="container">
+
+        <div class="sqa-section-header anim-hidden" data-delay="0.05">
+          <span class="section-label">10 · Questions &amp; Answers</span>
+          <h2 class="font-display">The complete briefing.</h2>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="sqa-filter-bar anim-hidden" data-delay="0.1" id="sqa-filter-bar">
+          <button class="sqa-filter-btn active" data-category="all">All</button>
+          <button class="sqa-filter-btn" data-category="competitive">Competitive</button>
+          <button class="sqa-filter-btn" data-category="financial">Financial</button>
+          <button class="sqa-filter-btn" data-category="technology">Technology</button>
+          <button class="sqa-filter-btn" data-category="strategic">Strategic</button>
+        </div>
+
+        <!-- Accordion List -->
+        <div class="sqa-accordion-list" id="sqa-accordion-list">
+
+          <!-- Q1 -->
+          <div class="accordion-item sqa-accordion-item anim-hidden" data-delay="0.1" data-category="competitive" id="q-1">
+            <button class="accordion-trigger sqa-trigger">
+              <div class="sqa-trigger-inner">
+                <span class="sqa-q-number">01</span>
+                <div class="sqa-trigger-text">
+                  <span class="sqa-category-tag sqa-cat-competitive">Competitive</span>
+                  <h3>Q: How does this differ from other agritech companies?</h3>
+                </div>
+              </div>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-content sqa-answer">
+                Most agritech companies operate at one layer — an app, a marketplace, or an advisory service. Kropbook operates at four simultaneous layers: Physical Sensing (soil analysis and residue detection hardware), Supply Chain (end-to-end agricultural supply chain operations), Financial Rails (payment facilitation and farmer financial identity creation), and Intelligence (AgriOS platform). No competitor operates at all four layers. The moat is not a single technology — it is the integration of four interdependent systems that have been building operational proof since 2018. The cost to replicate this is not capital. It is six years of farmer trust, institutional relationships, and operational data.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="accordion-item sqa-accordion-item anim-hidden" data-delay="0.15" data-category="competitive" id="q-2">
+            <button class="accordion-trigger sqa-trigger">
+              <div class="sqa-trigger-inner">
+                <span class="sqa-q-number">02</span>
+                <div class="sqa-trigger-text">
+                  <span class="sqa-category-tag sqa-cat-competitive">Competitive</span>
+                  <h3>Q: What is the competitive moat?</h3>
+                </div>
+              </div>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-content sqa-answer">
+                The moat is self-reinforcing. Every new farmer who gets a soil test enriches the national database. Every new institutional buyer that integrates with the payment rail makes the rail more valuable to all other buyers. Every new government contract deepens the regulatory relationships. Every new piece of financial identity data makes the credit intelligence product more accurate. Unlike a software moat that can be cloned, Kropbook's moat is built from physical operations, institutional relationships, and trusted data — none of which can be replicated without matching Kropbook's operational history. The gap widens every day the platform operates.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="accordion-item sqa-accordion-item anim-hidden" data-delay="0.2" data-category="financial" id="q-3">
+            <button class="accordion-trigger sqa-trigger">
+              <div class="sqa-trigger-inner">
+                <span class="sqa-q-number">03</span>
+                <div class="sqa-trigger-text">
+                  <span class="sqa-category-tag sqa-cat-financial">Financial</span>
+                  <h3>Q: How was 112% revenue growth achieved in FY 2024-25?</h3>
+                </div>
+              </div>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-content sqa-answer">
+                Three primary drivers. First, expansion of institutional buyer relationships — the addition of Zomato HyperPure and Swiggy to the existing ITC, Metro, and Annapurna relationships materially increased transaction volumes. Second, expansion of supply chain operations as institutional buyer demand increased. Third, increased transaction value per buyer as relationships matured and Kropbook demonstrated consistent quality and compliance. The growth was not from new market entry — it was from deepening existing relationships and adding strategic new ones.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="accordion-item sqa-accordion-item anim-hidden" data-delay="0.25" data-category="financial" id="q-4">
+            <button class="accordion-trigger sqa-trigger">
+              <div class="sqa-trigger-inner">
+                <span class="sqa-q-number">04</span>
+                <div class="sqa-trigger-text">
+                  <span class="sqa-category-tag sqa-cat-financial">Financial</span>
+                  <h3>Q: What is the path to profitability?</h3>
+                </div>
+              </div>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-content sqa-answer">
+                Kropbook is already profitable. Net profit in FY 2024-25 was ₹7.80 Crore, representing a 13.2% net margin. The question is more accurately about the path to higher-margin profitability. The current business — agricultural supply chain operations — carries thin but consistent margins. The eight business models being built (AgriOS licensing, credit intelligence, government contracts, export traceability, carbon credits, global subscriptions) all carry 50-85% gross margins. Each is being built on the operational foundation already generating positive cash flow.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="accordion-item sqa-accordion-item anim-hidden" data-delay="0.3" data-category="technology" id="q-5">
+            <button class="accordion-trigger sqa-trigger">
+              <div class="sqa-trigger-inner">
+                <span class="sqa-q-number">05</span>
+                <div class="sqa-trigger-text">
+                  <span class="sqa-category-tag sqa-cat-technology">Technology</span>
+                  <h3>Q: What validates the technology?</h3>
+                </div>
+              </div>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-content sqa-answer">
+                The most rigorous possible validation: the United States Department of Defense challenged Kropbook's Nano-Urea patent. The DoD — which has access to the world's best scientific and legal resources — challenged the patent as not genuinely original. Kropbook won. This is not a domestic Indian regulatory approval. It is confirmation by an international body with world-class scientific scrutiny that Kropbook's innovation is genuinely original. Dr. Kiran Avhad's Nano-Urea research is not incremental. It is a scientific breakthrough.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="accordion-item sqa-accordion-item anim-hidden" data-delay="0.35" data-category="strategic" id="q-6">
+            <button class="accordion-trigger sqa-trigger">
+              <div class="sqa-trigger-inner">
+                <span class="sqa-q-number">06</span>
+                <div class="sqa-trigger-text">
+                  <span class="sqa-category-tag sqa-cat-strategic">Strategic</span>
+                  <h3>Q: Why has Manoj Avhad transferred shares?</h3>
+                </div>
+              </div>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-content sqa-answer">
+                Manoj Avhad voluntarily restructured his personal shareholding to protect the company's institutional credibility during a personal financial challenge. As of 31st March 2025, shareholding is: Dr. Kunal Pingale 91%, Dr. Kiran Avhad 9%. This was a deliberate choice to prioritize institutional integrity over personal equity. The company's operations, strategy, and leadership have not changed. Manoj Avhad remains Founder and Managing CEO. The restructuring demonstrates precisely the institution-over-individual ethos that institutional investors should want to see in a founder.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="accordion-item sqa-accordion-item anim-hidden" data-delay="0.4" data-category="strategic" id="q-7">
+            <button class="accordion-trigger sqa-trigger">
+              <div class="sqa-trigger-inner">
+                <span class="sqa-q-number">07</span>
+                <div class="sqa-trigger-text">
+                  <span class="sqa-category-tag sqa-cat-strategic">Strategic</span>
+                  <h3>Q: What is the total addressable market?</h3>
+                </div>
+              </div>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-content sqa-answer">
+                The global food system is valued at approximately ₹9 trillion. India's agricultural economy is the world's second largest, with 140+ million farming households. The institutional market for agricultural intelligence — the domain Kropbook is building toward — is effectively uncapped. By comparison, Palantir's entire market is ₹63 billion and it operates in fewer domains at a shallower depth than Kropbook's 4-layer architecture. The agricultural intelligence market has no incumbent. No Bloomberg Terminal for food. No Palantir for agriculture. Kropbook is building what does not exist.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="accordion-item sqa-accordion-item anim-hidden" data-delay="0.45" data-category="competitive" id="q-8">
+            <button class="accordion-trigger sqa-trigger">
+              <div class="sqa-trigger-inner">
+                <span class="sqa-q-number">08</span>
+                <div class="sqa-trigger-text">
+                  <span class="sqa-category-tag sqa-cat-competitive">Competitive</span>
+                  <h3>Q: Who are the institutional buyers today?</h3>
+                </div>
+              </div>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-content sqa-answer">
+                Five institutional buyers as of FY 2024-25: ITC (India's largest FMCG conglomerate), Metro Cash &amp; Carry (Reliance's B2B retail network), Annapurna (Adani Group's food distribution arm), Zomato HyperPure (quick commerce premium produce supply), Swiggy (non-perishable staples — rice, wheat). These are not experimental partnerships. They are operational supply relationships generating ₹59.18 Crore in audited FY25 revenue. India's most demanding institutional buyers, choosing Kropbook consistently.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="accordion-item sqa-accordion-item anim-hidden" data-delay="0.5" data-category="strategic" id="q-9">
+            <button class="accordion-trigger sqa-trigger">
+              <div class="sqa-trigger-inner">
+                <span class="sqa-q-number">09</span>
+                <div class="sqa-trigger-text">
+                  <span class="sqa-category-tag sqa-cat-strategic">Strategic</span>
+                  <h3>Q: What is the 24-36 month strategic plan?</h3>
+                </div>
+              </div>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-content sqa-answer">
+                Four non-negotiable priorities: (1) Payment rail becomes non-negotiable for all institutional procurement — every buyer pays farmers through Kropbook's rail, every transaction creates financial identity data. (2) Soil infrastructure reaches national scale — operational presence in every major agricultural state, soil data from millions of farms. (3) First state government contracts signed — establishing government as a recurring institutional buyer of agricultural intelligence. (4) Farmer financial identity product launched — enabling formal credit access for unbanked farmers through verified transaction data. These four create the foundation for the higher-margin models in the following phase.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="accordion-item sqa-accordion-item anim-hidden" data-delay="0.55" data-category="strategic" id="q-10">
+            <button class="accordion-trigger sqa-trigger">
+              <div class="sqa-trigger-inner">
+                <span class="sqa-q-number">10</span>
+                <div class="sqa-trigger-text">
+                  <span class="sqa-category-tag sqa-cat-strategic">Strategic</span>
+                  <h3>Q: Why should we invest or partner now?</h3>
+                </div>
+              </div>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-body">
+              <div class="accordion-content sqa-answer">
+                There is a 24-36 month window to establish foundational monopoly in Indian agricultural intelligence infrastructure. Infrastructure is valued on replacement cost, not revenue multiples. The replacement cost of Kropbook's operational position — six years of farmer trust, institutional buyer relationships, patent portfolio, soil data, payment rail — is not replicable with capital alone. It requires time. Time that Kropbook has already spent. The gap widens every day. The institutional buyers are already proven. The financial model is already profitable. The technology is patent-protected and internationally validated. The question is not whether this infrastructure will matter. It is who will own it.
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /sqa-accordion-list -->
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 10.4 · CLOSING STATEMENT
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt sqa-closing-section" id="closing">
+      <div class="container">
+        <div class="sqa-closing-header anim-hidden" data-delay="0.05">
+          <span class="section-label">10 · Position</span>
+          <h2 class="font-display">The case, stated plainly.</h2>
+        </div>
+
+        <div class="sqa-closing-card anim-hidden" data-delay="0.2">
+          <div class="sqa-closing-content">
+            <p class="sqa-closing-statement">
+              Kropbook is not asking to be believed. It is asking to be evaluated. The financial statements are audited. The clients are verifiable. The patent defense is documented. The operational track record is six years long. The question is not whether Kropbook is real. The question is whether you want to be part of what it becomes.
+            </p>
+            <div class="sqa-closing-cta">
+              <span class="sqa-closing-cta-label">Contact</span>
+              <a href="mailto:ceo@kropbook.com" class="sqa-closing-email">ceo@kropbook.com</a>
+            </div>
+          </div>
+          <div class="sqa-closing-deco" aria-hidden="true">
+            <span class="sqa-closing-deco-num">10</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 10.5 · CTA LINK CARDS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section sqa-cta-section" id="cta">
+      <div class="container">
+        <div class="sqa-cta-grid">
+
+          <a href="financial-statements.html" class="sqa-cta-card anim-hidden" data-delay="0.1">
+            <div class="sqa-cta-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <line x1="9" y1="3" x2="9" y2="21"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+              </svg>
+            </div>
+            <div class="sqa-cta-card-body">
+              <span class="sqa-cta-card-label font-mono-custom">Financial Records</span>
+              <h3 class="sqa-cta-card-title">View Financial Statements</h3>
+              <p class="sqa-cta-card-desc">Audited P&amp;L, balance sheet, and cash flow statements for FY 2024-25.</p>
+            </div>
+            <span class="sqa-cta-card-arrow">→</span>
+          </a>
+
+          <a href="governance.html" class="sqa-cta-card anim-hidden" data-delay="0.2">
+            <div class="sqa-cta-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="sqa-cta-card-body">
+              <span class="sqa-cta-card-label font-mono-custom">Corporate Governance</span>
+              <h3 class="sqa-cta-card-title">Review Governance Documents</h3>
+              <p class="sqa-cta-card-desc">Shareholding structure, MCA filings, directorship records, and compliance documentation.</p>
+            </div>
+            <span class="sqa-cta-card-arrow">→</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/effects.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/strategic-qa.js"></script>
+
+</body>
+</html>

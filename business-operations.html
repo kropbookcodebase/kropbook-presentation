@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Operations | Kropbook Agritech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/business-operations.css">
+  <script src="js/effects.js"></script>
+</head>
+
+<body>
+
+  <!-- Glass SVG Filter -->
+  <svg style="display:none" aria-hidden="true">
+    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence" />
+      <feComponentTransfer in="turbulence" result="mapped">
+        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+      </feComponentTransfer>
+      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+      <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100"
+        lightingColor="white" result="specLight">
+        <fePointLight x="-200" y="-200" z="300" />
+      </feSpecularLighting>
+      <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+      <feDisplacementMap in="SourceGraphic" in2="softMap" scale="200" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
+  <div id="scroll-progress"></div>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 1 — HERO
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="bops-hero section" id="hero">
+      <div class="bg-grid"></div>
+      <div class="bops-hero-gradient"></div>
+
+      <!-- Decorative floating shapes -->
+      <div class="bops-shape bops-shape-1"></div>
+      <div class="bops-shape bops-shape-2"></div>
+      <div class="bops-shape bops-shape-3"></div>
+
+      <div class="container bops-hero-inner">
+        <div class="bops-hero-content">
+          <span class="section-label anim-hidden" data-delay="0">WHAT WE DO</span>
+          <h1 class="bops-hero-h1 anim-hidden" data-delay="0.1">Business<br>Operations.</h1>
+          <h2 class="bops-hero-h2 anim-hidden" data-delay="0.2">Backward &amp; Forward Integration in India's
+            Agricultural Supply Chain.</h2>
+          <p class="bops-hero-p anim-hidden" data-delay="0.3">
+            Kropbook operates at every layer of the agricultural value chain — from direct farmer procurement to
+            institutional delivery. We don't just digitize supply chains; we <em>are</em> the supply chain.
+          </p>
+        </div>
+
+        <!-- Supply chain visual -->
+        <div class="bops-chain-visual anim-hidden" data-delay="0.5">
+          <div class="bops-chain-inner">
+            <div class="bops-chain-node node-farmer">
+              <div class="bops-chain-icon">🌾</div>
+              <span class="bops-chain-label">Farmer</span>
+            </div>
+            <div class="bops-chain-arrow">
+              <div class="bops-flow-line"></div>
+              <div class="bops-flow-dot"></div>
+            </div>
+            <div class="bops-chain-node node-procure">
+              <div class="bops-chain-icon">⚖️</div>
+              <span class="bops-chain-label">Procurement</span>
+            </div>
+            <div class="bops-chain-arrow">
+              <div class="bops-flow-line"></div>
+              <div class="bops-flow-dot"></div>
+            </div>
+            <div class="bops-chain-node node-process">
+              <div class="bops-chain-icon">🏭</div>
+              <span class="bops-chain-label">Processing</span>
+            </div>
+            <div class="bops-chain-arrow">
+              <div class="bops-flow-line"></div>
+              <div class="bops-flow-dot"></div>
+            </div>
+            <div class="bops-chain-node node-distrib">
+              <div class="bops-chain-icon">🚛</div>
+              <span class="bops-chain-label">Distribution</span>
+            </div>
+            <div class="bops-chain-arrow">
+              <div class="bops-flow-line"></div>
+              <div class="bops-flow-dot"></div>
+            </div>
+            <div class="bops-chain-node node-buyer">
+              <div class="bops-chain-icon">🏪</div>
+              <span class="bops-chain-label">Buyer</span>
+            </div>
+          </div>
+          <div class="bops-chain-tagline">Every node. Zero middlemen.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 2 — WHAT WE SELL
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="what-we-sell">
+      <div class="container">
+        <span class="section-label anim-hidden" data-delay="0">Product Portfolio</span>
+        <h2 class="anim-hidden" data-delay="0.1">Two categories.<br><em>One mission.</em></h2>
+
+        <div class="bops-products-grid">
+
+          <!-- Fresh Organic Produce -->
+          <div class="glass-card bops-product-card anim-hidden" data-delay="0.15">
+            <div class="bops-product-badge fresh">Fresh Produce</div>
+            <div class="bops-product-icon-wrap">
+              <img src="icons/GIF/wheat.gif" alt="Fresh Organic Produce" class="bops-product-gif"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="bops-product-emoji-fallback">🥬</div>
+            </div>
+            <h3 class="bops-product-title">Fresh Organic Produce</h3>
+            <p class="bops-product-desc">Direct from certified farms to institutional buyers — with provenance you can
+              trace to the exact field.</p>
+            <ul class="bops-product-features">
+              <li><span class="bops-feat-dot"></span>Organic fruits &amp; vegetables</li>
+              <li><span class="bops-feat-dot"></span>Direct from certified farms</li>
+              <li><span class="bops-feat-dot"></span>Daily freshness guarantee</li>
+              <li><span class="bops-feat-dot"></span>Zero chemical residue policy</li>
+            </ul>
+            <div class="bops-product-crops">
+              <span class="bops-crop-chip">Leafy Greens</span>
+              <span class="bops-crop-chip">Seasonal Fruits</span>
+              <span class="bops-crop-chip">Exotic Vegetables</span>
+            </div>
+          </div>
+
+          <!-- Commodity & Grains -->
+          <div class="glass-card bops-product-card anim-hidden" data-delay="0.25">
+            <div class="bops-product-badge commodity">Commodities</div>
+            <div class="bops-product-icon-wrap">
+              <div class="bops-product-emoji-large">🌾</div>
+            </div>
+            <h3 class="bops-product-title">Commodity &amp; Grains</h3>
+            <p class="bops-product-desc">Bulk institutional supply of perishable and non-perishable commodities —
+              quality tested, graded, and traceable.</p>
+            <ul class="bops-product-features">
+              <li><span class="bops-feat-dot"></span>Paddy, wheat, pulses, oilseeds</li>
+              <li><span class="bops-feat-dot"></span>Bulk institutional supply</li>
+              <li><span class="bops-feat-dot"></span>Quality tested &amp; graded</li>
+              <li><span class="bops-feat-dot"></span>Pan-India sourcing network</li>
+            </ul>
+            <div class="bops-product-crops">
+              <span class="bops-crop-chip">Paddy</span>
+              <span class="bops-crop-chip">Wheat</span>
+              <span class="bops-crop-chip">Pulses</span>
+              <span class="bops-crop-chip">Oilseeds</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 3 — HOW WE PROCURE (BACKWARD INTEGRATION)
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section" id="procurement">
+      <div class="container">
+        <span class="section-label anim-hidden" data-delay="0">Backward Integration</span>
+        <h2 class="anim-hidden" data-delay="0.1">How we procure.<br><em>Directly from the source.</em></h2>
+
+        <div class="bops-procure-steps" id="procure-steps">
+
+          <div class="bops-procure-step glass-card anim-hidden" data-delay="0.1">
+            <div class="bops-step-number">01</div>
+            <div class="bops-step-body">
+              <h4 class="bops-step-title">Farmer Identification</h4>
+              <p class="bops-step-desc">Direct outreach to farmers, FPO partnerships, and soil quality assessment to
+                onboard the right partners.</p>
+            </div>
+          </div>
+
+          <div class="bops-procure-connector anim-hidden" data-delay="0.15">
+            <div class="bops-pc-line"></div>
+            <div class="bops-pc-dot"></div>
+          </div>
+
+          <div class="bops-procure-step glass-card anim-hidden" data-delay="0.2">
+            <div class="bops-step-number">02</div>
+            <div class="bops-step-body">
+              <h4 class="bops-step-title">Fair Price Commitment</h4>
+              <p class="bops-step-desc">Farmers receive <strong>15–20% above MSP</strong>. Loyalty built through
+                transparent, guaranteed pricing.</p>
+            </div>
+          </div>
+
+          <div class="bops-procure-connector anim-hidden" data-delay="0.25">
+            <div class="bops-pc-line"></div>
+            <div class="bops-pc-dot"></div>
+          </div>
+
+          <div class="bops-procure-step glass-card anim-hidden" data-delay="0.3">
+            <div class="bops-step-number">03</div>
+            <div class="bops-step-body">
+              <h4 class="bops-step-title">Soil Testing &amp; Optimisation</h4>
+              <p class="bops-step-desc">Kropbook's 3-minute IoT soil testing device helps farmers grow better crops — at
+                their doorstep.</p>
+            </div>
+          </div>
+
+          <div class="bops-procure-connector anim-hidden" data-delay="0.35">
+            <div class="bops-pc-line"></div>
+            <div class="bops-pc-dot"></div>
+          </div>
+
+          <div class="bops-procure-step glass-card anim-hidden" data-delay="0.4">
+            <div class="bops-step-number">04</div>
+            <div class="bops-step-body">
+              <h4 class="bops-step-title">Harvest &amp; Quality Check</h4>
+              <p class="bops-step-desc">On-site grading and quality control at farm level — before the produce leaves
+                the field.</p>
+            </div>
+          </div>
+
+          <div class="bops-procure-connector anim-hidden" data-delay="0.45">
+            <div class="bops-pc-line"></div>
+            <div class="bops-pc-dot"></div>
+          </div>
+
+          <div class="bops-procure-step glass-card anim-hidden" data-delay="0.5">
+            <div class="bops-step-number">05</div>
+            <div class="bops-step-body">
+              <h4 class="bops-step-title">Procurement &amp; Payment</h4>
+              <p class="bops-step-desc">Same-day payment on procurement. No middlemen. No 30-day credit cycles. Farmer
+                gets paid when produce is accepted.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Key procurement stat -->
+        <div class="bops-procure-stat anim-hidden" data-delay="0.3">
+          <div class="bops-stat-inner">
+            <div class="bops-stat-left">
+              <span class="bops-stat-icon">🌱</span>
+            </div>
+            <p class="bops-stat-text">
+              We source from
+              <strong><span data-counter data-target="800" data-suffix="+">800+</span> farmers</strong>
+              across Maharashtra &amp; Goa —
+              paying <strong>₹500+ Cr</strong> in fair prices annually.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 4 — HOW WE DISTRIBUTE (FORWARD INTEGRATION)
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="distribution">
+      <div class="container">
+        <span class="section-label anim-hidden" data-delay="0">Forward Integration</span>
+        <h2 class="anim-hidden" data-delay="0.1">How we distribute.<br><em>Every channel. Every city.</em></h2>
+
+        <!-- Distribution network -->
+        <div class="bops-distrib-hub anim-hidden" data-delay="0.2">
+          <div class="bops-hub-badge">
+            <span class="bops-hub-label">Mumbai &amp; Navi Mumbai Hub</span>
+            <span class="bops-hub-detail">50,000 sq ft · Processing &amp; Cold Storage</span>
+          </div>
+        </div>
+
+        <div class="bops-distrib-channels">
+
+          <div class="glass-card bops-channel-card anim-hidden" data-delay="0.15">
+            <div class="bops-channel-icon">⚡</div>
+            <div class="bops-channel-body">
+              <h4 class="bops-channel-title">Quick Commerce</h4>
+              <p class="bops-channel-desc">Swiggy Instamart, Zepto, Blinkit supply within a 4-hour SLA. Ultra-fresh,
+                ultra-fast.</p>
+              <div class="bops-channel-chips">
+                <span class="bops-ch-chip">Swiggy Instamart</span>
+                <span class="bops-ch-chip">Zepto</span>
+                <span class="bops-ch-chip">Blinkit</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card bops-channel-card anim-hidden" data-delay="0.2">
+            <div class="bops-channel-icon">🏛️</div>
+            <div class="bops-channel-body">
+              <h4 class="bops-channel-title">B2B Institutional</h4>
+              <p class="bops-channel-desc">Hotels, hospitals, restaurants, and corporate cafeterias. Bulk orders,
+                consistent quality, direct relationships.</p>
+              <div class="bops-channel-chips">
+                <span class="bops-ch-chip">Hotels</span>
+                <span class="bops-ch-chip">Hospitals</span>
+                <span class="bops-ch-chip">Corporate</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card bops-channel-card anim-hidden" data-delay="0.25">
+            <div class="bops-channel-icon">🏪</div>
+            <div class="bops-channel-body">
+              <h4 class="bops-channel-title">Modern Trade</h4>
+              <p class="bops-channel-desc">ITC, Metro Cash &amp; Carry, and Annapurna distribution — premium shelf space
+                for premium produce.</p>
+              <div class="bops-channel-chips">
+                <span class="bops-ch-chip">ITC</span>
+                <span class="bops-ch-chip">Metro C&amp;C</span>
+                <span class="bops-ch-chip">Annapurna</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card bops-channel-card anim-hidden" data-delay="0.3">
+            <div class="bops-channel-icon">🍽️</div>
+            <div class="bops-channel-body">
+              <h4 class="bops-channel-title">Dark Kitchen Supply</h4>
+              <p class="bops-channel-desc">Zomato HyperPure and cloud kitchen networks. The backbone of India's food
+                delivery revolution.</p>
+              <div class="bops-channel-chips">
+                <span class="bops-ch-chip">Zomato HyperPure</span>
+                <span class="bops-ch-chip">Cloud Kitchens</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Distribution stats -->
+        <div class="bops-distrib-stats">
+          <div class="glass-card bops-dist-stat-card anim-hidden" data-delay="0.1">
+            <div class="bops-dst-value" data-counter data-target="12" data-suffix=" Hours">12 Hours</div>
+            <div class="bops-dst-label">Farm to Shelf Delivery</div>
+          </div>
+          <div class="glass-card bops-dist-stat-card anim-hidden" data-delay="0.2">
+            <div class="bops-dst-value" data-counter data-target="99.2" data-decimals="1" data-suffix="%">99.2%</div>
+            <div class="bops-dst-label">Order Fulfillment Rate</div>
+          </div>
+          <div class="glass-card bops-dist-stat-card anim-hidden" data-delay="0.3">
+            <div class="bops-dst-value bops-dst-text">Zero<br>Waste</div>
+            <div class="bops-dst-label">Cold Chain Waste Target</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5 — FARMER LOYALTY ENGINE
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section" id="farmer-loyalty">
+      <div class="container">
+        <span class="section-label anim-hidden" data-delay="0">Farmer Retention</span>
+        <h2 class="anim-hidden" data-delay="0.1">The Farmer<br><em>Loyalty Engine.</em></h2>
+
+        <div class="bops-loyalty-layout">
+
+          <!-- Left: loyalty reasons -->
+          <div class="bops-loyalty-list">
+
+            <div class="bops-loyalty-item anim-left" data-delay="0.1">
+              <div class="bops-loyalty-num">01</div>
+              <div class="bops-loyalty-body">
+                <h4 class="bops-loyalty-title">Best Price Guarantee</h4>
+                <p class="bops-loyalty-desc">We match or beat any competitor. Farmers earn 15–20% above MSP — every
+                  single transaction.</p>
+              </div>
+            </div>
+
+            <div class="bops-loyalty-item anim-left" data-delay="0.18">
+              <div class="bops-loyalty-num">02</div>
+              <div class="bops-loyalty-body">
+                <h4 class="bops-loyalty-title">Immediate Payment</h4>
+                <p class="bops-loyalty-desc">No 30–60 day credit cycles. Farmers receive payment the same day produce is
+                  accepted.</p>
+              </div>
+            </div>
+
+            <div class="bops-loyalty-item anim-left" data-delay="0.26">
+              <div class="bops-loyalty-num">03</div>
+              <div class="bops-loyalty-body">
+                <h4 class="bops-loyalty-title">Soil Testing</h4>
+                <p class="bops-loyalty-desc">Kropbook's IoT device delivers 3-minute N-P-K results vs. 7-day Kjeldahl
+                  lab method — at no cost.</p>
+              </div>
+            </div>
+
+            <div class="bops-loyalty-item anim-left" data-delay="0.34">
+              <div class="bops-loyalty-num">04</div>
+              <div class="bops-loyalty-body">
+                <h4 class="bops-loyalty-title">Crop Advisory</h4>
+                <p class="bops-loyalty-desc">Data-driven guidance on what to grow next season — based on real-time
+                  market demand intelligence.</p>
+              </div>
+            </div>
+
+            <div class="bops-loyalty-item anim-left" data-delay="0.42">
+              <div class="bops-loyalty-num">05</div>
+              <div class="bops-loyalty-body">
+                <h4 class="bops-loyalty-title">Input Supply at Cost</h4>
+                <p class="bops-loyalty-desc">Seeds and fertilizers at cost price through the TropOrganic network —
+                  eliminating the local dealer margin.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right: quote card -->
+          <div class="bops-loyalty-quote anim-right" data-delay="0.2">
+            <div class="glass-card bops-quote-card">
+              <div class="bops-quote-mark">"</div>
+              <p class="bops-quote-text">Farmers who sell to us once, never leave. We've had <strong>0% farmer
+                  churn</strong> in 3 years.</p>
+              <div class="bops-quote-attr">
+                <span class="bops-quote-dash">—</span>
+                <span class="bops-quote-source">Kropbook Operations, Mumbai</span>
+              </div>
+            </div>
+            <!-- Loyalty metric -->
+            <div class="bops-loyalty-metric glass-card">
+              <div class="bops-lm-value">
+                <span data-counter data-target="0" data-suffix="%">0%</span>
+              </div>
+              <div class="bops-lm-label">Farmer Churn Rate</div>
+              <div class="bops-lm-sub">3-Year Track Record</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 6 — DISTRIBUTION & PROCUREMENT NETWORK
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="network">
+      <div class="container">
+        <span class="section-label anim-hidden" data-delay="0">Geographic Network</span>
+        <h2 class="anim-hidden" data-delay="0.1">Where we operate.<br><em>Where we're going.</em></h2>
+
+        <div class="grid-3 bops-network-grid">
+
+          <div class="glass-card bops-network-card anim-hidden" data-delay="0.1">
+            <div class="bops-net-state">Maharashtra</div>
+            <div class="bops-net-badge active">Primary Hub</div>
+            <p class="bops-net-desc">Our operational heartland. Three distinct sourcing zones delivering India's best.
+            </p>
+            <ul class="bops-net-list">
+              <li>
+                <span class="bops-net-region">Nashik</span>
+                <span class="bops-net-crops">Grapes, Onions</span>
+              </li>
+              <li>
+                <span class="bops-net-region">Pune</span>
+                <span class="bops-net-crops">Vegetables</span>
+              </li>
+              <li>
+                <span class="bops-net-region">Konkan</span>
+                <span class="bops-net-crops">Fruits</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card bops-network-card anim-hidden" data-delay="0.2">
+            <div class="bops-net-state">Goa</div>
+            <div class="bops-net-badge active">Active</div>
+            <p class="bops-net-desc">Coastal specialty sourcing for premium institutional buyers and hospitality chains.
+            </p>
+            <ul class="bops-net-list">
+              <li>
+                <span class="bops-net-region">North Goa</span>
+                <span class="bops-net-crops">Coastal Fruits</span>
+              </li>
+              <li>
+                <span class="bops-net-region">South Goa</span>
+                <span class="bops-net-crops">Spices</span>
+              </li>
+              <li>
+                <span class="bops-net-region">Mandovi Belt</span>
+                <span class="bops-net-crops">Specialty Produce</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card bops-network-card bops-network-card-expand anim-hidden" data-delay="0.3">
+            <div class="bops-net-state">Pan-India</div>
+            <div class="bops-net-badge expansion">Expansion</div>
+            <p class="bops-net-desc">Karnataka, Gujarat, and Rajasthan sourcing networks under active development.</p>
+            <ul class="bops-net-list">
+              <li>
+                <span class="bops-net-region">Karnataka</span>
+                <span class="bops-net-crops">Horticulture</span>
+              </li>
+              <li>
+                <span class="bops-net-region">Gujarat</span>
+                <span class="bops-net-crops">Oilseeds, Cotton</span>
+              </li>
+              <li>
+                <span class="bops-net-region">Rajasthan</span>
+                <span class="bops-net-crops">Mustard, Pulses</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 7 — SOIL TESTING ARM
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section bops-soil-section" id="soil-testing">
+      <div class="bops-soil-bg"></div>
+      <div class="container bops-soil-container">
+
+        <div class="bops-soil-header">
+          <span class="section-label anim-hidden" data-delay="0" style="color:rgba(232,200,74,0.85)">Patent Pending ·
+            IoT Device</span>
+          <h2 class="bops-soil-h2 anim-hidden" data-delay="0.1">The Hidden Weapon:<br><em>3-Minute Soil Testing.</em>
+          </h2>
+          <p class="bops-soil-intro anim-hidden" data-delay="0.2">
+            Kropbook has developed a patented IoT device that performs full soil N-P-K analysis in <strong>3
+              minutes</strong> — versus the 7-day Kjeldahl laboratory method. This device changes the economics of
+            Indian agriculture.
+          </p>
+        </div>
+
+        <div class="bops-soil-grid">
+
+          <div class="bops-soil-card anim-hidden" data-delay="0.15">
+            <div class="bops-soil-card-icon">🔬</div>
+            <h4 class="bops-soil-card-title">Real-Time Crop Optimisation</h4>
+            <p class="bops-soil-card-desc">Farmers receive actionable soil data in the field — enabling immediate input
+              decisions before the next season.</p>
+          </div>
+
+          <div class="bops-soil-card anim-hidden" data-delay="0.25">
+            <div class="bops-soil-card-icon">🏛️</div>
+            <h4 class="bops-soil-card-title">Government Contract Opportunity</h4>
+            <p class="bops-soil-card-desc">State and central agencies require mass soil health surveys. Our device
+              reduces cost and time by 10x.</p>
+          </div>
+
+          <div class="bops-soil-card anim-hidden" data-delay="0.35">
+            <div class="bops-soil-card-icon">📊</div>
+            <h4 class="bops-soil-card-title">Unmatched Data Advantage</h4>
+            <p class="bops-soil-card-desc">Every test adds to a proprietary national soil database — a strategic moat no
+              competitor can replicate.</p>
+          </div>
+
+        </div>
+
+        <div class="bops-soil-stat-block anim-hidden" data-delay="0.2">
+          <div class="bops-soil-stat-text">
+            <span class="bops-soil-stat-label">GOVERNMENT OPPORTUNITY</span>
+            <p class="bops-soil-stat-body">
+              Government of India spends <strong>₹3,800 Cr annually</strong> on soil testing.
+              Our device reduces the systemic cost to <strong>₹500 Cr</strong> — a <em>7.6x efficiency gain</em>.
+            </p>
+          </div>
+          <div class="bops-soil-patent">
+            <div class="bops-patent-badge">
+              <span class="bops-patent-icon">⚖️</span>
+              <div>
+                <div class="bops-patent-title">Patent Status</div>
+                <div class="bops-patent-status">Granted</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 8 — CTA
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section" id="cta">
+      <div class="container">
+        <div class="bops-cta-row">
+
+          <div class="callout-card bops-cta-card anim-hidden" data-delay="0.1">
+            <div class="bops-cta-inner">
+              <div class="bops-cta-text">
+                <span class="section-label" style="color:rgba(201,162,39,0.8)">Next: Capital</span>
+                <h3 class="bops-cta-h3">See Our Capital<br>Requirements.</h3>
+                <p class="bops-cta-sub">Funding structure, use of proceeds, and the path to institutional scale.</p>
+              </div>
+              <a href="funding.html" class="btn btn-primary bops-cta-btn">
+                See Our Capital Requirements
+                <span class="bops-cta-arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="bops-cta-card-secondary glass-card anim-hidden" data-delay="0.2">
+            <div class="bops-cta-inner">
+              <div class="bops-cta-text">
+                <span class="section-label" style="color: var(--accent-gold)">Also: Technology</span>
+                <h3 class="bops-cta-h3-alt">Explore Our<br>Technology Platform.</h3>
+                <p class="bops-cta-sub-alt">AgriOS, the intelligence layer connecting every node in the value chain.</p>
+              </div>
+              <a href="systems.html" class="bops-cta-btn-alt">
+                Explore Technology Platform
+                <span class="bops-cta-arrow-alt">→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/business-operations.js"></script>
+
+</body>
+
+</html>

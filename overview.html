@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overview | Kropbook Agritech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/overview.css">
+  <script src="js/effects.js"></script>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+    <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
+    <feComponentTransfer in="turbulence" result="mapped">
+      <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5"/>
+      <feFuncG type="gamma" amplitude="0" exponent="1" offset="0"/>
+      <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5"/>
+    </feComponentTransfer>
+    <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap"/>
+    <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lightingColor="white" result="specLight">
+      <fePointLight x="-200" y="-200" z="300"/>
+    </feSpecularLighting>
+    <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage"/>
+    <feDisplacementMap in="SourceGraphic" in2="softMap" scale="200" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+  <div id="scroll-progress"></div>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 1 · HERO
+    ══════════════════════════════════════════════════════════ -->
+    <section class="hero-section" id="hero" style="position:relative;overflow:hidden;">
+
+      <!-- Wave sphere canvas — fills hero, scroll-animated via JS -->
+      <canvas id="wave-sphere" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.6;"></canvas>
+
+      <!-- Background layers -->
+      <div class="hero-bg-gradient"></div>
+      <div class="bg-grid"></div>
+
+      <!-- Floating decorative shapes -->
+      <div class="floating-shape hero-shape-1" data-opacity="0.07"
+           style="--rot:12deg; animation-delay:0s; animation-duration:14s;"></div>
+      <div class="floating-shape hero-shape-2" data-opacity="0.05"
+           style="--rot:-15deg; animation-delay:2s; animation-duration:18s;"></div>
+      <div class="floating-shape hero-shape-3" data-opacity="0.06"
+           style="--rot:-8deg; animation-delay:1s; animation-duration:16s;"></div>
+      <div class="floating-shape hero-shape-4" data-opacity="0.08"
+           style="--rot:20deg; animation-delay:3s; animation-duration:12s;"></div>
+
+      <!-- Hero content -->
+      <div class="hero-content">
+
+        <div class="hero-badge-wrap"
+             style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.1s;">
+          <div class="confidential-badge">
+            <span class="dot"></span>
+            Institutional Briefing &middot; 2026 &middot; Confidential
+          </div>
+        </div>
+
+        <div class="hero-logo-wrap"
+             style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.3s;">
+          <img src="images/kblogo.png" alt="Kropbook Agritech" width="56" height="56"
+               class="hero-logo-img">
+        </div>
+
+        <h1 class="hero-wordmark font-display"
+            style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.45s;">
+          KROPBOOK
+        </h1>
+
+        <p class="hero-company-name"
+           style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.55s;">
+          Agritech Private Limited
+        </p>
+
+        <div class="hero-headline-wrap"
+             style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.7s;">
+          <h2 class="hero-headline-main font-display">The Operating System</h2>
+          <h2 class="hero-headline-gold font-display text-gold-gradient">of the Global Food Economy</h2>
+        </div>
+
+        <p class="hero-tagline"
+           style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.85s;">
+          Built in India. Designed for the Planet.
+        </p>
+
+        <!-- Morphing intelligence layer text -->
+        <div class="hero-morphing-wrap"
+             style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:1s;">
+          <span class="hero-morphing-label">Currently powering:</span>
+          <span class="hero-morphing-text" id="morphing-text">Intelligence Layer</span>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero-scroll-indicator"
+             style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:1.2s;">
+          <div class="scroll-arrow-line"></div>
+          <span class="scroll-arrow-icon">&#8595;</span>
+          <span class="scroll-label">Scroll to explore</span>
+        </div>
+
+      </div>
+
+      <!-- Bottom fade to white -->
+      <div class="hero-bottom-fade"></div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 2 · KEY METRICS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section metrics-section" id="metrics">
+      <div class="container">
+
+        <div class="section-header anim-hidden" data-delay="0">
+          <div class="section-label">01 &middot; Performance</div>
+          <h2 class="metrics-heading">Three years of verified growth.</h2>
+          <p class="metrics-subheading text-muted">Every figure audited. Every number real.</p>
+        </div>
+
+        <div class="grid-4 metrics-grid">
+
+          <article class="metric-card anim-hidden" data-delay="0.1">
+            <div class="metric-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <div class="metric-label">Revenue FY 2024&ndash;25</div>
+            <div class="metric-value">
+              <span data-counter data-target="59.18" data-decimals="2" data-prefix="&#8377;" data-suffix=" Cr">&#8377;59.18 Cr</span>
+            </div>
+            <div class="metric-note">+112% YoY</div>
+          </article>
+
+          <article class="metric-card anim-hidden" data-delay="0.2">
+            <div class="metric-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="metric-label">Net Profit FY 2024&ndash;25</div>
+            <div class="metric-value">
+              <span data-counter data-target="7.80" data-decimals="2" data-prefix="&#8377;" data-suffix=" Cr">&#8377;7.80 Cr</span>
+            </div>
+            <div class="metric-note">13.2% Net Margin</div>
+          </article>
+
+          <article class="metric-card anim-hidden" data-delay="0.3">
+            <div class="metric-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="metric-label">Total Assets FY 2024&ndash;25</div>
+            <div class="metric-value">
+              <span data-counter data-target="16.87" data-decimals="2" data-prefix="&#8377;" data-suffix=" Cr">&#8377;16.87 Cr</span>
+            </div>
+            <div class="metric-note">+196% YoY</div>
+          </article>
+
+          <article class="metric-card anim-hidden" data-delay="0.4">
+            <div class="metric-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 2L11 13"></path>
+                <path d="M22 2L15 22 11 13 2 9l20-7z"></path>
+              </svg>
+            </div>
+            <div class="metric-label">YoY Revenue Growth</div>
+            <div class="metric-value metric-value-gold">
+              <span data-counter data-target="112" data-decimals="0" data-prefix="+" data-suffix="%">+112%</span>
+            </div>
+            <div class="metric-note">Sustained growth</div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 3 · NOT AN AGRITECH
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt identity-section" id="identity">
+      <div class="container">
+        <div class="grid-2 identity-grid">
+
+          <div class="identity-left anim-left" data-delay="0">
+            <div class="section-label">01 &middot; Identity</div>
+            <h2 class="identity-heading">Not an agritech<br>company.</h2>
+            <p class="identity-subheading text-muted">
+              The distinction matters enormously to how you value it.
+            </p>
+            <div class="identity-accent-bar"></div>
+          </div>
+
+          <div class="identity-right anim-right" data-delay="0.15">
+            <p class="identity-para">
+              Kropbook is the operating system of the agricultural economy — a layered infrastructure
+              platform that creates data where none existed, builds the rails along which food and
+              money move, and generates intelligence that neither farmers nor institutions have
+              ever possessed.
+            </p>
+            <p class="identity-para">
+              Eight billion people depend on the global food system, yet every participant in
+              that system — farmer, aggregator, processor, retailer — operates with incomplete
+              information and misaligned incentives. No platform has ever attempted to resolve
+              that at infrastructure depth.
+            </p>
+            <p class="identity-para identity-para-gold">
+              Kropbook is building that layer. From India, where the problem is hardest.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 4 · THE PALANTIR PARALLEL
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section palantir-section" id="palantir">
+      <div class="container">
+        <div class="palantir-inner">
+
+          <div class="section-header-center anim-hidden" data-delay="0">
+            <div class="section-label">01 &middot; Positioning</div>
+            <h2 class="palantir-heading">The right comparison<br>is Palantir.</h2>
+            <p class="palantir-subheading text-muted">
+              But Kropbook operates at greater depth.
+            </p>
+          </div>
+
+          <div class="glass-card palantir-card anim-hidden" data-delay="0.2">
+            <div class="palantir-compare-grid">
+
+              <div class="palantir-col palantir-col-left">
+                <div class="palantir-col-label font-mono-custom">Palantir</div>
+                <div class="palantir-depth">1 layer deep</div>
+                <p class="palantir-desc">
+                  Data understanding for institutions that already possess data. Powerful analytics
+                  and decision intelligence — but built on data someone else created.
+                </p>
+                <ul class="palantir-list">
+                  <li>Analyzes existing enterprise data</li>
+                  <li>Connects siloed information systems</li>
+                  <li>Intelligence layer only</li>
+                </ul>
+              </div>
+
+              <div class="palantir-divider">
+                <div class="palantir-vs">vs</div>
+              </div>
+
+              <div class="palantir-col palantir-col-right">
+                <div class="palantir-col-label font-mono-custom palantir-label-gold">Kropbook</div>
+                <div class="palantir-depth palantir-depth-gold text-gold-gradient">4 layers deep</div>
+                <p class="palantir-desc">
+                  Creates the data, builds the rails, establishes the trust, generates
+                  the intelligence — across an economy that had none of these before.
+                </p>
+                <ul class="palantir-list palantir-list-gold">
+                  <li>Creates primary agricultural data</li>
+                  <li>Builds physical + financial rails</li>
+                  <li>Owns the full intelligence stack</li>
+                  <li>Network effects at every layer</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <blockquote class="palantir-quote anim-hidden" data-delay="0.35">
+            <p>"Every new farmer enriches the data. Every new buyer strengthens the rail.
+            The gap widens every day."</p>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5 · 4-LAYER MOAT
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt moat-section" id="moat">
+      <div class="container">
+
+        <div class="section-header anim-hidden" data-delay="0">
+          <div class="section-label">01 &middot; Architecture</div>
+          <h2 class="moat-heading">The self-reinforcing moat.</h2>
+          <p class="moat-subheading text-muted">
+            Four interlocking layers that compound in value every day the platform operates.
+          </p>
+        </div>
+
+        <div class="moat-layers">
+
+          <article class="moat-layer-card glass-card anim-hidden" data-delay="0.1">
+            <div class="moat-layer-content moat-border-green-dark">
+              <div class="moat-layer-header">
+                <span class="moat-layer-num font-mono-custom">Layer 01</span>
+                <h3 class="moat-layer-title">Physical Sensing</h3>
+              </div>
+              <p class="moat-layer-desc">
+                The foundation no competitor can replicate overnight. Proprietary hardware at
+                the farm gate captures soil chemistry, residue levels, and crop quality at
+                the point of harvest — creating a primary data corpus that did not exist before.
+              </p>
+              <div class="moat-layer-tags">
+                <span class="moat-tag">Instant soil analysis</span>
+                <span class="moat-tag">Farm-gate residue detection</span>
+                <span class="moat-tag">Proprietary hardware</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="moat-layer-card glass-card anim-hidden" data-delay="0.2">
+            <div class="moat-layer-content moat-border-green-mid">
+              <div class="moat-layer-header">
+                <span class="moat-layer-num font-mono-custom">Layer 02</span>
+                <h3 class="moat-layer-title">Supply Chain</h3>
+              </div>
+              <p class="moat-layer-desc">
+                End-to-end integration from farm aggregation through quality certification to
+                institutional delivery. Kropbook holds the relationship with both ends of the
+                supply chain simultaneously — a structural position that took six years to build.
+              </p>
+              <div class="moat-layer-tags">
+                <span class="moat-tag">End-to-end integration</span>
+                <span class="moat-tag">Quality certification</span>
+                <span class="moat-tag">Institutional delivery</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="moat-layer-card glass-card anim-hidden" data-delay="0.3">
+            <div class="moat-layer-content moat-border-gold">
+              <div class="moat-layer-header">
+                <span class="moat-layer-num font-mono-custom">Layer 03</span>
+                <h3 class="moat-layer-title">Financial Rails</h3>
+              </div>
+              <p class="moat-layer-desc">
+                Farmers without formal credit histories become financially visible for the first
+                time. Kropbook's transaction history, delivery compliance records, and quality
+                data create an entirely new class of agricultural credit infrastructure.
+              </p>
+              <div class="moat-layer-tags">
+                <span class="moat-tag moat-tag-gold">Payment facilitation</span>
+                <span class="moat-tag moat-tag-gold">Farmer financial identity</span>
+                <span class="moat-tag moat-tag-gold">Credit data infrastructure</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="moat-layer-card glass-card anim-hidden" data-delay="0.4">
+            <div class="moat-layer-content moat-border-gold">
+              <div class="moat-layer-header">
+                <span class="moat-layer-num font-mono-custom">Layer 04</span>
+                <h3 class="moat-layer-title">Intelligence</h3>
+              </div>
+              <p class="moat-layer-desc">
+                The data from three layers beneath — soil chemistry, transaction flows, quality
+                certifications, compliance records — feeds the AgriOS intelligence platform.
+                Policy intelligence. Global subscriptions. Insights no one else can produce.
+              </p>
+              <div class="moat-layer-tags">
+                <span class="moat-tag moat-tag-gold">AgriOS platform</span>
+                <span class="moat-tag moat-tag-gold">Policy intelligence</span>
+                <span class="moat-tag moat-tag-gold">Global subscriptions</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="moat-footer-note anim-hidden" data-delay="0.5">
+          Each layer makes the others more defensible. Competitors cannot catch up because
+          the gap widens every day the platform operates.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 6 · KEY ACHIEVEMENTS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section achievements-section" id="achievements">
+      <div class="container">
+
+        <div class="section-header anim-hidden" data-delay="0">
+          <div class="section-label">01 &middot; Validation</div>
+          <h2 class="achievements-heading">Earned, not claimed.</h2>
+          <p class="achievements-subheading text-muted">
+            Each of these would define a company. Kropbook has all three.
+          </p>
+        </div>
+
+        <div class="grid-3 achievements-grid">
+
+          <article class="glass-card achievement-card anim-hidden border-beam-wrap" data-delay="0.1">
+            <div class="achievement-icon-wrap">
+              <div class="achievement-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"></path>
+                  <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"></path>
+                  <path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"></path>
+                  <path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"></path>
+                  <path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"></path>
+                  <path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"></path>
+                  <path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"></path>
+                  <path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="achievement-title">Patent Upheld vs US DoD</h3>
+            <p class="achievement-body">
+              The United States Department of Defense challenged Kropbook's patent. Kropbook
+              won. Scientific originality confirmed by international adjudication — the kind
+              of validation that cannot be purchased, only earned.
+            </p>
+            <div class="achievement-badge badge badge-green">Legally Validated</div>
+          </article>
+
+          <article class="glass-card achievement-card anim-hidden border-beam-wrap" data-delay="0.2">
+            <div class="achievement-icon-wrap">
+              <div class="achievement-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  <polyline points="16 7 22 7 22 13"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="achievement-title">110% Sustained YoY Growth</h3>
+            <p class="achievement-body">
+              Through a global pandemic, patent litigation, and market cycles — not a single
+              year of contraction since founding in 2018. Compounding revenue growth is the
+              most honest signal of genuine product-market fit.
+            </p>
+            <div class="achievement-badge badge badge-green">8 Years Unbroken</div>
+          </article>
+
+          <article class="glass-card achievement-card anim-hidden border-beam-wrap" data-delay="0.3">
+            <div class="achievement-icon-wrap">
+              <div class="achievement-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="achievement-title">Institutional Buyers Since Day One</h3>
+            <p class="achievement-body">
+              ITC, Metro (Reliance), Annapurna (Adani), Zomato HyperPure, Swiggy. India's
+              most demanding buyers chose Kropbook from inception — not as a pilot, but as
+              a core supply chain partner.
+            </p>
+            <div class="achievement-badge badge badge-gold">India's Largest Buyers</div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 7 · NAVIGATION GRID
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt nav-grid-section" id="navigate">
+      <div class="container">
+
+        <div class="section-header anim-hidden" data-delay="0">
+          <div class="section-label">01 &middot; Navigate</div>
+          <h2 class="nav-grid-heading">Explore the briefing.</h2>
+          <p class="nav-grid-subheading text-muted">
+            Each section is a complete dossier. Navigate to any chapter below.
+          </p>
+        </div>
+
+        <nav class="nav-cards-grid" aria-label="Section navigation">
+
+          <a href="founder.html" class="nav-card glass-card anim-hidden" data-delay="0.05">
+            <span class="nav-card-num font-mono-custom">02</span>
+            <div class="nav-card-body">
+              <h3 class="nav-card-title">Founder</h3>
+              <p class="nav-card-desc">The people who built it</p>
+            </div>
+            <span class="nav-card-arrow">View &rarr;</span>
+          </a>
+
+          <a href="kropbook.html" class="nav-card glass-card anim-hidden" data-delay="0.1">
+            <span class="nav-card-num font-mono-custom">03</span>
+            <div class="nav-card-body">
+              <h3 class="nav-card-title">KropBook</h3>
+              <p class="nav-card-desc">The technology &amp; data layer</p>
+            </div>
+            <span class="nav-card-arrow">View &rarr;</span>
+          </a>
+
+          <a href="team.html" class="nav-card glass-card anim-hidden" data-delay="0.15">
+            <span class="nav-card-num font-mono-custom">04</span>
+            <div class="nav-card-body">
+              <h3 class="nav-card-title">Team</h3>
+              <p class="nav-card-desc">Full organizational architecture</p>
+            </div>
+            <span class="nav-card-arrow">View &rarr;</span>
+          </a>
+
+          <a href="systems.html" class="nav-card glass-card anim-hidden" data-delay="0.2">
+            <span class="nav-card-num font-mono-custom">05</span>
+            <div class="nav-card-body">
+              <h3 class="nav-card-title">Systems</h3>
+              <p class="nav-card-desc">AgriOS platform &amp; rails</p>
+            </div>
+            <span class="nav-card-arrow">View &rarr;</span>
+          </a>
+
+          <a href="finance.html" class="nav-card glass-card anim-hidden" data-delay="0.25">
+            <span class="nav-card-num font-mono-custom">06</span>
+            <div class="nav-card-body">
+              <h3 class="nav-card-title">Finance</h3>
+              <p class="nav-card-desc">3-year audited financials</p>
+            </div>
+            <span class="nav-card-arrow">View &rarr;</span>
+          </a>
+
+          <a href="governance.html" class="nav-card glass-card anim-hidden" data-delay="0.3">
+            <span class="nav-card-num font-mono-custom">07</span>
+            <div class="nav-card-body">
+              <h3 class="nav-card-title">Governance</h3>
+              <p class="nav-card-desc">Legal, compliance &amp; certificates</p>
+            </div>
+            <span class="nav-card-arrow">View &rarr;</span>
+          </a>
+
+          <a href="clients.html" class="nav-card glass-card anim-hidden" data-delay="0.35">
+            <span class="nav-card-num font-mono-custom">08</span>
+            <div class="nav-card-body">
+              <h3 class="nav-card-title">Clients</h3>
+              <p class="nav-card-desc">ITC, Metro, Zomato, Swiggy</p>
+            </div>
+            <span class="nav-card-arrow">View &rarr;</span>
+          </a>
+
+          <a href="strategic-qa.html" class="nav-card glass-card anim-hidden" data-delay="0.4">
+            <span class="nav-card-num font-mono-custom">09</span>
+            <div class="nav-card-body">
+              <h3 class="nav-card-title">Q&amp;A</h3>
+              <p class="nav-card-desc">Hard questions, direct answers</p>
+            </div>
+            <span class="nav-card-arrow">View &rarr;</span>
+          </a>
+
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 8 · KEY DOCUMENTS — PATENT & INCORPORATION
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="key-documents">
+      <div class="container">
+
+        <div class="section-header anim-hidden" data-delay="0">
+          <div class="section-label">01 &middot; Core Documents</div>
+          <h2 class="font-display">Verified. Filed. Legally upheld.</h2>
+          <p class="text-muted" style="max-width:560px;font-size:1rem;line-height:1.7;">
+            Our patent and incorporation certificate — open for review. No clicks required.
+          </p>
+        </div>
+
+        <!-- Patent Document — Embedded Open -->
+        <div class="anim-hidden" data-delay="0.1" style="margin-bottom:2.5rem;border-radius:18px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+          <div style="background:var(--bg-secondary);padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;">
+            <div style="display:flex;align-items:center;gap:0.875rem;">
+              <div style="width:44px;height:44px;border-radius:10px;background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <img src="icons/GIF/patent IP Protection.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+              </div>
+              <div>
+                <div style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;">Intellectual Property</div>
+                <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-top:0.1rem;">Kropbook Patent Application</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <span style="background:rgba(201,162,39,0.1);border:1px solid rgba(201,162,39,0.25);color:var(--accent-gold);font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.625rem;border-radius:100px;letter-spacing:0.1em;">FILED &middot; PENDING APPROVAL</span>
+              <a href="documents/Kropbook Patient.pdf" download style="background:var(--brand-green);color:#fff;font-size:0.7rem;font-family:'JetBrains Mono',monospace;padding:0.35rem 0.875rem;border-radius:100px;text-decoration:none;letter-spacing:0.06em;">&#8595; Download</a>
+            </div>
+          </div>
+          <iframe src="documents/Kropbook Patient.pdf" style="width:100%;height:82vh;border:none;display:block;background:#f5f5f0;" title="Kropbook Patent Application" loading="lazy"></iframe>
+        </div>
+
+        <!-- Certificate of Incorporation — Embedded Open -->
+        <div class="anim-hidden" data-delay="0.2" style="border-radius:18px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+          <div style="background:var(--bg-secondary);padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;">
+            <div style="display:flex;align-items:center;gap:0.875rem;">
+              <div style="width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <img src="icons/GIF/legal.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+              </div>
+              <div>
+                <div style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;">Company KYC &middot; MCA</div>
+                <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-top:0.1rem;">Certificate of Incorporation</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <span style="background:rgba(27,77,62,0.08);border:1px solid rgba(27,77,62,0.15);color:var(--brand-green);font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.625rem;border-radius:100px;letter-spacing:0.1em;">ACTIVE &middot; ROC VERIFIED</span>
+              <a href="documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf" download style="background:var(--brand-green);color:#fff;font-size:0.7rem;font-family:'JetBrains Mono',monospace;padding:0.35rem 0.875rem;border-radius:100px;text-decoration:none;letter-spacing:0.06em;">&#8595; Download</a>
+            </div>
+          </div>
+          <iframe src="documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf" style="width:100%;height:70vh;border:none;display:block;background:#f5f5f0;" title="Certificate of Incorporation" loading="lazy"></iframe>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/overview.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160/build/three.min.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      if (typeof initWaveSphere === 'function') initWaveSphere('wave-sphere');
+    });
+  </script>
+
+</body>
+</html>

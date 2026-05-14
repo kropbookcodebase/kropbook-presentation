@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documents | Kropbook Agritech</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/financial-statements.css">
+  <script src="js/effects.js"></script>
+</head>
+
+<body>
+
+  <!-- SVG Glass Filter -->
+  <svg width="0" height="0" style="position:absolute;overflow:hidden;" aria-hidden="true">
+    <defs>
+      <filter id="glass-blur" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+        <feColorMatrix in="blur" type="saturate" values="1.8" result="saturated" />
+        <feComposite in="saturated" in2="SourceGraphic" operator="over" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div id="scroll-progress"></div>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 1 · HERO — DOCUMENT CENTRE
+    ══════════════════════════════════════════════════════════ -->
+    <section class="fs-hero" id="hero">
+
+      <div class="fs-hero-bg-gradient"></div>
+      <div class="bg-grid"></div>
+
+      <div class="floating-shape fs-shape-1" data-opacity="0.05"
+        style="--rot:6deg; animation-delay:0s; animation-duration:16s;"></div>
+      <div class="floating-shape fs-shape-2" data-opacity="0.04"
+        style="--rot:-14deg; animation-delay:2s; animation-duration:20s;"></div>
+      <div class="floating-shape fs-shape-3" data-opacity="0.06"
+        style="--rot:20deg; animation-delay:4s; animation-duration:14s;"></div>
+
+      <div class="fs-hero-content">
+
+        <div class="fs-hero-badge-wrap" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.1s;">
+          <div class="confidential-badge">
+            <span class="dot"></span>
+            Institutional Briefing &middot; 2026 &middot; Document Centre
+          </div>
+        </div>
+
+        <div style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.25s;">
+          <div class="section-label">11 &middot; Documents</div>
+        </div>
+
+        <h1 class="font-display fs-hero-h1"
+          style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.4s;">
+          Document Centre.
+        </h1>
+
+        <h2 class="font-display fs-hero-h2 text-gold-gradient"
+          style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.55s;">
+          Every certificate. Every statement. Every patent.
+        </h2>
+
+        <!-- Quick stats -->
+        <div class="fs-hero-stats" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.85s;">
+          <div class="fs-stat-item">
+            <span class="fs-stat-value">5</span>
+            <span class="fs-stat-label">Document Sections</span>
+          </div>
+          <div class="fs-stat-divider"></div>
+          <div class="fs-stat-item">
+            <span class="fs-stat-value">13</span>
+            <span class="fs-stat-label">Documents</span>
+          </div>
+          <div class="fs-stat-divider"></div>
+          <div class="fs-stat-item">
+            <span class="fs-stat-value">All</span>
+            <span class="fs-stat-label">Verified &amp; Active</span>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="fs-scroll-indicator" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:1.0s;">
+          <div class="scroll-arrow-line"></div>
+          <span class="scroll-arrow-icon">&#8595;</span>
+          <span class="scroll-label">Scroll to explore</span>
+        </div>
+
+      </div>
+
+      <div class="fs-hero-bottom-fade"></div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION A · DPIIT CERTIFICATIONS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="dpiit-certifications">
+      <div class="container">
+
+        <div class="section-header anim-hidden" data-delay="0">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+            <div style="width:56px;height:56px;border-radius:12px;background:rgba(201,162,39,0.07);border:1px solid rgba(201,162,39,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <img src="icons/GIF/Certificate DIPP53655_KROPBOOK.gif" alt="" style="width:38px;height:38px;object-fit:contain;">
+            </div>
+            <div>
+              <div class="section-label">A &middot; DPIIT Certifications</div>
+            </div>
+          </div>
+          <h2>Government Recognition.</h2>
+          <p class="text-muted fs-section-subtext">
+            Official government recognition — startup status, tax exemptions, and regulatory approvals.
+          </p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;" class="anim-hidden" data-delay="0.1">
+
+          <!-- DPIIT Certificate -->
+          <div class="doc-card glass-card fs-doc-card-new"
+            onclick="openPdfModal('documents/DIPP53655_KROPBOOK.pdf', 'DIPP Startup India Certificate')" role="button"
+            tabindex="0" aria-label="View DIPP Startup India Certificate">
+            <div class="doc-card-icon" style="background:rgba(201,162,39,0.07);border:1px solid rgba(201,162,39,0.18);">
+              <img src="icons/GIF/Certificate DIPP53655_KROPBOOK.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            </div>
+            <div class="doc-card-body">
+              <div class="doc-card-category">Startup India &middot; DPIIT</div>
+              <h4 class="doc-card-title">DIPP53655 · KROPBOOK</h4>
+              <p class="doc-card-meta">Department for Promotion of Industry &amp; Internal Trade &middot; GOI</p>
+              <div class="doc-card-badges">
+                <span class="fs-cert-badge fs-cert-active">Active</span>
+                <span class="fs-doc-year">DIPP53655</span>
+              </div>
+              <span class="doc-card-action">View Document &#8599;</span>
+            </div>
+          </div>
+
+          <!-- 80-IAC Certificate -->
+          <div class="doc-card glass-card fs-doc-card-new"
+            onclick="openPdfModal('documents/Kropbook-section-80-iac.pdf', '80-IAC Tax Exemption Certificate')"
+            role="button" tabindex="0" aria-label="View 80-IAC Tax Exemption Certificate">
+            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
+              <img src="icons/GIF/certificate.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            </div>
+            <div class="doc-card-body">
+              <div class="doc-card-category">Income Tax &middot; Section 80-IAC</div>
+              <h4 class="doc-card-title">80-IAC Tax Exemption</h4>
+              <p class="doc-card-meta">Income Tax Act &middot; Eligible Startup &middot; Tax Benefits Confirmed</p>
+              <div class="doc-card-badges">
+                <span class="fs-cert-badge fs-cert-active">Recognised</span>
+                <span class="fs-doc-year">80-IAC</span>
+              </div>
+              <span class="doc-card-action">View Document &#8599;</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION B · COMPANY KYC
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section" id="company-kyc">
+      <div class="container">
+
+        <div class="section-header anim-hidden" data-delay="0">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+            <div style="width:56px;height:56px;border-radius:12px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <img src="icons/GIF/legal.gif" alt="" style="width:38px;height:38px;object-fit:contain;">
+            </div>
+            <div>
+              <div class="section-label">B &middot; Company KYC</div>
+            </div>
+          </div>
+          <h2>Company Identity Documents.</h2>
+          <p class="text-muted fs-section-subtext">
+            Certificate of incorporation, GST registration, and official company registration documents.
+          </p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;" class="anim-hidden" data-delay="0.1">
+
+          <!-- Certificate of Incorporation -->
+          <div class="doc-card glass-card fs-doc-card-new"
+            onclick="openPdfModal('documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf', 'Certificate of Incorporation — Kropbook Agritech')"
+            role="button" tabindex="0" aria-label="View Certificate of Incorporation">
+            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
+              <img src="icons/GIF/legal.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            </div>
+            <div class="doc-card-body">
+              <div class="doc-card-category">Company Incorporation &middot; MCA</div>
+              <h4 class="doc-card-title">Certificate of Incorporation</h4>
+              <p class="doc-card-meta">Ministry of Corporate Affairs &middot; CIN: U01100PN2018PTC180049</p>
+              <div class="doc-card-badges">
+                <span class="fs-cert-badge fs-cert-active">Active</span>
+                <span class="fs-doc-year">Incorporated 2018</span>
+              </div>
+              <span class="doc-card-action">View Document &#8599;</span>
+            </div>
+          </div>
+
+          <!-- GST Registration -->
+          <div class="doc-card glass-card fs-doc-card-new"
+            onclick="openPdfModal('documents/Kropbook-gst.pdf', 'GST Registration Certificate')" role="button"
+            tabindex="0" aria-label="View GST Registration Certificate">
+            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
+              <img src="icons/GIF/tax.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            </div>
+            <div class="doc-card-body">
+              <div class="doc-card-category">Tax Registration &middot; GST</div>
+              <h4 class="doc-card-title">GST Registration Certificate</h4>
+              <p class="doc-card-meta">GST Authority &middot; Goods &amp; Services Tax &middot; Active Registration</p>
+              <div class="doc-card-badges">
+                <span class="fs-cert-badge fs-cert-active">Verified</span>
+                <span class="fs-doc-year">GST Active</span>
+              </div>
+              <span class="doc-card-action">View Document &#8599;</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION C · FINANCIAL STATEMENTS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="audited-financials">
+      <div class="container">
+
+        <div class="section-header anim-hidden" data-delay="0">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+            <div style="width:56px;height:56px;border-radius:12px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <img src="icons/GIF/Financial Rails.gif" alt="" style="width:38px;height:38px;object-fit:contain;">
+            </div>
+            <div>
+              <div class="section-label">C &middot; Financial Statements</div>
+            </div>
+          </div>
+          <h2>Audited Financials.</h2>
+          <p class="text-muted fs-section-subtext">
+            Three years of independently audited financial statements prepared under Indian GAAP.
+            Auditor: Akshay M Jhawar &amp; Associates, Pune (FRN: 150528W).
+          </p>
+        </div>
+
+        <!-- 3 audited years -->
+        <div class="grid-3 fs-doc-grid anim-hidden" data-delay="0.1">
+
+          <!-- FY 2022-23 -->
+          <div class="doc-card glass-card fs-doc-card-new"
+            onclick="openPdfModal('documents/KB FY 2022-23.pdf', 'FY 2022-23 Financial Statement')" role="button"
+            tabindex="0" aria-label="View FY 2022-23 Financial Statement">
+            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
+              <img src="icons/GIF/document-calculator.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            </div>
+            <div class="doc-card-body">
+              <div class="doc-card-category">Annual Report &middot; Audited</div>
+              <h4 class="doc-card-title">FY 2022-23 Financials</h4>
+              <p class="doc-card-meta">Audited &middot; Kropbook Agritech Pvt Ltd &middot; Indian GAAP</p>
+              <div class="doc-card-badges">
+                <span class="fs-doc-badge">Audited</span>
+                <span class="fs-doc-year">FY 2022-23</span>
+              </div>
+              <span class="doc-card-action">View Document &#8599;</span>
+            </div>
+          </div>
+
+          <!-- FY 2023-24 -->
+          <div class="doc-card glass-card fs-doc-card-new"
+            onclick="openPdfModal('documents/KB FY 2023-24.pdf', 'FY 2023-24 Financial Statement')" role="button"
+            tabindex="0" aria-label="View FY 2023-24 Financial Statement">
+            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
+              <img src="icons/GIF/document-calculator.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            </div>
+            <div class="doc-card-body">
+              <div class="doc-card-category">Annual Report &middot; Audited</div>
+              <h4 class="doc-card-title">FY 2023-24 Financials</h4>
+              <p class="doc-card-meta">Audited &middot; Kropbook Agritech Pvt Ltd &middot; Indian GAAP</p>
+              <div class="doc-card-badges">
+                <span class="fs-doc-badge">Audited</span>
+                <span class="fs-doc-year">FY 2023-24</span>
+              </div>
+              <span class="doc-card-action">View Document &#8599;</span>
+            </div>
+          </div>
+
+          <!-- FY 2024-25 -->
+          <div class="doc-card glass-card fs-doc-card-new"
+            onclick="openPdfModal('documents/KB FY 2024-25.pdf', 'FY 2024-25 Financial Statement')" role="button"
+            tabindex="0" aria-label="View FY 2024-25 Financial Statement">
+            <div class="doc-card-icon" style="background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);">
+              <img src="icons/GIF/Financial Rails.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            </div>
+            <div class="doc-card-body">
+              <div class="doc-card-category">Annual Report &middot; Latest Audited</div>
+              <h4 class="doc-card-title">FY 2024-25 Financials</h4>
+              <p class="doc-card-meta">&#8377;59.18 Cr Revenue &middot; +112% YoY &middot; &#8377;7.80 Cr Net Profit</p>
+              <div class="doc-card-badges">
+                <span class="fs-doc-badge fs-doc-badge-latest">Latest Audited</span>
+                <span class="fs-doc-year">FY 2024-25</span>
+              </div>
+              <span class="doc-card-action">View Document &#8599;</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FY 2025-26 Provisional — full-width -->
+        <div class="fs-provisional-wrap anim-hidden" data-delay="0.2">
+          <div class="doc-card fs-doc-card-provisional glass-card"
+            onclick="openPdfModal('documents/08_KROPBOOK Provisionals.pdf', 'FY 2025-26 Provisional Financial Statement')"
+            role="button" tabindex="0" aria-label="View FY 2025-26 Provisional Financial Statement">
+            <div class="doc-card-icon fs-provisional-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
+              <img src="icons/GIF/presentation.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            </div>
+            <div class="doc-card-body">
+              <div class="doc-card-category">Provisional &middot; Current Year</div>
+              <h4 class="doc-card-title">FY 2025-26 Provisional Financials</h4>
+              <p class="doc-card-meta">Management Estimates &middot; Kropbook Agritech Pvt Ltd &middot; Subject to Audit</p>
+              <div class="doc-card-badges">
+                <span class="fs-doc-badge fs-doc-badge-provisional">CURRENT YEAR &mdash; PROVISIONAL</span>
+              </div>
+              <span class="doc-card-action">View Document &#8599;</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION D · PATENT DOCUMENTATION
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section" id="patent-documentation">
+      <div class="container">
+
+        <div class="section-header anim-hidden" data-delay="0">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+            <div style="width:56px;height:56px;border-radius:12px;background:rgba(201,162,39,0.07);border:1px solid rgba(201,162,39,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <img src="icons/GIF/patent IP Protection.gif" alt="" style="width:38px;height:38px;object-fit:contain;">
+            </div>
+            <div>
+              <div class="section-label">D &middot; Patent Documentation</div>
+            </div>
+          </div>
+          <h2>Intellectual Property.</h2>
+          <p class="text-muted fs-section-subtext">
+            Kropbook's filed patent for the IoT-based 3-minute soil testing device.
+            Upheld against a challenge from the United States Department of Defense.
+          </p>
+        </div>
+
+        <div class="fs-patent-wrap anim-hidden" data-delay="0.1">
+          <div class="doc-card glass-card fs-doc-card-patent"
+            onclick="openPdfModal('documents/Kropbook Patient.pdf', 'Kropbook Patent Application')" role="button"
+            tabindex="0" aria-label="View Kropbook Patent Application">
+            <div class="fs-patent-left">
+              <div class="doc-card-icon fs-patent-icon" style="background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);">
+                <img src="icons/GIF/patent IP Protection.gif" alt="" style="width:32px;height:32px;object-fit:contain;">
+              </div>
+              <div class="doc-card-body">
+                <div class="doc-card-category">Patent Application &middot; Indian Patent Office</div>
+                <h4 class="doc-card-title">Kropbook Patent Application</h4>
+                <p class="doc-card-meta">IoT-Based 3-Minute Soil Testing Device &middot; Filed with Indian Patent Office</p>
+                <div class="doc-card-badges">
+                  <span class="fs-doc-badge fs-doc-badge-patent">Application Filed</span>
+                  <span class="fs-doc-year">Pending Approval</span>
+                </div>
+                <span class="doc-card-action">View Document &#8599;</span>
+              </div>
+            </div>
+            <div class="fs-patent-note">
+              <div class="fs-patent-note-inner">
+                <div class="fs-patent-note-text">Agricultural Technology &middot; IoT Devices &middot; Upheld vs US DoD</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION E · SUPPORTING DOCUMENTS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="supporting-documents">
+      <div class="container">
+
+        <div class="section-header anim-hidden" data-delay="0">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+            <div style="width:56px;height:56px;border-radius:12px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <img src="icons/GIF/audit-document.gif" alt="" style="width:38px;height:38px;object-fit:contain;">
+            </div>
+            <div>
+              <div class="section-label">E &middot; Supporting Documents</div>
+            </div>
+          </div>
+          <h2>Financial Supporting Documents.</h2>
+          <p class="text-muted fs-section-subtext">
+            Detailed subsidiary schedules, ageing analysis, and supporting financial data for FY 2024-25.
+          </p>
+        </div>
+
+        <div class="grid-3 fs-doc-grid anim-hidden" data-delay="0.1">
+
+          <!-- Supporting Documents FY 24-25 -->
+          <div class="doc-card glass-card fs-doc-card-new"
+            onclick="openPdfModal('documents/Kropbook_supportings 1 detailed financial documents .pdf', 'Supporting Documents FY 24-25')"
+            role="button" tabindex="0" aria-label="View Supporting Documents FY 24-25">
+            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
+              <img src="icons/GIF/audit-document.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            </div>
+            <div class="doc-card-body">
+              <div class="doc-card-category">Supporting &middot; Schedules</div>
+              <h4 class="doc-card-title">Supporting Documents FY 24-25</h4>
+              <p class="doc-card-meta">Detailed Financial Documents &middot; Schedules &amp; Annexures &middot; Kropbook</p>
+              <div class="doc-card-badges">
+                <span class="fs-doc-badge">Schedules &amp; Annexures</span>
+                <span class="fs-doc-year">FY 2024-25</span>
+              </div>
+              <span class="doc-card-action">View Document &#8599;</span>
+            </div>
+          </div>
+
+          <!-- Debtors Ageing -->
+          <div class="doc-card glass-card fs-doc-card-new"
+            onclick="openPdfModal('documents/Debitors AgeingReceivables(FIFOBasis).pdf', 'Debtors Ageing Report FY 24-25')"
+            role="button" tabindex="0" aria-label="View Debtors Ageing Report">
+            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
+              <img src="icons/GIF/diagram.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            </div>
+            <div class="doc-card-body">
+              <div class="doc-card-category">Receivables &middot; Ageing</div>
+              <h4 class="doc-card-title">Debtors Ageing FY 24-25</h4>
+              <p class="doc-card-meta">Receivables Schedule &middot; FIFO Basis &middot; Kropbook Agritech</p>
+              <div class="doc-card-badges">
+                <span class="fs-doc-badge">Ageing Report</span>
+                <span class="fs-doc-year">FY 2024-25</span>
+              </div>
+              <span class="doc-card-action">View Document &#8599;</span>
+            </div>
+          </div>
+
+          <!-- Creditors Ageing -->
+          <div class="doc-card glass-card fs-doc-card-new"
+            onclick="openPdfModal('documents/Creditors AgeingPayables(FIFOBasis).pdf', 'Creditors Ageing Report FY 24-25')"
+            role="button" tabindex="0" aria-label="View Creditors Ageing Report">
+            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
+              <img src="icons/GIF/purse.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            </div>
+            <div class="doc-card-body">
+              <div class="doc-card-category">Payables &middot; Ageing</div>
+              <h4 class="doc-card-title">Creditors Ageing FY 24-25</h4>
+              <p class="doc-card-meta">Payables Schedule &middot; FIFO Basis &middot; Kropbook Agritech</p>
+              <div class="doc-card-badges">
+                <span class="fs-doc-badge">Ageing Report</span>
+                <span class="fs-doc-year">FY 2024-25</span>
+              </div>
+              <span class="doc-card-action">View Document &#8599;</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION F · CONFIDENTIAL NOTICE
+    ══════════════════════════════════════════════════════════ -->
+    <section class="section" id="confidential-notice">
+      <div class="container">
+
+        <div class="fs-confidential-card anim-hidden" data-delay="0.1">
+
+          <div class="fs-conf-header">
+            <div class="fs-conf-shield" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="fs-conf-badge-wrap">
+              <span class="fs-conf-badge">
+                <span class="fs-conf-badge-dot"></span>
+                CONFIDENTIAL
+              </span>
+            </div>
+          </div>
+
+          <div class="fs-conf-body">
+            <p class="fs-conf-primary">
+              All documents in this centre are confidential and intended solely for authorised recipients.
+            </p>
+            <ul class="fs-conf-list">
+              <li>Financial statements are audited under Indian GAAP.</li>
+              <li>Provisional figures are management estimates and subject to audit.</li>
+              <li>This document library is not for public distribution or reproduction.</li>
+            </ul>
+            <div class="fs-conf-footer-row">
+              <span class="fs-conf-cin font-mono-custom">CIN: U01100PN2018PTC180049</span>
+              <span class="fs-conf-sep">&middot;</span>
+              <span class="fs-conf-auditor font-mono-custom">Auditor: Akshay M Jhawar and Associates (FRN: 150528W)</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/financial-statements.js"></script>
+
+</body>
+
+</html>

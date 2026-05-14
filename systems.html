@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Systems & AgriOS | Kropbook Agritech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/systems.css">
+  <script src="js/effects.js"></script>
+</head>
+<body>
+<svg style="display:none" aria-hidden="true">
+  <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+    <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
+    <feComponentTransfer in="turbulence" result="mapped">
+      <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5"/>
+      <feFuncG type="gamma" amplitude="0" exponent="1" offset="0"/>
+      <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5"/>
+    </feComponentTransfer>
+    <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap"/>
+    <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lightingColor="white" result="specLight">
+      <fePointLight x="-200" y="-200" z="300"/>
+    </feSpecularLighting>
+    <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage"/>
+    <feDisplacementMap in="SourceGraphic" in2="softMap" scale="200" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+  <div id="scroll-progress"></div>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 6.1 — HERO
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="sys-hero section" id="hero">
+      <div class="bg-grid"></div>
+      <div class="hero-bg-gradient"></div>
+
+      <!-- Floating shapes -->
+      <div class="floating-shape sys-shape-1" data-opacity="0.05" style="--rot:-4deg"></div>
+      <div class="floating-shape sys-shape-2" data-opacity="0.07" style="--rot:3deg"></div>
+      <div class="floating-shape sys-shape-3" data-opacity="0.05" style="--rot:-2deg"></div>
+
+      <div class="container sys-hero-inner">
+        <div class="sys-hero-content">
+          <span class="section-label anim-hidden" data-delay="0">06 · Systems</span>
+          <h1 class="sys-hero-h1 anim-hidden" data-delay="0.1">AgriOS.</h1>
+          <h2 class="sys-hero-h2 anim-hidden" data-delay="0.2">The intelligence layer that connects everything.</h2>
+          <p class="sys-hero-subtitle anim-hidden" data-delay="0.3">
+            Where soil data, supply chain, payments, and intelligence converge into one coherent architecture.
+          </p>
+        </div>
+
+        <!-- Animated architecture preview -->
+        <div class="arch-preview anim-hidden" data-delay="0.5">
+          <div class="arch-preview-inner">
+            <div class="ap-box ap-buyers">
+              <span class="ap-label">Institutional Buyers</span>
+            </div>
+            <div class="ap-connector-v">
+              <div class="ap-pulse-dot"></div>
+            </div>
+            <div class="ap-box ap-agrios">
+              <span class="ap-label">AgriOS Intelligence</span>
+            </div>
+            <div class="ap-row-two">
+              <div class="ap-connector-v">
+                <div class="ap-pulse-dot"></div>
+              </div>
+              <div class="ap-connector-v">
+                <div class="ap-pulse-dot"></div>
+              </div>
+            </div>
+            <div class="ap-mid-row">
+              <div class="ap-box ap-fin">
+                <span class="ap-label">Financial Rails</span>
+              </div>
+              <div class="ap-box ap-supply">
+                <span class="ap-label">Supply Chain</span>
+              </div>
+            </div>
+            <div class="ap-row-merge">
+              <div class="ap-connector-v">
+                <div class="ap-pulse-dot"></div>
+              </div>
+            </div>
+            <div class="ap-box ap-sensing">
+              <span class="ap-label">Sensing Layer</span>
+            </div>
+            <div class="ap-connector-v">
+              <div class="ap-pulse-dot"></div>
+            </div>
+            <div class="ap-box ap-farmer">
+              <span class="ap-label">140M+ Farmers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 6.2 — ARCHITECTURE DIAGRAM
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="architecture">
+      <div class="container">
+        <span class="section-label anim-hidden" data-delay="0">06 · Platform Architecture</span>
+        <h2 class="anim-hidden" data-delay="0.1">Four layers. One platform.<br><em>Zero alternatives.</em></h2>
+
+        <div class="arch-diagram" id="arch-diagram">
+
+          <!-- LAYER 1: INSTITUTIONAL BUYERS -->
+          <div class="arch-layer layer-buyers anim-hidden" data-delay="0.1" data-layer="0">
+            <div class="arch-layer-inner">
+              <div class="arch-layer-tag">LAYER 1</div>
+              <h3 class="arch-layer-title">Institutional Buyers</h3>
+              <div class="arch-layer-buyers-row">
+                <span class="buyer-chip">ITC</span>
+                <span class="buyer-chip">Metro</span>
+                <span class="buyer-chip">Zomato</span>
+                <span class="buyer-chip">Swiggy</span>
+                <span class="buyer-chip">Banks</span>
+                <span class="buyer-chip">Govt</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONNECTOR: Buyers → AgriOS -->
+          <div class="arch-connector anim-hidden" data-delay="0.2">
+            <div class="arch-connector-line"></div>
+            <div class="arch-flow-dot"></div>
+          </div>
+
+          <!-- LAYER 2: AGRIOS INTELLIGENCE -->
+          <div class="arch-layer layer-agrios anim-hidden" data-delay="0.3" data-layer="1">
+            <div class="arch-layer-inner">
+              <div class="arch-layer-tag">LAYER 2</div>
+              <h3 class="arch-layer-title">AgriOS Intelligence Layer</h3>
+              <div class="arch-features-row">
+                <div class="arch-feature-chip">Data Processing</div>
+                <div class="arch-feature-chip">Policy Intelligence</div>
+                <div class="arch-feature-chip">Recommendations</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FORKED CONNECTORS -->
+          <div class="arch-fork anim-hidden" data-delay="0.4">
+            <div class="arch-fork-left">
+              <div class="arch-connector-line"></div>
+              <div class="arch-flow-dot"></div>
+            </div>
+            <div class="arch-fork-right">
+              <div class="arch-connector-line"></div>
+              <div class="arch-flow-dot"></div>
+            </div>
+          </div>
+
+          <!-- LAYER 3: FINANCIAL + SUPPLY CHAIN -->
+          <div class="arch-mid-row anim-hidden" data-delay="0.5">
+            <div class="arch-layer layer-financial" data-layer="2">
+              <div class="arch-layer-inner">
+                <div class="arch-layer-tag">LAYER 3A</div>
+                <h3 class="arch-layer-title">Financial Rails</h3>
+                <div class="arch-features-col">
+                  <span>Payments</span>
+                  <span>Identity</span>
+                  <span>Credit Profiles</span>
+                </div>
+              </div>
+            </div>
+            <div class="arch-layer layer-supply" data-layer="2">
+              <div class="arch-layer-inner">
+                <div class="arch-layer-tag">LAYER 3B</div>
+                <h3 class="arch-layer-title">Supply Chain Layer</h3>
+                <div class="arch-features-col">
+                  <span>Quality</span>
+                  <span>Certification</span>
+                  <span>Traceability · Delivery</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MERGE CONNECTOR -->
+          <div class="arch-merge anim-hidden" data-delay="0.6">
+            <div class="arch-merge-left">
+              <div class="arch-connector-line"></div>
+              <div class="arch-flow-dot"></div>
+            </div>
+            <div class="arch-merge-right">
+              <div class="arch-connector-line"></div>
+              <div class="arch-flow-dot"></div>
+            </div>
+          </div>
+
+          <!-- LAYER 4: SENSING LAYER -->
+          <div class="arch-layer layer-sensing anim-hidden" data-delay="0.7" data-layer="3">
+            <div class="arch-layer-inner">
+              <div class="arch-layer-tag">LAYER 4</div>
+              <h3 class="arch-layer-title">Sensing Layer</h3>
+              <div class="arch-features-row">
+                <div class="arch-feature-chip">Soil Analysis</div>
+                <div class="arch-feature-chip">Residue Detection</div>
+                <div class="arch-feature-chip">Farm Data</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONNECTOR: Sensing → Farmer -->
+          <div class="arch-connector anim-hidden" data-delay="0.8">
+            <div class="arch-connector-line"></div>
+            <div class="arch-flow-dot"></div>
+          </div>
+
+          <!-- LAYER 5: FARMER LAYER -->
+          <div class="arch-layer layer-farmer anim-hidden" data-delay="0.9" data-layer="4">
+            <div class="arch-layer-inner">
+              <div class="arch-layer-tag">FOUNDATION</div>
+              <h3 class="arch-layer-title">Farmer Layer</h3>
+              <p class="arch-layer-desc">India's 140M+ Farmers · Village Centres · Farm Didi</p>
+            </div>
+          </div>
+
+        </div><!-- /arch-diagram -->
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 6.3 — PLATFORM CAPABILITIES
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section" id="capabilities">
+      <div class="container">
+        <span class="section-label anim-hidden" data-delay="0">06 · Capabilities</span>
+        <h2 class="anim-hidden" data-delay="0.1">What the platform does.</h2>
+
+        <div class="grid-3 cap-grid">
+          <div class="glass-card cap-card anim-hidden" data-delay="0.1">
+            <div class="cap-icon">
+              <span class="cap-emoji">🌱</span>
+            </div>
+            <h3 class="cap-title">Soil Intelligence Integration</h3>
+            <p class="cap-desc">Permanent farm-level soil profiles across India. Every test builds the national database.</p>
+          </div>
+
+          <div class="glass-card cap-card anim-hidden" data-delay="0.2">
+            <div class="cap-icon">
+              <span class="cap-emoji">🔗</span>
+            </div>
+            <h3 class="cap-title">Supply Chain Traceability</h3>
+            <p class="cap-desc">End-to-end tracking from farm to institutional buyer. Quality certification at every stage.</p>
+          </div>
+
+          <div class="glass-card cap-card anim-hidden" data-delay="0.3">
+            <div class="cap-icon">
+              <span class="cap-emoji">⚡</span>
+            </div>
+            <h3 class="cap-title">Payment Facilitation & Settlement</h3>
+            <p class="cap-desc">Instant farmer payments. GST-compliant documentation. Financial identity creation.</p>
+          </div>
+
+          <div class="glass-card cap-card anim-hidden" data-delay="0.2">
+            <div class="cap-icon">
+              <span class="cap-emoji">✅</span>
+            </div>
+            <h3 class="cap-title">Quality Certification</h3>
+            <p class="cap-desc">Verified quality data attached to every transaction. Enables premium market access.</p>
+          </div>
+
+          <div class="glass-card cap-card anim-hidden" data-delay="0.3">
+            <div class="cap-icon">
+              <span class="cap-emoji">📊</span>
+            </div>
+            <h3 class="cap-title">Credit Intelligence</h3>
+            <p class="cap-desc">Verified financial identity for 140M+ unbanked farmers. Enables formal credit access.</p>
+          </div>
+
+          <div class="glass-card cap-card anim-hidden" data-delay="0.4">
+            <div class="cap-icon">
+              <span class="cap-emoji">🏛️</span>
+            </div>
+            <h3 class="cap-title">Policy & Compliance Data</h3>
+            <p class="cap-desc">Government-grade intelligence on agricultural production, quality, and transactions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 6.4 — FINANCIAL RAIL
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="financial-rail">
+      <div class="container">
+        <span class="section-label anim-hidden" data-delay="0">06 · Financial Rail</span>
+        <h2 class="anim-hidden" data-delay="0.1">The payment infrastructure<br><em>that changes everything.</em></h2>
+
+        <div class="rail-flow" id="rail-flow">
+          <div class="rail-step anim-hidden" data-delay="0.1">
+            <div class="rail-step-number">01</div>
+            <div class="rail-step-icon">🌾</div>
+            <div class="rail-step-body">
+              <div class="rail-step-title">Farmer delivers produce</div>
+              <div class="rail-step-desc">To collection centre or direct buyer</div>
+            </div>
+            <div class="rail-arrow">→</div>
+          </div>
+
+          <div class="rail-step anim-hidden" data-delay="0.2">
+            <div class="rail-step-number">02</div>
+            <div class="rail-step-icon">📱</div>
+            <div class="rail-step-body">
+              <div class="rail-step-title">Institutional buyer scans</div>
+              <div class="rail-step-desc">Quality verified at point of receipt</div>
+            </div>
+            <div class="rail-arrow">→</div>
+          </div>
+
+          <div class="rail-step anim-hidden" data-delay="0.3">
+            <div class="rail-step-number">03</div>
+            <div class="rail-step-icon">⚡</div>
+            <div class="rail-step-body">
+              <div class="rail-step-title">Kropbook rail processes</div>
+              <div class="rail-step-desc">Transaction authenticated & recorded</div>
+            </div>
+            <div class="rail-arrow">→</div>
+          </div>
+
+          <div class="rail-step anim-hidden" data-delay="0.4">
+            <div class="rail-step-number">04</div>
+            <div class="rail-step-icon">💰</div>
+            <div class="rail-step-body">
+              <div class="rail-step-title">Instant payment to farmer</div>
+              <div class="rail-step-desc">Direct transfer, no middleman delay</div>
+            </div>
+            <div class="rail-arrow">→</div>
+          </div>
+
+          <div class="rail-step anim-hidden" data-delay="0.5">
+            <div class="rail-step-number">05</div>
+            <div class="rail-step-icon">📋</div>
+            <div class="rail-step-body">
+              <div class="rail-step-title">GST-compliant docs generated</div>
+              <div class="rail-step-desc">Auto e-invoice, compliant receipts</div>
+            </div>
+            <div class="rail-arrow">→</div>
+          </div>
+
+          <div class="rail-step anim-hidden" data-delay="0.6">
+            <div class="rail-step-number">06</div>
+            <div class="rail-step-icon">🪪</div>
+            <div class="rail-step-body">
+              <div class="rail-step-title">Financial identity updated</div>
+              <div class="rail-step-desc">Every transaction adds to profile</div>
+            </div>
+            <div class="rail-arrow">→</div>
+          </div>
+
+          <div class="rail-step anim-hidden" data-delay="0.7">
+            <div class="rail-step-number">07</div>
+            <div class="rail-step-icon">📈</div>
+            <div class="rail-step-body">
+              <div class="rail-step-title">Credit profile built</div>
+              <div class="rail-step-desc">Verified income history accumulates</div>
+            </div>
+            <div class="rail-arrow">→</div>
+          </div>
+
+          <div class="rail-step rail-step-last anim-hidden" data-delay="0.8">
+            <div class="rail-step-number">08</div>
+            <div class="rail-step-icon">🏦</div>
+            <div class="rail-step-body">
+              <div class="rail-step-title">Bank can now lend</div>
+              <div class="rail-step-desc">Formal credit becomes accessible</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key insight card -->
+        <div class="rail-insight-card anim-hidden" data-delay="0.3">
+          <div class="rail-insight-icon">💡</div>
+          <p class="rail-insight-text">
+            For <strong>140 million Indian farmers</strong> without formal financial identity, Kropbook's payment rail is the first step toward credit access. Each transaction is a data point. Each data point is creditworthiness.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 6.5 — FARMER APP
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section" id="farmer-app">
+      <div class="container">
+        <span class="section-label anim-hidden" data-delay="0">06 · Farmer Interface</span>
+        <h2 class="anim-hidden" data-delay="0.1">Intelligence delivered to<br><em>every farmer's mobile.</em></h2>
+
+        <div class="farmer-app-layout">
+          <!-- Phone mockup -->
+          <div class="phone-wrap anim-left" data-delay="0.2">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <!-- Status bar -->
+                <div class="phone-status-bar">
+                  <span>9:41</span>
+                  <span>●●●</span>
+                </div>
+
+                <!-- App header -->
+                <div class="phone-app-header">
+                  <div class="phone-app-logo">K</div>
+                  <div>
+                    <div class="phone-app-name">My Farm Report</div>
+                    <div class="phone-app-sub">Ramesh Patil · Nashik District</div>
+                  </div>
+                </div>
+
+                <!-- Soil health card -->
+                <div class="phone-card phone-soil">
+                  <div class="phone-card-label">SOIL HEALTH</div>
+                  <div class="phone-soil-metrics">
+                    <div class="phone-soil-item">
+                      <span class="phone-soil-val">6.8</span>
+                      <span class="phone-soil-key">pH</span>
+                    </div>
+                    <div class="phone-soil-item">
+                      <span class="phone-soil-val good">Good</span>
+                      <span class="phone-soil-key">N</span>
+                    </div>
+                    <div class="phone-soil-item">
+                      <span class="phone-soil-val medium">Med</span>
+                      <span class="phone-soil-key">P</span>
+                    </div>
+                    <div class="phone-soil-item">
+                      <span class="phone-soil-val good">Good</span>
+                      <span class="phone-soil-key">K</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Fertiliser recommendation -->
+                <div class="phone-card phone-reco">
+                  <div class="phone-card-label">RECOMMENDATION</div>
+                  <div class="phone-reco-text">Apply DAP: 50kg/acre</div>
+                  <div class="phone-reco-text">Urea: 25kg/acre</div>
+                </div>
+
+                <!-- Payment history -->
+                <div class="phone-card phone-payment">
+                  <div class="phone-card-label">LAST PAYMENT</div>
+                  <div class="phone-payment-row">
+                    <span class="phone-payment-amount">₹12,400</span>
+                    <span class="phone-payment-buyer">ITC</span>
+                  </div>
+                  <div class="phone-payment-date">Dec 2024 · Onion</div>
+                </div>
+
+                <!-- Credit score -->
+                <div class="phone-card phone-credit">
+                  <div class="phone-card-label">FINANCIAL PROFILE</div>
+                  <div class="phone-credit-bar-wrap">
+                    <div class="phone-credit-bar">
+                      <div class="phone-credit-fill"></div>
+                    </div>
+                    <span class="phone-credit-status">Building...</span>
+                  </div>
+                  <div class="phone-credit-note">3 transactions recorded</div>
+                </div>
+
+              </div><!-- /phone-screen -->
+              <div class="phone-home-bar"></div>
+            </div><!-- /phone-frame -->
+          </div>
+
+          <!-- Feature points -->
+          <div class="farmer-features anim-right" data-delay="0.3">
+            <div class="farmer-feature">
+              <div class="ff-number">01</div>
+              <div class="ff-body">
+                <h3 class="ff-title">Soil health report in farmer's language</h3>
+                <p class="ff-desc">Translated into local languages. Simple colour-coded indicators replace jargon.</p>
+              </div>
+            </div>
+            <div class="farmer-feature">
+              <div class="ff-number">02</div>
+              <div class="ff-body">
+                <h3 class="ff-title">Specific fertiliser recommendations</h3>
+                <p class="ff-desc">Precision input advice derived from actual soil test data and crop type.</p>
+              </div>
+            </div>
+            <div class="farmer-feature">
+              <div class="ff-number">03</div>
+              <div class="ff-body">
+                <h3 class="ff-title">Complete payment history</h3>
+                <p class="ff-desc">Every sale recorded with buyer, amount, and date. Farmer owns their data.</p>
+              </div>
+            </div>
+            <div class="farmer-feature">
+              <div class="ff-number">04</div>
+              <div class="ff-body">
+                <h3 class="ff-title">Credit profile building in real-time</h3>
+                <p class="ff-desc">Each verified transaction contributes to a formal creditworthiness score.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 6.6 — LICENSING MODEL
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="licensing">
+      <div class="container">
+        <span class="section-label anim-hidden" data-delay="0">06 · Business Model</span>
+        <h2 class="anim-hidden" data-delay="0.1">Annual contracts.<br><em>Non-cancellable once integrated.</em></h2>
+
+        <div class="grid-3 license-grid">
+          <div class="license-card anim-hidden" data-delay="0.1">
+            <div class="license-icon">🏢</div>
+            <div class="license-header">
+              <h3 class="license-title">Institutional Buyers</h3>
+              <div class="license-examples">ITC · Metro · Reliance</div>
+            </div>
+            <p class="license-desc">Quality assurance, traceability, compliance documentation. Once integrated, switching cost is prohibitive.</p>
+            <div class="license-moat">
+              <span class="moat-label">Lock-in factor</span>
+              <div class="moat-bars">
+                <div class="moat-bar" style="width:90%"></div>
+              </div>
+              <span class="moat-value">Very High</span>
+            </div>
+          </div>
+
+          <div class="license-card anim-hidden" data-delay="0.2">
+            <div class="license-icon">🏦</div>
+            <div class="license-header">
+              <h3 class="license-title">Financial Institutions</h3>
+              <div class="license-examples">Banks · NBFCs · Fintechs</div>
+            </div>
+            <p class="license-desc">Credit intelligence for agricultural lending. Verified farmer data reduces NPA risk.</p>
+            <div class="license-moat">
+              <span class="moat-label">Lock-in factor</span>
+              <div class="moat-bars">
+                <div class="moat-bar" style="width:80%"></div>
+              </div>
+              <span class="moat-value">High</span>
+            </div>
+          </div>
+
+          <div class="license-card anim-hidden" data-delay="0.3">
+            <div class="license-icon">🏛️</div>
+            <div class="license-header">
+              <h3 class="license-title">Governments & Policy</h3>
+              <div class="license-examples">State · Central · Multilateral</div>
+            </div>
+            <p class="license-desc">Agricultural intelligence for planning, subsidy optimization, crop forecasting.</p>
+            <div class="license-moat">
+              <span class="moat-label">Lock-in factor</span>
+              <div class="moat-bars">
+                <div class="moat-bar" style="width:95%"></div>
+              </div>
+              <span class="moat-value">Systemic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 6.7 — CTA
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="section" id="cta">
+      <div class="container">
+        <div class="callout-card sys-cta-card anim-hidden" data-delay="0.1">
+          <div class="sys-cta-inner">
+            <div class="sys-cta-text">
+              <span class="section-label" style="color:rgba(201,162,39,0.8)">Next: Finance</span>
+              <h2 class="sys-cta-h2">View 3-Year<br>Audited Financials.</h2>
+              <p class="sys-cta-sub">Revenue, margins, and the path to institutional scale.</p>
+            </div>
+            <a href="finance.html" class="btn btn-primary sys-cta-btn">
+              View 3-Year Audited Financials
+              <span class="sys-cta-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/systems.js"></script>
+</body>
+</html>
