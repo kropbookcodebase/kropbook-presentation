@@ -46,7 +46,7 @@
 }
 
 .finance-hero h1 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(3.25rem, 8vw, 6rem);
   font-weight: 600;
   line-height: 1.1;
@@ -69,7 +69,7 @@
   border-radius: var(--radius-full);
   background: rgba(27,77,62,0.04);
   border: 1px solid rgba(27,77,62,0.12);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -144,7 +144,7 @@
 }
 
 .finance-metric-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.62rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -153,7 +153,7 @@
 }
 
 .finance-metric-value {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.25rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--text-primary);
@@ -191,7 +191,7 @@
 .year-comparison-table thead th {
   padding: 0.875rem 1rem;
   text-align: left;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.62rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -235,7 +235,7 @@
   font-weight: 600;
   color: var(--text-primary);
   font-size: 0.8rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   letter-spacing: 0.04em;
 }
 
@@ -256,7 +256,7 @@
 }
 
 .cell-value {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -281,7 +281,7 @@
   background: var(--bg-green-light);
   color: var(--brand-green);
   margin-bottom: 0.5rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   letter-spacing: 0.06em;
 }
 
@@ -352,7 +352,7 @@
   gap: 0.5rem;
   font-size: 0.78rem;
   color: var(--text-muted);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   letter-spacing: 0.04em;
 }
 
@@ -370,7 +370,7 @@
 }
 
 .asset-chart-subtitle {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   color: var(--accent-gold);
@@ -409,7 +409,7 @@
   padding: 1rem 1.25rem;
   text-align: left;
   color: rgba(255,255,255,0.65);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.62rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -476,14 +476,14 @@
 .pl-table tbody td.pl-td-growth {
   color: var(--brand-green);
   font-weight: 700;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.8rem;
 }
 
 .pl-table tbody td.pl-td-growth-gold {
   color: var(--accent-gold);
   font-weight: 700;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.8rem;
 }
 
@@ -492,7 +492,7 @@
   border-top: 1px solid var(--border-light);
   font-size: 0.72rem;
   color: var(--text-muted);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   letter-spacing: 0.04em;
   background: rgba(247,249,248,0.5);
   line-height: 1.6;
@@ -543,7 +543,7 @@
 }
 
 .ratio-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -551,7 +551,7 @@
 }
 
 .ratio-value {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.25rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--brand-green);
@@ -606,7 +606,7 @@
 }
 
 .bs-hl-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.62rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -615,7 +615,7 @@
 }
 
 .bs-hl-value {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;
   color: var(--accent-gold);
@@ -649,7 +649,7 @@
   padding: 0.875rem 1.25rem;
   text-align: left;
   color: rgba(255,255,255,0.65);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.62rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -686,7 +686,7 @@
 
 .bs-table tbody td.bs-td-val {
   text-align: right;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
   font-weight: 600;
   color: var(--brand-green);
@@ -722,7 +722,7 @@
 }
 
 .auditor-card h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
   color: var(--text-primary);
   margin-bottom: 1.25rem;
@@ -738,7 +738,7 @@
 .auditor-detail-row {
   font-size: 0.85rem;
   color: var(--text-secondary);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   letter-spacing: 0.04em;
 }
 
@@ -786,7 +786,7 @@
 }
 
 .callout-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -795,7 +795,7 @@
 }
 
 .callout-heading {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   color: #fff;
@@ -875,3 +875,283 @@
     font-size: 0.65rem;
   }
 }
+
+.ex-finance-1 { display:none }
+
+.ex-finance-2 { width:540px;height:120px;background:linear-gradient(135deg,rgba(27,77,62,0.18),rgba(45,107,85,0.06));top:8%;left:-120px; }
+
+.ex-finance-3 { width:440px;height:100px;background:linear-gradient(135deg,rgba(201,162,39,0.12),rgba(232,200,74,0.04));top:22%;right:-90px;animation-delay:-4s; }
+
+.ex-finance-4 { width:280px;height:70px;background:linear-gradient(135deg,rgba(27,77,62,0.12),rgba(27,77,62,0.03));bottom:20%;left:4%;animation-delay:-8s; }
+
+.ex-finance-5 { display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem; }
+
+.ex-finance-6 { flex:1;height:1px;background:var(--border-light); }
+
+.ex-finance-7 { font-size:0.65rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);padding:0.25rem 0.875rem;border-radius:100px;white-space:nowrap; }
+
+.ex-finance-8 { flex:1;height:1px;background:var(--border-light); }
+
+.ex-finance-9 { margin-bottom: 3rem; }
+
+.ex-finance-10 { display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem; }
+
+.ex-finance-11 { flex:1;height:1px;background:var(--border-light); }
+
+.ex-finance-12 { font-size:0.65rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);padding:0.25rem 0.875rem;border-radius:100px;white-space:nowrap; }
+
+.ex-finance-13 { flex:1;height:1px;background:var(--border-light); }
+
+.ex-finance-14 { margin-bottom:3rem; }
+
+.ex-finance-15 { background:linear-gradient(135deg,rgba(201,162,39,0.06),rgba(27,77,62,0.03));border:1px solid rgba(201,162,39,0.22);border-radius:var(--radius-xl);padding:2rem;position:relative;overflow:hidden; }
+
+.ex-finance-16 { position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px; }
+
+.ex-finance-17 { color:var(--accent-gold); }
+
+.ex-finance-18 { background:linear-gradient(135deg,rgba(201,162,39,0.06),rgba(27,77,62,0.03));border:1px solid rgba(201,162,39,0.22);border-radius:var(--radius-xl);padding:2rem;position:relative;overflow:hidden; }
+
+.ex-finance-19 { position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px; }
+
+.ex-finance-20 { color:var(--accent-gold); }
+
+.ex-finance-21 { background:linear-gradient(135deg,rgba(201,162,39,0.06),rgba(27,77,62,0.03));border:1px solid rgba(201,162,39,0.22);border-radius:var(--radius-xl);padding:2rem;position:relative;overflow:hidden; }
+
+.ex-finance-22 { position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px; }
+
+.ex-finance-23 { color:var(--accent-gold); }
+
+.ex-finance-24 { display:none; }
+
+.ex-finance-25 { width:100%;height:380px;display:block; }
+
+.ex-finance-26 { background:#1B4D3E; }
+
+.ex-finance-27 { background:#2d6b55; }
+
+.ex-finance-28 { background:#C9A227; }
+
+.ex-finance-29 { margin-left:auto;font-style:italic;color:var(--text-muted);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;font-size:0.7rem; }
+
+.ex-finance-30 { width:100%;height:300px;display:block; }
+
+.ex-finance-31 { background:#1B4D3E;border-radius:3px; }
+
+.ex-finance-32 { background:#C9A227;border-radius:3px; }
+
+.ex-finance-33 { margin-left:auto;font-style:italic;color:var(--text-muted);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;font-size:0.7rem; }
+
+.ex-finance-34 { width:28%; }
+
+.ex-finance-35 { font-size:clamp(1.6rem,3vw,2.25rem); }
+
+.ex-finance-36 { padding-top:0; }
+
+.ex-finance-37 { display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem; }
+
+.ex-finance-38 { width:48px;height:48px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+
+.ex-finance-39 { width:32px;height:32px;object-fit:contain; }
+
+.ex-finance-40 { color:var(--text-muted);font-size:0.9rem;margin-top:0.5rem; }
+
+.ex-finance-41 { display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem; }
+
+.ex-finance-42 { background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all 0.2s ease; }
+
+.ex-finance-43 { width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem; }
+
+.ex-finance-44 { width:28px;height:28px;object-fit:contain; }
+
+.ex-finance-45 { font-size:0.6rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem; }
+
+.ex-finance-46 { font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.25rem; }
+
+.ex-finance-47 { font-size:0.7rem;color:var(--text-muted); }
+
+.ex-finance-48 { margin-top:1rem;font-size:0.7rem;color:var(--brand-green);font-weight:600; }
+
+.ex-finance-49 { background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all 0.2s ease; }
+
+.ex-finance-50 { width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem; }
+
+.ex-finance-51 { width:28px;height:28px;object-fit:contain; }
+
+.ex-finance-52 { font-size:0.6rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem; }
+
+.ex-finance-53 { font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.25rem; }
+
+.ex-finance-54 { font-size:0.7rem;color:var(--text-muted); }
+
+.ex-finance-55 { margin-top:1rem;font-size:0.7rem;color:var(--brand-green);font-weight:600; }
+
+.ex-finance-56 { background:linear-gradient(135deg,rgba(27,77,62,0.04),rgba(201,162,39,0.03));border:1px solid rgba(201,162,39,0.25);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all 0.2s ease; }
+
+.ex-finance-57 { width:44px;height:44px;border-radius:10px;background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem; }
+
+.ex-finance-58 { width:28px;height:28px;object-fit:contain; }
+
+.ex-finance-59 { font-size:0.6rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;color:var(--accent-gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem; }
+
+.ex-finance-60 { font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.25rem; }
+
+.ex-finance-61 { font-size:0.7rem;color:var(--text-muted); }
+
+.ex-finance-62 { margin-top:1rem;font-size:0.7rem;color:var(--accent-gold);font-weight:600; }
+
+.ex-finance-63 { background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all 0.2s ease; }
+
+.ex-finance-64 { width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem; }
+
+.ex-finance-65 { width:28px;height:28px;object-fit:contain; }
+
+.ex-finance-66 { font-size:0.6rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem; }
+
+.ex-finance-67 { font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.25rem; }
+
+.ex-finance-68 { font-size:0.7rem;color:var(--text-muted); }
+
+.ex-finance-69 { margin-top:1rem;font-size:0.7rem;color:var(--brand-green);font-weight:600; }
+
+.ex-finance-70 { white-space:nowrap; }
+
+.ex-finance-1 { display:none }
+
+.ex-finance-2 { width:540px;height:120px;background:linear-gradient(135deg,rgba(27,77,62,0.18),rgba(45,107,85,0.06));top:8%;left:-120px; }
+
+.ex-finance-3 { width:440px;height:100px;background:linear-gradient(135deg,rgba(201,162,39,0.12),rgba(232,200,74,0.04));top:22%;right:-90px;animation-delay:-4s; }
+
+.ex-finance-4 { width:280px;height:70px;background:linear-gradient(135deg,rgba(27,77,62,0.12),rgba(27,77,62,0.03));bottom:20%;left:4%;animation-delay:-8s; }
+
+.ex-finance-5 { display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem; }
+
+.ex-finance-6 { flex:1;height:1px;background:var(--border-light); }
+
+.ex-finance-7 { font-size:0.65rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);padding:0.25rem 0.875rem;border-radius:100px;white-space:nowrap; }
+
+.ex-finance-8 { flex:1;height:1px;background:var(--border-light); }
+
+.ex-finance-9 { margin-bottom: 3rem; }
+
+.ex-finance-10 { display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem; }
+
+.ex-finance-11 { flex:1;height:1px;background:var(--border-light); }
+
+.ex-finance-12 { font-size:0.65rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);padding:0.25rem 0.875rem;border-radius:100px;white-space:nowrap; }
+
+.ex-finance-13 { flex:1;height:1px;background:var(--border-light); }
+
+.ex-finance-14 { margin-bottom:3rem; }
+
+.ex-finance-15 { background:linear-gradient(135deg,rgba(201,162,39,0.06),rgba(27,77,62,0.03));border:1px solid rgba(201,162,39,0.22);border-radius:var(--radius-xl);padding:2rem;position:relative;overflow:hidden; }
+
+.ex-finance-16 { position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px; }
+
+.ex-finance-17 { color:var(--accent-gold); }
+
+.ex-finance-18 { background:linear-gradient(135deg,rgba(201,162,39,0.06),rgba(27,77,62,0.03));border:1px solid rgba(201,162,39,0.22);border-radius:var(--radius-xl);padding:2rem;position:relative;overflow:hidden; }
+
+.ex-finance-19 { position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px; }
+
+.ex-finance-20 { color:var(--accent-gold); }
+
+.ex-finance-21 { background:linear-gradient(135deg,rgba(201,162,39,0.06),rgba(27,77,62,0.03));border:1px solid rgba(201,162,39,0.22);border-radius:var(--radius-xl);padding:2rem;position:relative;overflow:hidden; }
+
+.ex-finance-22 { position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px; }
+
+.ex-finance-23 { color:var(--accent-gold); }
+
+.ex-finance-24 { display:none; }
+
+.ex-finance-25 { width:100%;height:380px;display:block; }
+
+.ex-finance-26 { background:#1B4D3E; }
+
+.ex-finance-27 { background:#2d6b55; }
+
+.ex-finance-28 { background:#C9A227; }
+
+.ex-finance-29 { margin-left:auto;font-style:italic;color:var(--text-muted);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;font-size:0.7rem; }
+
+.ex-finance-30 { width:100%;height:300px;display:block; }
+
+.ex-finance-31 { background:#1B4D3E;border-radius:3px; }
+
+.ex-finance-32 { background:#C9A227;border-radius:3px; }
+
+.ex-finance-33 { margin-left:auto;font-style:italic;color:var(--text-muted);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;font-size:0.7rem; }
+
+.ex-finance-34 { width:28%; }
+
+.ex-finance-35 { font-size:clamp(1.6rem,3vw,2.25rem); }
+
+.ex-finance-36 { padding-top:0; }
+
+.ex-finance-37 { display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem; }
+
+.ex-finance-38 { width:48px;height:48px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+
+.ex-finance-39 { width:32px;height:32px;object-fit:contain; }
+
+.ex-finance-40 { color:var(--text-muted);font-size:0.9rem;margin-top:0.5rem; }
+
+.ex-finance-41 { display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem; }
+
+.ex-finance-42 { background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all 0.2s ease; }
+
+.ex-finance-43 { width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem; }
+
+.ex-finance-44 { width:28px;height:28px;object-fit:contain; }
+
+.ex-finance-45 { font-size:0.6rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem; }
+
+.ex-finance-46 { font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.25rem; }
+
+.ex-finance-47 { font-size:0.7rem;color:var(--text-muted); }
+
+.ex-finance-48 { margin-top:1rem;font-size:0.7rem;color:var(--brand-green);font-weight:600; }
+
+.ex-finance-49 { background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all 0.2s ease; }
+
+.ex-finance-50 { width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem; }
+
+.ex-finance-51 { width:28px;height:28px;object-fit:contain; }
+
+.ex-finance-52 { font-size:0.6rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem; }
+
+.ex-finance-53 { font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.25rem; }
+
+.ex-finance-54 { font-size:0.7rem;color:var(--text-muted); }
+
+.ex-finance-55 { margin-top:1rem;font-size:0.7rem;color:var(--brand-green);font-weight:600; }
+
+.ex-finance-56 { background:linear-gradient(135deg,rgba(27,77,62,0.04),rgba(201,162,39,0.03));border:1px solid rgba(201,162,39,0.25);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all 0.2s ease; }
+
+.ex-finance-57 { width:44px;height:44px;border-radius:10px;background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem; }
+
+.ex-finance-58 { width:28px;height:28px;object-fit:contain; }
+
+.ex-finance-59 { font-size:0.6rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;color:var(--accent-gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem; }
+
+.ex-finance-60 { font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.25rem; }
+
+.ex-finance-61 { font-size:0.7rem;color:var(--text-muted); }
+
+.ex-finance-62 { margin-top:1rem;font-size:0.7rem;color:var(--accent-gold);font-weight:600; }
+
+.ex-finance-63 { background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all 0.2s ease; }
+
+.ex-finance-64 { width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem; }
+
+.ex-finance-65 { width:28px;height:28px;object-fit:contain; }
+
+.ex-finance-66 { font-size:0.6rem;font-family:"SFMono-Regular", Consolas, "Liberation Mono", monospace;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem; }
+
+.ex-finance-67 { font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.25rem; }
+
+.ex-finance-68 { font-size:0.7rem;color:var(--text-muted); }
+
+.ex-finance-69 { margin-top:1rem;font-size:0.7rem;color:var(--brand-green);font-weight:600; }
+
+.ex-finance-70 { white-space:nowrap; }

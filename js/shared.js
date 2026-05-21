@@ -16,6 +16,7 @@ const NAV_ITEMS = [
   { label: 'Finance', href: 'finance.html' },
   { label: 'Funding', href: 'funding.html' },
   { label: 'Q&A', href: 'strategic-qa.html' },
+  { label: 'Credit File', href: 'corporate-profile.html' },
 ];
 
 function getCurrentPage() {
@@ -39,7 +40,7 @@ function injectNavbar() {
     <!-- Side Navbar (no hamburger — edge hover only) -->
     <aside class="side-navbar" id="side-navbar" aria-label="Navigation">
       <div class="side-nav-top">
-        <img src="images/kblogo.png" alt="Kropbook" class="side-nav-logo-mark" />
+        <img src="../images/kblogo.png" alt="Kropbook" class="side-nav-logo-mark" />
         <span class="side-nav-logo-text">Kropbook</span>
       </div>
       <div class="side-nav-menu">
@@ -53,7 +54,7 @@ function injectNavbar() {
       <!-- Desktop pill nav -->
       <nav class="navbar">
         <a href="overview.html" class="nav-brand">
-          <img src="images/kblogo.png" alt="Kropbook" />
+          <img src="../images/kblogo.png" alt="Kropbook" />
           <span>Kropbook</span>
         </a>
         ${navLinks}
@@ -62,8 +63,8 @@ function injectNavbar() {
 
       <!-- Mobile nav -->
       <div class="navbar-mobile" id="navbar-mobile">
-        <a href="overview.html" class="nav-brand" style="border-right:none;margin-right:0;">
-          <img src="images/kblogo.png" alt="Kropbook" />
+        <a href="overview.html" class="nav-brand nav-brand-mobile">
+          <img src="../images/kblogo.png" alt="Kropbook" />
           <span>Kropbook</span>
         </a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -76,7 +77,7 @@ function injectNavbar() {
     <div class="mobile-menu" id="mobile-menu">
       ${NAV_ITEMS.map(item => `<a href="${item.href}" class="${currentPage === item.href ? 'active' : ''}">${item.label}</a>`).join('<div class="mobile-sep"></div>')}
       <div class="mobile-sep"></div>
-      <a href="financial-statements.html" style="color:#C9A227;font-size:1.25rem;">Documents ↗</a>
+      <a href="financial-statements.html" class="mobile-documents-link">Documents ↗</a>
     </div>
   `;
 
@@ -158,7 +159,7 @@ function injectFooter() {
           <!-- Column 1: Brand -->
           <div class="footer-brand">
             <div class="footer-logo">
-              <img src="images/kblogo.png" alt="Kropbook Agritech" />
+              <img src="../images/kblogo.png" alt="Kropbook Agritech" />
               <div class="footer-logo-text">
                 <span class="footer-logo-name">Kropbook</span>
                 <span class="footer-logo-sub">Agritech Pvt. Ltd.</span>
@@ -275,8 +276,8 @@ function injectPdfModal() {
           <button class="modal-close-btn" id="modal-close" aria-label="Close">✕</button>
         </div>
         <div class="modal-toolbar">
-          <a id="pdf-download" download class="btn btn-secondary" style="font-size:0.75rem;padding:0.4rem 0.75rem;">⬇ Download</a>
-          <span style="flex:1"></span>
+          <a id="pdf-download" download class="btn btn-secondary pdf-download-link">⬇ Download</a>
+          <span class="pdf-modal-spacer"></span>
           <span class="page-info">PDF Viewer</span>
         </div>
         <div class="modal-body">
@@ -298,10 +299,32 @@ function injectPdfModal() {
   });
 }
 
+function initDocumentTriggers() {
+  document.addEventListener('click', (event) => {
+    const trigger = event.target.closest('[data-pdf-path]');
+    if (!trigger) return;
+    event.preventDefault();
+    openPdfModal(trigger.dataset.pdfPath, trigger.dataset.pdfTitle || 'Document');
+  });
+}
+
+function initLocalScrollTargets() {
+  document.addEventListener('click', (event) => {
+    const trigger = event.target.closest('[data-scroll-target]');
+    if (!trigger) return;
+    const target = document.getElementById(trigger.dataset.scrollTarget);
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
+
 /* ── Init all shared ────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   injectNavbar();
   injectFooter();
   initScrollProgress();
   injectPdfModal();
+  initDocumentTriggers();
+  initLocalScrollTargets();
 });

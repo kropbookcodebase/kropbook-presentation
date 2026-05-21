@@ -70,7 +70,7 @@
   line-height: 1;
   color: #ffffff;
   margin-bottom: 1.25rem;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .bops-hero-h2 {
@@ -79,7 +79,7 @@
   color: rgba(255,255,255,0.72);
   margin-bottom: 1.5rem;
   line-height: 1.45;
-  font-family: 'DM Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .bops-hero-p {
@@ -138,7 +138,7 @@
 }
 
 .bops-chain-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.5rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -186,7 +186,7 @@
 }
 
 .bops-chain-tagline {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.3em;
@@ -216,7 +216,7 @@
 
 .bops-product-badge {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.25em;
@@ -267,7 +267,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-primary);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.2;
 }
 
@@ -309,7 +309,7 @@
 }
 
 .bops-crop-chip {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   font-weight: 600;
   padding: 0.25rem 0.65rem;
@@ -364,7 +364,7 @@
 }
 
 .bops-step-number {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--accent-gold);
@@ -376,7 +376,7 @@
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.3;
   margin-bottom: 0.3rem;
 }
@@ -488,7 +488,7 @@
 }
 
 .bops-hub-label {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--brand-green);
@@ -496,7 +496,7 @@
 }
 
 .bops-hub-detail {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   color: var(--text-muted);
   letter-spacing: 0.1em;
@@ -543,7 +543,7 @@
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-primary);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   margin-bottom: 0.5rem;
   line-height: 1.3;
 }
@@ -562,7 +562,7 @@
 }
 
 .bops-ch-chip {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.58rem;
   font-weight: 600;
   padding: 0.2rem 0.6rem;
@@ -590,7 +590,7 @@
 }
 
 .bops-dst-value {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--brand-green);
@@ -603,7 +603,7 @@
 }
 
 .bops-dst-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -641,7 +641,7 @@
 }
 
 .bops-loyalty-num {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.7rem;
   font-weight: 600;
   color: var(--accent-gold);
@@ -655,7 +655,7 @@
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   margin-bottom: 0.4rem;
   line-height: 1.3;
 }
@@ -687,7 +687,7 @@
 }
 
 .bops-quote-mark {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 4rem;
   color: var(--accent-gold);
   line-height: 0.8;
@@ -719,7 +719,7 @@
 }
 
 .bops-quote-source {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   color: rgba(255,255,255,0.4);
@@ -737,7 +737,7 @@
 }
 
 .bops-lm-value {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   color: var(--brand-green);
@@ -745,14 +745,14 @@
 }
 
 .bops-lm-label {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-primary);
 }
 
 .bops-lm-sub {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   color: var(--text-muted);
   letter-spacing: 0.12em;
@@ -774,7 +774,7 @@
 }
 
 .bops-net-state {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -783,7 +783,7 @@
 
 .bops-net-badge {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.58rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -828,14 +828,14 @@
 }
 
 .bops-net-region {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-primary);
 }
 
 .bops-net-crops {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.62rem;
   color: var(--text-muted);
   letter-spacing: 0.04em;
@@ -934,7 +934,7 @@
   font-size: 1rem;
   font-weight: 700;
   color: #ffffff;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   margin-bottom: 0.75rem;
   line-height: 1.3;
 }
@@ -961,7 +961,7 @@
 
 .bops-soil-stat-label {
   display: block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.3em;
@@ -1005,7 +1005,7 @@
 }
 
 .bops-patent-title {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -1015,7 +1015,7 @@
 }
 
 .bops-patent-status {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
   color: var(--accent-gold-light);
@@ -1049,7 +1049,7 @@
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   color: #ffffff;
   line-height: 1.15;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   margin-bottom: 0.5rem;
 }
 
@@ -1067,7 +1067,7 @@
   padding: 1rem 1.75rem;
   background: var(--accent-gold);
   color: var(--brand-green-dark);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   border-radius: var(--radius-lg);
@@ -1100,7 +1100,7 @@
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   color: var(--text-primary);
   line-height: 1.15;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   margin-bottom: 0.5rem;
 }
 
@@ -1119,7 +1119,7 @@
   border: 1px solid var(--border-medium);
   background: transparent;
   color: var(--brand-green);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   border-radius: var(--radius-lg);
@@ -1234,3 +1234,19 @@
   .bops-soil-stat-block { padding: 1.5rem; }
   .bops-cta-inner { padding: 2rem 1.5rem; }
 }
+
+.ex-business-operations-1 { display:none }
+
+.ex-business-operations-2 { color:rgba(232,200,74,0.85) }
+
+.ex-business-operations-3 { color:rgba(201,162,39,0.8) }
+
+.ex-business-operations-4 { color: var(--accent-gold) }
+
+.ex-business-operations-1 { display:none }
+
+.ex-business-operations-2 { color:rgba(232,200,74,0.85) }
+
+.ex-business-operations-3 { color:rgba(201,162,39,0.8) }
+
+.ex-business-operations-4 { color: var(--accent-gold) }

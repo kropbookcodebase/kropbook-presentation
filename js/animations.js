@@ -128,7 +128,7 @@ function drawBarChart(canvasId, data, options = {}) {
     ctx.stroke();
     const val = (maxVal * (4 - i) / 4).toFixed(1);
     ctx.fillStyle = '#7A9690';
-    ctx.font = '11px Inter, sans-serif';
+    ctx.font = '11px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
     ctx.textAlign = 'right';
     ctx.fillText('₹' + val + 'Cr', padLeft - 6, y + 4);
   }
@@ -155,7 +155,7 @@ function drawBarChart(canvasId, data, options = {}) {
       ctx.stroke();
       const val = (maxVal * (4 - i) / 4).toFixed(1);
       ctx.fillStyle = '#7A9690';
-      ctx.font = '11px Inter, sans-serif';
+      ctx.font = '11px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
       ctx.textAlign = 'right';
       ctx.fillText('₹' + val + 'Cr', padLeft - 6, y + 4);
     }
@@ -164,7 +164,7 @@ function drawBarChart(canvasId, data, options = {}) {
     groups.forEach((group, gi) => {
       const cx = padLeft + groupW * gi + groupW / 2;
       ctx.fillStyle = '#7A9690';
-      ctx.font = '11px Inter, sans-serif';
+      ctx.font = '11px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText(group, cx, H - padBottom + 20);
     });
@@ -198,7 +198,7 @@ function drawBarChart(canvasId, data, options = {}) {
         // Value label on top
         if (progress > 0.85) {
           ctx.fillStyle = s.color;
-          ctx.font = 'bold 10px Inter, sans-serif';
+          ctx.font = 'bold 10px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText('₹' + val + 'Cr', x + barW / 2, y - 5);
         }
@@ -213,7 +213,7 @@ function drawBarChart(canvasId, data, options = {}) {
         ctx.fillStyle = item.color;
         ctx.fillRect(lx, ly, 12, 10);
         ctx.fillStyle = '#7A9690';
-        ctx.font = '11px Inter, sans-serif';
+        ctx.font = '11px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText(item.label, lx + 16, ly + 9);
       });
@@ -271,13 +271,13 @@ function drawAreaChart(canvasId, data, options = {}) {
       const y = padT + (chartH / 4) * i;
       ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(padL + chartW, y); ctx.stroke();
       const val = (maxVal * (4 - i) / 4).toFixed(2);
-      ctx.fillStyle = '#7A9690'; ctx.font = '11px Inter'; ctx.textAlign = 'right';
+      ctx.fillStyle = '#7A9690'; ctx.font = '11px -apple-system'; ctx.textAlign = 'right';
       ctx.fillText('₹' + val + 'Cr', padL - 6, y + 4);
     }
 
     // X labels
     labels.forEach((lbl, i) => {
-      ctx.fillStyle = '#7A9690'; ctx.font = '11px Inter'; ctx.textAlign = 'center';
+      ctx.fillStyle = '#7A9690'; ctx.font = '11px -apple-system'; ctx.textAlign = 'center';
       ctx.fillText(lbl, getX(i), H - 8);
     });
 

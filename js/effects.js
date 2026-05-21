@@ -2,265 +2,152 @@
  * effects.js — Kropbook Agritech Investor Presentation
  *
  * Visual effects library. Pure vanilla JS, no build tools, no frameworks.
- * THREE.js must be loaded via CDN script tag on pages that use initWaveSphere().
  *
  * Exports (global):
- *   initWaveSphere(canvasId)  — THREE.js animated wave sphere
+ *   initWaveSphere(canvasId)  — Canvas animated wave sphere
  *   initInfiniteGrids()       — Mouse-reveal grid backgrounds
  *   initZoomParallax()        — Scroll-driven zoom parallax layers
  *   initHeroShapes()          — Floating entry-animated hero shapes
  */
 
 /* =========================================================================
-   1. THREE.JS WAVE SPHERE
+   1. CANVAS WAVE SPHERE
    ========================================================================= */
 
 /**
- * Initialises a self-animating wave sphere on the given canvas element.
+ * Initialises a self-animating wave sphere on the given canvas element using
+ * only the browser canvas API.
  *
- * Requirements:
- *   - <canvas id="<canvasId>"> must exist in the DOM.
- *   - THREE.js must be present on the global scope (window.THREE).
- *
- * @param {string} canvasId  id of the target <canvas> element.
- * @returns {Function|undefined}  Cleanup function that stops animation and
- *                                releases WebGL resources, or undefined if
- *                                the canvas / THREE was not found.
+ * @param {string} canvasId id of the target <canvas> element.
+ * @returns {Function|undefined} Cleanup function that stops animation.
  */
 function initWaveSphere(canvasId) {
   const canvas = document.getElementById(canvasId);
-  if (!canvas || typeof THREE === 'undefined') return;
+  const ctx = canvas?.getContext('2d');
+  if (!canvas || !ctx) return;
 
-  /* ---- Renderer --------------------------------------------------------- */
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-  function getCanvasSize() {
-    return { w: canvas.offsetWidth || window.innerWidth, h: canvas.offsetHeight || window.innerHeight };
-  }
-  const { w: initW, h: initH } = getCanvasSize();
-  renderer.setSize(initW, initH);
-
-  /* ---- Scene & Camera --------------------------------------------------- */
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, initW / initH, 0.1, 100);
-  camera.position.z = 3.5;
-
-  /* ---- Shaders ---------------------------------------------------------- */
-  const vertexShader = `
-    uniform float uTime;
-    uniform float uIntensity;
-    varying vec3 vNormal;
-    varying vec3 vPosition;
-
-    /* --- Simplex 3D noise (Stefan Gustavson, public domain) --- */
-    vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-    vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-    vec4 permute(vec4 x) { return mod289(((x * 34.0) + 10.0) * x); }
-    vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
-
-    float snoise(vec3 v) {
-      const vec2 C = vec2(1.0 / 6.0, 1.0 / 3.0);
-      const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
-
-      vec3 i  = floor(v + dot(v, C.yyy));
-      vec3 x0 = v - i + dot(i, C.xxx);
-
-      vec3 g  = step(x0.yzx, x0.xyz);
-      vec3 l  = 1.0 - g;
-      vec3 i1 = min(g.xyz, l.zxy);
-      vec3 i2 = max(g.xyz, l.zxy);
-
-      vec3 x1 = x0 - i1 + C.xxx;
-      vec3 x2 = x0 - i2 + C.yyy;
-      vec3 x3 = x0 - D.yyy;
-
-      i = mod289(i);
-      vec4 p = permute(permute(permute(
-        i.z + vec4(0.0, i1.z, i2.z, 1.0))
-        + i.y + vec4(0.0, i1.y, i2.y, 1.0))
-        + i.x + vec4(0.0, i1.x, i2.x, 1.0));
-
-      float n_ = 0.142857142857;
-      vec3  ns  = n_ * D.wyz - D.xzx;
-
-      vec4 j  = p - 49.0 * floor(p * ns.z * ns.z);
-      vec4 x_ = floor(j * ns.z);
-      vec4 y_ = floor(j - 7.0 * x_);
-
-      vec4 x = x_ * ns.x + ns.yyyy;
-      vec4 y = y_ * ns.x + ns.yyyy;
-      vec4 h = 1.0 - abs(x) - abs(y);
-
-      vec4 b0 = vec4(x.xy, y.xy);
-      vec4 b1 = vec4(x.zw, y.zw);
-      vec4 s0 = floor(b0) * 2.0 + 1.0;
-      vec4 s1 = floor(b1) * 2.0 + 1.0;
-      vec4 sh = -step(h, vec4(0.0));
-
-      vec4 a0 = b0.xzyw + s0.xzyw * sh.xxyy;
-      vec4 a1 = b1.xzyw + s1.xzyw * sh.zzww;
-
-      vec3 p0 = vec3(a0.xy, h.x);
-      vec3 p1 = vec3(a0.zw, h.y);
-      vec3 p2 = vec3(a1.xy, h.z);
-      vec3 p3 = vec3(a1.zw, h.w);
-
-      vec4 norm = taylorInvSqrt(vec4(
-        dot(p0, p0), dot(p1, p1), dot(p2, p2), dot(p3, p3)));
-      p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w;
-
-      vec4 m = max(0.6 - vec4(
-        dot(x0, x0), dot(x1, x1), dot(x2, x2), dot(x3, x3)), 0.0);
-      m = m * m;
-      return 42.0 * dot(m * m, vec4(
-        dot(p0, x0), dot(p1, x1), dot(p2, x2), dot(p3, x3)));
-    }
-
-    void main() {
-      vNormal   = normalize(normalMatrix * normal);
-      vPosition = position;
-
-      float noise  = snoise(position * 2.0 + uTime * 0.3);
-      vec3  newPos = position + normal * noise * uIntensity * 0.15;
-
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(newPos, 1.0);
-    }
-  `;
-
-  const fragmentShader = `
-    uniform vec3 uColorA;
-    uniform vec3 uColorB;
-    uniform vec3 uLightPos;
-    varying vec3 vNormal;
-    varying vec3 vPosition;
-
-    void main() {
-      vec3  lightDir = normalize(uLightPos - vPosition);
-      float diffuse  = max(dot(vNormal, lightDir), 0.0);
-
-      /* Fresnel rim */
-      vec3  viewDir = normalize(cameraPosition - vPosition);
-      float fresnel = pow(1.0 - max(dot(viewDir, vNormal), 0.0), 3.0);
-
-      vec3  color = mix(uColorA, uColorB, diffuse + fresnel * 0.5);
-      float alpha = 0.15 + fresnel * 0.4 + diffuse * 0.2;
-
-      gl_FragColor = vec4(color, alpha);
-    }
-  `;
-
-  /* ---- Geometry & Material ---------------------------------------------- */
-  const geometry = new THREE.IcosahedronGeometry(1.65, 64);
-  const material = new THREE.ShaderMaterial({
-    vertexShader,
-    fragmentShader,
-    transparent: true,
-    uniforms: {
-      uTime:      { value: 0 },
-      uIntensity: { value: 1.0 },
-      uColorA:    { value: new THREE.Color('#1B4D3E') },
-      uColorB:    { value: new THREE.Color('#C9A227') },
-      uLightPos:  { value: new THREE.Vector3(2, 2, 2) }
-    }
-  });
-
-  const mesh = new THREE.Mesh(geometry, material);
-  scene.add(mesh);
-
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
-  scene.add(ambientLight);
-
-  /* ---- Mouse interaction ------------------------------------------------ */
   let mouseX = 0;
   let mouseY = 0;
+  let width = 0;
+  let height = 0;
+  let targetPosX = 0;
+  let targetPosY = 0;
+  let targetScale = 1;
+  let curPosX = 0;
+  let curPosY = 0;
+  let curScale = 1;
+  let animId;
 
   function onMouseMove(e) {
-    mouseX = (e.clientX / window.innerWidth)  * 2 - 1;
+    mouseX = (e.clientX / window.innerWidth) * 2 - 1;
     mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
   }
-  window.addEventListener('mousemove', onMouseMove, { passive: true });
-
-  /* ---- Scroll-driven position + scale ----------------------------------- */
-  let targetPosX  = 0;
-  let targetPosY  = 0;
-  let targetScale = 1;
-  let curPosX     = 0;
-  let curPosY     = 0;
-  let curScale    = 1;
 
   function onScroll() {
-    const scrollY   = window.scrollY;
-    const heroH     = window.innerHeight * 0.9;
-    const progress  = Math.min(scrollY / heroH, 1);
+    const scrollY = window.scrollY;
+    const heroH = window.innerHeight * 0.9;
+    const progress = Math.min(scrollY / heroH, 1);
 
-    /* Arc: 0-30% → drift right; 30-100% → sweep to the left */
     if (progress <= 0.3) {
       const p = progress / 0.3;
-      targetPosX  = p * 0.4;
-      targetPosY  = -p * 0.1;
+      targetPosX = p * 0.4;
+      targetPosY = -p * 0.1;
       targetScale = 1 - p * 0.12;
     } else {
       const p = (progress - 0.3) / 0.7;
-      targetPosX  = 0.4 - p * 3.0;
-      targetPosY  = -0.1 - p * 0.3;
+      targetPosX = 0.4 - p * 3.0;
+      targetPosY = -0.1 - p * 0.3;
       targetScale = 0.88 - p * 0.65;
     }
 
-    /* Fade canvas as sphere retreats */
     canvas.style.opacity = (0.6 - progress * 0.42).toFixed(3);
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  /* ---- Resize handler --------------------------------------------------- */
   function handleResize() {
-    const { w, h } = getCanvasSize();
-    renderer.setSize(w, h);
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    width = canvas.offsetWidth || window.innerWidth;
+    height = canvas.offsetHeight || window.innerHeight;
+    canvas.width = Math.floor(width * ratio);
+    canvas.height = Math.floor(height * ratio);
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
   }
+
+  function drawSphere(time) {
+    const cx = width * 0.52 + curPosX * width * 0.24;
+    const cy = height * 0.44 + curPosY * height * 0.24;
+    const radius = Math.min(width, height) * 0.24 * Math.max(curScale, 0.05);
+    const bands = 18;
+
+    ctx.clearRect(0, 0, width, height);
+
+    const halo = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius * 1.8);
+    halo.addColorStop(0, 'rgba(201,162,39,0.22)');
+    halo.addColorStop(0.42, 'rgba(27,77,62,0.14)');
+    halo.addColorStop(1, 'rgba(27,77,62,0)');
+    ctx.fillStyle = halo;
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius * 1.8, 0, Math.PI * 2);
+    ctx.fill();
+
+    for (let i = 0; i < bands; i += 1) {
+      const p = i / (bands - 1);
+      const y = cy + (p - 0.5) * radius * 1.65;
+      const bandRadius = Math.sqrt(Math.max(0, 1 - Math.pow((p - 0.5) * 2, 2))) * radius;
+      const wave = Math.sin(time * 0.0018 + i * 0.75 + mouseX * 0.9) * radius * 0.06;
+
+      ctx.beginPath();
+      for (let step = 0; step <= 80; step += 1) {
+        const t = (step / 80) * Math.PI * 2;
+        const x = cx + Math.cos(t) * bandRadius + Math.sin(t * 3 + time * 0.0012) * radius * 0.025;
+        const yy = y + Math.sin(t) * radius * 0.08 + wave;
+        if (step === 0) ctx.moveTo(x, yy);
+        else ctx.lineTo(x, yy);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = i % 3 === 0 ? 'rgba(201,162,39,0.36)' : 'rgba(27,77,62,0.28)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    const rim = ctx.createRadialGradient(
+      cx + mouseX * radius * 0.25,
+      cy - mouseY * radius * 0.25,
+      radius * 0.1,
+      cx,
+      cy,
+      radius
+    );
+    rim.addColorStop(0, 'rgba(255,255,255,0.34)');
+    rim.addColorStop(0.38, 'rgba(201,162,39,0.16)');
+    rim.addColorStop(1, 'rgba(27,77,62,0.04)');
+    ctx.fillStyle = rim;
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function animate(time) {
+    const ease = 0.05;
+    curPosX += (targetPosX - curPosX) * ease;
+    curPosY += (targetPosY - curPosY) * ease;
+    curScale += (targetScale - curScale) * ease;
+    drawSphere(time);
+    animId = requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('mousemove', onMouseMove, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', handleResize);
 
-  /* ---- Animation loop --------------------------------------------------- */
-  let animId;
+  handleResize();
+  onScroll();
+  animId = requestAnimationFrame(animate);
 
-  function animate() {
-    animId = requestAnimationFrame(animate);
-
-    material.uniforms.uTime.value += 0.005;
-
-    /* Smooth-follow scroll targets */
-    const ease = 0.05;
-    curPosX  += (targetPosX  - curPosX)  * ease;
-    curPosY  += (targetPosY  - curPosY)  * ease;
-    curScale += (targetScale - curScale) * ease;
-
-    mesh.position.x = curPosX;
-    mesh.position.y = curPosY;
-    mesh.scale.setScalar(Math.max(curScale, 0.05));
-
-    /* Light follows mouse */
-    const lp = material.uniforms.uLightPos.value;
-    lp.x += (mouseX * 3 - lp.x) * 0.05;
-    lp.y += (mouseY * 3 - lp.y) * 0.05;
-
-    mesh.rotation.y += 0.003;
-    mesh.rotation.x += 0.001;
-
-    renderer.render(scene, camera);
-  }
-  animate();
-
-  /* ---- Cleanup ---------------------------------------------------------- */
   return function cleanup() {
     cancelAnimationFrame(animId);
     window.removeEventListener('mousemove', onMouseMove);
     window.removeEventListener('resize', handleResize);
     window.removeEventListener('scroll', onScroll);
-    geometry.dispose();
-    material.dispose();
-    renderer.dispose();
   };
 }
 
@@ -464,20 +351,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* Hero shape entry + float animations */
   initHeroShapes();
-
-  /*
-   * Wave spheres are NOT initialised here because THREE.js is a large CDN
-   * dependency that is only included on slides that actually need the sphere.
-   *
-   * On those pages, add the following after the THREE.js <script> tag:
-   *
-   *   <script>
-   *     document.addEventListener('DOMContentLoaded', function () {
-   *       initWaveSphere('wave-sphere');
-   *     });
-   *   </script>
-   *
-   * Or call initWaveSphere('wave-sphere') directly from the page's own JS
-   * once THREE is confirmed loaded (e.g. in a THREE script onload callback).
-   */
+  /* Wave spheres are initialised from page-specific JS only on pages that need that canvas effect. */
 });

@@ -53,7 +53,17 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #1B4D3E;
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.nav-brand-mobile {
+  border-right: none;
+  margin-right: 0;
+}
+
+.mobile-documents-link {
+  color: #C9A227;
+  font-size: 1.25rem;
 }
 
 /* Nav separator dot */
@@ -79,7 +89,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 400;
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   transition: color 150ms ease;
   flex-shrink: 0;
 }
@@ -107,7 +117,7 @@
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 600;
   text-decoration: none;
   transition: all 150ms ease;
@@ -169,7 +179,7 @@
 }
 .mobile-menu.open { opacity: 1; pointer-events: all; }
 .mobile-menu a {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.75rem;
   color: #0A1A14;
   letter-spacing: 0.05em;
@@ -246,7 +256,7 @@
   flex-shrink: 0;
 }
 .side-nav-logo-text {
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -275,7 +285,7 @@
   position: relative;
   text-decoration: none;
   color: #7A9690;
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
   text-transform: uppercase;

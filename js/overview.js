@@ -46,6 +46,10 @@
 // The main charts live on the Finance page; overview uses counters only.
 // If a canvas#revenue-spark element is present, draw a micro area chart.
 document.addEventListener('DOMContentLoaded', () => {
+  if (typeof initWaveSphere === 'function') {
+    initWaveSphere('wave-sphere');
+  }
+
   if (typeof drawAreaChart === 'function') {
     const sparkCanvas = document.getElementById('revenue-spark');
     if (sparkCanvas) {

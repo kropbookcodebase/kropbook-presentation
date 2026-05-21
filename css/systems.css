@@ -119,7 +119,7 @@
 }
 
 .ap-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -231,7 +231,7 @@
 }
 
 .arch-layer-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.25em;
@@ -244,7 +244,7 @@
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .arch-layer-desc {
@@ -314,7 +314,7 @@
 }
 
 .arch-feature-chip {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);
@@ -335,7 +335,7 @@
   gap: 0.3rem;
   font-size: 0.8rem;
   opacity: 0.8;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 /* Buyer chips */
@@ -345,7 +345,7 @@
   gap: 0.5rem;
 }
 .buyer-chip {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   font-weight: 600;
   padding: 0.2rem 0.65rem;
@@ -520,7 +520,7 @@
 .cap-title {
   font-size: 1.05rem;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text-primary);
   margin-bottom: 0.75rem;
   line-height: 1.3;
@@ -555,7 +555,7 @@
 }
 
 .rail-step-number {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   font-weight: 600;
   color: var(--accent-gold);
@@ -613,7 +613,7 @@
   opacity: 0.5;
   z-index: 3;
   transition: opacity var(--transition-base);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 .rail-step.anim-visible .rail-arrow { opacity: 0.9; }
@@ -726,7 +726,7 @@
   padding: 0.5rem 1rem 0.25rem;
   font-size: 0.6rem;
   color: rgba(255,255,255,0.5);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-weight: 500;
 }
 
@@ -747,7 +747,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
   font-size: 0.9rem;
   color: var(--accent-gold);
@@ -757,13 +757,13 @@
   font-size: 0.7rem;
   font-weight: 600;
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .phone-app-sub {
   font-size: 0.55rem;
   color: rgba(255,255,255,0.4);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 .phone-card {
@@ -775,7 +775,7 @@
 }
 
 .phone-card-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.5rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -802,7 +802,7 @@
   font-size: 0.65rem;
   font-weight: 700;
   color: #fff;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 .phone-soil-val.good {
@@ -818,7 +818,7 @@
 .phone-soil-key {
   font-size: 0.5rem;
   color: rgba(255,255,255,0.4);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   letter-spacing: 0.1em;
 }
 
@@ -826,7 +826,7 @@
 .phone-reco-text {
   font-size: 0.62rem;
   color: rgba(255,255,255,0.75);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   line-height: 1.6;
 }
 
@@ -842,13 +842,13 @@
   font-size: 0.85rem;
   font-weight: 700;
   color: #4ade80;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .phone-payment-buyer {
   font-size: 0.55rem;
   font-weight: 600;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   color: var(--accent-gold);
   padding: 0.1rem 0.4rem;
   border: 1px solid rgba(201,162,39,0.3);
@@ -858,7 +858,7 @@
 .phone-payment-date {
   font-size: 0.55rem;
   color: rgba(255,255,255,0.35);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 /* Credit card */
@@ -893,14 +893,14 @@
 .phone-credit-status {
   font-size: 0.55rem;
   color: var(--accent-gold);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   white-space: nowrap;
 }
 
 .phone-credit-note {
   font-size: 0.5rem;
   color: rgba(255,255,255,0.3);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 .phone-home-bar {
@@ -925,7 +925,7 @@
 }
 
 .ff-number {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.7rem;
   font-weight: 600;
   color: var(--accent-gold);
@@ -940,7 +940,7 @@
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.4rem;
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.3;
 }
 
@@ -989,11 +989,11 @@
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .license-examples {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   color: var(--text-muted);
   letter-spacing: 0.05em;
@@ -1016,7 +1016,7 @@
 }
 
 .moat-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.55rem;
   letter-spacing: 0.15em;
   color: var(--text-muted);
@@ -1045,7 +1045,7 @@
 }
 
 .moat-value {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   font-weight: 600;
   color: var(--accent-gold);
@@ -1171,3 +1171,35 @@
   .rail-step { gap: 0.75rem; }
   .phone-frame { width: 240px; }
 }
+
+.ex-systems-1 { display:none }
+
+.ex-systems-2 { --rot:-4deg }
+
+.ex-systems-3 { --rot:3deg }
+
+.ex-systems-4 { --rot:-2deg }
+
+.ex-systems-5 { width:90% }
+
+.ex-systems-6 { width:80% }
+
+.ex-systems-7 { width:95% }
+
+.ex-systems-8 { color:rgba(201,162,39,0.8) }
+
+.ex-systems-1 { display:none }
+
+.ex-systems-2 { --rot:-4deg }
+
+.ex-systems-3 { --rot:3deg }
+
+.ex-systems-4 { --rot:-2deg }
+
+.ex-systems-5 { width:90% }
+
+.ex-systems-6 { width:80% }
+
+.ex-systems-7 { width:95% }
+
+.ex-systems-8 { color:rgba(201,162,39,0.8) }

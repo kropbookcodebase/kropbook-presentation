@@ -4,18 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Governance | Kropbook Agritech</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/governance.css">
+  <title>Governance | Kropbook Agritech</title>  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/governance.css">
+  <script src="../js/effects.js"></script>
 </head>
 
 <body>
-  <svg style="display:none" aria-hidden="true">
+  <svg aria-hidden="true" class="ex-governance-1">
     <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
       <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence" />
       <feComponentTransfer in="turbulence" result="mapped">
@@ -47,43 +44,43 @@
       <div class="bg-grid"></div>
 
       <!-- Floating shapes -->
-      <div class="floating-shape gov-shape-1" data-opacity="0.06"
-        style="--rot:8deg; animation-delay:0s; animation-duration:15s;"></div>
-      <div class="floating-shape gov-shape-2" data-opacity="0.05"
-        style="--rot:-12deg; animation-delay:1.5s; animation-duration:18s;"></div>
-      <div class="floating-shape gov-shape-3" data-opacity="0.07"
-        style="--rot:18deg; animation-delay:3s; animation-duration:13s;"></div>
+      <div class="floating-shape gov-shape-1 ex-governance-2" data-opacity="0.06"
+       ></div>
+      <div class="floating-shape gov-shape-2 ex-governance-3" data-opacity="0.05"
+       ></div>
+      <div class="floating-shape gov-shape-3 ex-governance-4" data-opacity="0.07"
+       ></div>
 
       <div class="gov-hero-content">
 
-        <div class="gov-hero-badge-wrap" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.1s;">
+        <div class="gov-hero-badge-wrap ex-governance-5">
           <div class="confidential-badge">
             <span class="dot"></span>
             Institutional Briefing &middot; 2026 &middot; Governance
           </div>
         </div>
 
-        <div style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.25s;">
+        <div class="ex-governance-6">
           <div class="section-label">08 &middot; Governance</div>
         </div>
 
-        <h1 class="font-display gov-hero-h1"
-          style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.4s;">
+        <h1 class="font-display gov-hero-h1 ex-governance-7"
+         >
           Governance is not compliance.
         </h1>
 
-        <h2 class="font-display gov-hero-h2 text-gold-gradient"
-          style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.55s;">
+        <h2 class="font-display gov-hero-h2 text-gold-gradient ex-governance-8"
+         >
           It is the architecture of institutional trust.
         </h2>
 
-        <p class="gov-hero-subtitle" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.7s;">
+        <p class="gov-hero-subtitle ex-governance-9">
           Legal backbone. Audit integrity. IP protection. Tax strategy. Every dimension covered.
         </p>
 
         <!-- Scroll indicator -->
-        <div class="gov-scroll-indicator"
-          style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.9s;">
+        <div class="gov-scroll-indicator ex-governance-10"
+         >
           <div class="scroll-arrow-line"></div>
           <span class="scroll-arrow-icon">&#8595;</span>
           <span class="scroll-label">Scroll to explore</span>
@@ -112,11 +109,10 @@
         <div class="grid-4 gov-certs-grid">
 
           <!-- Card 1: Certificate of Incorporation -->
-          <article class="doc-card anim-hidden" data-delay="0.1"
-            onclick="openPdfModal('documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf', 'Certificate of Incorporation — Kropbook Agritech')">
+          <article class="doc-card anim-hidden" data-delay="0.1" data-pdf-path="../documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf" data-pdf-title="Certificate of Incorporation — Kropbook Agritech">
             <div class="doc-card-top">
-              <div class="doc-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;">
-                <img src="icons/GIF/legal.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+              <div class="doc-icon ex-governance-11">
+                <img src="../icons/GIF/legal.gif" alt="" class="ex-governance-12">
               </div>
               <span class="gov-status-badge gov-status-active">Verified</span>
             </div>
@@ -131,11 +127,10 @@
           </article>
 
           <!-- Card 2: DIPP Certificate -->
-          <article class="doc-card anim-hidden" data-delay="0.2"
-            onclick="openPdfModal('documents/DIPP53655_KROPBOOK.pdf', 'DIPP Certificate — Startup India')">
+          <article class="doc-card anim-hidden" data-delay="0.2" data-pdf-path="../documents/DIPP53655_KROPBOOK.pdf" data-pdf-title="DIPP Certificate — Startup India">
             <div class="doc-card-top">
-              <div class="doc-icon" style="background:rgba(201,162,39,0.06);border:1px solid rgba(201,162,39,0.15);width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;">
-                <img src="icons/GIF/Certificate DIPP53655_KROPBOOK.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+              <div class="doc-icon ex-governance-13">
+                <img src="../icons/GIF/Certificate DIPP53655_KROPBOOK.gif" alt="" class="ex-governance-14">
               </div>
               <span class="gov-status-badge gov-status-active">Active</span>
             </div>
@@ -150,11 +145,10 @@
           </article>
 
           <!-- Card 3: Section 80-IAC -->
-          <article class="doc-card anim-hidden" data-delay="0.3"
-            onclick="openPdfModal('documents/Kropbook-section-80-iac.pdf', 'Section 80-IAC Certificate')">
+          <article class="doc-card anim-hidden" data-delay="0.3" data-pdf-path="../documents/Kropbook-section-80-iac.pdf" data-pdf-title="Section 80-IAC Certificate">
             <div class="doc-card-top">
-              <div class="doc-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;">
-                <img src="icons/GIF/certificate.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+              <div class="doc-icon ex-governance-15">
+                <img src="../icons/GIF/certificate.gif" alt="" class="ex-governance-16">
               </div>
               <span class="gov-status-badge gov-status-active">Recognised</span>
             </div>
@@ -171,8 +165,8 @@
           <!-- Card 4: Company Registration (CIN) -->
           <article class="doc-card doc-card-info anim-hidden" data-delay="0.4">
             <div class="doc-card-top">
-              <div class="doc-icon" style="background:rgba(45,107,85,0.06);border:1px solid rgba(45,107,85,0.12);width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;">
-                <img src="icons/GIF/folder.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+              <div class="doc-icon ex-governance-17">
+                <img src="../icons/GIF/folder.gif" alt="" class="ex-governance-18">
               </div>
               <span class="gov-status-badge gov-status-active">Active</span>
             </div>
@@ -183,7 +177,7 @@
               <span class="gov-cin-value font-mono-custom">U01100PN2018PTC180049</span>
             </div>
             <p class="gov-doc-desc">
-              Incorporated 2018. Registered office: Vashi, Navi Mumbai, Maharashtra. Status: Active (MCA).
+              Incorporated 05 November 2018. Registered office: Vashi, Navi Mumbai, Maharashtra. Status: Active (MCA).
             </p>
           </article>
 
@@ -212,7 +206,7 @@
           <!-- 1: Geetanjali Khanna -->
           <article class="glass-card gov-team-card anim-hidden" data-delay="0.1">
             <div class="gov-team-icon-wrap">
-              <img src="icons/GIF/audit-document.gif" alt="" style="width:36px;height:36px;object-fit:contain;">
+              <img src="../icons/GIF/audit-document.gif" alt="" class="ex-governance-19">
             </div>
             <div class="gov-team-domain-tag">Audit &amp; Risk Control</div>
             <h3 class="gov-team-name">Geetanjali Khanna</h3>
@@ -225,7 +219,7 @@
           <!-- 2: CA Shashank Suvarnapathki -->
           <article class="glass-card gov-team-card anim-hidden" data-delay="0.2">
             <div class="gov-team-icon-wrap">
-              <img src="icons/GIF/tax.gif" alt="" style="width:36px;height:36px;object-fit:contain;">
+              <img src="../icons/GIF/tax.gif" alt="" class="ex-governance-20">
             </div>
             <div class="gov-team-domain-tag">Tax Strategy</div>
             <h3 class="gov-team-name">CA Shashank Suvarnapathki</h3>
@@ -238,7 +232,7 @@
           <!-- 3: Adv. Tarun Khurana -->
           <article class="glass-card gov-team-card anim-hidden" data-delay="0.3">
             <div class="gov-team-icon-wrap">
-              <img src="icons/GIF/patent IP Protection.gif" alt="" style="width:36px;height:36px;object-fit:contain;">
+              <img src="../icons/GIF/patent IP Protection.gif" alt="" class="ex-governance-21">
             </div>
             <div class="gov-team-domain-tag">Patent Defense</div>
             <h3 class="gov-team-name">Adv. Tarun Khurana</h3>
@@ -251,7 +245,7 @@
           <!-- 4: Adv. Anubhav Kumar -->
           <article class="glass-card gov-team-card anim-hidden" data-delay="0.4">
             <div class="gov-team-icon-wrap">
-              <img src="icons/GIF/legal 2.gif" alt="" style="width:36px;height:36px;object-fit:contain;">
+              <img src="../icons/GIF/legal 2.gif" alt="" class="ex-governance-22">
             </div>
             <div class="gov-team-domain-tag">Legal Counsel</div>
             <h3 class="gov-team-name">Adv. Anubhav Kumar</h3>
@@ -264,7 +258,7 @@
           <!-- 5: CS Pralhad Kumar -->
           <article class="glass-card gov-team-card anim-hidden" data-delay="0.5">
             <div class="gov-team-icon-wrap">
-              <img src="icons/GIF/legal.gif" alt="" style="width:36px;height:36px;object-fit:contain;">
+              <img src="../icons/GIF/legal.gif" alt="" class="ex-governance-23">
             </div>
             <div class="gov-team-domain-tag">Corporate Compliance</div>
             <h3 class="gov-team-name">CS Pralhad Kumar</h3>
@@ -374,7 +368,7 @@
           </p>
 
           <p class="gov-patent-sub gov-patent-sub-secondary">
-            Dr. Kiran Avhad's Nano-Urea research represents a genuine scientific breakthrough,
+            Dr. Kiran Chandar Avhad's Nano-Urea research represents a genuine scientific breakthrough,
             protected by intellectual property that withstood the most demanding scrutiny.
           </p>
 
@@ -410,7 +404,7 @@
 
           <div class="gov-info-item">
             <div class="gov-info-label">Founded</div>
-            <div class="gov-info-value">2018</div>
+            <div class="gov-info-value">05 November 2018</div>
           </div>
 
           <div class="gov-info-item gov-info-item-wide">
@@ -476,10 +470,9 @@
 
   <div id="footer-container"></div>
 
-  <script src="js/effects.js"></script>
-  <script src="js/shared.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/governance.js"></script>
+  <script src="../js/shared.js"></script>
+  <script src="../js/animations.js"></script>
+  <script src="../js/governance.js"></script>
 
 </body>
 

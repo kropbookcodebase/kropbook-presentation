@@ -4,23 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business Operations | Kropbook Agritech</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/business-operations.css">
-  <script src="js/effects.js"></script>
+  <title>Business Operations | Kropbook Agritech</title>  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/business-operations.css">
+  <script src="../js/effects.js"></script>
 </head>
 
 <body>
 
   <!-- Glass SVG Filter -->
-  <svg style="display:none" aria-hidden="true">
+  <svg aria-hidden="true" class="ex-business-operations-1">
     <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
       <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence" />
       <feComponentTransfer in="turbulence" result="mapped">
@@ -127,8 +121,7 @@
           <div class="glass-card bops-product-card anim-hidden" data-delay="0.15">
             <div class="bops-product-badge fresh">Fresh Produce</div>
             <div class="bops-product-icon-wrap">
-              <img src="icons/GIF/wheat.gif" alt="Fresh Organic Produce" class="bops-product-gif"
-                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <img src="../icons/GIF/wheat.gif" alt="Fresh Organic Produce" class="bops-product-gif">
               <div class="bops-product-emoji-fallback">🥬</div>
             </div>
             <h3 class="bops-product-title">Fresh Organic Produce</h3>
@@ -261,7 +254,7 @@
             <p class="bops-stat-text">
               We source from
               <strong><span data-counter data-target="800" data-suffix="+">800+</span> farmers</strong>
-              across Maharashtra &amp; Goa —
+              across Maharashtra, Punjab &amp; Andhra Pradesh —
               paying <strong>₹500+ Cr</strong> in fair prices annually.
             </p>
           </div>
@@ -484,42 +477,42 @@
           </div>
 
           <div class="glass-card bops-network-card anim-hidden" data-delay="0.2">
-            <div class="bops-net-state">Goa</div>
+            <div class="bops-net-state">Punjab</div>
             <div class="bops-net-badge active">Active</div>
-            <p class="bops-net-desc">Coastal specialty sourcing for premium institutional buyers and hospitality chains.
+            <p class="bops-net-desc">Northern grain belt sourcing for institutional buyers and export supply chains.
             </p>
             <ul class="bops-net-list">
               <li>
-                <span class="bops-net-region">North Goa</span>
-                <span class="bops-net-crops">Coastal Fruits</span>
+                <span class="bops-net-region">Ludhiana</span>
+                <span class="bops-net-crops">Wheat, Grains</span>
               </li>
               <li>
-                <span class="bops-net-region">South Goa</span>
-                <span class="bops-net-crops">Spices</span>
+                <span class="bops-net-region">Amritsar</span>
+                <span class="bops-net-crops">Pulses</span>
               </li>
               <li>
-                <span class="bops-net-region">Mandovi Belt</span>
-                <span class="bops-net-crops">Specialty Produce</span>
+                <span class="bops-net-region">Sutlej Valley</span>
+                <span class="bops-net-crops">Fresh Produce</span>
               </li>
             </ul>
           </div>
 
           <div class="glass-card bops-network-card bops-network-card-expand anim-hidden" data-delay="0.3">
-            <div class="bops-net-state">Pan-India</div>
-            <div class="bops-net-badge expansion">Expansion</div>
-            <p class="bops-net-desc">Karnataka, Gujarat, and Rajasthan sourcing networks under active development.</p>
+            <div class="bops-net-state">Andhra Pradesh</div>
+            <div class="bops-net-badge active">Active</div>
+            <p class="bops-net-desc">Southern sourcing network for fresh produce, spices, and export-quality commodities.</p>
             <ul class="bops-net-list">
               <li>
-                <span class="bops-net-region">Karnataka</span>
-                <span class="bops-net-crops">Horticulture</span>
+                <span class="bops-net-region">Guntur</span>
+                <span class="bops-net-crops">Chillies, Spices</span>
               </li>
               <li>
-                <span class="bops-net-region">Gujarat</span>
-                <span class="bops-net-crops">Oilseeds, Cotton</span>
+                <span class="bops-net-region">Krishna</span>
+                <span class="bops-net-crops">Vegetables</span>
               </li>
               <li>
-                <span class="bops-net-region">Rajasthan</span>
-                <span class="bops-net-crops">Mustard, Pulses</span>
+                <span class="bops-net-region">Kurnool</span>
+                <span class="bops-net-crops">Pulses, Oilseeds</span>
               </li>
             </ul>
           </div>
@@ -537,7 +530,7 @@
       <div class="container bops-soil-container">
 
         <div class="bops-soil-header">
-          <span class="section-label anim-hidden" data-delay="0" style="color:rgba(232,200,74,0.85)">Patent Pending ·
+          <span class="section-label anim-hidden ex-business-operations-2" data-delay="0">Patent Pending ·
             IoT Device</span>
           <h2 class="bops-soil-h2 anim-hidden" data-delay="0.1">The Hidden Weapon:<br><em>3-Minute Soil Testing.</em>
           </h2>
@@ -606,7 +599,7 @@
           <div class="callout-card bops-cta-card anim-hidden" data-delay="0.1">
             <div class="bops-cta-inner">
               <div class="bops-cta-text">
-                <span class="section-label" style="color:rgba(201,162,39,0.8)">Next: Capital</span>
+                <span class="section-label ex-business-operations-3">Continue: Capital</span>
                 <h3 class="bops-cta-h3">See Our Capital<br>Requirements.</h3>
                 <p class="bops-cta-sub">Funding structure, use of proceeds, and the path to institutional scale.</p>
               </div>
@@ -620,9 +613,9 @@
           <div class="bops-cta-card-secondary glass-card anim-hidden" data-delay="0.2">
             <div class="bops-cta-inner">
               <div class="bops-cta-text">
-                <span class="section-label" style="color: var(--accent-gold)">Also: Technology</span>
+                <span class="section-label ex-business-operations-4">Also: Technology</span>
                 <h3 class="bops-cta-h3-alt">Explore Our<br>Technology Platform.</h3>
-                <p class="bops-cta-sub-alt">AgriOS, the intelligence layer connecting every node in the value chain.</p>
+                <p class="bops-cta-sub-alt">KropBook, the intelligence platform connecting every node in the value chain.</p>
               </div>
               <a href="systems.html" class="bops-cta-btn-alt">
                 Explore Technology Platform
@@ -639,9 +632,9 @@
 
   <div id="footer-container"></div>
 
-  <script src="js/shared.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/business-operations.js"></script>
+  <script src="../js/shared.js"></script>
+  <script src="../js/animations.js"></script>
+  <script src="../js/business-operations.js"></script>
 
 </body>
 

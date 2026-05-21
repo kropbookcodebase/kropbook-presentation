@@ -1,9 +1,6 @@
 /* ============================================================
    KROPBOOK AGRITECH — GLOBAL DESIGN SYSTEM
    ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 /* ── CSS Variables ─────────────────────────────────────────── */
 :root {
   /* Brand Colors */
@@ -66,16 +63,16 @@
   --text-8xl:  7rem;
 
   /* Font Families */
-  --font-display: 'Playfair Display';
-  --font-body: 'DM Sans';
-  --font-mono: 'JetBrains Mono';
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 /* ── Reset & Base ──────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
 body {
-  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 1.125rem;
   background: var(--bg-primary);
   color: var(--text-primary);
@@ -89,35 +86,35 @@ ul, ol { list-style: none; }
 table { border-collapse: collapse; width: 100%; }
 
 /* ── Typography ────────────────────────────────────────────── */
-.font-display { font-family: 'Playfair Display', Georgia, serif; }
-.font-mono-custom { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+.font-display { font-family: Georgia, "Times New Roman", serif; }
+.font-mono-custom { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
 
 h1 {
   font-size: clamp(3.375rem, 8vw, 7rem);
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
   line-height: 1.1;
 }
 h2 {
   font-size: clamp(2.625rem, 6vw, 4.25rem);
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-weight: 600;
   line-height: 1.15;
 }
 h3 {
   font-size: clamp(1.75rem, 3vw, 2.125rem);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 600;
   line-height: 1.25;
 }
 h4 {
   font-size: clamp(1.375rem, 2.5vw, 1.75rem);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 600;
 }
 h5 {
   font-size: clamp(1.125rem, 2vw, 1.375rem);
-  font-family: 'DM Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 600;
 }
 p { font-size: 1.125rem; line-height: 1.8; }
@@ -308,7 +305,7 @@ p { font-size: 1.125rem; line-height: 1.8; }
 /* ── Section Label ─────────────────────────────────────────── */
 .section-label {
   font-size: var(--text-xs);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-weight: 600;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -334,7 +331,7 @@ p { font-size: 1.125rem; line-height: 1.8; }
   border-radius: var(--radius-md);
   font-size: 1rem;
   font-weight: 600;
-  font-family: 'DM Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   letter-spacing: 0.02em;
   transition: all var(--transition-fast);
 }
@@ -509,7 +506,7 @@ p { font-size: 1.125rem; line-height: 1.8; }
   color: var(--brand-green);
 }
 .metric-card .metric-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -517,7 +514,7 @@ p { font-size: 1.125rem; line-height: 1.8; }
   margin-bottom: 0.5rem;
 }
 .metric-card .metric-value {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, "Times New Roman", serif, serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -551,7 +548,7 @@ p { font-size: 1.125rem; line-height: 1.8; }
   color: var(--brand-green);
   font-size: 1.25rem;
   font-weight: 700;
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, "Times New Roman", serif, serif;
   margin-bottom: 1rem;
   overflow: hidden;
 }
@@ -570,7 +567,7 @@ p { font-size: 1.125rem; line-height: 1.8; }
 .team-card .team-bg {
   font-size: 0.7rem;
   color: var(--text-muted);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 /* ── Table ──────────────────────────────────────────────────── */
@@ -580,7 +577,7 @@ p { font-size: 1.125rem; line-height: 1.8; }
   padding: 0.875rem 1.25rem;
   text-align: left;
   color: rgba(255,255,255,0.7);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.2em;
@@ -620,7 +617,7 @@ p { font-size: 1.125rem; line-height: 1.8; }
 }
 .accordion-trigger:hover { background: var(--bg-secondary); }
 .accordion-trigger h3 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: var(--text-base);
   font-weight: 600;
   color: var(--text-primary);
@@ -662,7 +659,7 @@ p { font-size: 1.125rem; line-height: 1.8; }
   padding: 0.625rem 1.25rem;
   font-size: var(--text-sm);
   font-weight: 500;
-  font-family: 'DM Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text-muted);
   border-bottom: 2px solid transparent;
   transition: all var(--transition-fast);
@@ -704,7 +701,7 @@ p { font-size: 1.125rem; line-height: 1.8; }
 }
 .doc-card:hover .doc-icon { background: rgba(201,162,39,0.1); color: var(--accent-gold); }
 .doc-card .doc-name { font-size: var(--text-sm); font-weight: 600; color: var(--text-primary); }
-.doc-card .doc-category { font-size: 0.65rem; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); }
+.doc-card .doc-category { font-size: 0.65rem; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); }
 .doc-card .doc-action { font-size: 0.75rem; color: var(--accent-gold); opacity: 0.7; display: flex; align-items: center; gap: 0.25rem; margin-top: auto; }
 .doc-card:hover .doc-action { opacity: 1; gap: 0.5rem; }
 
@@ -757,7 +754,34 @@ p { font-size: 1.125rem; line-height: 1.8; }
   transition: all var(--transition-fast);
 }
 .modal-toolbar button:hover { background: rgba(255,255,255,0.08); color: #fff; }
-.modal-toolbar .page-info { color: rgba(255,255,255,0.5); font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; padding: 0 0.5rem; }
+.modal-toolbar .page-info { color: rgba(255,255,255,0.5); font-size: 0.75rem; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; padding: 0 0.5rem; }
+.pdf-download-link {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.75rem;
+}
+.pdf-modal-spacer {
+  flex: 1;
+}
+.local-only-note {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  background: rgba(27, 77, 62, 0.08);
+  color: var(--brand-green);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.local-document-note {
+  margin: 0;
+  color: var(--text-secondary);
+  background: rgba(27, 77, 62, 0.04);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
 .modal-body { flex: 1; overflow: auto; display: flex; align-items: flex-start; justify-content: center; padding: 1.5rem; }
 .modal-body iframe { width: 100%; height: 100%; border: none; border-radius: var(--radius-md); }
 .modal-close-btn {
@@ -848,7 +872,7 @@ p { font-size: 1.125rem; line-height: 1.8; }
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-muted);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 .confidential-badge .dot {
   width: 6px; height: 6px;

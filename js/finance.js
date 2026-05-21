@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   drawBarChart('revenue-chart', {
     groups: ['FY 22-23', 'FY 23-24', 'FY 24-25', 'FY 25-26*'],
     series: [
-      { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 92.50], label: 'Revenue' },
+      { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 75.49], label: 'Revenue' },
       { color: '#2d6b55', values: [1.47, 6.43, 21.70, 37.00],   label: 'Gross Profit' },
       { color: '#C9A227', values: [0.61, 4.72, 7.80, 13.20],    label: 'Net Profit' }
     ]
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   drawAreaChart('asset-chart', {
     labels: ['FY 22-23', 'FY 23-24', 'FY 24-25', 'FY 25-26*'],
     series: [
-      { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 92.50], label: 'Revenue' },
+      { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 75.49], label: 'Revenue' },
       { color: '#C9A227', values: [0.61, 4.72, 7.80, 13.20],    label: 'Net Profit' }
     ]
   });
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       drawBarChart('revenue-chart', {
         groups: ['FY 22-23', 'FY 23-24', 'FY 24-25', 'FY 25-26*'],
         series: [
-          { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 92.50], label: 'Revenue' },
+          { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 75.49], label: 'Revenue' },
           { color: '#2d6b55', values: [1.47, 6.43, 21.70, 37.00],   label: 'Gross Profit' },
           { color: '#C9A227', values: [0.61, 4.72, 7.80, 13.20],    label: 'Net Profit' }
         ]
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       drawAreaChart('asset-chart', {
         labels: ['FY 22-23', 'FY 23-24', 'FY 24-25', 'FY 25-26*'],
         series: [
-          { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 92.50], label: 'Revenue' },
+          { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 75.49], label: 'Revenue' },
           { color: '#C9A227', values: [0.61, 4.72, 7.80, 13.20],    label: 'Net Profit' }
         ]
       });

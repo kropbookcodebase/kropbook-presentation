@@ -101,7 +101,7 @@
 }
 
 .kb-hero-card__label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -116,7 +116,7 @@
 }
 
 .kb-hero-card__params span {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   font-weight: 600;
   padding: 0.2rem 0.5rem;
@@ -133,7 +133,7 @@
 }
 
 .kb-timer-number {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 4.5rem;
   font-weight: 700;
   color: var(--brand-green);
@@ -189,7 +189,7 @@
 }
 
 .kb-reveal__strikethrough {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 600;
   color: var(--text-muted);
@@ -221,7 +221,7 @@
 }
 
 .kb-reveal__truth {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.5rem, 7vw, 5rem);
   font-weight: 700;
   line-height: 1;
@@ -317,7 +317,7 @@
 }
 
 .kb-process-step__number {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -378,7 +378,7 @@
   font-size: 0.7rem;
   color: var(--text-muted);
   line-height: 1.4;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 /* Summary bar */
@@ -411,7 +411,7 @@
 }
 
 .kb-process__summary-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -419,7 +419,7 @@
 }
 
 .kb-process__summary-value {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--brand-green);
@@ -504,7 +504,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-primary);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   line-height: 1.25;
 }
 
@@ -517,7 +517,7 @@
 
 .kb-flip-card__hint {
   font-size: 0.65rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   color: var(--accent-gold);
   opacity: 0.7;
   letter-spacing: 0.1em;
@@ -533,7 +533,7 @@
 }
 
 .kb-flip-card__back-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -615,7 +615,7 @@
 }
 
 .kb-patent-seal__top {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.55rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -623,7 +623,7 @@
 }
 
 .kb-patent-seal__main {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--accent-gold-light);
@@ -633,7 +633,7 @@
 
 .kb-patent-seal__sub {
   font-size: 0.5rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   letter-spacing: 0.15em;
   color: rgba(201,162,39,0.5);
   text-transform: uppercase;
@@ -648,7 +648,7 @@
 }
 
 .kb-validation__headline {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 400;
   color: rgba(255,255,255,0.9);
@@ -656,7 +656,7 @@
 }
 
 .kb-validation__result {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1;
@@ -740,7 +740,7 @@
 }
 
 .kb-device-card__time-badge {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -751,7 +751,7 @@
 }
 
 .kb-device-card__market-badge {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -763,7 +763,7 @@
 }
 
 .kb-device-card__pipeline-badge {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -778,7 +778,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-primary);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .kb-device-card__desc {
@@ -795,7 +795,7 @@
 }
 
 .kb-param-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   font-weight: 500;
   padding: 0.2rem 0.5rem;
@@ -815,7 +815,7 @@
 }
 
 .kb-market-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   font-weight: 500;
   padding: 0.2rem 0.5rem;
@@ -927,7 +927,7 @@
 }
 
 .kb-biz-card__number {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 3.5rem;
   font-weight: 700;
   color: var(--accent-gold);
@@ -957,7 +957,7 @@
 }
 
 .kb-biz-card__title {
-  font-family: 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -988,7 +988,7 @@
 }
 
 .kb-biz-card__since {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   color: var(--accent-gold);
   letter-spacing: 0.1em;
@@ -1218,3 +1218,34 @@
     padding: 2rem 1.5rem;
   }
 }
+
+
+
+/* Extracted from kropbook.html head style block */
+.process-gif {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
+
+.ex-kropbook-1 { display:none }
+
+.ex-kropbook-2 { color:rgba(201,162,39,0.7); }
+
+.ex-kropbook-3 { padding: 5rem 1.5rem; background: #F7F9F8; }
+
+.ex-kropbook-4 { max-width: 900px; margin: 0 auto; }
+
+.ex-kropbook-5 { margin-bottom: 0.5rem; }
+
+.ex-kropbook-6 { color: var(--text-muted); margin-bottom: 2rem; font-size: 1rem; }
+
+.ex-kropbook-7 { border: 2px solid var(--border-gold); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); background: #fff; }
+
+.ex-kropbook-8 { background: var(--brand-green); color: #fff; padding: 0.875rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+
+.ex-kropbook-9 { font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; }
+
+.ex-kropbook-10 { color: var(--accent-gold); font-size: 0.75rem; text-decoration: none; border: 1px solid var(--accent-gold); padding: 0.3rem 0.75rem; border-radius: 100px; transition: all 200ms ease; }
+
+.ex-kropbook-11 { width: 100%; height: 800px; border: none; display: block; }

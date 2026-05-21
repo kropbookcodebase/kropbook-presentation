@@ -4,21 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documents | Kropbook Agritech</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/financial-statements.css">
-  <script src="js/effects.js"></script>
+  <title>Documents | Kropbook Agritech</title>  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/financial-statements.css">
+  <script src="../js/effects.js"></script>
 </head>
 
 <body>
 
   <!-- SVG Glass Filter -->
-  <svg width="0" height="0" style="position:absolute;overflow:hidden;" aria-hidden="true">
+  <svg width="0" height="0" aria-hidden="true" class="ex-financial-statements-1">
     <defs>
       <filter id="glass-blur" x="-20%" y="-20%" width="140%" height="140%">
         <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
@@ -41,38 +37,38 @@
       <div class="fs-hero-bg-gradient"></div>
       <div class="bg-grid"></div>
 
-      <div class="floating-shape fs-shape-1" data-opacity="0.05"
-        style="--rot:6deg; animation-delay:0s; animation-duration:16s;"></div>
-      <div class="floating-shape fs-shape-2" data-opacity="0.04"
-        style="--rot:-14deg; animation-delay:2s; animation-duration:20s;"></div>
-      <div class="floating-shape fs-shape-3" data-opacity="0.06"
-        style="--rot:20deg; animation-delay:4s; animation-duration:14s;"></div>
+      <div class="floating-shape fs-shape-1 ex-financial-statements-2" data-opacity="0.05"
+       ></div>
+      <div class="floating-shape fs-shape-2 ex-financial-statements-3" data-opacity="0.04"
+       ></div>
+      <div class="floating-shape fs-shape-3 ex-financial-statements-4" data-opacity="0.06"
+       ></div>
 
       <div class="fs-hero-content">
 
-        <div class="fs-hero-badge-wrap" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.1s;">
+        <div class="fs-hero-badge-wrap ex-financial-statements-5">
           <div class="confidential-badge">
             <span class="dot"></span>
             Institutional Briefing &middot; 2026 &middot; Document Centre
           </div>
         </div>
 
-        <div style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.25s;">
+        <div class="ex-financial-statements-6">
           <div class="section-label">11 &middot; Documents</div>
         </div>
 
-        <h1 class="font-display fs-hero-h1"
-          style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.4s;">
+        <h1 class="font-display fs-hero-h1 ex-financial-statements-7"
+         >
           Document Centre.
         </h1>
 
-        <h2 class="font-display fs-hero-h2 text-gold-gradient"
-          style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.55s;">
+        <h2 class="font-display fs-hero-h2 text-gold-gradient ex-financial-statements-8"
+         >
           Every certificate. Every statement. Every patent.
         </h2>
 
         <!-- Quick stats -->
-        <div class="fs-hero-stats" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.85s;">
+        <div class="fs-hero-stats ex-financial-statements-9">
           <div class="fs-stat-item">
             <span class="fs-stat-value">5</span>
             <span class="fs-stat-label">Document Sections</span>
@@ -90,7 +86,7 @@
         </div>
 
         <!-- Scroll indicator -->
-        <div class="fs-scroll-indicator" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:1.0s;">
+        <div class="fs-scroll-indicator ex-financial-statements-10">
           <div class="scroll-arrow-line"></div>
           <span class="scroll-arrow-icon">&#8595;</span>
           <span class="scroll-label">Scroll to explore</span>
@@ -109,9 +105,9 @@
       <div class="container">
 
         <div class="section-header anim-hidden" data-delay="0">
-          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
-            <div style="width:56px;height:56px;border-radius:12px;background:rgba(201,162,39,0.07);border:1px solid rgba(201,162,39,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <img src="icons/GIF/Certificate DIPP53655_KROPBOOK.gif" alt="" style="width:38px;height:38px;object-fit:contain;">
+          <div class="ex-financial-statements-11">
+            <div class="ex-financial-statements-12">
+              <img src="../icons/GIF/Certificate DIPP53655_KROPBOOK.gif" alt="" class="ex-financial-statements-13">
             </div>
             <div>
               <div class="section-label">A &middot; DPIIT Certifications</div>
@@ -123,14 +119,13 @@
           </p>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;" class="anim-hidden" data-delay="0.1">
+        <div class="anim-hidden ex-financial-statements-14" data-delay="0.1">
 
           <!-- DPIIT Certificate -->
-          <div class="doc-card glass-card fs-doc-card-new"
-            onclick="openPdfModal('documents/DIPP53655_KROPBOOK.pdf', 'DIPP Startup India Certificate')" role="button"
+          <div class="doc-card glass-card fs-doc-card-new" data-pdf-path="../documents/DIPP53655_KROPBOOK.pdf" data-pdf-title="DIPP Startup India Certificate" role="button"
             tabindex="0" aria-label="View DIPP Startup India Certificate">
-            <div class="doc-card-icon" style="background:rgba(201,162,39,0.07);border:1px solid rgba(201,162,39,0.18);">
-              <img src="icons/GIF/Certificate DIPP53655_KROPBOOK.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            <div class="doc-card-icon ex-financial-statements-15">
+              <img src="../icons/GIF/Certificate DIPP53655_KROPBOOK.gif" alt="" class="ex-financial-statements-16">
             </div>
             <div class="doc-card-body">
               <div class="doc-card-category">Startup India &middot; DPIIT</div>
@@ -145,11 +140,10 @@
           </div>
 
           <!-- 80-IAC Certificate -->
-          <div class="doc-card glass-card fs-doc-card-new"
-            onclick="openPdfModal('documents/Kropbook-section-80-iac.pdf', '80-IAC Tax Exemption Certificate')"
+          <div class="doc-card glass-card fs-doc-card-new" data-pdf-path="../documents/Kropbook-section-80-iac.pdf" data-pdf-title="80-IAC Tax Exemption Certificate"
             role="button" tabindex="0" aria-label="View 80-IAC Tax Exemption Certificate">
-            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
-              <img src="icons/GIF/certificate.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            <div class="doc-card-icon ex-financial-statements-17">
+              <img src="../icons/GIF/certificate.gif" alt="" class="ex-financial-statements-18">
             </div>
             <div class="doc-card-body">
               <div class="doc-card-category">Income Tax &middot; Section 80-IAC</div>
@@ -176,9 +170,9 @@
       <div class="container">
 
         <div class="section-header anim-hidden" data-delay="0">
-          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
-            <div style="width:56px;height:56px;border-radius:12px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <img src="icons/GIF/legal.gif" alt="" style="width:38px;height:38px;object-fit:contain;">
+          <div class="ex-financial-statements-19">
+            <div class="ex-financial-statements-20">
+              <img src="../icons/GIF/legal.gif" alt="" class="ex-financial-statements-21">
             </div>
             <div>
               <div class="section-label">B &middot; Company KYC</div>
@@ -190,14 +184,13 @@
           </p>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;" class="anim-hidden" data-delay="0.1">
+        <div class="anim-hidden ex-financial-statements-22" data-delay="0.1">
 
           <!-- Certificate of Incorporation -->
-          <div class="doc-card glass-card fs-doc-card-new"
-            onclick="openPdfModal('documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf', 'Certificate of Incorporation — Kropbook Agritech')"
+          <div class="doc-card glass-card fs-doc-card-new" data-pdf-path="../documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf" data-pdf-title="Certificate of Incorporation — Kropbook Agritech"
             role="button" tabindex="0" aria-label="View Certificate of Incorporation">
-            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
-              <img src="icons/GIF/legal.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            <div class="doc-card-icon ex-financial-statements-23">
+              <img src="../icons/GIF/legal.gif" alt="" class="ex-financial-statements-24">
             </div>
             <div class="doc-card-body">
               <div class="doc-card-category">Company Incorporation &middot; MCA</div>
@@ -212,11 +205,10 @@
           </div>
 
           <!-- GST Registration -->
-          <div class="doc-card glass-card fs-doc-card-new"
-            onclick="openPdfModal('documents/Kropbook-gst.pdf', 'GST Registration Certificate')" role="button"
+          <div class="doc-card glass-card fs-doc-card-new" data-pdf-path="../documents/Kropbook-gst.pdf" data-pdf-title="GST Registration Certificate" role="button"
             tabindex="0" aria-label="View GST Registration Certificate">
-            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
-              <img src="icons/GIF/tax.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            <div class="doc-card-icon ex-financial-statements-25">
+              <img src="../icons/GIF/tax.gif" alt="" class="ex-financial-statements-26">
             </div>
             <div class="doc-card-body">
               <div class="doc-card-category">Tax Registration &middot; GST</div>
@@ -243,9 +235,9 @@
       <div class="container">
 
         <div class="section-header anim-hidden" data-delay="0">
-          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
-            <div style="width:56px;height:56px;border-radius:12px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <img src="icons/GIF/Financial Rails.gif" alt="" style="width:38px;height:38px;object-fit:contain;">
+          <div class="ex-financial-statements-27">
+            <div class="ex-financial-statements-28">
+              <img src="../icons/GIF/Financial Rails.gif" alt="" class="ex-financial-statements-29">
             </div>
             <div>
               <div class="section-label">C &middot; Financial Statements</div>
@@ -262,11 +254,10 @@
         <div class="grid-3 fs-doc-grid anim-hidden" data-delay="0.1">
 
           <!-- FY 2022-23 -->
-          <div class="doc-card glass-card fs-doc-card-new"
-            onclick="openPdfModal('documents/KB FY 2022-23.pdf', 'FY 2022-23 Financial Statement')" role="button"
+          <div class="doc-card glass-card fs-doc-card-new" data-pdf-path="../documents/KB FY 2022-23.pdf" data-pdf-title="FY 2022-23 Financial Statement" role="button"
             tabindex="0" aria-label="View FY 2022-23 Financial Statement">
-            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
-              <img src="icons/GIF/document-calculator.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            <div class="doc-card-icon ex-financial-statements-30">
+              <img src="../icons/GIF/document-calculator.gif" alt="" class="ex-financial-statements-31">
             </div>
             <div class="doc-card-body">
               <div class="doc-card-category">Annual Report &middot; Audited</div>
@@ -281,11 +272,10 @@
           </div>
 
           <!-- FY 2023-24 -->
-          <div class="doc-card glass-card fs-doc-card-new"
-            onclick="openPdfModal('documents/KB FY 2023-24.pdf', 'FY 2023-24 Financial Statement')" role="button"
+          <div class="doc-card glass-card fs-doc-card-new" data-pdf-path="../documents/KB FY 2023-24.pdf" data-pdf-title="FY 2023-24 Financial Statement" role="button"
             tabindex="0" aria-label="View FY 2023-24 Financial Statement">
-            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
-              <img src="icons/GIF/document-calculator.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            <div class="doc-card-icon ex-financial-statements-32">
+              <img src="../icons/GIF/document-calculator.gif" alt="" class="ex-financial-statements-33">
             </div>
             <div class="doc-card-body">
               <div class="doc-card-category">Annual Report &middot; Audited</div>
@@ -300,11 +290,10 @@
           </div>
 
           <!-- FY 2024-25 -->
-          <div class="doc-card glass-card fs-doc-card-new"
-            onclick="openPdfModal('documents/KB FY 2024-25.pdf', 'FY 2024-25 Financial Statement')" role="button"
+          <div class="doc-card glass-card fs-doc-card-new" data-pdf-path="../documents/KB FY 2024-25.pdf" data-pdf-title="FY 2024-25 Financial Statement" role="button"
             tabindex="0" aria-label="View FY 2024-25 Financial Statement">
-            <div class="doc-card-icon" style="background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);">
-              <img src="icons/GIF/Financial Rails.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            <div class="doc-card-icon ex-financial-statements-34">
+              <img src="../icons/GIF/Financial Rails.gif" alt="" class="ex-financial-statements-35">
             </div>
             <div class="doc-card-body">
               <div class="doc-card-category">Annual Report &middot; Latest Audited</div>
@@ -322,11 +311,10 @@
 
         <!-- FY 2025-26 Provisional — full-width -->
         <div class="fs-provisional-wrap anim-hidden" data-delay="0.2">
-          <div class="doc-card fs-doc-card-provisional glass-card"
-            onclick="openPdfModal('documents/08_KROPBOOK Provisionals.pdf', 'FY 2025-26 Provisional Financial Statement')"
+          <div class="doc-card fs-doc-card-provisional glass-card" data-pdf-path="../documents/08_KROPBOOK Provisionals.pdf" data-pdf-title="FY 2025-26 Provisional Financial Statement"
             role="button" tabindex="0" aria-label="View FY 2025-26 Provisional Financial Statement">
-            <div class="doc-card-icon fs-provisional-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
-              <img src="icons/GIF/presentation.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            <div class="doc-card-icon fs-provisional-icon ex-financial-statements-36">
+              <img src="../icons/GIF/presentation.gif" alt="" class="ex-financial-statements-37">
             </div>
             <div class="doc-card-body">
               <div class="doc-card-category">Provisional &middot; Current Year</div>
@@ -351,9 +339,9 @@
       <div class="container">
 
         <div class="section-header anim-hidden" data-delay="0">
-          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
-            <div style="width:56px;height:56px;border-radius:12px;background:rgba(201,162,39,0.07);border:1px solid rgba(201,162,39,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <img src="icons/GIF/patent IP Protection.gif" alt="" style="width:38px;height:38px;object-fit:contain;">
+          <div class="ex-financial-statements-38">
+            <div class="ex-financial-statements-39">
+              <img src="../icons/GIF/patent IP Protection.gif" alt="" class="ex-financial-statements-40">
             </div>
             <div>
               <div class="section-label">D &middot; Patent Documentation</div>
@@ -367,12 +355,11 @@
         </div>
 
         <div class="fs-patent-wrap anim-hidden" data-delay="0.1">
-          <div class="doc-card glass-card fs-doc-card-patent"
-            onclick="openPdfModal('documents/Kropbook Patient.pdf', 'Kropbook Patent Application')" role="button"
+          <div class="doc-card glass-card fs-doc-card-patent" data-pdf-path="../documents/Kropbook Patient.pdf" data-pdf-title="Kropbook Patent Application" role="button"
             tabindex="0" aria-label="View Kropbook Patent Application">
             <div class="fs-patent-left">
-              <div class="doc-card-icon fs-patent-icon" style="background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);">
-                <img src="icons/GIF/patent IP Protection.gif" alt="" style="width:32px;height:32px;object-fit:contain;">
+              <div class="doc-card-icon fs-patent-icon ex-financial-statements-41">
+                <img src="../icons/GIF/patent IP Protection.gif" alt="" class="ex-financial-statements-42">
               </div>
               <div class="doc-card-body">
                 <div class="doc-card-category">Patent Application &middot; Indian Patent Office</div>
@@ -404,9 +391,9 @@
       <div class="container">
 
         <div class="section-header anim-hidden" data-delay="0">
-          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
-            <div style="width:56px;height:56px;border-radius:12px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <img src="icons/GIF/audit-document.gif" alt="" style="width:38px;height:38px;object-fit:contain;">
+          <div class="ex-financial-statements-43">
+            <div class="ex-financial-statements-44">
+              <img src="../icons/GIF/audit-document.gif" alt="" class="ex-financial-statements-45">
             </div>
             <div>
               <div class="section-label">E &middot; Supporting Documents</div>
@@ -421,11 +408,10 @@
         <div class="grid-3 fs-doc-grid anim-hidden" data-delay="0.1">
 
           <!-- Supporting Documents FY 24-25 -->
-          <div class="doc-card glass-card fs-doc-card-new"
-            onclick="openPdfModal('documents/Kropbook_supportings 1 detailed financial documents .pdf', 'Supporting Documents FY 24-25')"
+          <div class="doc-card glass-card fs-doc-card-new" data-pdf-path="../documents/Kropbook_supportings 1 detailed financial documents .pdf" data-pdf-title="Supporting Documents FY 24-25"
             role="button" tabindex="0" aria-label="View Supporting Documents FY 24-25">
-            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
-              <img src="icons/GIF/audit-document.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            <div class="doc-card-icon ex-financial-statements-46">
+              <img src="../icons/GIF/audit-document.gif" alt="" class="ex-financial-statements-47">
             </div>
             <div class="doc-card-body">
               <div class="doc-card-category">Supporting &middot; Schedules</div>
@@ -440,11 +426,10 @@
           </div>
 
           <!-- Debtors Ageing -->
-          <div class="doc-card glass-card fs-doc-card-new"
-            onclick="openPdfModal('documents/Debitors AgeingReceivables(FIFOBasis).pdf', 'Debtors Ageing Report FY 24-25')"
+          <div class="doc-card glass-card fs-doc-card-new" data-pdf-path="../documents/Debitors AgeingReceivables(FIFOBasis).pdf" data-pdf-title="Debtors Ageing Report FY 24-25"
             role="button" tabindex="0" aria-label="View Debtors Ageing Report">
-            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
-              <img src="icons/GIF/diagram.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            <div class="doc-card-icon ex-financial-statements-48">
+              <img src="../icons/GIF/diagram.gif" alt="" class="ex-financial-statements-49">
             </div>
             <div class="doc-card-body">
               <div class="doc-card-category">Receivables &middot; Ageing</div>
@@ -459,11 +444,10 @@
           </div>
 
           <!-- Creditors Ageing -->
-          <div class="doc-card glass-card fs-doc-card-new"
-            onclick="openPdfModal('documents/Creditors AgeingPayables(FIFOBasis).pdf', 'Creditors Ageing Report FY 24-25')"
+          <div class="doc-card glass-card fs-doc-card-new" data-pdf-path="../documents/Creditors AgeingPayables(FIFOBasis).pdf" data-pdf-title="Creditors Ageing Report FY 24-25"
             role="button" tabindex="0" aria-label="View Creditors Ageing Report">
-            <div class="doc-card-icon" style="background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);">
-              <img src="icons/GIF/purse.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+            <div class="doc-card-icon ex-financial-statements-50">
+              <img src="../icons/GIF/purse.gif" alt="" class="ex-financial-statements-51">
             </div>
             <div class="doc-card-body">
               <div class="doc-card-category">Payables &middot; Ageing</div>
@@ -531,9 +515,9 @@
 
   <div id="footer-container"></div>
 
-  <script src="js/shared.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/financial-statements.js"></script>
+  <script src="../js/shared.js"></script>
+  <script src="../js/animations.js"></script>
+  <script src="../js/financial-statements.js"></script>
 
 </body>
 

@@ -39,7 +39,7 @@
 }
 
 .founder-hero-subtitle {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   font-weight: 400;
   font-style: italic;
@@ -48,7 +48,7 @@
 }
 
 .founder-hero-note {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -102,7 +102,7 @@
 }
 
 .founder-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -118,7 +118,7 @@
 }
 
 .founder-location {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -139,7 +139,7 @@
   gap: 0.4rem;
   font-size: 0.7rem;
   color: var(--text-muted);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   margin-top: 0.25rem;
 }
 
@@ -160,7 +160,7 @@
 }
 
 .founder-timeline-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.25rem;
   font-weight: 500;
   color: var(--text-secondary);
@@ -228,7 +228,7 @@
 }
 
 .timeline-era {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -237,7 +237,7 @@
 }
 
 .timeline-heading {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -306,7 +306,7 @@
 }
 
 .integrity-quote {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.15rem, 2.5vw, 1.6rem);
   font-style: italic;
   font-weight: 400;
@@ -316,7 +316,7 @@
 }
 
 .integrity-subnote {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   color: rgba(255, 255, 255, 0.45);
@@ -376,7 +376,7 @@
 }
 
 .promise-line {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.05rem, 2vw, 1.4rem);
   font-style: italic;
   font-weight: 400;
@@ -385,7 +385,7 @@
 }
 
 .promise-attribution {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   color: rgba(201, 162, 39, 0.65);
@@ -427,7 +427,7 @@
 }
 
 .cofounder-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -458,7 +458,7 @@
 }
 
 .tech-journey-title {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -554,7 +554,7 @@
 }
 
 .tech-stage-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.6rem;
   letter-spacing: 0.1em;
   color: var(--text-muted);
@@ -568,7 +568,7 @@
 }
 
 .tech-stage-status {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.55rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -695,7 +695,7 @@
 .kunal-message-text {
   position: relative;
   z-index: 1;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
   font-style: italic;
   font-weight: 400;
@@ -735,7 +735,7 @@
 
 .director-card .team-avatar {
   font-size: 0.875rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   background: var(--bg-green-light);
   color: var(--brand-green);
   border: 1px solid var(--border-medium);
@@ -859,3 +859,15 @@
     font-size: 1.4rem;
   }
 }
+
+.ex-founder-1 { width:120px;height:120px;border-radius:50%;border:3px solid #C9A227;object-fit:cover; }
+
+.ex-founder-2 { width:100px;height:100px;border-radius:50%;border:2px solid rgba(201,162,39,0.4);object-fit:cover; }
+
+.ex-founder-3 { width:100px;height:100px;border-radius:50%;border:2px solid rgba(201,162,39,0.4);object-fit:cover; }
+
+.ex-founder-1 { width:120px;height:120px;border-radius:50%;border:3px solid #C9A227;object-fit:cover; }
+
+.ex-founder-2 { width:100px;height:100px;border-radius:50%;border:2px solid rgba(201,162,39,0.4);object-fit:cover; }
+
+.ex-founder-3 { width:100px;height:100px;border-radius:50%;border:2px solid rgba(201,162,39,0.4);object-fit:cover; }

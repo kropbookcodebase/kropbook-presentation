@@ -4,20 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Overview | Kropbook Agritech</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/overview.css">
-  <script src="js/effects.js"></script>
+  <title>Overview | Kropbook Agritech</title>  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/overview.css">
+  <script src="../js/effects.js"></script>
 </head>
 
 <body>
 
-  <svg style="display:none" aria-hidden="true">
+  <svg aria-hidden="true" class="ex-overview-1">
     <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
       <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence" />
       <feComponentTransfer in="turbulence" result="mapped">
@@ -43,67 +39,67 @@
     <!-- ══════════════════════════════════════════════════════════
          SECTION 1 · HERO
     ══════════════════════════════════════════════════════════ -->
-    <section class="hero-section" id="hero" style="position:relative;overflow:hidden;">
+    <section class="hero-section ex-overview-2" id="hero">
 
       <!-- Wave sphere canvas — fills hero, scroll-animated via JS -->
       <canvas id="wave-sphere"
-        style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.6;"></canvas>
+        class="ex-overview-3"></canvas>
 
       <!-- Background layers -->
       <div class="hero-bg-gradient"></div>
       <div class="bg-grid"></div>
 
       <!-- Floating decorative shapes -->
-      <div class="floating-shape hero-shape-1" data-opacity="0.07"
-        style="--rot:12deg; animation-delay:0s; animation-duration:14s;"></div>
-      <div class="floating-shape hero-shape-2" data-opacity="0.05"
-        style="--rot:-15deg; animation-delay:2s; animation-duration:18s;"></div>
-      <div class="floating-shape hero-shape-3" data-opacity="0.06"
-        style="--rot:-8deg; animation-delay:1s; animation-duration:16s;"></div>
-      <div class="floating-shape hero-shape-4" data-opacity="0.08"
-        style="--rot:20deg; animation-delay:3s; animation-duration:12s;"></div>
+      <div class="floating-shape hero-shape-1 ex-overview-4" data-opacity="0.07"
+       ></div>
+      <div class="floating-shape hero-shape-2 ex-overview-5" data-opacity="0.05"
+       ></div>
+      <div class="floating-shape hero-shape-3 ex-overview-6" data-opacity="0.06"
+       ></div>
+      <div class="floating-shape hero-shape-4 ex-overview-7" data-opacity="0.08"
+       ></div>
 
       <!-- Hero content -->
       <div class="hero-content">
 
-        <div class="hero-badge-wrap" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.1s;">
+        <div class="hero-badge-wrap ex-overview-8">
           <div class="confidential-badge">
             <span class="dot"></span>
             Institutional Briefing &middot; 2026 &middot; Confidential
           </div>
         </div>
 
-        <div class="hero-logo-wrap" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.3s;">
-          <img src="images/kblogo.png" alt="Kropbook Agritech" width="56" height="56" class="hero-logo-img">
+        <div class="hero-logo-wrap ex-overview-9">
+          <img src="../images/kblogo.png" alt="Kropbook Agritech" width="56" height="56" class="hero-logo-img">
         </div>
 
-        <h1 class="hero-wordmark font-display"
-          style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.45s;">
+        <h1 class="hero-wordmark font-display ex-overview-10"
+         >
           KROPBOOK
         </h1>
 
-        <p class="hero-company-name" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.55s;">
+        <p class="hero-company-name ex-overview-11">
           Agritech Private Limited
         </p>
 
-        <div class="hero-headline-wrap" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.7s;">
+        <div class="hero-headline-wrap ex-overview-12">
           <h2 class="hero-headline-main font-display">The Operating System</h2>
           <h2 class="hero-headline-gold font-display text-gold-gradient">of the Global Food Economy</h2>
         </div>
 
-        <p class="hero-tagline" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:0.85s;">
+        <p class="hero-tagline ex-overview-13">
           Built in India. Designed for the Planet.
         </p>
 
         <!-- Morphing intelligence layer text -->
-        <div class="hero-morphing-wrap" style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:1s;">
+        <div class="hero-morphing-wrap ex-overview-14">
           <span class="hero-morphing-label">Currently powering:</span>
           <span class="hero-morphing-text" id="morphing-text">Intelligence Layer</span>
         </div>
 
         <!-- Scroll indicator -->
-        <div class="hero-scroll-indicator"
-          style="opacity:0; animation: fadeUp 0.7s ease forwards; animation-delay:1.2s;">
+        <div class="hero-scroll-indicator ex-overview-15"
+         >
           <div class="scroll-arrow-line"></div>
           <span class="scroll-arrow-icon">&#8595;</span>
           <span class="scroll-label">Scroll to explore</span>
@@ -128,12 +124,12 @@
           <p class="metrics-subheading text-muted">Every figure audited. Every number real.</p>
         </div>
 
-        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;">
-          <div style="flex:1;height:1px;background:var(--border-light);"></div>
+        <div class="ex-overview-16">
+          <div class="ex-overview-17"></div>
           <span
-            style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);padding:0.25rem 0.875rem;border-radius:100px;white-space:nowrap;">FY
+            class="ex-overview-18">FY
             2024&ndash;25 &middot; Previous Year</span>
-          <div style="flex:1;height:1px;background:var(--border-light);"></div>
+          <div class="ex-overview-19"></div>
         </div>
 
         <div class="grid-4 metrics-grid">
@@ -208,22 +204,22 @@
         </div>
 
         <!-- FY 2025-26 Provisional — Current Year -->
-        <div class="anim-hidden" data-delay="0.5" style="margin-top:2rem;">
-          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;">
-            <div style="flex:1;height:1px;background:var(--border-light);"></div>
+        <div class="anim-hidden ex-overview-20" data-delay="0.5">
+          <div class="ex-overview-21">
+            <div class="ex-overview-22"></div>
             <span
-              style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-gold);background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);padding:0.25rem 0.875rem;border-radius:100px;white-space:nowrap;">FY
+              class="ex-overview-23">FY
               2025&ndash;26 &middot; Current Year</span>
-            <div style="flex:1;height:1px;background:var(--border-light);"></div>
+            <div class="ex-overview-24"></div>
           </div>
           <div class="grid-3">
 
-            <article class="metric-card"
-              style="border-color:rgba(201,162,39,0.25);background:linear-gradient(135deg,rgba(201,162,39,0.05),rgba(27,77,62,0.02));position:relative;overflow:hidden;">
+            <article class="metric-card ex-overview-25"
+             >
               <div
-                style="position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px;">
+                class="ex-overview-26">
                 Current</div>
-              <div class="metric-icon" style="color:var(--accent-gold);">
+              <div class="metric-icon ex-overview-27">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
@@ -231,16 +227,16 @@
                 </svg>
               </div>
               <div class="metric-label">Revenue FY 2025&ndash;26</div>
-              <div class="metric-value metric-value-gold">&#8377;92.50 Cr</div>
+              <div class="metric-value metric-value-gold">&#8377;75.49 Cr</div>
 
             </article>
 
-            <article class="metric-card"
-              style="border-color:rgba(201,162,39,0.25);background:linear-gradient(135deg,rgba(201,162,39,0.05),rgba(27,77,62,0.02));position:relative;overflow:hidden;">
+            <article class="metric-card ex-overview-28"
+             >
               <div
-                style="position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px;">
+                class="ex-overview-29">
                 Current</div>
-              <div class="metric-icon" style="color:var(--accent-gold);">
+              <div class="metric-icon ex-overview-30">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <line x1="12" y1="1" x2="12" y2="23"></line>
@@ -248,15 +244,15 @@
                 </svg>
               </div>
               <div class="metric-label">Net Profit FY 2025&ndash;26</div>
-              <div class="metric-value metric-value-gold">&#8377;13.20 Cr</div>
+              <div class="metric-value metric-value-gold">Pending Audit</div>
             </article>
 
-            <article class="metric-card"
-              style="border-color:rgba(201,162,39,0.25);background:linear-gradient(135deg,rgba(201,162,39,0.05),rgba(27,77,62,0.02));position:relative;overflow:hidden;">
+            <article class="metric-card ex-overview-31"
+             >
               <div
-                style="position:absolute;top:0.75rem;right:0.875rem;font-size:0.55rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;color:var(--accent-gold);background:rgba(201,162,39,0.12);border:1px solid rgba(201,162,39,0.25);padding:0.18rem 0.5rem;border-radius:100px;">
+                class="ex-overview-32">
                 Current</div>
-              <div class="metric-icon" style="color:var(--accent-gold);">
+              <div class="metric-icon ex-overview-33">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -264,8 +260,8 @@
                   <line x1="12" y1="17" x2="12" y2="21"></line>
                 </svg>
               </div>
-              <div class="metric-label">Current Assets FY 2025&ndash;26</div>
-              <div class="metric-value metric-value-gold">&#8377;28.41 Cr</div>
+              <div class="metric-label">Debtors as at 31-Mar-26</div>
+              <div class="metric-value metric-value-gold">&#8377;16.20 Cr</div>
             </article>
 
           </div>
@@ -398,14 +394,14 @@
           <!-- ─── LAYER 01 · Physical Sensing ─────────────── -->
           <div class="mas-row anim-hidden" data-delay="0.1">
             <div class="mas-spine-col">
-              <div class="mas-spine-seg" style="flex:0 0 28px;opacity:0;"></div>
+              <div class="mas-spine-seg ex-overview-34"></div>
               <div class="mas-spine-dot mas-dot-g1"></div>
               <div class="mas-spine-seg mas-seg-g1"></div>
             </div>
             <div class="mas-card glass-card mas-card-g1">
               <div class="mas-icon-panel mas-panel-g1">
                 <div class="mas-icon-box">
-                  <img src="icons/PNG/sensing.png" alt="Physical Sensing" class="mas-icon">
+                  <img src="../icons/PNG/sensing.png" alt="Physical Sensing" class="mas-icon">
                 </div>
                 <span class="mas-num font-mono-custom">01</span>
               </div>
@@ -440,8 +436,8 @@
           <div class="mas-conn-row anim-hidden" data-delay="0.17">
             <div class="mas-spine-col">
               <div class="mas-conn-track mas-track-g1">
-                <div class="mas-particle" style="--p-delay:0s;--p-color:var(--brand-green);"></div>
-                <div class="mas-particle" style="--p-delay:1.6s;--p-color:var(--brand-green);"></div>
+                <div class="mas-particle ex-overview-35"></div>
+                <div class="mas-particle ex-overview-36"></div>
               </div>
             </div>
             <div class="mas-conn-body">
@@ -458,14 +454,14 @@
           <!-- ─── LAYER 02 · Supply Chain ──────────────────── -->
           <div class="mas-row anim-hidden" data-delay="0.24">
             <div class="mas-spine-col">
-              <div class="mas-spine-seg mas-seg-g1" style="flex:0 0 28px;"></div>
+              <div class="mas-spine-seg mas-seg-g1 ex-overview-37"></div>
               <div class="mas-spine-dot mas-dot-g2"></div>
               <div class="mas-spine-seg mas-seg-transition"></div>
             </div>
             <div class="mas-card glass-card mas-card-g2">
               <div class="mas-icon-panel mas-panel-g2">
                 <div class="mas-icon-box">
-                  <img src="icons/GIF/Supply chain.gif" alt="Supply Chain" class="mas-icon">
+                  <img src="../icons/GIF/Supply chain.gif" alt="Supply Chain" class="mas-icon">
                 </div>
                 <span class="mas-num font-mono-custom">02</span>
               </div>
@@ -500,8 +496,8 @@
           <div class="mas-conn-row anim-hidden" data-delay="0.31">
             <div class="mas-spine-col">
               <div class="mas-conn-track mas-track-transition">
-                <div class="mas-particle" style="--p-delay:0.4s;--p-color:var(--accent-gold);"></div>
-                <div class="mas-particle" style="--p-delay:2s;--p-color:var(--accent-gold);"></div>
+                <div class="mas-particle ex-overview-38"></div>
+                <div class="mas-particle ex-overview-39"></div>
               </div>
             </div>
             <div class="mas-conn-body">
@@ -518,14 +514,14 @@
           <!-- ─── LAYER 03 · Financial Rails ──────────────── -->
           <div class="mas-row anim-hidden" data-delay="0.38">
             <div class="mas-spine-col">
-              <div class="mas-spine-seg mas-seg-transition" style="flex:0 0 28px;"></div>
+              <div class="mas-spine-seg mas-seg-transition ex-overview-40"></div>
               <div class="mas-spine-dot mas-dot-gold"></div>
               <div class="mas-spine-seg mas-seg-gold"></div>
             </div>
             <div class="mas-card glass-card mas-card-gold">
               <div class="mas-icon-panel mas-panel-gold">
                 <div class="mas-icon-box">
-                  <img src="icons/GIF/Financial Rails.gif" alt="Financial Rails" class="mas-icon">
+                  <img src="../icons/GIF/Financial Rails.gif" alt="Financial Rails" class="mas-icon">
                 </div>
                 <span class="mas-num mas-num-gold font-mono-custom">03</span>
               </div>
@@ -560,8 +556,8 @@
           <div class="mas-conn-row anim-hidden" data-delay="0.45">
             <div class="mas-spine-col">
               <div class="mas-conn-track mas-track-gold">
-                <div class="mas-particle" style="--p-delay:0.8s;--p-color:var(--accent-gold-light);"></div>
-                <div class="mas-particle" style="--p-delay:2.4s;--p-color:var(--accent-gold-light);"></div>
+                <div class="mas-particle ex-overview-41"></div>
+                <div class="mas-particle ex-overview-42"></div>
               </div>
             </div>
             <div class="mas-conn-body">
@@ -578,14 +574,14 @@
           <!-- ─── LAYER 04 · Intelligence ──────────────────── -->
           <div class="mas-row mas-row-apex anim-hidden" data-delay="0.52">
             <div class="mas-spine-col">
-              <div class="mas-spine-seg mas-seg-gold" style="flex:0 0 28px;"></div>
+              <div class="mas-spine-seg mas-seg-gold ex-overview-43"></div>
               <div class="mas-spine-dot mas-dot-apex"></div>
-              <div class="mas-spine-seg" style="opacity:0;flex:1;"></div>
+              <div class="mas-spine-seg ex-overview-44"></div>
             </div>
             <div class="mas-card glass-card mas-card-apex">
               <div class="mas-icon-panel mas-panel-apex">
                 <div class="mas-icon-box mas-icon-box-apex">
-                  <img src="icons/GIF/Intelligence.gif" alt="Intelligence" class="mas-icon">
+                  <img src="../icons/GIF/Intelligence.gif" alt="Intelligence" class="mas-icon">
                 </div>
                 <span class="mas-num mas-num-gold font-mono-custom">04</span>
               </div>
@@ -822,73 +818,71 @@
         <div class="section-header anim-hidden" data-delay="0">
           <div class="section-label">01 &middot; Core Documents</div>
           <h2 class="font-display">Verified. Filed. Legally upheld.</h2>
-          <p class="text-muted" style="max-width:560px;font-size:1rem;line-height:1.7;">
+          <p class="text-muted ex-overview-45">
             Our patent and incorporation certificate — open for review. No clicks required.
           </p>
         </div>
 
         <!-- Patent Document — Embedded Open -->
-        <div class="anim-hidden" data-delay="0.1"
-          style="margin-bottom:2.5rem;border-radius:18px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+        <div class="anim-hidden ex-overview-46" data-delay="0.1"
+         >
           <div
-            style="background:var(--bg-secondary);padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;">
-            <div style="display:flex;align-items:center;gap:0.875rem;">
+            class="ex-overview-47">
+            <div class="ex-overview-48">
               <div
-                style="width:44px;height:44px;border-radius:10px;background:rgba(201,162,39,0.08);border:1px solid rgba(201,162,39,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <img src="icons/GIF/patent IP Protection.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+                class="ex-overview-49">
+                <img src="../icons/GIF/patent IP Protection.gif" alt="" class="ex-overview-50">
               </div>
               <div>
                 <div
-                  style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;">
+                  class="ex-overview-51">
                   Intellectual Property</div>
-                <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-top:0.1rem;">Kropbook
+                <div class="ex-overview-52">Kropbook
                   Patent Application</div>
               </div>
             </div>
-            <div style="display:flex;align-items:center;gap:0.75rem;">
+            <div class="ex-overview-53">
               <span
-                style="background:rgba(201,162,39,0.1);border:1px solid rgba(201,162,39,0.25);color:var(--accent-gold);font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.625rem;border-radius:100px;letter-spacing:0.1em;">FILED
+                class="ex-overview-54">FILED
                 &middot; PENDING APPROVAL</span>
-              <a href="documents/Kropbook Patient.pdf" download
-                style="background:var(--brand-green);color:#fff;font-size:0.7rem;font-family:'JetBrains Mono',monospace;padding:0.35rem 0.875rem;border-radius:100px;text-decoration:none;letter-spacing:0.06em;">&#8595;
-                Download</a>
+              <span class="local-only-note">
+                Local file</span>
             </div>
           </div>
-          <iframe src="documents/Kropbook Patient.pdf"
-            style="width:100%;height:82vh;border:none;display:block;background:#f5f5f0;"
-            title="Kropbook Patent Application" loading="lazy"></iframe>
+          <p class="local-document-note ex-overview-56">
+            The patent PDF remains in the private local documents folder and is reviewed from the local documents section.
+          </p>
         </div>
 
         <!-- Certificate of Incorporation — Embedded Open -->
-        <div class="anim-hidden" data-delay="0.2"
-          style="border-radius:18px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+        <div class="anim-hidden ex-overview-57" data-delay="0.2"
+         >
           <div
-            style="background:var(--bg-secondary);padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;">
-            <div style="display:flex;align-items:center;gap:0.875rem;">
+            class="ex-overview-58">
+            <div class="ex-overview-59">
               <div
-                style="width:44px;height:44px;border-radius:10px;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <img src="icons/GIF/legal.gif" alt="" style="width:28px;height:28px;object-fit:contain;">
+                class="ex-overview-60">
+                <img src="../icons/GIF/legal.gif" alt="" class="ex-overview-61">
               </div>
               <div>
                 <div
-                  style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;">
+                  class="ex-overview-62">
                   Company KYC &middot; MCA</div>
-                <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-top:0.1rem;">Certificate
+                <div class="ex-overview-63">Certificate
                   of Incorporation</div>
               </div>
             </div>
-            <div style="display:flex;align-items:center;gap:0.75rem;">
+            <div class="ex-overview-64">
               <span
-                style="background:rgba(27,77,62,0.08);border:1px solid rgba(27,77,62,0.15);color:var(--brand-green);font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.625rem;border-radius:100px;letter-spacing:0.1em;">ACTIVE
+                class="ex-overview-65">ACTIVE
                 &middot; ROC VERIFIED</span>
-              <a href="documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf" download
-                style="background:var(--brand-green);color:#fff;font-size:0.7rem;font-family:'JetBrains Mono',monospace;padding:0.35rem 0.875rem;border-radius:100px;text-decoration:none;letter-spacing:0.06em;">&#8595;
-                Download</a>
+              <span class="local-only-note">
+                Local file</span>
             </div>
           </div>
-          <iframe src="documents/CERTIFICATE OF INCORPORATION-2 (1) (1) (3).pdf"
-            style="width:100%;height:70vh;border:none;display:block;background:#f5f5f0;"
-            title="Certificate of Incorporation" loading="lazy"></iframe>
+          <p class="local-document-note ex-overview-67">
+            The incorporation certificate remains in the private local documents folder and is reviewed from the local documents section.
+          </p>
         </div>
 
       </div>
@@ -898,16 +892,9 @@
 
   <div id="footer-container"></div>
 
-  <script src="js/shared.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/overview.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160/build/three.min.js"></script>
-  <script>
-    window.addEventListener('load', () => {
-      if (typeof initWaveSphere === 'function') initWaveSphere('wave-sphere');
-    });
-  </script>
-
+  <script src="../js/shared.js"></script>
+  <script src="../js/animations.js"></script>
+  <script src="../js/overview.js"></script>
 </body>
 
 </html>
