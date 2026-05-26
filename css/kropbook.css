@@ -566,7 +566,77 @@
 }
 
 /* ══════════════════════════════════════════════════════════════
-   4.5 — SCIENTIFIC VALIDATION
+   4.5 — FOUR-LAYER MOAT
+═══════════════════════════════════════════════════════════════ */
+
+.kb-moat__header {
+  margin-bottom: 3rem;
+}
+
+.kb-moat__subtitle {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 580px;
+  font-weight: 400;
+  margin-top: 0.75rem;
+}
+
+.moat-card {
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.moat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--accent-gold), rgba(201,162,39,0.15));
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: 3;
+}
+
+.moat-card:hover::before {
+  opacity: 1;
+}
+
+.moat-card__layer {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  opacity: 0.8;
+}
+
+.moat-card__title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.moat-card__desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   4.6 — SCIENTIFIC VALIDATION
 ═══════════════════════════════════════════════════════════════ */
 
 .kb-validation__card {

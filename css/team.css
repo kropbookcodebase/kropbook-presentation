@@ -1412,20 +1412,23 @@
 
 .team-dish-layout {
   display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  justify-items: center;
   align-items: center;
+  gap: 0rem;
   margin-top: 3rem;
 }
 
 .team-dish-canvas-wrap {
   position: relative;
+  width: min(100%,920px);
   border-radius: var(--radius-xl, 34px);
   overflow: hidden;
   background: #040c09;
   box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
   aspect-ratio: 4/3;
   min-height: 320px;
+  margine : 0 auto;
 }
 
 .team-dish-canvas { display: block; width: 100%; height: 100%; min-height: 320px; }
