@@ -210,7 +210,7 @@
 ═══════════════════════════════════════════════════════════════ */
 .globe-fixed-wrap {
   position: fixed;
-  z-index: 5;
+  z-index: 0;
   pointer-events: none;
   will-change: transform, opacity;
   transition: opacity 0.6s ease;
@@ -222,6 +222,7 @@
   width: 260px;
   height: 260px;
   border-radius: 50%;
+  opacity: 0.28;
   background:
     radial-gradient(ellipse at 32% 32%, rgba(255,255,255,0.18) 0%, transparent 55%),
     url('../3D_model/earth-rotation/textures/8k_earth_daymap.jpeg') 0% center / 280% auto;
@@ -259,7 +260,7 @@
   position: absolute;
   right: 5%;
   top: 8%;
-  z-index: 3;
+  z-index: 1;
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -322,14 +323,18 @@
   top: 0;
   z-index: 40;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.2rem;
   padding: 0.65rem 1.5rem;
   background: rgba(240,244,242,0.88);
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
   border-bottom: 1px solid rgba(27,77,62,0.09);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.profile-tabs::-webkit-scrollbar { display: none; }
 
 .profile-tabs button {
   padding: 0.5rem 1rem;
@@ -340,6 +345,7 @@
   letter-spacing: 0.02em;
   transition: all 0.2s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .profile-tabs button:hover {
@@ -363,6 +369,7 @@
 .profile-section {
   padding: 5.5rem 0;
   position: relative;
+  z-index: 2;
 }
 
 .profile-section-muted {
@@ -778,19 +785,23 @@
 /* ── Donut chart (shareholding / revenue composition) ──────── */
 .donut-wrap {
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 0.75rem;
 }
 
 .donut-svg-container {
   flex-shrink: 0;
-  width: 140px;
-  height: 140px;
+  width: 130px;
+  height: 130px;
 }
 
 .donut-svg-container svg { overflow: visible; }
+
+.donut-legend {
+  width: 100%;
+}
 
 .donut-track {
   fill: none;

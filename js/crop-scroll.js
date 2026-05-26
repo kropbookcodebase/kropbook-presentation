@@ -2,8 +2,8 @@
   'use strict';
 
   var STAGE_COUNT = 5;
-  var CANVAS_W = 200;
-  var CANVAS_H = 320;
+  var CANVAS_W = 260;
+  var CANVAS_H = 420;
 
   function easeInOut(t) {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
@@ -261,7 +261,7 @@
     var ctx = canvas.getContext('2d');
     renderFrame(ctx, 0, cropType);
 
-    var scrollZoneHeight = anchor.offsetHeight || 400;
+    var scrollZoneHeight = Math.max(anchor.offsetHeight, 600);
 
     function update() {
       var rect = anchor.getBoundingClientRect();
