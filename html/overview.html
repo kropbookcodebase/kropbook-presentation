@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/navbar.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/overview.css">
+  <link rel="stylesheet" href="../css/crop-scroll.css">
   <script src="../js/effects.js"></script>
 </head>
 
@@ -35,6 +36,20 @@
   <div id="navbar-container"></div>
 
   <main>
+
+    <!-- Sketchfab Earth — fixed background, scroll-animated via globe.js -->
+    <div id="earth-wrap" aria-hidden="true">
+      <iframe
+        id="earth-frame"
+        src="https://sketchfab.com/models/374e5604a9184f7693c1b64144e9a041/embed?autostart=1&preload=1&transparent=1&ui_infos=0&ui_controls=0&ui_hint=0&ui_stop=0&dnt=1"
+        title="Earth 3D Model"
+        frameborder="0"
+        allowfullscreen
+        mozallowfullscreen="true"
+        webkitallowfullscreen="true"
+        allow="autoplay; fullscreen; xr-spatial-tracking"
+      ></iframe>
+    </div>
 
     <!-- ══════════════════════════════════════════════════════════
          SECTION 1 · HERO
@@ -624,6 +639,11 @@
 
 
     <!-- ══════════════════════════════════════════════════════════
+         CROP SCROLL ANIMATION — WHEAT LIFECYCLE
+    ══════════════════════════════════════════════════════════ -->
+    <div class="crop-scroll-anchor" data-crop="wheat"></div>
+
+    <!-- ══════════════════════════════════════════════════════════
          SECTION 6 · KEY ACHIEVEMENTS
     ══════════════════════════════════════════════════════════ -->
     <section class="section achievements-section" id="achievements">
@@ -895,6 +915,8 @@
   <script src="../js/shared.js"></script>
   <script src="../js/animations.js"></script>
   <script src="../js/overview.js"></script>
+  <script src="../js/globe.js"></script>
+  <script src="../js/crop-scroll.js"></script>
 </body>
 
 </html>

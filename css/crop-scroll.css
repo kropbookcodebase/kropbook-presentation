@@ -1,0 +1,25 @@
+.crop-scroll-anchor {
+  position: relative;
+  height: 500px;
+  overflow: visible;
+}
+
+.crop-scroll-panel {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  float: right;
+  width: 200px;
+  height: 320px;
+  margin-right: 40px;
+  margin-top: -160px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.crop-scroll-canvas {
+  width: 200px;
+  height: 320px;
+  border-radius: var(--radius-lg, 21px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}

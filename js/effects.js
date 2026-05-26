@@ -338,10 +338,132 @@ function initHeroShapes() {
 
 
 /* =========================================================================
-   5. INITIALISE ALL EFFECTS ON DOM READY
+   5. CURSOR PARTICLE GRID
+   ========================================================================= */
+
+/**
+ * Canvas-based cursor-reactive dot grid — "antigravity" effect.
+ *
+ * A grid of small dots (34 px spacing, Fibonacci) reacts to cursor proximity:
+ * dots within ~130 px are repelled and spring back when the cursor moves away.
+ * Disabled on touch-only devices (hover:none). Canvas is injected into <body>.
+ *
+ * @returns {Function|undefined} Cleanup function that stops animation + removes canvas.
+ */
+function initCursorParticles() {
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  var canvas = document.createElement('canvas');
+  canvas.setAttribute('aria-hidden', 'true');
+  canvas.style.cssText = 'position:fixed;top:0;left:0;pointer-events:none;z-index:0;';
+  document.body.prepend(canvas);
+
+  var ctx = canvas.getContext('2d');
+
+  var GRID   = 40;    /* Fibonacci 34 — dot spacing px         */
+  var RADIUS = 140;   /* cursor influence radius px             */
+  var REPEL  = 9;     /* push force coefficient                 */
+  var SPRING = 0.072; /* spring-back stiffness                  */
+  var DAMP   = 0.68;  /* velocity damping per frame             */
+
+  var dots  = [];
+  var mx    = -9999;
+  var my    = -9999;
+  var rafId;
+
+  function buildGrid() {
+    dots = [];
+    var cols = Math.ceil(window.innerWidth  / GRID) + 2;
+    var rows = Math.ceil(window.innerHeight / GRID) + 2;
+    for (var r = 0; r < rows; r++) {
+      for (var c = 0; c < cols; c++) {
+        dots.push({
+          ox: c * GRID, oy: r * GRID,
+          x:  c * GRID, y:  r * GRID,
+          vx: 0, vy: 0
+        });
+      }
+    }
+  }
+
+  function resize() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width  = Math.floor(window.innerWidth  * dpr);
+    canvas.height = Math.floor(window.innerHeight * dpr);
+    canvas.style.width  = window.innerWidth  + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    buildGrid();
+  }
+
+  function tick() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (var i = 0; i < dots.length; i++) {
+      var d  = dots[i];
+      var dx = d.x - mx;
+      var dy = d.y - my;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < RADIUS && dist > 0.5) {
+        var f = (1 - dist / RADIUS) * REPEL;
+        d.vx += (dx / dist) * f;
+        d.vy += (dy / dist) * f;
+      }
+
+      d.vx += (d.ox - d.x) * SPRING;
+      d.vy += (d.oy - d.y) * SPRING;
+      d.vx *= DAMP;
+      d.vy *= DAMP;
+      d.x  += d.vx;
+      d.y  += d.vy;
+
+      var disp = Math.sqrt((d.x - d.ox) * (d.x - d.ox) + (d.y - d.oy) * (d.y - d.oy));
+      var t    = disp / 22 > 1 ? 1 : disp / 22;
+
+      var r = Math.round(27  + (201 - 27)  * t);
+      var g = Math.round(77  + (162 - 77)  * t);
+      var b = Math.round(62  + (39  - 62)  * t);
+      var a = (0.05 + t * 0.3 7).toFixed(2);
+      var s = 1.4 + t * 1.6;
+
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, s, 0, 6.2832);
+      ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
+      ctx.fill();
+    }
+
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function onMove(e)  { mx = e.clientX; my = e.clientY; }
+  function onLeave()  { mx = -9999; my = -9999; }
+
+  window.addEventListener('mousemove',  onMove,  { passive: true });
+  window.addEventListener('mouseleave', onLeave, { passive: true });
+  window.addEventListener('resize',     resize,  { passive: true });
+
+  resize();
+  rafId = requestAnimationFrame(tick);
+
+  return function cleanup() {
+    cancelAnimationFrame(rafId);
+    window.removeEventListener('mousemove',  onMove);
+    window.removeEventListener('mouseleave', onLeave);
+    window.removeEventListener('resize',     resize);
+    canvas.remove();
+  };
+}
+
+
+/* =========================================================================
+   6. INITIALISE ALL EFFECTS ON DOM READY
    ========================================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
+
+  /* Cursor-reactive dot grid */
+  initCursorParticles();
 
   /* Grid reveal on all qualifying sections */
   initInfiniteGrids();

@@ -3,6 +3,21 @@
    Supplement to global.css — do not duplicate global rules
    ============================================================ */
 
+/* ── FONT READABILITY ───────────────────────────────────── */
+
+.finance-hero,
+.finance-metrics-section,
+.finance-chart-section,
+.finance-asset-section,
+.finance-pl-section,
+.finance-ratios-section,
+.finance-bs-section,
+.finance-auditor-section,
+.finance-cta-section {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* ── SECTION 7.1 · HERO ─────────────────────────────────── */
 
 .finance-hero {
@@ -113,6 +128,7 @@
 .finance-section-header h2 {
   color: var(--text-primary);
   margin-bottom: 0.5rem;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 /* Large metric card variant */
@@ -181,7 +197,7 @@
 .year-comparison-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
 }
 
 .year-comparison-table thead tr {
@@ -229,12 +245,14 @@
 .year-comparison-table tbody td {
   padding: 1rem 1rem;
   vertical-align: top;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .year-comparison-table tbody td:first-child {
   font-weight: 600;
   color: var(--text-primary);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   letter-spacing: 0.04em;
 }
@@ -397,7 +415,8 @@
 .pl-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
   min-width: 700px;
 }
 
@@ -408,9 +427,9 @@
 .pl-table thead th {
   padding: 1rem 1.25rem;
   text-align: left;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.82);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 500;
@@ -452,6 +471,8 @@
   padding: 0.875rem 1.25rem;
   color: var(--text-muted);
   white-space: nowrap;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .pl-table tbody td:first-child {
@@ -607,10 +628,10 @@
 
 .bs-hl-label {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.78);
   margin-bottom: 0.75rem;
 }
 
@@ -624,8 +645,8 @@
 }
 
 .bs-hl-desc {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.82);
   line-height: 1.7;
 }
 
@@ -648,9 +669,9 @@
 .bs-table thead th {
   padding: 0.875rem 1.25rem;
   text-align: left;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.82);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 500;
@@ -677,6 +698,8 @@
 .bs-table tbody td {
   padding: 0.875rem 1.25rem;
   color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .bs-table tbody td:first-child {
@@ -736,7 +759,8 @@
 }
 
 .auditor-detail-row {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
   color: var(--text-secondary);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   letter-spacing: 0.04em;
@@ -790,7 +814,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.75);
   margin-bottom: 0.875rem;
 }
 
@@ -805,7 +829,7 @@
 
 .callout-body {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.82);
   line-height: 1.7;
   max-width: 560px;
 }

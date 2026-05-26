@@ -3,29 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kropbook Agritech - Corporate Profile | Credit Dossier</title>
+  <title>Kropbook Agritech — Credit Assessment Dossier</title>
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/navbar.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/corporate-profile.css">
+  <link rel="stylesheet" href="../css/crop-scroll.css">
   <script src="../js/effects.js"></script>
 </head>
 <body>
   <div id="navbar-container"></div>
 
+  <!-- Hidden SVG glass distortion filter -->
+  <svg class="glass-filter-defs" aria-hidden="true">
+    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
+      <feComponentTransfer in="turbulence" result="mapped">
+        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5"/>
+        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0"/>
+        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5"/>
+      </feComponentTransfer>
+      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap"/>
+      <feDisplacementMap in="SourceGraphic" in2="softMap" scale="120" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
+  <!-- Floating globe (scroll-driven) -->
+  <div class="globe-fixed-wrap" id="globe-follower" aria-hidden="true">
+    <div class="globe-sphere"></div>
+  </div>
+
   <main class="profile-page">
 
-    <!-- ═══════════════════════════════════════════════════════════
-         HERO HEADER
-    ════════════════════════════════════════════════════════════ -->
-    <section class="profile-hero">
-      <div class="profile-container">
-        <p class="profile-kicker">Credit Assessment Dossier</p>
-        <h1>Kropbook Agritech Private Limited</h1>
+    <!-- ═══════════════════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════════════════ -->
+    <section class="profile-hero" id="profile-hero-section">
+
+      <!-- Decorative floating shapes -->
+      <div class="elegant-shape shape-1 is-visible" aria-hidden="true"></div>
+      <div class="elegant-shape shape-2 is-visible" aria-hidden="true"></div>
+      <div class="elegant-shape shape-3 is-visible" aria-hidden="true"></div>
+
+      <!-- Globe anchored in hero viewport -->
+      <div class="globe-hero-anchor" aria-hidden="true">
+        <div class="globe-sphere"></div>
+      </div>
+
+      <div class="profile-container profile-hero-inner">
+
+        <span class="profile-dossier-label">Credit Assessment Dossier</span>
+        <h1>Kropbook Agritech<br>Private Limited</h1>
+
         <p class="profile-lede">
-          Comprehensive corporate credit profile - corporate identity, four-year audited financials,
+          Comprehensive corporate credit profile — corporate identity, four-year audited financials,
           director KYC, multi-state GST compliance, working capital analysis, and document readiness
-          checklist prepared for credit evaluation.
+          prepared for institutional credit evaluation.
         </p>
 
         <div class="profile-hero-grid">
@@ -43,137 +76,89 @@
           </div>
           <div>
             <span>Registered Office</span>
-            <strong>Merchant Centre, Vashi, Navi Mumbai - 400705</strong>
+            <strong>Merchant Centre, Vashi, Navi Mumbai — 400705</strong>
           </div>
         </div>
 
         <div class="profile-hero-row">
-          <div class="profile-hero-badge">DPIIT Startup India - Cert. No. DIPP53655</div>
+          <div class="profile-hero-badge">DPIIT Startup India · Cert. No. DIPP53655</div>
           <div class="profile-hero-badge">MSME / Udyam Registered</div>
-          <div class="profile-hero-badge">Sec. 80-IAC Eligible - IMB Certified 09 May 2026</div>
+          <div class="profile-hero-badge">Sec. 80-IAC Eligible · IMB Certified 09 May 2026</div>
+          <div class="profile-hero-badge">Patent No. 363155 · Valid until April 2040</div>
         </div>
 
         <div class="profile-hero-identities">
           <div class="profile-identity-row">
-            <span class="profile-identity-label">GSTIN - Punjab</span>
+            <span class="profile-identity-label">GSTIN — Punjab</span>
             <span class="profile-identity-val">03AAHCK3551A1Z5</span>
           </div>
           <div class="profile-identity-row">
-            <span class="profile-identity-label">GSTIN - Maharashtra</span>
+            <span class="profile-identity-label">GSTIN — Maharashtra</span>
             <span class="profile-identity-val">27AAHCK3551A1ZV</span>
           </div>
           <div class="profile-identity-row">
-            <span class="profile-identity-label">GSTIN - Andhra Pradesh</span>
+            <span class="profile-identity-label">GSTIN — Andhra Pradesh</span>
             <span class="profile-identity-val">37AAHCK3551A1ZU</span>
           </div>
-
         </div>
+
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════════
          TAB NAVIGATION
-    ════════════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════════ -->
     <nav class="profile-tabs" aria-label="Corporate profile sections">
       <button type="button" data-scroll-target="identity">Identity</button>
       <button type="button" data-scroll-target="financials">Financials</button>
       <button type="button" data-scroll-target="directors">Directors</button>
-      <button type="button" data-scroll-target="gst-compliance">GST Compliance</button>
+      <button type="button" data-scroll-target="gst-compliance">GST</button>
       <button type="button" data-scroll-target="operations">Operations</button>
-      <button type="button" data-scroll-target="kotak-checklist">Kotak Checklist</button>
+      <button type="button" data-scroll-target="credit-proposal">Credit Proposal</button>
+      <button type="button" data-scroll-target="documents">Documents</button>
     </nav>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 1 - CORPORATE IDENTITY
-    ════════════════════════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 1 — CORPORATE IDENTITY
+    ════════════════════════════════════════════════════════ -->
     <section class="profile-section" id="identity">
       <div class="profile-container">
-        <p class="section-label">Section 01 - Corporate Identity</p>
+        <p class="section-label">Section 01 — Corporate Identity</p>
         <h2>Company Snapshot</h2>
 
-        <div class="profile-grid profile-grid-3">
+        <!-- ── Row 1: 3-column cards ──────────────────────── -->
+        <div class="profile-grid-3 profile-mt flip-enter" data-flip-group>
 
-          <article class="profile-card profile-card-wide">
+          <article class="profile-card">
             <h3>Registered Details</h3>
             <dl class="profile-list">
-              <div>
-                <dt>Company Type</dt>
-                <dd>Private Limited Company (Domestic)</dd>
-              </div>
-              <div>
-                <dt>Date of Incorporation</dt>
-                <dd>05 November 2018</dd>
-              </div>
-              <div>
-                <dt>CIN</dt>
-                <dd>U01100PN2018PTC180049</dd>
-              </div>
-              <div>
-                <dt>Registered Address</dt>
-                <dd>Merchant Centre, Section B1, Office No B 423, Plot 14, Sector 19, Vashi, Thane, Maharashtra - 400705</dd>
-              </div>
-              <div>
-                <dt>Alternate Address (Tax Records)</dt>
-                <dd>C/O Manoj Baban Avhad, CK No 262/A, Near Newasa MIDC Rajegaon, Singave Tukai, Ahmednagar, Maharashtra - 414607</dd>
-              </div>
-              <div>
-                <dt>Phone</dt>
-                <dd>+91 (0) 2246063535</dd>
-              </div>
-              <div>
-                <dt>Email</dt>
-                <dd>info@kropbook.com</dd>
-              </div>
-              <div>
-                <dt>Website</dt>
-                <dd>www.kropbook.com</dd>
-              </div>
+              <div><dt>Company Type</dt><dd>Private Limited Company (Domestic)</dd></div>
+              <div><dt>Date of Incorporation</dt><dd>05 November 2018</dd></div>
+              <div><dt>CIN</dt><dd>U01100PN2018PTC180049</dd></div>
+              <div><dt>Registered Address</dt><dd>Merchant Centre, Section B1, Office No B 423, Plot 14, Sector 19, Vashi, Thane, Maharashtra — 400705</dd></div>
+              <div><dt>Alternate Address (Tax Records)</dt><dd>C/O Manoj Baban Avhad, CK No 262/A, Near Newasa MIDC Rajegaon, Singave Tukai, Ahmednagar, Maharashtra — 414607</dd></div>
+              <div><dt>Phone</dt><dd>+91 (0) 2246063535</dd></div>
+              <div><dt>Email</dt><dd>info@kropbook.com</dd></div>
+              <div><dt>Website</dt><dd>www.kropbook.com</dd></div>
             </dl>
           </article>
 
           <article class="profile-card">
             <h3>Tax Identity</h3>
             <dl class="profile-list">
-              <div>
-                <dt>PAN</dt>
-                <dd>AAHCK3551A</dd>
-              </div>
-              <div>
-                <dt>Assessee Type</dt>
-                <dd>Company (Domestic)</dd>
-              </div>
-              <div>
-                <dt>Tax Regime</dt>
-                <dd>Section 115BAA @ 22%</dd>
-              </div>
-              <div>
-                <dt>Agriculture Income Status</dt>
-                <dd>Separate computation - exempt under IT Act</dd>
-              </div>
-              <div>
-                <dt>Status</dt>
-                <dd>Active</dd>
-              </div>
+              <div><dt>PAN</dt><dd>AAHCK3551A</dd></div>
+              <div><dt>Assessee Type</dt><dd>Company (Domestic)</dd></div>
+              <div><dt>Tax Regime</dt><dd>Section 115BAA @ 22%</dd></div>
+              <div><dt>Agriculture Income Status</dt><dd>Separate computation — exempt under IT Act</dd></div>
+              <div><dt>Status</dt><dd>Active</dd></div>
             </dl>
 
             <h3 class="profile-subhead">Recognitions &amp; Certifications</h3>
             <dl class="profile-list">
-              <div>
-                <dt>DPIIT Startup India</dt>
-                <dd>Cert. No. DIPP53655 | Valid: 24 Jan 2020 – 04 Nov 2028</dd>
-              </div>
-              <div>
-                <dt>Section 80-IAC (IMB)</dt>
-                <dd>Cert. No. DIPP53655/IMB | Date: 09 May 2026 - Income Tax exemption eligible</dd>
-              </div>
-              <div>
-                <dt>MSME / Udyam</dt>
-                <dd>Registered</dd>
-              </div>
-              <div>
-                <dt>Patent (Primary)</dt>
-                <dd>No. 363155 - Device for Analysis of Granules | Valid until April 2040</dd>
-              </div>
+              <div><dt>DPIIT Startup India</dt><dd>Cert. No. DIPP53655 | Valid: 24 Jan 2020 – 04 Nov 2028</dd></div>
+              <div><dt>Section 80-IAC (IMB)</dt><dd>Cert. No. DIPP53655/IMB | Date: 09 May 2026 — Income Tax exemption eligible</dd></div>
+              <div><dt>MSME / Udyam</dt><dd>Registered</dd></div>
+              <div><dt>Patent (Primary)</dt><dd>No. 363155 — Device for Analysis of Granules | Valid until April 2040</dd></div>
             </dl>
           </article>
 
@@ -181,15 +166,44 @@
             <h3>Share Capital Structure</h3>
             <dl class="profile-list">
               <div>
-              </div>
-              <div>
                 <dt>Issued, Subscribed &amp; Paid-up</dt>
-                <dd>Rs. 10,000 (1,000 Shares @ Rs. 10 each - 500 each to both directors)</dd>
+                <dd>Rs. 10,000 (1,000 Shares @ Rs. 10 each)</dd>
               </div>
             </dl>
 
-            <h3 class="profile-subhead">Shareholding Pattern (as at 31 Mar 2025)</h3>
-            <table class="profile-table">
+            <h3 class="profile-subhead">Shareholding (31 Mar 2025)</h3>
+
+            <!-- Shareholding Donut Chart -->
+            <div class="donut-wrap" data-donut-group>
+              <div class="donut-svg-container">
+                <svg viewBox="0 0 100 100" role="img" aria-label="Shareholding pattern">
+                  <circle class="donut-track" cx="50" cy="50" r="40"/>
+                  <circle class="donut-seg-green" id="donut-kunal" cx="50" cy="50" r="40"
+                    transform="rotate(-90 50 50)"
+                    data-pct="94"/>
+                  <circle class="donut-seg-gold" id="donut-kiran" cx="50" cy="50" r="40"
+                    transform="rotate(-90 50 50)"
+                    data-pct="6"
+                    data-offset-pct="94"/>
+                  <text x="50" y="47" text-anchor="middle" class="donut-value">94%</text>
+                  <text x="50" y="57" text-anchor="middle" class="donut-label">Kunal</text>
+                </svg>
+              </div>
+              <div class="donut-legend">
+                <div class="donut-legend-item">
+                  <span class="donut-legend-dot" style="background:var(--brand-green)"></span>
+                  <span class="donut-legend-label">Kunal Subhash Pingle (DIN 08754829)</span>
+                  <strong class="donut-legend-pct">94%</strong>
+                </div>
+                <div class="donut-legend-item">
+                  <span class="donut-legend-dot" style="background:var(--accent-gold)"></span>
+                  <span class="donut-legend-label">Dr. Kiran Chandar Avhad (DIN 10555305)</span>
+                  <strong class="donut-legend-pct">6%</strong>
+                </div>
+              </div>
+            </div>
+
+            <table class="profile-table profile-mt-sm">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -201,74 +215,66 @@
                 <tr>
                   <td>Kunal Subhash Pingle</td>
                   <td>08754829</td>
-                  <td><strong>92.00%</strong></td>
+                  <td><strong>94.00%</strong></td>
                 </tr>
                 <tr>
                   <td>Dr. Kiran Chandar Avhad</td>
                   <td>10555305</td>
-                  <td><strong>8.00%</strong></td>
+                  <td><strong>6.00%</strong></td>
                 </tr>
                 <tr class="profile-table-total">
                   <td>Total</td>
                   <td></td>
-                  <td>1,000</td>
                   <td>100%</td>
                 </tr>
               </tbody>
             </table>
             <p class="profile-note profile-note-sm">
-              Effective FY 2024-25 
-              Kunal Subhash Pingle holds 92% and Dr. Kiran Chandar Avhad holds 8% - equal partnership.
+              1,000 equity shares @ Rs. 10 per share. Kunal Subhash Pingle: 940 shares (94%). Dr. Kiran Chandar Avhad: 60 shares (6%).
             </p>
           </article>
 
         </div>
 
-        <div class="profile-grid profile-grid-2 profile-mt">
-          <article class="profile-card">
+        <!-- ── Row 2: Business Nature + Auditors ──────────── -->
+        <div class="profile-grid-2 profile-mt">
+
+          <article class="profile-card flip-enter">
             <h3>Business Nature (Tax Classification)</h3>
             <table class="profile-table">
               <thead>
-                <tr>
-                  <th>Code</th>
-                  <th>Category</th>
-                </tr>
+                <tr><th>Code</th><th>Category</th></tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>01018</td>
-                  <td>Agriculture, Animal Husbandry &amp; Forestry - Other n.e.c.</td>
-                </tr>
-                <tr>
-                  <td>01011</td>
-                  <td>Soil conservation, soil testing and soil desalination services</td>
-                </tr>
-                <tr>
-                  <td>11013</td>
-                  <td>Transport and Logistics - Storage and Warehousing</td>
-                </tr>
-                <tr>
-                  <td>15003</td>
-                  <td>Research and Development - Other R&amp;D activities n.e.c.</td>
-                </tr>
-                <tr>
-                  <td>09007</td>
-                  <td>Wholesale and Retail Trade - Wholesale of food, beverages and tobacco</td>
-                </tr>
+                <tr><td>01018</td><td>Agriculture, Animal Husbandry &amp; Forestry — Other n.e.c.</td></tr>
+                <tr><td>01011</td><td>Soil conservation, soil testing and soil desalination services</td></tr>
+                <tr><td>11013</td><td>Transport and Logistics — Storage and Warehousing</td></tr>
+                <tr><td>15003</td><td>Research and Development — Other R&amp;D activities n.e.c.</td></tr>
+                <tr><td>09007</td><td>Wholesale and Retail Trade — Wholesale of food, beverages and tobacco</td></tr>
               </tbody>
             </table>
+
+            <!-- Business type bar chart -->
+            <h3 class="profile-subhead">Revenue Mix by Type</h3>
+            <div class="cat-bar-chart" data-cat-chart>
+              <div class="cat-row">
+                <span class="cat-label">Non-Perishable Commodities</span>
+                <div class="cat-bar-bg"><div class="cat-bar-fg" data-w="78"></div></div>
+                <span class="cat-pct">78%</span>
+              </div>
+              <div class="cat-row">
+                <span class="cat-label">Perishable Fresh Produce</span>
+                <div class="cat-bar-bg"><div class="cat-bar-fg" data-w="22" style="background:linear-gradient(90deg,rgba(201,162,39,0.6),var(--accent-gold))"></div></div>
+                <span class="cat-pct">22%</span>
+              </div>
+            </div>
           </article>
 
-          <article class="profile-card">
-            <h3>Auditors - Year-wise</h3>
+          <article class="profile-card flip-enter">
+            <h3>Auditors — Year-wise</h3>
             <table class="profile-table">
               <thead>
-                <tr>
-                  <th>Period</th>
-                  <th>Firm</th>
-                  <th>MRN / FRN</th>
-                  <th>Signed</th>
-                </tr>
+                <tr><th>Period</th><th>Firm</th><th>MRN / FRN</th><th>Signed</th></tr>
               </thead>
               <tbody>
                 <tr>
@@ -291,46 +297,90 @@
                 </tr>
               </tbody>
             </table>
+
+            <!-- Tree model decoration for agri context -->
+            <div class="model-tree-wrap" aria-hidden="true">
+              <span class="model-tree-icon">🌿</span>
+            </div>
           </article>
+
         </div>
 
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 2 - FINANCIAL PROFILE
-    ════════════════════════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 2 — FINANCIAL PROFILE
+    ════════════════════════════════════════════════════════ -->
     <section class="profile-section profile-section-muted" id="financials">
       <div class="profile-container">
-        <p class="section-label">Section 02 - Financial Profile</p>
+        <p class="section-label">Section 02 — Financial Profile</p>
         <h2>Four-Year Audited Financial Summary</h2>
 
+        <!-- KPI strip -->
         <div class="profile-metric-grid">
-          <div class="profile-metric">
+          <div class="profile-metric reveal">
             <span>FY 2022-23</span>
-            <strong>Rs. 24.47 Cr</strong>
+            <strong data-counter data-target="24.47" data-decimals="2" data-prefix="Rs. " data-suffix=" Cr">Rs. 24.47 Cr</strong>
             <small>First operating revenue year</small>
           </div>
-          <div class="profile-metric">
+          <div class="profile-metric reveal">
             <span>FY 2023-24</span>
-            <strong>Rs. 27.90 Cr</strong>
-            <small>+14.0% YoY - Audited</small>
+            <strong data-counter data-target="27.90" data-decimals="2" data-prefix="Rs. " data-suffix=" Cr">Rs. 27.90 Cr</strong>
+            <small>+14.0% YoY — Audited</small>
           </div>
-          <div class="profile-metric">
+          <div class="profile-metric reveal">
             <span>FY 2024-25</span>
-            <strong>Rs. 59.18 Cr</strong>
-            <small>+112.1% YoY - Audited</small>
+            <strong data-counter data-target="59.18" data-decimals="2" data-prefix="Rs. " data-suffix=" Cr">Rs. 59.18 Cr</strong>
+            <small>+112.1% YoY — Audited</small>
           </div>
-          <div class="profile-metric">
+          <div class="profile-metric reveal">
             <span>FY 2025-26</span>
-            <strong>Rs. 75.49 Cr</strong>
-            <small>+27.6% YoY - Provisional</small>
+            <strong data-counter data-target="75.49" data-decimals="2" data-prefix="Rs. " data-suffix=" Cr">Rs. 75.49 Cr</strong>
+            <small>+27.6% YoY — Provisional</small>
           </div>
         </div>
 
-        <article class="profile-card profile-card-full profile-mt">
-          <h3>Balance Sheet &amp; P&amp;L - Consolidated Multi-Year Table</h3>
-          <p class="profile-note">All figures in Rs. Crore unless noted. FY 2025-26 revenue from operational reports; audit pending.</p>
+        <!-- Revenue bar chart -->
+        <article class="profile-card profile-mt reveal">
+          <h3>Revenue Growth — Four-Year Trajectory</h3>
+          <p class="profile-note-sm">All figures in Rs. Crore. FY 2025-26 revenue from operational reports; audit pending.</p>
+          <div class="revenue-bar-chart" data-rbc-chart>
+            <div class="rbc-row">
+              <span class="rbc-label">FY 23</span>
+              <div class="rbc-bar-wrap">
+                <div class="rbc-bar-fill" data-pct="32" data-value="Rs. 24.47 Cr"></div>
+              </div>
+              <span class="rbc-val">24.47 Cr</span>
+            </div>
+            <div class="rbc-row">
+              <span class="rbc-label">FY 24</span>
+              <div class="rbc-bar-wrap">
+                <div class="rbc-bar-fill" data-pct="37" data-value="Rs. 27.90 Cr"></div>
+              </div>
+              <span class="rbc-val">27.90 Cr</span>
+            </div>
+            <div class="rbc-row">
+              <span class="rbc-label">FY 25</span>
+              <div class="rbc-bar-wrap">
+                <div class="rbc-bar-fill" data-pct="78" data-value="Rs. 59.18 Cr"></div>
+              </div>
+              <span class="rbc-val">59.18 Cr</span>
+            </div>
+            <div class="rbc-row">
+              <span class="rbc-label">FY 26P</span>
+              <div class="rbc-bar-wrap">
+                <div class="rbc-bar-fill" data-pct="100" data-value="Rs. 75.49 Cr" data-highlight="true"></div>
+              </div>
+              <span class="rbc-val">75.49 Cr</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Finance table -->
+        <article class="profile-card profile-mt reveal">
+          <h3>Balance Sheet &amp; P&amp;L — Consolidated Multi-Year</h3>
+          <p class="profile-note-sm">All figures in Rs. Crore. FY 2025-26: provisional.</p>
           <div class="profile-table-scroll">
             <table class="profile-table profile-table-finance">
               <thead>
@@ -343,420 +393,308 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="profile-table-group">
-                  <td colspan="5">Revenue &amp; Profitability</td>
-                </tr>
-                <tr>
-                  <td>Revenue from Operations</td>
-                  <td>24.47</td>
-                  <td>27.90</td>
-                  <td>59.18</td>
-                  <td>75.49</td>
-                </tr>
-                <tr>
-                  <td>YoY Revenue Growth</td>
-                  <td>- (First year)</td>
-                  <td>+14.0%</td>
-                  <td>+112.1%</td>
-                  <td>+27.6%</td>
-                </tr>
-                <tr>
-                  <td>Gross Profit</td>
-                  <td>1.46</td>
-                  <td>6.43</td>
-                  <td>21.70</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Gross Margin %</td>
-                  <td>5.97%</td>
-                  <td>23.04%</td>
-                  <td>36.67%</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Net Profit / (Loss)</td>
-                  <td>0.61</td>
-                  <td>4.72</td>
-                  <td>7.80</td>
-                  <td>Audit Pending</td>
-                </tr>
-                <tr>
-                  <td>Net Margin %</td>
-                  <td>2.48%</td>
-                  <td>16.90%</td>
-                  <td>13.18%</td>
-                  <td>-</td>
-                </tr>
-                <tr class="profile-table-group">
-                  <td colspan="5">Balance Sheet - Key Items</td>
-                </tr>
-                <tr>
-                  <td>Total Assets</td>
-                  <td>1.50</td>
-                  <td>5.69</td>
-                  <td>16.87</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Share Capital</td>
-                  <td>0.001</td>
-                  <td>0.001</td>
-                  <td>0.001</td>
-                  <td>0.001</td>
-                </tr>
-                <tr>
-                  <td>Reserves &amp; Surplus</td>
-                  <td>0.59</td>
-                  <td>5.30</td>
-                  <td>13.10</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Trade Receivables</td>
-                  <td>0.77</td>
-                  <td>5.00</td>
-                  <td>15.21</td>
-                  <td>16.20 (31-3-26)</td>
-                </tr>
-                <tr>
-                  <td>Trade Payables</td>
-                  <td>0.74</td>
-                  <td>0.22</td>
-                  <td>2.92</td>
-                  <td>1.87 (31-3-26)</td>
-                </tr>
-                <tr>
-                  <td>Inventories</td>
-                  <td>0.58</td>
-                  <td>0.31</td>
-                  <td>0.24</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Cash &amp; Bank</td>
-                  <td>0.0002</td>
-                  <td>0.16</td>
-                  <td>0.85</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Director Unsecured Loan</td>
-                  <td>0.16</td>
-                  <td>0.16</td>
-                  <td>0.16</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Bank / Institutional Debt</td>
-                  <td>NIL</td>
-                  <td>NIL</td>
-                  <td>NIL</td>
-                  <td>NIL</td>
-                </tr>
-                <tr class="profile-table-group">
-                  <td colspan="5">Key Ratios (from Audited Reports)</td>
-                </tr>
-                <tr>
-                  <td>Current Ratio</td>
-                  <td>1.82x</td>
-                  <td>24.23x</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Debt-Equity Ratio</td>
-                  <td>1.53x</td>
-                  <td>0.07x</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Return on Equity</td>
-                  <td>102%</td>
-                  <td>89%</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Net Profit Ratio</td>
-                  <td>2%</td>
-                  <td>17%</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
+                <tr class="profile-table-group"><td colspan="5">Revenue &amp; Profitability</td></tr>
+                <tr><td>Revenue from Operations</td><td>24.47</td><td>27.90</td><td>59.18</td><td>75.49</td></tr>
+                <tr><td>YoY Revenue Growth</td><td>— (First year)</td><td>+14.0%</td><td>+112.1%</td><td>+27.6%</td></tr>
+                <tr><td>Gross Profit</td><td>1.46</td><td>6.43</td><td>21.70</td><td>—</td></tr>
+                <tr><td>Gross Margin %</td><td>5.97%</td><td>23.04%</td><td>36.67%</td><td>—</td></tr>
+                <tr><td>Net Profit / (Loss)</td><td>0.61</td><td>4.72</td><td>7.80</td><td>Audit Pending</td></tr>
+                <tr><td>Net Margin %</td><td>2.48%</td><td>16.90%</td><td>13.18%</td><td>—</td></tr>
+                <tr class="profile-table-group"><td colspan="5">Balance Sheet — Key Items</td></tr>
+                <tr><td>Total Assets</td><td>1.50</td><td>5.69</td><td>16.87</td><td>—</td></tr>
+                <tr><td>Share Capital</td><td>0.001</td><td>0.001</td><td>0.001</td><td>0.001</td></tr>
+                <tr><td>Reserves &amp; Surplus</td><td>0.59</td><td>5.30</td><td>13.10</td><td>—</td></tr>
+                <tr><td>Trade Receivables</td><td>0.77</td><td>5.00</td><td>15.21</td><td>16.20 (31-3-26)</td></tr>
+                <tr><td>Trade Payables</td><td>0.74</td><td>0.22</td><td>2.92</td><td>1.87 (31-3-26)</td></tr>
+                <tr><td>Inventories</td><td>0.58</td><td>0.31</td><td>0.24</td><td>—</td></tr>
+                <tr><td>Cash &amp; Bank</td><td>0.0002</td><td>0.16</td><td>0.85</td><td>—</td></tr>
+                <tr><td>Director Unsecured Loan</td><td>0.16</td><td>0.16</td><td>0.16</td><td>—</td></tr>
+                <tr><td>Bank / Institutional Debt</td><td>NIL</td><td>NIL</td><td>NIL</td><td>NIL</td></tr>
+                <tr class="profile-table-group"><td colspan="5">Key Ratios (from Audited Reports)</td></tr>
+                <tr><td>Current Ratio</td><td>1.82x</td><td>24.23x</td><td>—</td><td>—</td></tr>
+                <tr><td>Debt-Equity Ratio</td><td>1.53x</td><td>0.07x</td><td>—</td><td>—</td></tr>
+                <tr><td>Return on Equity</td><td>102%</td><td>89%</td><td>—</td><td>—</td></tr>
+                <tr><td>Net Profit Ratio</td><td>2%</td><td>17%</td><td>—</td><td>—</td></tr>
               </tbody>
             </table>
           </div>
         </article>
 
-        <div class="profile-grid profile-grid-3 profile-mt">
-          <div class="profile-metric">
-            <span>Revenue CAGR - FY23 to FY25</span>
+        <!-- Revenue highlights + composition -->
+        <div class="profile-grid-3 profile-mt">
+          <div class="profile-metric reveal">
+            <span>Revenue CAGR — FY23 to FY25</span>
             <strong>~55.5%</strong>
             <small>From Rs. 24.47 Cr to Rs. 59.18 Cr in two years</small>
           </div>
-          <div class="profile-metric">
-            <span>Total 4-Year Revenue (FY23–FY26)</span>
+          <div class="profile-metric reveal">
+            <span>Total 4-Year Revenue</span>
             <strong>Rs. 187.04 Cr</strong>
             <small>Sum of all four operating years</small>
           </div>
-          <div class="profile-metric">
+          <div class="profile-metric reveal">
             <span>Peak Net Profit Margin</span>
             <strong>16.9% (FY24)</strong>
-            <small>Net Profit Rs. 4.72 Cr on Revenue Rs. 27.90 Cr</small>
+            <small>Net Profit Rs. 4.72 Cr on Rs. 27.90 Cr revenue</small>
           </div>
         </div>
 
-        <article class="profile-card profile-card-full profile-mt">
-          <h3>Revenue Composition - FY 2025-26 (Provisional)</h3>
-          <div class="profile-table-scroll">
-            <table class="profile-table">
-              <thead>
-                <tr>
-                  <th>Revenue Stream</th>
-                  <th>Amount (Rs. Cr)</th>
-                  <th>% of Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Fresh Fruits, Vegetables &amp; Dry Commodities</td>
-                  <td>70.53</td>
-                  <td>93.43%</td>
-                </tr>
-                <tr>
-                  <td>Soil Testing Services</td>
-                  <td>1.18</td>
-                  <td>1.56%</td>
-                </tr>
-                <tr>
-                  <td>Agricultural Advisory Fees</td>
-                  <td>1.82</td>
-                  <td>2.42%</td>
-                </tr>
-                <tr>
-                  <td>Kropbook Intelligent Platform (SaaS)</td>
-                  <td>1.96</td>
-                  <td>2.60%</td>
-                </tr>
-                <tr class="profile-table-total">
-                  <td>Grand Total</td>
-                  <td>75.49</td>
-                  <td>100%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
+        <!-- Revenue Composition -->
+        <div class="profile-grid-2 profile-mt">
 
-        <article class="profile-card profile-card-full profile-mt">
-          <h3>FY 2025-26 Monthly Sales - Quarter Summary</h3>
-          <div class="profile-table-scroll">
+          <article class="profile-card reveal">
+            <h3>Revenue Composition — FY 2025-26 (Provisional)</h3>
             <table class="profile-table">
               <thead>
-                <tr>
-                  <th>Quarter</th>
-                  <th>Revenue (Rs. Cr)</th>
-                  <th>% of Annual</th>
-                  <th>Peak Month</th>
-                </tr>
+                <tr><th>Revenue Stream</th><th>Rs. Cr</th><th>%</th></tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Q1 - April to June 2025</td>
-                  <td>18.27</td>
-                  <td>24.20%</td>
-                  <td>April (Rs. 6.67 Cr)</td>
-                </tr>
-                <tr>
-                  <td>Q2 - July to September 2025</td>
-                  <td>15.25</td>
-                  <td>20.20%</td>
-                  <td>July (Rs. 6.04 Cr)</td>
-                </tr>
-                <tr>
-                  <td>Q3 - October to December 2025</td>
-                  <td>21.14</td>
-                  <td>28.01%</td>
-                  <td>December (Rs. 9.18 Cr)</td>
-                </tr>
-                <tr>
-                  <td>Q4 - January to March 2026</td>
-                  <td>19.84</td>
-                  <td>26.28%</td>
-                  <td>January (Rs. 9.31 Cr)</td>
-                </tr>
-                <tr class="profile-table-total">
-                  <td>Annual Total</td>
-                  <td>75.49</td>
-                  <td>100%</td>
-                  <td>Jan 2026 (Rs. 9.31 Cr)</td>
-                </tr>
+                <tr><td>Fresh Fruits, Vegetables &amp; Dry Commodities</td><td>70.53</td><td>93.43%</td></tr>
+                <tr><td>Soil Testing Services</td><td>1.18</td><td>1.56%</td></tr>
+                <tr><td>Agricultural Advisory Fees</td><td>1.82</td><td>2.42%</td></tr>
+                <tr><td>Kropbook Intelligent Platform (SaaS)</td><td>1.96</td><td>2.60%</td></tr>
+                <tr class="profile-table-total"><td>Grand Total</td><td>75.49</td><td>100%</td></tr>
               </tbody>
             </table>
-          </div>
-          <p class="profile-note profile-note-sm">
-            H2 (Oct–Mar) accounts for 54.3% of annual revenue - reflecting post-harvest / winter crop cycle
-            seasonality. March 2026 was low at Rs. 2.07 Cr due to year-end billing cut-off.
-          </p>
-        </article>
+          </article>
+
+          <article class="profile-card reveal">
+            <h3>FY 2025-26 Quarterly Sales Summary</h3>
+            <table class="profile-table">
+              <thead>
+                <tr><th>Quarter</th><th>Rs. Cr</th><th>% Annual</th><th>Peak Month</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Q1 — Apr–Jun 2025</td><td>18.27</td><td>24.20%</td><td>April (Rs. 6.67 Cr)</td></tr>
+                <tr><td>Q2 — Jul–Sep 2025</td><td>15.25</td><td>20.20%</td><td>July (Rs. 6.04 Cr)</td></tr>
+                <tr><td>Q3 — Oct–Dec 2025</td><td>21.14</td><td>28.01%</td><td>December (Rs. 9.18 Cr)</td></tr>
+                <tr><td>Q4 — Jan–Mar 2026</td><td>19.84</td><td>26.28%</td><td>January (Rs. 9.31 Cr)</td></tr>
+                <tr class="profile-table-total"><td>Annual Total</td><td>75.49</td><td>100%</td><td>Jan 2026</td></tr>
+              </tbody>
+            </table>
+            <p class="profile-note-sm">H2 (Oct–Mar) accounts for 54.3% of annual revenue — reflecting post-harvest / winter crop cycle seasonality.</p>
+          </article>
+
+        </div>
 
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 3 - DIRECTOR PROFILES
-    ════════════════════════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 3 — DIRECTOR PROFILES
+    ════════════════════════════════════════════════════════ -->
     <section class="profile-section" id="directors">
       <div class="profile-container">
-        <p class="section-label">Section 03 - Director Profiles</p>
+        <p class="section-label">Section 03 — Director Profiles</p>
         <h2>Leadership, KYC &amp; ITR Status</h2>
 
-        <div class="director-grid">
+        <!-- ── Director 1: Dr. Kiran Chandar Avhad ─────── -->
+        <div class="cp-dir-grid">
+          <div class="cp-dir-card glass-card">
+            <div class="cp-dir-photo-wrap">
+              <div class="cp-dir-avatar" aria-label="Dr. Kiran Chandar Avhad">KA</div>
+            </div>
+            <div class="cp-dir-name">DR. KIRAN CHANDAR AVHAD</div>
+            <div class="cp-dir-role">Director &amp; Head of R&amp;D</div>
+            <div class="cp-dir-location">Navi Mumbai &nbsp;·&nbsp; India</div>
+            <div class="cp-dir-tags">
+              <span class="badge badge-green">PhD Agriculture / Biotech</span>
+              <span class="badge badge-green">Patent Holder</span>
+              <span class="badge badge-green">Crop Science Expert</span>
+            </div>
+            <div class="cp-dir-meta-row">
+              <span class="cp-dir-meta-label">DIN</span>
+              <span class="cp-dir-meta-val">10555305</span>
+            </div>
+            <div class="cp-dir-meta-row">
+              <span class="cp-dir-meta-label">Shareholding</span>
+              <span class="cp-dir-meta-val cp-dir-meta-val--highlight">6.00%</span>
+            </div>
+            <div class="cp-dir-divider"></div>
+            <div class="cp-dir-compliance">
+              <div class="cp-dir-compliance-item" data-status="complete">
+                <span class="compliance-label">ITR AY 2023-24</span>
+                <span class="compliance-status">Filed</span>
+              </div>
+              <div class="cp-dir-compliance-item" data-status="complete">
+                <span class="compliance-label">ITR AY 2024-25</span>
+                <span class="compliance-status">Filed</span>
+              </div>
+              <div class="cp-dir-compliance-item" data-status="complete">
+                <span class="compliance-label">ITR AY 2025-26</span>
+                <span class="compliance-status">ACK Available</span>
+              </div>
+              <div class="cp-dir-compliance-item" data-status="partial">
+                <span class="compliance-label">Computation 2025-26</span>
+                <span class="compliance-status">Pending from CA</span>
+              </div>
+              <div class="cp-dir-compliance-item" data-status="complete">
+                <span class="compliance-label">Net Worth Cert.</span>
+                <span class="compliance-status">Available</span>
+              </div>
+              <div class="cp-dir-compliance-item" data-status="complete">
+                <span class="compliance-label">KYC Bundle</span>
+                <span class="compliance-status">Available</span>
+              </div>
+            </div>
+            <div class="cp-dir-footer">
+              <span class="badge badge-gold">R&amp;D Lead &nbsp;·&nbsp; Patent Holder</span>
+            </div>
+          </div>
 
-          <article class="director-card director-card-full">
-            <div class="director-avatar" aria-label="Kunal Subhash Pingle">KP</div>
-            <div class="director-info">
-              <div class="director-header">
-                <div>
-                  <h3>Kunal Subhash Pingle</h3>
-                  <p class="director-title">Director &amp; Chief Technology Officer - "The Technology Architect"</p>
-                </div>
-                <div class="director-stake">
-                  <span>Shareholding</span>
-                  <strong>50.00%</strong>
+          <div class="cp-dir-timeline">
+            <h3 class="cp-dir-timeline-title">Career &amp; Research Journey</h3>
+            <div class="cp-dir-tl">
+              <div class="cp-dir-tl-track"></div>
+              <div class="cp-dir-tl-item">
+                <div class="cp-dir-tl-dot"></div>
+                <div class="cp-dir-tl-content">
+                  <div class="cp-dir-tl-era">Early Career &nbsp;·&nbsp; Research Foundation</div>
+                  <div class="cp-dir-tl-heading">Agricultural Sciences Postgraduate</div>
+                  <p class="cp-dir-tl-body">Pursued advanced studies in agricultural biotechnology and soil science, building a rigorous foundation in crop physiology and agrochemical systems.</p>
                 </div>
               </div>
-
-              <dl class="profile-list profile-list-grid">
-                <div>
-                  <dt>DIN</dt>
-                  <dd>08754829</dd>
+              <div class="cp-dir-tl-item">
+                <div class="cp-dir-tl-dot"></div>
+                <div class="cp-dir-tl-content">
+                  <div class="cp-dir-tl-era">Doctoral Phase &nbsp;·&nbsp; IIT &amp; ICT Mumbai</div>
+                  <div class="cp-dir-tl-heading">PhD — Chemistry &amp; Agri-Biotechnology</div>
+                  <p class="cp-dir-tl-body">Completed doctorate at IIT Bombay and ICT Mumbai. Research focused on eco-friendly fertilizer molecule synthesis and soil-nutrient interaction modelling.</p>
                 </div>
-                <div>
-                  <dt>Qualification</dt>
-                  <dd>B.E. Electronics &amp; Telecommunication - University of Mumbai</dd>
+              </div>
+              <div class="cp-dir-tl-item">
+                <div class="cp-dir-tl-dot"></div>
+                <div class="cp-dir-tl-content">
+                  <div class="cp-dir-tl-era">Scientific Career &nbsp;·&nbsp; National Fertilizers Ltd.</div>
+                  <div class="cp-dir-tl-heading">Senior Scientist — 10+ Years</div>
+                  <p class="cp-dir-tl-body">Led fertilizer formulation and process optimisation programs at NFL. Built deep domain expertise in agrochemical compliance, soil health diagnostics, and bio-organic integration.</p>
                 </div>
-                <div>
-                  <dt>Expertise</dt>
-                  <dd>Embedded Systems, Power Electronics, ERP Automation, Hardware-Software Integration</dd>
+              </div>
+              <div class="cp-dir-tl-item">
+                <div class="cp-dir-tl-dot"></div>
+                <div class="cp-dir-tl-content">
+                  <div class="cp-dir-tl-era">Innovation &nbsp;·&nbsp; Patent Estate</div>
+                  <div class="cp-dir-tl-heading">Patent No. 363155 — Granule Analysis Device</div>
+                  <p class="cp-dir-tl-body">Filed and granted primary patent for a portable device for analysis of granules in soil and fertilizer — valid until April 2040. Anchors Kropbook's proprietary soil-testing IP.</p>
                 </div>
-                <div>
-                  <dt>Industry Collaborations</dt>
-                  <dd>Johnson &amp; Johnson, PMV Electric, Sapat International, Niravi Consumer LLP, Instant Retail India Ltd.</dd>
-                </div>
-                <div>
-                  <dt>Role at Kropbook</dt>
-                  <dd>IoT soil testing device architecture, farm automation, enterprise data systems, Kropbook Intelligent Platform hardware</dd>
-                </div>
-              </dl>
-
-              <div class="director-compliance">
-                <h4>Compliance &amp; KYC Status</h4>
-                <div class="director-compliance-grid">
-                  <div class="compliance-item" data-status="complete">
-                    <span class="compliance-label">ITR - AY 2023-24</span>
-                    <span class="compliance-status">Filed</span>
-                  </div>
-                  <div class="compliance-item" data-status="complete">
-                    <span class="compliance-label">ITR - AY 2024-25</span>
-                    <span class="compliance-status">Filed</span>
-                  </div>
-                  <div class="compliance-item" data-status="complete">
-                    <span class="compliance-label">ITR - AY 2025-26</span>
-                    <span class="compliance-status">ACK Available</span>
-                  </div>
-                  <div class="compliance-item" data-status="partial">
-                    <span class="compliance-label">Computation AY 2025-26</span>
-                    <span class="compliance-status">Pending from CA</span>
-                  </div>
-                  <div class="compliance-item" data-status="complete">
-                    <span class="compliance-label">Net Worth Certificate</span>
-                    <span class="compliance-status">Available</span>
-                  </div>
-                  <div class="compliance-item" data-status="complete">
-                    <span class="compliance-label">KYC Bundle</span>
-                    <span class="compliance-status">Available</span>
-                  </div>
+              </div>
+              <div class="cp-dir-tl-item">
+                <div class="cp-dir-tl-dot cp-dir-tl-dot--gold"></div>
+                <div class="cp-dir-tl-content">
+                  <div class="cp-dir-tl-era">2018 &nbsp;·&nbsp; Co-Founding</div>
+                  <div class="cp-dir-tl-heading">Joined Kropbook as Director &amp; Head of R&amp;D</div>
+                  <p class="cp-dir-tl-body">Brought research excellence into commercial agriculture. Leads all scientific validation, soil health reporting, R&amp;D roadmap, and DPIIT Startup India certified innovation pipeline.</p>
                 </div>
               </div>
             </div>
-          </article>
-
-          <article class="director-card director-card-full">
-            <div class="director-avatar director-avatar-alt" aria-label="Dr. Kiran Chandar Avhad">KA</div>
-            <div class="director-info">
-              <div class="director-header">
-                <div>
-                  <h3>Dr. Kiran Chandar Avhad</h3>
-                  <p class="director-title">Director &amp; Head of Research &amp; Development - "The Scientific Backbone"</p>
-                </div>
-                <div class="director-stake">
-                  <span>Shareholding</span>
-                  <strong>50.00%</strong>
-                </div>
-              </div>
-
-              <dl class="profile-list profile-list-grid">
-                <div>
-                  <dt>DIN</dt>
-                  <dd>10555305</dd>
-                </div>
-                <div>
-                  <dt>Qualification</dt>
-                  <dd>Doctor of Philosophy (Ph.D.) in Chemistry - IIT Bombay &amp; ICT Mumbai</dd>
-                </div>
-                <div>
-                  <dt>Prior Role</dt>
-                  <dd>Senior Scientist - National Fertilizers Ltd. | 10+ years fertilizer formulation &amp; process optimization</dd>
-                </div>
-                <div>
-                  <dt>Expertise</dt>
-                  <dd>Eco-friendly fertilizer molecule synthesis, patent-driven R&amp;D, soil science, agrochemical compliance</dd>
-                </div>
-                <div>
-                  <dt>Role at Kropbook</dt>
-                  <dd>Patent holder for portable soil testing device; R&amp;D leadership; scientific validation of soil health reports; bio-organic integration</dd>
-                </div>
-              </dl>
-
-              <div class="director-compliance">
-                <h4>Compliance &amp; KYC Status</h4>
-                <div class="director-compliance-grid">
-                  <div class="compliance-item" data-status="complete">
-                    <span class="compliance-label">ITR - AY 2023-24</span>
-                    <span class="compliance-status">Filed</span>
-                  </div>
-                  <div class="compliance-item" data-status="complete">
-                    <span class="compliance-label">ITR - AY 2024-25</span>
-                    <span class="compliance-status">Filed</span>
-                  </div>
-                  <div class="compliance-item" data-status="complete">
-                    <span class="compliance-label">ITR - AY 2025-26</span>
-                    <span class="compliance-status">ACK Available</span>
-                  </div>
-                  <div class="compliance-item" data-status="partial">
-                    <span class="compliance-label">Computation AY 2025-26</span>
-                    <span class="compliance-status">Pending from CA</span>
-                  </div>
-                  <div class="compliance-item" data-status="complete">
-                    <span class="compliance-label">Net Worth Certificate</span>
-                    <span class="compliance-status">Available</span>
-                  </div>
-                  <div class="compliance-item" data-status="complete">
-                    <span class="compliance-label">KYC Bundle</span>
-                    <span class="compliance-status">Available</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
+          </div>
         </div>
 
-        <article class="profile-card profile-card-full profile-mt">
-          <h3>Company ITR - Compliance Summary</h3>
+        <!-- ── Director 2: Kunal Subhash Pingle ─────────── -->
+        <div class="cp-dir-grid cp-dir-grid--mirror">
+          <div class="cp-dir-card glass-card">
+            <div class="cp-dir-photo-wrap">
+              <div class="cp-dir-avatar cp-dir-avatar--alt" aria-label="Kunal Subhash Pingle">KP</div>
+            </div>
+            <div class="cp-dir-name">KUNAL SUBHASH PINGLE</div>
+            <div class="cp-dir-role">Director &amp; Chief Technology Officer</div>
+            <div class="cp-dir-location">Navi Mumbai &nbsp;·&nbsp; India</div>
+            <div class="cp-dir-tags">
+              <span class="badge badge-green">Johnson &amp; Johnson Alumni</span>
+              <span class="badge badge-green">AgriTech Platform Builder</span>
+              <span class="badge badge-green">Embedded Systems</span>
+            </div>
+            <div class="cp-dir-meta-row">
+              <span class="cp-dir-meta-label">DIN</span>
+              <span class="cp-dir-meta-val">08754829</span>
+            </div>
+            <div class="cp-dir-meta-row">
+              <span class="cp-dir-meta-label">Shareholding</span>
+              <span class="cp-dir-meta-val cp-dir-meta-val--highlight">94.00%</span>
+            </div>
+            <div class="cp-dir-divider"></div>
+            <div class="cp-dir-compliance">
+              <div class="cp-dir-compliance-item" data-status="complete">
+                <span class="compliance-label">ITR AY 2023-24</span>
+                <span class="compliance-status">Filed</span>
+              </div>
+              <div class="cp-dir-compliance-item" data-status="complete">
+                <span class="compliance-label">ITR AY 2024-25</span>
+                <span class="compliance-status">Filed</span>
+              </div>
+              <div class="cp-dir-compliance-item" data-status="complete">
+                <span class="compliance-label">ITR AY 2025-26</span>
+                <span class="compliance-status">ACK Available</span>
+              </div>
+              <div class="cp-dir-compliance-item" data-status="partial">
+                <span class="compliance-label">Computation 2025-26</span>
+                <span class="compliance-status">Pending from CA</span>
+              </div>
+              <div class="cp-dir-compliance-item" data-status="complete">
+                <span class="compliance-label">Net Worth Cert.</span>
+                <span class="compliance-status">Available</span>
+              </div>
+              <div class="cp-dir-compliance-item" data-status="complete">
+                <span class="compliance-label">KYC Bundle</span>
+                <span class="compliance-status">Available</span>
+              </div>
+            </div>
+            <div class="cp-dir-footer">
+              <span class="badge badge-gold">Founder &nbsp;·&nbsp; CTO &nbsp;·&nbsp; Platform Architect</span>
+            </div>
+          </div>
+
+          <div class="cp-dir-timeline">
+            <h3 class="cp-dir-timeline-title">Career &amp; Technology Journey</h3>
+            <div class="cp-dir-tl">
+              <div class="cp-dir-tl-track"></div>
+              <div class="cp-dir-tl-item">
+                <div class="cp-dir-tl-dot"></div>
+                <div class="cp-dir-tl-content">
+                  <div class="cp-dir-tl-era">Academic Foundation &nbsp;·&nbsp; University of Mumbai</div>
+                  <div class="cp-dir-tl-heading">B.E. Electronics &amp; Telecommunication</div>
+                  <p class="cp-dir-tl-body">Built core engineering discipline in embedded systems, power electronics, and hardware-software integration — forming the technical backbone of all future platform work.</p>
+                </div>
+              </div>
+              <div class="cp-dir-tl-item">
+                <div class="cp-dir-tl-dot"></div>
+                <div class="cp-dir-tl-content">
+                  <div class="cp-dir-tl-era">Industry Experience &nbsp;·&nbsp; Johnson &amp; Johnson</div>
+                  <div class="cp-dir-tl-heading">Technology Leadership — J&amp;J India</div>
+                  <p class="cp-dir-tl-body">Gained multinational-grade engineering and operational systems experience at Johnson &amp; Johnson, deepening expertise in ERP automation, enterprise data flows, and hardware-software integration at scale.</p>
+                </div>
+              </div>
+              <div class="cp-dir-tl-item">
+                <div class="cp-dir-tl-dot"></div>
+                <div class="cp-dir-tl-content">
+                  <div class="cp-dir-tl-era">Cross-Sector Exposure &nbsp;·&nbsp; Multiple Firms</div>
+                  <div class="cp-dir-tl-heading">PMV Electric, Sapat, Niravi, Instant Retail</div>
+                  <p class="cp-dir-tl-body">Led technology and automation engagements across PMV Electric, Sapat International, Niravi Consumer LLP, and Instant Retail India — applying embedded and IoT systems across FMCG, EV, and retail supply chains.</p>
+                </div>
+              </div>
+              <div class="cp-dir-tl-item">
+                <div class="cp-dir-tl-dot"></div>
+                <div class="cp-dir-tl-content">
+                  <div class="cp-dir-tl-era">2018 &nbsp;·&nbsp; Founding Vision</div>
+                  <div class="cp-dir-tl-heading">Co-Founded Kropbook Agritech</div>
+                  <p class="cp-dir-tl-body">Conceived and co-founded Kropbook to digitise agri supply chains. Architected the core technology stack — from IoT soil-testing devices to farm automation and enterprise logistics modules.</p>
+                </div>
+              </div>
+              <div class="cp-dir-tl-item">
+                <div class="cp-dir-tl-dot cp-dir-tl-dot--gold"></div>
+                <div class="cp-dir-tl-content">
+                  <div class="cp-dir-tl-era">Present &nbsp;·&nbsp; Platform at Scale</div>
+                  <div class="cp-dir-tl-heading">Kropbook Intelligence Platform — CTO</div>
+                  <p class="cp-dir-tl-body">Leads architecture and deployment of the Kropbook Intelligent Platform (SaaS) — integrating soil diagnostics, predictive procurement, and farm-to-buyer traceability across 6+ states and Rs. 75 Cr annual revenue.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Company ITR Compliance -->
+        <article class="profile-card profile-mt reveal">
+          <h3>Company ITR — Compliance Summary</h3>
           <div class="profile-table-scroll">
             <table class="profile-table">
               <thead>
@@ -781,7 +719,7 @@
                   <td>FY 2023-24</td>
                   <td><span class="compliance-badge" data-status="complete">Filed</span></td>
                   <td>Ack. No. 660764241291024</td>
-                  <td>Rs. 47,100 - SAT deposited 28 Oct 2024</td>
+                  <td>Rs. 47,100 — SAT deposited 28 Oct 2024</td>
                 </tr>
                 <tr>
                   <td>AY 2025-26</td>
@@ -798,680 +736,409 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 4 - GST COMPLIANCE MAP
-    ════════════════════════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 4 — GST COMPLIANCE
+    ════════════════════════════════════════════════════════ -->
     <section class="profile-section profile-section-muted" id="gst-compliance">
       <div class="profile-container">
-        <p class="section-label">Section 04 - GST Compliance</p>
+        <p class="section-label">Section 04 — GST Compliance</p>
         <h2>Multi-State GST Compliance Map</h2>
         <p class="profile-note">
-          Kropbook Agritech operates under three GSTINs - Punjab, Maharashtra, and Andhra Pradesh.
+          Kropbook Agritech operates under three GSTINs — Punjab, Maharashtra, and Andhra Pradesh.
           Status as reported May 2026.
         </p>
 
-        <article class="profile-card profile-card-full profile-mt">
+        <article class="profile-card profile-mt reveal">
           <div class="profile-table-scroll">
             <table class="profile-table profile-table-gst">
               <thead>
                 <tr>
                   <th>State</th>
                   <th>GSTIN</th>
-                  <th>Pending / Gap</th>
+                  <th>GSTR-1 Status</th>
+                  <th>GSTR-3B Status</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td><strong>Punjab</strong></td>
                   <td class="gst-gstin">03AAHCK3551A1Z5</td>
-                  <td data-status="complete">GSTR-1: All Months | GSTR-3B: All Months</td>
-
+                  <td data-status="complete">All Months Filed</td>
+                  <td data-status="complete">All Months Filed</td>
                 </tr>
                 <tr>
                   <td><strong>Maharashtra</strong></td>
                   <td class="gst-gstin">27AAHCK3551A1ZV</td>
-                  <td data-status="complete">GSTR-1: All Months | GSTR-3B: All Months</td>
+                  <td data-status="complete">All Months Filed</td>
+                  <td data-status="complete">All Months Filed</td>
                 </tr>
                 <tr>
                   <td><strong>Andhra Pradesh</strong></td>
                   <td class="gst-gstin">37AAHCK3551A1ZU</td>
-                  <td data-status="complete">GSTR-1: All Months | GSTR-3B: All Months</td>
-
+                  <td data-status="complete">All Months Filed</td>
+                  <td data-status="complete">All Months Filed</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </article>
 
-
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 5 - OPERATIONS & WORKING CAPITAL
-    ════════════════════════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 5 — OPERATIONS & WORKING CAPITAL
+    ════════════════════════════════════════════════════════ -->
     <section class="profile-section" id="operations">
       <div class="profile-container">
-        <p class="section-label">Section 05 - Operations &amp; Working Capital</p>
+        <p class="section-label">Section 05 — Operations &amp; Working Capital</p>
         <h2>Working Capital, Debtors, Creditors &amp; Inventory</h2>
 
-        <div class="profile-grid profile-grid-2">
-
-          <article class="profile-card">
-            <h3>Debtors Ageing - 31 March 2026</h3>
-            <p class="profile-note profile-note-sm">Total Outstanding: <strong>Rs. 16.20 Cr</strong> | Zero overdue beyond 90 days</p>
+        <div class="ops-subhead"><span class="ops-subhead-label">A — Receivables / Debtors Ageing</span></div>
+        <div class="profile-grid-2">
+          <article class="profile-card reveal">
+            <h3>Debtors Ageing — 31 March 2026</h3>
+            <p class="profile-note-sm">Total Outstanding: <strong>Rs. 16.20 Cr</strong> | Zero overdue beyond 90 days</p>
             <table class="profile-table">
               <thead>
-                <tr>
-                  <th>Age Bucket</th>
-                  <th>Amount (Rs. Cr)</th>
-                  <th>% of Total</th>
-                </tr>
+                <tr><th>Age Bucket</th><th>Amount (Rs. Cr)</th><th>%</th></tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>0–30 Days</td>
-                  <td>1.50</td>
-                  <td>9.29%</td>
-                </tr>
-                <tr>
-                  <td>31–60 Days</td>
-                  <td>7.95</td>
-                  <td>49.10%</td>
-                </tr>
-                <tr>
-                  <td>61–90 Days</td>
-                  <td>6.74</td>
-                  <td>41.61%</td>
-                </tr>
-                <tr>
-                  <td>91+ Days</td>
-                  <td>NIL</td>
-                  <td>0%</td>
-                </tr>
-                <tr class="profile-table-total">
-                  <td>TOTAL</td>
-                  <td>16.20</td>
-                  <td>100%</td>
-                </tr>
+                <tr><td>0–30 Days</td><td>1.50</td><td>9.29%</td></tr>
+                <tr><td>31–60 Days</td><td>7.95</td><td>49.10%</td></tr>
+                <tr><td>61–90 Days</td><td>6.74</td><td>41.61%</td></tr>
+                <tr><td>91+ Days</td><td>NIL</td><td>0%</td></tr>
+                <tr class="profile-table-total"><td>TOTAL</td><td>16.20</td><td>100%</td></tr>
               </tbody>
             </table>
             <h4 class="profile-subhead-sm">High-Value Debtors (&gt; Rs. 50 Lakhs)</h4>
             <table class="profile-table">
               <thead>
-                <tr>
-                  <th>Party</th>
-                  <th>Outstanding</th>
-                  <th>Dominant Bucket</th>
-                </tr>
+                <tr><th>Party</th><th>Outstanding</th><th>Dominant Bucket</th></tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>ITC IL Ltd</td>
-                  <td>Rs. 2.76 Cr</td>
-                  <td>31–60 Days (65%)</td>
-                </tr>
-                <tr>
-                  <td>Pulpking Private Ltd</td>
-                  <td>Rs. 1.56 Cr</td>
-                  <td>31–60 Days (48%)</td>
-                </tr>
-                <tr>
-                  <td>Orchid Fruits</td>
-                  <td>Rs. 1.12 Cr</td>
-                  <td>61–90 Days (54%)</td>
-                </tr>
-                <tr>
-                  <td>Ram Exports &amp; Cargo</td>
-                  <td>Rs. 1.25 Cr</td>
-                  <td>0–30 Days (64%)</td>
-                </tr>
-                <tr>
-                  <td>Metro Super Market</td>
-                  <td>Rs. 1.04 Cr</td>
-                  <td>31–60 Days (98%)</td>
-                </tr>
-                <tr>
-                  <td>Satguru Fruits &amp; Veg</td>
-                  <td>Rs. 0.93 Cr</td>
-                  <td>0–30 Days (55%)</td>
-                </tr>
-                <tr>
-                  <td>Fresh India NW Supplies</td>
-                  <td>Rs. 0.91 Cr</td>
-                  <td>0–30 Days (54%)</td>
-                </tr>
-                <tr>
-                  <td>K B Exports</td>
-                  <td>Rs. 0.88 Cr</td>
-                  <td>31–60 Days (33%)</td>
-                </tr>
+                <tr><td>ITC IL Ltd</td><td>Rs. 2.76 Cr</td><td>31–60 Days (65%)</td></tr>
+                <tr><td>Pulpking Private Ltd</td><td>Rs. 1.56 Cr</td><td>31–60 Days (48%)</td></tr>
+                <tr><td>Orchid Fruits</td><td>Rs. 1.12 Cr</td><td>61–90 Days (54%)</td></tr>
+                <tr><td>Ram Exports &amp; Cargo</td><td>Rs. 1.25 Cr</td><td>0–30 Days (64%)</td></tr>
+                <tr><td>Metro Super Market</td><td>Rs. 1.04 Cr</td><td>31–60 Days (98%)</td></tr>
+                <tr><td>Satguru Fruits &amp; Veg</td><td>Rs. 0.93 Cr</td><td>0–30 Days (55%)</td></tr>
+                <tr><td>Fresh India NW Supplies</td><td>Rs. 0.91 Cr</td><td>0–30 Days (54%)</td></tr>
+                <tr><td>K B Exports</td><td>Rs. 0.88 Cr</td><td>31–60 Days (33%)</td></tr>
               </tbody>
             </table>
           </article>
 
-          <article class="profile-card">
-            <h3>Creditors Ageing - 31 March 2026</h3>
-            <p class="profile-note profile-note-sm">Total Outstanding: <strong>Rs. 1.87 Cr</strong> | All within 60-day window - zero overdue</p>
+          <article class="profile-card reveal">
+            <h3>Creditors Ageing — 31 March 2026</h3>
+            <p class="profile-note-sm">Total Outstanding: <strong>Rs. 1.87 Cr</strong> | All within 60-day window — zero overdue</p>
             <table class="profile-table">
               <thead>
-                <tr>
-                  <th>Age Bucket</th>
-                  <th>Amount (Rs. Cr)</th>
-                  <th>% of Total</th>
-                </tr>
+                <tr><th>Age Bucket</th><th>Amount (Rs. Cr)</th><th>%</th></tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>0–30 Days</td>
-                  <td>1.33</td>
-                  <td>70.88%</td>
-                </tr>
-                <tr>
-                  <td>31–60 Days</td>
-                  <td>0.55</td>
-                  <td>29.12%</td>
-                </tr>
-                <tr>
-                  <td>61+ Days</td>
-                  <td>NIL</td>
-                  <td>0%</td>
-                </tr>
-                <tr class="profile-table-total">
-                  <td>TOTAL</td>
-                  <td>1.87</td>
-                  <td>100%</td>
-                </tr>
+                <tr><td>0–30 Days</td><td>1.33</td><td>70.88%</td></tr>
+                <tr><td>31–60 Days</td><td>0.55</td><td>29.12%</td></tr>
+                <tr><td>61+ Days</td><td>NIL</td><td>0%</td></tr>
+                <tr class="profile-table-total"><td>TOTAL</td><td>1.87</td><td>100%</td></tr>
               </tbody>
             </table>
-            <p class="profile-note profile-note-sm">
-              All 12 creditors are agricultural supply-side entities - Shetkari Gats (farmer cooperatives) and
-              Farmer Producer Companies. Zero bank or institutional creditors. No MSME disputes outstanding.
-            </p>
-
+            <p class="profile-note-sm">All 12 creditors are Shetkari Gats (farmer cooperatives) and Farmer Producer Companies. Zero bank or institutional creditors. No MSME disputes outstanding.</p>
             <h4 class="profile-subhead-sm">Creditor Type Breakdown</h4>
             <table class="profile-table">
               <thead>
-                <tr>
-                  <th>Type</th>
-                  <th>Count</th>
-                  <th>Amount</th>
-                  <th>%</th>
-                </tr>
+                <tr><th>Type</th><th>Count</th><th>Amount</th><th>%</th></tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Shetkari Gat (Farmer Co-ops)</td>
-                  <td>9</td>
-                  <td>Rs. 1.18 Cr</td>
-                  <td>62.8%</td>
-                </tr>
-                <tr>
-                  <td>Farmer Producer Companies</td>
-                  <td>3</td>
-                  <td>Rs. 0.70 Cr</td>
-                  <td>37.2%</td>
-                </tr>
+                <tr><td>Shetkari Gat (Farmer Co-ops)</td><td>9</td><td>Rs. 1.18 Cr</td><td>62.8%</td></tr>
+                <tr><td>Farmer Producer Companies</td><td>3</td><td>Rs. 0.70 Cr</td><td>37.2%</td></tr>
+                <tr class="profile-table-total"><td>Total</td><td>12</td><td>Rs. 1.87 Cr</td><td>100%</td></tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+
+        <div class="ops-subhead"><span class="ops-subhead-label">B — Inventory &amp; Top 10 Revenue Buyers</span></div>
+        <div class="profile-grid-2 profile-mt">
+          <article class="profile-card reveal">
+            <h3>Inventory — Closing Stock (31 March 2026)</h3>
+            <p class="profile-note-sm">Total: <strong>35,308.1 Kgs</strong> | All stock within 0–30 day window — nil aged / dead stock</p>
+            <table class="profile-table">
+              <thead>
+                <tr><th>Item</th><th>Qty (Kgs)</th><th>Age Bucket</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Okra (Bhindi)</td><td>9,476.00</td><td>0–30 Days</td></tr>
+                <tr><td>Red Banana</td><td>8,957.70</td><td>0–30 Days</td></tr>
+                <tr><td>Matta Rice</td><td>6,948.00</td><td>0–30 Days</td></tr>
+                <tr><td>Coconut</td><td>6,241.40</td><td>0–30 Days</td></tr>
+                <tr><td>Gajar (Carrot)</td><td>1,750.00</td><td>0–30 Days</td></tr>
+                <tr><td>Aloo (Potato)</td><td>1,385.00</td><td>0–30 Days</td></tr>
+                <tr><td>Green Chilli</td><td>550.00</td><td>0–30 Days</td></tr>
+                <tr class="profile-table-total"><td>TOTAL</td><td>35,308.10 Kgs</td><td>All Current</td></tr>
+              </tbody>
+            </table>
+            <p class="profile-note-sm">Valuation method: FIFO (AS-2). Lean just-in-time model — inventory declining as % of revenue year-on-year.</p>
+          </article>
+
+          <article class="profile-card reveal">
+            <h3>Top 10 Revenue Buyers — FY 2025-26</h3>
+            <p class="profile-note-sm">32 active buyer parties | Top 3 concentration: 40.54% | Total Revenue: Rs. 75.49 Cr</p>
+            <table class="profile-table">
+              <thead>
+                <tr><th>#</th><th>Party</th><th>Rs. Cr</th><th>%</th><th>Category</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>ITC Group</td><td>11.34</td><td>18.50%</td><td>Institutional</td></tr>
+                <tr><td>2</td><td>K B Exports</td><td>7.39</td><td>12.05%</td><td>Export</td></tr>
+                <tr><td>3</td><td>Metro Super Market</td><td>7.35</td><td>11.99%</td><td>Institutional</td></tr>
+                <tr><td>4</td><td>Pulpking Private Ltd</td><td>4.35</td><td>7.10%</td><td>Processing</td></tr>
+                <tr><td>5</td><td>Isha Freshmart</td><td>3.98</td><td>6.49%</td><td>Modern Trade</td></tr>
+                <tr><td>6</td><td>Sayadri Farmfresh</td><td>3.51</td><td>5.73%</td><td>Trade</td></tr>
+                <tr><td>7</td><td>Ram Exports &amp; Cargo</td><td>2.85</td><td>4.66%</td><td>Export</td></tr>
+                <tr><td>8</td><td>Avenue Retail Mart</td><td>2.71</td><td>4.42%</td><td>Trade</td></tr>
+                <tr><td>9</td><td>Green Harvest Mart GmbH</td><td>2.22</td><td>3.63%</td><td>Export</td></tr>
+                <tr><td>10</td><td>Orchid Fruits</td><td>2.20</td><td>3.58%</td><td>Trade</td></tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+
+        <div class="ops-subhead"><span class="ops-subhead-label">C — Month-wise Sales &amp; Purchases</span></div>
+        <article class="profile-card profile-mt reveal">
+          <h3>Month-wise Sales &amp; Purchase Distribution — FY 2025-26</h3>
+          <p class="profile-note-sm">Source: SAR/FY2025-26/097 — Gross Revenue Rs. 75.49 Cr | Total Purchases Rs. 69.55 Cr | GP 7.87% | Report: 31 March 2026</p>
+
+          <!-- Monthly heat tiles -->
+          <div class="monthly-heat" data-monthly-heat>
+            <div class="month-tile" style="--heat:0.884"><span class="month-tile-label">Apr</span><span class="month-tile-val">6.67 Cr</span></div>
+            <div class="month-tile" style="--heat:0.764"><span class="month-tile-label">May</span><span class="month-tile-val">5.77 Cr</span></div>
+            <div class="month-tile" style="--heat:0.772"><span class="month-tile-label">Jun</span><span class="month-tile-val">5.83 Cr</span></div>
+            <div class="month-tile" style="--heat:0.800"><span class="month-tile-label">Jul</span><span class="month-tile-val">6.04 Cr</span></div>
+            <div class="month-tile" style="--heat:0.630"><span class="month-tile-label">Aug</span><span class="month-tile-val">4.76 Cr</span></div>
+            <div class="month-tile" style="--heat:0.591"><span class="month-tile-label">Sep</span><span class="month-tile-val">4.46 Cr</span></div>
+            <div class="month-tile" style="--heat:0.648"><span class="month-tile-label">Oct</span><span class="month-tile-val">4.89 Cr</span></div>
+            <div class="month-tile" style="--heat:1.067"><span class="month-tile-label">Nov</span><span class="month-tile-val">8.06 Cr</span></div>
+            <div class="month-tile" style="--heat:1.216"><span class="month-tile-label">Dec</span><span class="month-tile-val">9.18 Cr</span></div>
+            <div class="month-tile" style="--heat:1.234"><span class="month-tile-label">Jan</span><span class="month-tile-val">9.31 Cr</span></div>
+            <div class="month-tile" style="--heat:1.121"><span class="month-tile-label">Feb</span><span class="month-tile-val">8.46 Cr</span></div>
+            <div class="month-tile" style="--heat:0.274"><span class="month-tile-label">Mar</span><span class="month-tile-val">2.07 Cr</span></div>
+          </div>
+
+          <div class="profile-table-scroll profile-mt-sm">
+            <table class="profile-table">
+              <thead>
+                <tr><th>Month</th><th>Sales (INR)</th><th>Purchases (INR)</th><th>Gross Profit (INR)</th><th>% Annual Rev.</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>April 2025</td><td>6,67,42,164</td><td>6,16,05,231</td><td>51,36,933</td><td>8.84%</td></tr>
+                <tr><td>May 2025</td><td>5,76,88,426</td><td>5,26,50,744</td><td>50,37,682</td><td>7.64%</td></tr>
+                <tr><td>June 2025</td><td>5,82,52,042</td><td>5,24,17,951</td><td>58,34,091</td><td>7.72%</td></tr>
+                <tr><td>July 2025</td><td>6,03,60,349</td><td>5,55,57,958</td><td>48,02,391</td><td>8.00%</td></tr>
+                <tr><td>August 2025</td><td>4,75,50,413</td><td>4,23,42,891</td><td>52,07,522</td><td>6.30%</td></tr>
+                <tr><td>September 2025</td><td>4,46,15,289</td><td>3,94,75,995</td><td>51,39,294</td><td>5.91%</td></tr>
+                <tr><td>October 2025</td><td>4,89,22,563</td><td>4,39,22,304</td><td>50,00,259</td><td>6.48%</td></tr>
+                <tr><td>November 2025</td><td>8,05,57,630</td><td>7,54,59,377</td><td>50,98,253</td><td>10.67%</td></tr>
+                <tr><td>December 2025</td><td>9,17,97,463</td><td>8,66,71,463</td><td>51,26,000</td><td>12.16%</td></tr>
+                <tr><td>January 2026</td><td>9,31,45,470</td><td>8,80,38,263</td><td>51,07,207</td><td>12.34%</td></tr>
+                <tr><td>February 2026</td><td>8,45,94,637</td><td>7,87,43,284</td><td>58,51,353</td><td>11.21%</td></tr>
+                <tr><td>March 2026</td><td>2,06,66,689</td><td>1,86,18,555</td><td>20,48,134</td><td>2.74%</td></tr>
                 <tr class="profile-table-total">
-                  <td>Total</td>
-                  <td>12</td>
-                  <td>Rs. 1.87 Cr</td>
-                  <td>100%</td>
-                </tr>
-              </tbody>
-            </table>
-          </article>
-
-        </div>
-
-        <div class="profile-grid profile-grid-2 profile-mt">
-
-          <article class="profile-card">
-            <h3>Inventory - Closing Stock (31 March 2026)</h3>
-            <p class="profile-note profile-note-sm">
-              Total: <strong>35,308.1 Kgs</strong> | All stock within 0–30 day window - nil aged / dead stock
-            </p>
-            <table class="profile-table">
-              <thead>
-                <tr>
-                  <th>Item</th>
-                  <th>Qty (Kgs)</th>
-                  <th>Age Bucket</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Okra (Bhindi)</td>
-                  <td>9,476.00</td>
-                  <td>0–30 Days</td>
-                </tr>
-                <tr>
-                  <td>Red Banana</td>
-                  <td>8,957.70</td>
-                  <td>0–30 Days</td>
-                </tr>
-                <tr>
-                  <td>Matta Rice</td>
-                  <td>6,948.00</td>
-                  <td>0–30 Days</td>
-                </tr>
-                <tr>
-                  <td>Coconut</td>
-                  <td>6,241.40</td>
-                  <td>0–30 Days</td>
-                </tr>
-                <tr>
-                  <td>Gajar (Carrot)</td>
-                  <td>1,750.00</td>
-                  <td>0–30 Days</td>
-                </tr>
-                <tr>
-                  <td>Aloo (Potato)</td>
-                  <td>1,385.00</td>
-                  <td>0–30 Days</td>
-                </tr>
-                <tr>
-                  <td>Green Chilli</td>
-                  <td>550.00</td>
-                  <td>0–30 Days</td>
-                </tr>
-                <tr class="profile-table-total">
-                  <td>TOTAL</td>
-                  <td>35,308.10 Kgs</td>
-                  <td>All Current</td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="profile-note profile-note-sm">
-              Valuation method: FIFO (AS-2). Lean just-in-time model - inventory declining as % of revenue year-on-year.
-            </p>
-          </article>
-
-          <article class="profile-card">
-            <h3>Top 10 Revenue Buyers - FY 2025-26</h3>
-            <p class="profile-note profile-note-sm">
-              32 active buyer parties | Top 3 concentration: 40.54% | Total Revenue: Rs. 75.49 Cr
-            </p>
-            <table class="profile-table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Party</th>
-                  <th>Revenue (Rs. Cr)</th>
-                  <th>% Share</th>
-                  <th>Category</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>ITC Group</td>
-                  <td>11.34</td>
-                  <td>18.50%</td>
-                  <td>Institutional</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>K B Exports</td>
-                  <td>7.39</td>
-                  <td>12.05%</td>
-                  <td>Export</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Metro Super Market</td>
-                  <td>7.35</td>
-                  <td>11.99%</td>
-                  <td>Institutional</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Pulpking Private Ltd</td>
-                  <td>4.35</td>
-                  <td>7.10%</td>
-                  <td>Processing</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Isha Freshmart</td>
-                  <td>3.98</td>
-                  <td>6.49%</td>
-                  <td>Modern Trade</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>Sayadri Farmfresh</td>
-                  <td>3.51</td>
-                  <td>5.73%</td>
-                  <td>Trade</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>Ram Exports &amp; Cargo</td>
-                  <td>2.85</td>
-                  <td>4.66%</td>
-                  <td>Export</td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td>Avenue Retail Mart</td>
-                  <td>2.71</td>
-                  <td>4.42%</td>
-                  <td>Trade</td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td>Green Harvest Mart GmbH</td>
-                  <td>2.22</td>
-                  <td>3.63%</td>
-                  <td>Export</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>Orchid Fruits</td>
-                  <td>2.20</td>
-                  <td>3.58%</td>
-                  <td>Trade</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <h4 class="profile-subhead-sm">Revenue by Buyer Segment</h4>
-            <table class="profile-table">
-              <thead>
-                <tr>
-                  <th>Segment</th>
-                  <th>Revenue (Rs. Cr)</th>
-                  <th>% Share</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Institutional Buyers</td>
-                  <td>18.69</td>
-                  <td>24.49%</td>
-                </tr>
-                <tr>
-                  <td>Export Parties</td>
-                  <td>13.21</td>
-                  <td>17.14%</td>
-                </tr>
-                <tr>
-                  <td>Modern Trade / Organised Retail</td>
-                  <td>12.24</td>
-                  <td>15.91%</td>
-                </tr>
-                <tr>
-                  <td>Quality Processing Entities</td>
-                  <td>4.35</td>
-                  <td>5.70%</td>
-                </tr>
-                <tr>
-                  <td>Domestic Trade Buyers (24 parties)</td>
-                  <td>27.01</td>
-                  <td>35.76%</td>
-                </tr>
-              </tbody>
-            </table>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 6 - KOTAK BANK CHECKLIST
-    ════════════════════════════════════════════════════════════ -->
-    <section class="profile-section profile-section-muted" id="kotak-checklist">
-      <div class="profile-container">
-        <p class="section-label">Section 06 - Requirements</p>
-        <h2>11-Point Document Readiness Checklist</h2>
-
-        <div class="checklist-readiness">
-          <div class="readiness-score">
-            <span class="readiness-number">82%</span>
-            <span class="readiness-label">Overall Readiness</span>
-            <div class="readiness-bar">
-              <div class="readiness-fill"></div>
-            </div>
-            <span class="readiness-sub">10 action items pending</span>
-          </div>
-          <div class="readiness-detail">
-            <p>Based on availability of all requirement categories. Key gaps: GSTR-3B for Mar-26 and Apr-26 across all 3 states; Computation of Income for both directors AY 2025-26; purchase data and product-wise sales breakup missing.</p>
-            <p class="readiness-note"><strong>10 action items pending</strong> - see Priority Action List below.</p>
-          </div>
-        </div>
-
-        <article class="profile-card profile-card-full profile-mt">
-          <div class="profile-table-scroll">
-            <table class="profile-table profile-table-checklist">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Bank Requirement</th>
-                  <th>Status</th>
-                  <th>Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Complete schedules of Provisional Financials FY 2025-26</td>
-                  <td><span class="compliance-badge" data-status="partial">Partial</span></td>
-                  <td>3 files available; verify all schedules and notes to accounts are included</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Shareholding Pattern (all directors)</td>
-                  <td><span class="compliance-badge" data-status="complete">Complete</span></td>
-                  <td>Available - both active directors (Kunal Subhash Pingle 50%, Dr. Kiran Chandar Avhad 50%) filed</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>GSTR Jan-26 to Apr-26 + GST User ID for each GSTIN</td>
-                  <td><span class="compliance-badge" data-status="partial">Partial</span></td>
-                  <td>Mar-26 and Apr-26 GSTR-3B missing for all 3 states (Punjab, Maharashtra, AP)</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Sales breakup - Product / Business-wise FY24, FY25, FY26</td>
-                  <td><span class="compliance-badge" data-status="partial">Partial</span></td>
-                  <td>Monthly revenue summaries available; detailed product-wise breakup not yet prepared</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Month-wise Sales and Purchase - Apr 2025 to Apr 2026</td>
-                  <td><span class="compliance-badge" data-status="partial">Partial</span></td>
-                  <td>Sales data available (all 12 months); Purchase / procurement data missing</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>Top 5 Buyers and Suppliers (Name, Qty, Amount, State)</td>
-                  <td><span class="compliance-badge" data-status="missing">Missing</span></td>
-                  <td>To be formally prepared from party-wise sales data; supplier-side data not compiled</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>Computation of Income - Company FY 2022-23 and FY 2024-25</td>
-                  <td><span class="compliance-badge" data-status="complete">Complete</span></td>
-                  <td>Available in respective audit folders (AY 2023-24 and AY 2025-26)</td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td>Directors and Auditors Report - FY 2024-25</td>
-                  <td><span class="compliance-badge" data-status="complete">Complete</span></td>
-                  <td>Inside audited financial statements FY 2024-25 (signed 15 Sep 2025)</td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td>ITR of Company - AY 2024-25</td>
-                  <td><span class="compliance-badge" data-status="complete">Complete</span></td>
-                  <td>ITR-V + ACK available; Ack. No. 660764241291024; SAT Rs. 47,100 deposited</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>Computation of Income - Dr. Kiran Avhad AY 2025-26</td>
-                  <td><span class="compliance-badge" data-status="partial">Partial</span></td>
-                  <td>ITR ACK available; Computation PDF pending from CA</td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td>ITR and Computation - Kunal Pingle AY 2025-26</td>
-                  <td><span class="compliance-badge" data-status="partial">Partial</span></td>
-                  <td>Two ACKs available; Computation PDF pending from CA</td>
+                  <td><strong>Annual Total</strong></td>
+                  <td><strong>75,48,93,135</strong></td>
+                  <td><strong>69,55,04,016</strong></td>
+                  <td><strong>5,93,89,119</strong></td>
+                  <td><strong>100.00%</strong></td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <p class="profile-note-sm profile-mt-sm">
+            Q3 (Oct–Dec) is the peak quarter at 29.31% of annual revenue — post-Kharif harvest arrivals and festival-season procurement. Q2 (Jul–Sep) is the seasonal trough at 20.20% due to monsoon-period supply chain adjustments.
+          </p>
         </article>
 
-        
+        <div class="ops-subhead"><span class="ops-subhead-label">D — Product Breakup &amp; Top 5 Buyers</span></div>
+        <div class="profile-grid-2 profile-mt">
+          <article class="profile-card reveal">
+            <h3>Product &amp; Business-wise Sales Breakup — FY 2025-26</h3>
+            <p class="profile-note-sm">Commodity category revenue distribution | Source: CASR-OPS/FY2025-26/097</p>
+            <div class="cat-bar-chart" data-cat-chart>
+              <div class="cat-row">
+                <span class="cat-label">Grains &amp; Rice</span>
+                <div class="cat-bar-bg"><div class="cat-bar-fg" data-w="35"></div></div>
+                <span class="cat-pct">35%</span>
+              </div>
+              <div class="cat-row">
+                <span class="cat-label">Pulses &amp; Dal</span>
+                <div class="cat-bar-bg"><div class="cat-bar-fg" data-w="32"></div></div>
+                <span class="cat-pct">32%</span>
+              </div>
+              <div class="cat-row">
+                <span class="cat-label">Perishable Vegetables</span>
+                <div class="cat-bar-bg"><div class="cat-bar-fg" data-w="12"></div></div>
+                <span class="cat-pct">12%</span>
+              </div>
+              <div class="cat-row">
+                <span class="cat-label">Spices &amp; Premium</span>
+                <div class="cat-bar-bg"><div class="cat-bar-fg" data-w="11" style="background:linear-gradient(90deg,rgba(201,162,39,0.5),var(--accent-gold))"></div></div>
+                <span class="cat-pct">11%</span>
+              </div>
+              <div class="cat-row">
+                <span class="cat-label">Perishable Fruits</span>
+                <div class="cat-bar-bg"><div class="cat-bar-fg" data-w="10"></div></div>
+                <span class="cat-pct">10%</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="profile-card reveal">
+            <h3>Top 5 Buyers Statement — FY 2025-26</h3>
+            <p class="profile-note-sm">By annual revenue | Source: SAR/FY2025-26/097</p>
+            <table class="profile-table">
+              <thead>
+                <tr><th>#</th><th>Party / Account Name</th><th>Annual Sales (INR)</th><th>% Rev.</th><th>Segment</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td><strong>ITC LTD</strong></td><td>11,33,79,824</td><td>15.02%</td><td>FMCG Institutional — MH</td></tr>
+                <tr><td>2</td><td><strong>K B EXPORTS</strong></td><td>7,38,75,103</td><td>9.79%</td><td>Agri Export House — MH</td></tr>
+                <tr><td>3</td><td><strong>METRO SUPER MARKET</strong></td><td>7,34,98,740</td><td>9.74%</td><td>Modern Trade (MNC) — MH</td></tr>
+                <tr><td>4</td><td><strong>PULPKING PVT LTD</strong></td><td>4,35,08,342</td><td>5.76%</td><td>Food Processing — MH</td></tr>
+                <tr><td>5</td><td><strong>ISHA FRESHMART</strong></td><td>3,98,09,457</td><td>5.27%</td><td>Fresh Produce Retail — MH</td></tr>
+                <tr class="profile-table-total">
+                  <td></td>
+                  <td><strong>Top 5 Subtotal</strong></td>
+                  <td><strong>34,40,71,466</strong></td>
+                  <td><strong>45.58%</strong></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
         </div>
 
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 7 - PRIORITY ACTION LIST
-    ════════════════════════════════════════════════════════════ -->
-    <section class="profile-section" id="priority-actions">
-      <div class="profile-container">
-        <p class="section-label">Section 07 - Priority Actions</p>
-        <h2>Document Completion - Action Plan</h2>
-
-        <div class="profile-grid profile-grid-3">
-
-          <article class="profile-card priority-card" data-priority="1">
-            <div class="priority-header">
-              <span class="priority-badge">Priority 1</span>
-              <span class="priority-timing">Immediate</span>
-            </div>
-            <h3>GST Returns - Urgent Filing</h3>
-            <ul class="priority-list">
-              <li>
-                <span class="priority-item-label">GSTR-3B March 2026</span>
-                <span class="priority-item-detail">Punjab (03AAHCK3551A1Z5), Maharashtra (27AAHCK3551A1ZV), Andhra Pradesh (37AAHCK3551A1ZU) - 3 files</span>
-              </li>
-              <li>
-                <span class="priority-item-label">GSTR-3B April 2026</span>
-                <span class="priority-item-detail">Punjab (03AAHCK3551A1Z5), Maharashtra (27AAHCK3551A1ZV), Andhra Pradesh (37AAHCK3551A1ZU) - 3 files</span>
-              </li>
-              <li>
-                <span class="priority-item-label">GST User ID / Login</span>
-                <span class="priority-item-detail">Provide GST portal login credentials for each of the 3 GSTINs</span>
-              </li>
-            </ul>
-          </article>
-
-          <article class="profile-card priority-card" data-priority="2">
-            <div class="priority-header">
-              <span class="priority-badge">Priority 2</span>
-              <span class="priority-timing">Within 2–3 Days</span>
-            </div>
-            <h3>Director &amp; Financial Documents</h3>
-            <ul class="priority-list">
-              <li>
-                <span class="priority-item-label">Computation of Income - Dr. Kiran Avhad</span>
-                <span class="priority-item-detail">AY 2025-26 (FY 2024-25) - request from CA</span>
-              </li>
-              <li>
-                <span class="priority-item-label">Computation of Income - Kunal Pingle</span>
-                <span class="priority-item-detail">AY 2025-26 (FY 2024-25) - request from CA</span>
-              </li>
-              <li>
-                <span class="priority-item-label">Month-wise Purchase Data</span>
-                <span class="priority-item-detail">April 2025 to April 2026 - procurement / supplier invoices</span>
-              </li>
-              <li>
-                <span class="priority-item-label">Product &amp; Business-wise Sales Breakup</span>
-                <span class="priority-item-detail">FY 2023-24, FY 2024-25, FY 2025-26 - commodity-wise split</span>
-              </li>
-              <li>
-                <span class="priority-item-label">Top 5 Buyers Statement</span>
-                <span class="priority-item-detail">Name, Total Qty (Kgs), Total Amount (Rs.), State - for each FY</span>
-              </li>
-              <li>
-                <span class="priority-item-label">Top 5 Suppliers Statement</span>
-                <span class="priority-item-detail">Name, Total Qty (Kgs), Total Amount (Rs.), State - for each FY</span>
-              </li>
-            </ul>
-          </article>
-
-          <article class="profile-card priority-card" data-priority="3">
-            <div class="priority-header">
-              <span class="priority-badge">Priority 3</span>
-              <span class="priority-timing">Verify Before Submission</span>
-            </div>
-            <h3>Pre-Submission Verification</h3>
-            <ul class="priority-list">
-              <li>
-                <span class="priority-item-label">Provisional Financials - Schedule Check</span>
-                <span class="priority-item-detail">Confirm all schedules, notes to accounts, and MRL statement are included in FY 2025-26 provisional file</span>
-              </li>
-              <li>
-                <span class="priority-item-label">Bank Statements - Period Coverage</span>
-                <span class="priority-item-detail">Confirm bank statements for YES Bank and IDFC First Bank cover the full period required by Kotak</span>
-              </li>
-              <li>
-                <span class="priority-item-label">Shareholding Certificate</span>
-                <span class="priority-item-detail">Ensure MCA21 shareholding pattern extract is current (reflecting FY25 restructuring)</span>
-              </li>
-              <li>
-                <span class="priority-item-label">CGSS Eligibility Documentation</span>
-                <span class="priority-item-detail">Confirm Sec. 80-IAC certificate (09 May 2026) and DPIIT certificate are ready for submission</span>
-              </li>
-            </ul>
-          </article>
-
-        </div>
-
-        <article class="profile-card profile-card-full profile-mt">
-          <h3>Credit Proposal Summary - CGSS</h3>
+        <div class="ops-subhead"><span class="ops-subhead-label">E — Top 5 Suppliers</span></div>
+        <article class="profile-card profile-mt reveal">
+          <h3>Top 5 Suppliers Statement — FY 2025-26</h3>
+          <p class="profile-note-sm">Closing payable balances at 31 March 2026 | Total annual purchases: Rs. 69.55 Cr | Creditor Days: 9.8 days</p>
           <div class="profile-table-scroll">
             <table class="profile-table">
               <thead>
-                <tr>
-                  <th>Proposal</th>
-                  <th>Working Capital (CC)</th>
-                  <th>Capex</th>
-                  <th>Total Ask</th>
-                  <th>Focus</th>
-                </tr>
+                <tr><th>#</th><th>Supplier / Creditor Name</th><th>Entity Type</th><th>Closing Balance (INR)</th><th>% of Total Payables</th><th>State</th></tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><strong>Proposal A</strong></td>
-                  <td>Rs. 10.50 Cr</td>
-                  <td>-</td>
-                  <td>Rs. 10.50 Cr</td>
-                  <td>Working Capital Focus</td>
+                <tr><td>1</td><td><strong>Bhavarth Farmers Producer Company Ltd</strong></td><td>Registered FPC</td><td>42,90,213</td><td>22.91%</td><td>Maharashtra</td></tr>
+                <tr><td>2</td><td><strong>Gokul Farmers Producer Company</strong></td><td>Registered FPC</td><td>22,64,279</td><td>12.10%</td><td>Maharashtra</td></tr>
+                <tr><td>3</td><td><strong>Vamanbhau Shetkari Gat</strong></td><td>SHG / Shetkari Gat</td><td>19,04,512</td><td>10.17%</td><td>Maharashtra</td></tr>
+                <tr><td>4</td><td><strong>Santkrupa Shetkari Gat</strong></td><td>SHG / Shetkari Gat</td><td>18,74,516</td><td>10.01%</td><td>Maharashtra</td></tr>
+                <tr><td>5</td><td><strong>Bhagwanbaba Shetkari Gat</strong></td><td>SHG / Shetkari Gat</td><td>18,39,624</td><td>9.83%</td><td>Maharashtra</td></tr>
+                <tr class="profile-table-total">
+                  <td></td>
+                  <td><strong>Top 5 Subtotal</strong></td>
+                  <td></td>
+                  <td><strong>1,21,73,144</strong></td>
+                  <td><strong>65.02%</strong></td>
+                  <td></td>
                 </tr>
-                <tr>
-                  <td><strong>Proposal B</strong></td>
-                  <td>Rs. 10.00 Cr</td>
-                  <td>Machinery Rs. 2 Cr + Furniture Rs. 0.50 Cr</td>
-                  <td>Rs. 12.50 Cr</td>
-                  <td>Balanced Growth</td>
-                </tr>
-                <tr>
-                  <td><strong>Proposal C</strong></td>
-                  <td>Rs. 10.00 Cr</td>
-                  <td>Office Rs. 4 Cr + Furniture Rs. 0.50 Cr + Computers Rs. 0.20 Cr</td>
-                  <td>Rs. 14.70 Cr</td>
-                  <td>Infrastructure Investment</td>
+                <tr class="profile-table-total">
+                  <td></td>
+                  <td>All 12 Creditors Total</td>
+                  <td></td>
+                  <td>1,87,23,539</td>
+                  <td>100.00%</td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <dl class="profile-list profile-list-inline profile-mt-sm">
+          <p class="profile-note-sm profile-mt-sm">All creditors are Farmer Producer Companies (FPCs) or Maharashtra-registered Shetkari Gats. 92.58% of payables settled within 30 days. Zero creditor balance beyond 60 days.</p>
+        </article>
+
+        <!-- Crop scroll anchor -->
+        <div class="crop-scroll-anchor" data-crop="banyan"></div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 6 — CREDIT PROPOSAL
+    ════════════════════════════════════════════════════════ -->
+    <section class="profile-section profile-section-muted" id="credit-proposal">
+      <div class="profile-container">
+        <p class="section-label">Section 06 — Credit Proposal</p>
+        <h2>CGSS Credit Facility Proposal</h2>
+
+        <div class="proposal-grid">
+          <div class="proposal-card reveal">
+            <div class="proposal-card-label">Proposal A</div>
+            <div class="proposal-card-name">Working Capital Focus</div>
+            <div class="proposal-row">
+              <span class="proposal-row-label">Working Capital (CC)</span>
+              <span class="proposal-row-val">Rs. 10.50 Cr</span>
+            </div>
+            <div class="proposal-row">
+              <span class="proposal-row-label">Capex</span>
+              <span class="proposal-row-val">—</span>
+            </div>
+            <div class="proposal-total">
+              <span class="proposal-total-label">Total Ask</span>
+              <span class="proposal-total-val">Rs. 10.50 Cr</span>
+            </div>
+          </div>
+
+          <div class="proposal-card reveal">
+            <div class="proposal-card-label">Proposal B</div>
+            <div class="proposal-card-name">Balanced Growth</div>
+            <div class="proposal-row">
+              <span class="proposal-row-label">Working Capital (CC)</span>
+              <span class="proposal-row-val">Rs. 10.00 Cr</span>
+            </div>
+            <div class="proposal-row">
+              <span class="proposal-row-label">Machinery</span>
+              <span class="proposal-row-val">Rs. 2.00 Cr</span>
+            </div>
+            <div class="proposal-row">
+              <span class="proposal-row-label">Furniture</span>
+              <span class="proposal-row-val">Rs. 0.50 Cr</span>
+            </div>
+            <div class="proposal-total">
+              <span class="proposal-total-label">Total Ask</span>
+              <span class="proposal-total-val">Rs. 12.50 Cr</span>
+            </div>
+          </div>
+
+          <div class="proposal-card reveal">
+            <div class="proposal-card-label">Proposal C</div>
+            <div class="proposal-card-name">Infrastructure Investment</div>
+            <div class="proposal-row">
+              <span class="proposal-row-label">Working Capital (CC)</span>
+              <span class="proposal-row-val">Rs. 10.00 Cr</span>
+            </div>
+            <div class="proposal-row">
+              <span class="proposal-row-label">Office</span>
+              <span class="proposal-row-val">Rs. 4.00 Cr</span>
+            </div>
+            <div class="proposal-row">
+              <span class="proposal-row-label">Furniture + Computers</span>
+              <span class="proposal-row-val">Rs. 0.70 Cr</span>
+            </div>
+            <div class="proposal-total">
+              <span class="proposal-total-label">Total Ask</span>
+              <span class="proposal-total-val">Rs. 14.70 Cr</span>
+            </div>
+          </div>
+        </div>
+
+        <article class="profile-card profile-mt reveal">
+          <h3>Scheme Details</h3>
+          <dl class="profile-list profile-list-inline">
             <div>
               <dt>Scheme</dt>
-              <dd>CGSS - Credit Guarantee Scheme for Startups (eligible up to Rs. 20 Cr)</dd>
+              <dd>CGSS — Credit Guarantee Scheme for Startups (eligible up to Rs. 20 Cr)</dd>
             </div>
             <div>
               <dt>Security</dt>
-              <dd>CGSS Government Guarantee </dd>
+              <dd>CGSS Government Guarantee</dd>
             </div>
             <div>
               <dt>Purpose</dt>
@@ -1487,6 +1154,256 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 7 — DOCUMENTS
+    ════════════════════════════════════════════════════════ -->
+    <section class="profile-section" id="documents">
+      <div class="profile-container">
+        <p class="section-label">Section 07 — Master Credit File</p>
+        <h2>Document Index</h2>
+        <p class="profile-lede-sm">All documents are stored locally in the Master Credit File folder. Click any link to open the PDF directly.</p>
+
+        <div class="docs-grid">
+
+          <!-- 01 Corporate Identity -->
+          <article class="docs-card">
+            <div class="docs-card-header">
+              <span class="docs-cat-number">01</span>
+              <h3>Corporate Identity</h3>
+            </div>
+            <ul class="docs-list">
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/01_CORPORATE_IDENTITY/01_Incorporation_Documents/Certificate_of_Incorporation_Kropbook_Agritech_Pvt_Ltd.pdf" target="_blank" rel="noopener">Certificate of Incorporation</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/01_CORPORATE_IDENTITY/01_Incorporation_Documents/Certificate_of_Incorporation_Kropbook_Agritech_Pvt_Ltd_Updated_Copy.pdf" target="_blank" rel="noopener">Certificate of Incorporation (Updated)</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/01_CORPORATE_IDENTITY/01_Incorporation_Documents/Memorandum_of_Association_Kropbook_Agritech_Pvt_Ltd.pdf" target="_blank" rel="noopener">Memorandum of Association</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/01_CORPORATE_IDENTITY/01_Incorporation_Documents/Articles_of_Association_Kropbook_Agritech_Pvt_Ltd.pdf" target="_blank" rel="noopener">Articles of Association</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/01_CORPORATE_IDENTITY/01_Incorporation_Documents/DPIIT_Startup_Recognition_Certificate_Kropbook_Agritech_Pvt_Ltd.pdf" target="_blank" rel="noopener">DPIIT Startup India Certificate</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/01_CORPORATE_IDENTITY/01_Incorporation_Documents/PAN_Card_Company_Kropbook_Agritech_Pvt_Ltd.pdf" target="_blank" rel="noopener">PAN Card — Company</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/01_CORPORATE_IDENTITY/01_Incorporation_Documents/Udyam_MSME_Registration_Kropbook_Agritech_Pvt_Ltd.pdf" target="_blank" rel="noopener">Udyam / MSME Registration</a></li>
+              <li class="docs-subgroup">GST Registration Certificates</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/01_CORPORATE_IDENTITY/02_GST_Registration_Certificates/GST_Registration_Certificate_Maharashtra_GSTIN_27AAHCK3551A1ZV.pdf" target="_blank" rel="noopener">GST Certificate — Maharashtra</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/01_CORPORATE_IDENTITY/02_GST_Registration_Certificates/GST_Registration_Certificate_Punjab_GSTIN_03AAHCK3551A1Z5.pdf" target="_blank" rel="noopener">GST Certificate — Punjab</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/01_CORPORATE_IDENTITY/02_GST_Registration_Certificates/GST_Registration_Certificate_Andhra_Pradesh_GSTIN_37AAHCK3551A1ZU.pdf" target="_blank" rel="noopener">GST Certificate — Andhra Pradesh</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/01_CORPORATE_IDENTITY/03_Shareholding_Pattern/Shareholding_Pattern_Directors_Kropbook_Agritech_Pvt_Ltd_AY2025-26.pdf" target="_blank" rel="noopener">Shareholding Pattern AY 2025-26</a></li>
+            </ul>
+          </article>
+
+          <!-- 02 Director KYC -->
+          <article class="docs-card">
+            <div class="docs-card-header">
+              <span class="docs-cat-number">02</span>
+              <h3>Director KYC</h3>
+            </div>
+            <ul class="docs-list">
+              <li class="docs-subgroup">Dr. Kiran Chandar Avhad</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/02_DIRECTOR_KYC/01_Dr_Kiran_Avhad/KYC_Bundle_Dr_Kiran_Avhad.pdf" target="_blank" rel="noopener">KYC Bundle</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/02_DIRECTOR_KYC/01_Dr_Kiran_Avhad/Aadhaar_Card_Dr_Kiran_Avhad.pdf" target="_blank" rel="noopener">Aadhaar Card</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/02_DIRECTOR_KYC/01_Dr_Kiran_Avhad/PhD_Degree_Certificate_Dr_Kiran_Avhad.pdf" target="_blank" rel="noopener">PhD Degree Certificate</a></li>
+              <li class="docs-subgroup">Kunal Subhash Pingle</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/02_DIRECTOR_KYC/02_Kunal_Pingale/Degree_Certificate_Kunal_Pingale.pdf" target="_blank" rel="noopener">Degree Certificate</a></li>
+            </ul>
+          </article>
+
+          <!-- 03 Audited Financials -->
+          <article class="docs-card">
+            <div class="docs-card-header">
+              <span class="docs-cat-number">03</span>
+              <h3>Audited Financial Statements</h3>
+            </div>
+            <ul class="docs-list">
+              <li class="docs-subgroup">FY 2022-23 (AY 2023-24)</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/03_AUDITED_FINANCIAL_STATEMENTS/FY_2022-23_AY_2023-24/Audited_Financial_Statements_FY2022-23_Signed_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Audited Financial Statements (Signed)</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/03_AUDITED_FINANCIAL_STATEMENTS/FY_2022-23_AY_2023-24/Form_3CA-CD_Tax_Audit_Report_FY2022-23_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Form 3CA-CD Tax Audit Report</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/03_AUDITED_FINANCIAL_STATEMENTS/FY_2022-23_AY_2023-24/Computation_of_Income_AY2023-24_Company_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Computation of Income AY 2023-24</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/03_AUDITED_FINANCIAL_STATEMENTS/FY_2022-23_AY_2023-24/ITR_Acknowledgment_AY2023-24_Company_Kropbook_Agritech.pdf" target="_blank" rel="noopener">ITR Acknowledgment AY 2023-24</a></li>
+              <li class="docs-subgroup">FY 2023-24 (AY 2024-25)</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/03_AUDITED_FINANCIAL_STATEMENTS/FY_2023-24_AY_2024-25/Audited_Financial_Statements_FY2023-24_Stamped_Signed_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Audited Financial Statements (Signed)</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/03_AUDITED_FINANCIAL_STATEMENTS/FY_2023-24_AY_2024-25/Directors_and_Auditors_Report_FY2023-24_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Directors &amp; Auditors Report</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/03_AUDITED_FINANCIAL_STATEMENTS/FY_2023-24_AY_2024-25/Computation_of_Income_AY2024-25_Company_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Computation of Income AY 2024-25</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/03_AUDITED_FINANCIAL_STATEMENTS/FY_2023-24_AY_2024-25/ITR_Acknowledgment_AY2024-25_Company_Kropbook_Agritech.pdf" target="_blank" rel="noopener">ITR Acknowledgment AY 2024-25</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/03_AUDITED_FINANCIAL_STATEMENTS/FY_2023-24_AY_2024-25/ITR-V_AY2024-25_Company_Kropbook_Agritech.pdf" target="_blank" rel="noopener">ITR-V AY 2024-25</a></li>
+              <li class="docs-subgroup">FY 2024-25 (AY 2025-26)</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/03_AUDITED_FINANCIAL_STATEMENTS/FY_2024-25_AY_2025-26/Audited_Financial_Statements_with_Directors_and_Auditors_Report_FY2024-25_Signed_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Audited Financial Statements with Directors Report (Signed)</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/03_AUDITED_FINANCIAL_STATEMENTS/FY_2024-25_AY_2025-26/Form_3CA_Tax_Audit_Report_FY2024-25_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Form 3CA Tax Audit Report</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/03_AUDITED_FINANCIAL_STATEMENTS/FY_2024-25_AY_2025-26/Computation_of_Income_AY2025-26_Company_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Computation of Income AY 2025-26</a></li>
+            </ul>
+          </article>
+
+          <!-- 04 Provisional Financials -->
+          <article class="docs-card">
+            <div class="docs-card-header">
+              <span class="docs-cat-number">04</span>
+              <h3>Provisional Financials FY 2025-26</h3>
+            </div>
+            <ul class="docs-list">
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/04_PROVISIONAL_FINANCIALS_FY2025-26/Provisional_Financial_Statements_FY2025-26_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Provisional Financial Statements</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/04_PROVISIONAL_FINANCIALS_FY2025-26/Provisional_Balance_Sheet_FY2025-26_Part1_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Provisional Balance Sheet — Part 1</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/04_PROVISIONAL_FINANCIALS_FY2025-26/Provisional_Balance_Sheet_FY2025-26_Part2_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Provisional Balance Sheet — Part 2</a></li>
+            </ul>
+          </article>
+
+          <!-- 05 Director ITR -->
+          <article class="docs-card">
+            <div class="docs-card-header">
+              <span class="docs-cat-number">05</span>
+              <h3>Director Income Tax Returns</h3>
+            </div>
+            <ul class="docs-list">
+              <li class="docs-subgroup">Dr. Kiran Chandar Avhad</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/05_INCOME_TAX_RETURNS_DIRECTORS/01_Dr_Kiran_Avhad/ITR_Acknowledgment_AY2023-24_Dr_Kiran_Avhad.pdf" target="_blank" rel="noopener">ITR Acknowledgment AY 2023-24</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/05_INCOME_TAX_RETURNS_DIRECTORS/01_Dr_Kiran_Avhad/ITR_Acknowledgment_AY2024-25_Dr_Kiran_Avhad.pdf" target="_blank" rel="noopener">ITR Acknowledgment AY 2024-25</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/05_INCOME_TAX_RETURNS_DIRECTORS/01_Dr_Kiran_Avhad/ITR_Acknowledgment_AY2025-26_Dr_Kiran_Avhad.pdf" target="_blank" rel="noopener">ITR Acknowledgment AY 2025-26</a></li>
+              <li class="docs-subgroup">Kunal Subhash Pingle</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/05_INCOME_TAX_RETURNS_DIRECTORS/02_Kunal_Pingale/ITR_Acknowledgment_AY2025-26_Kunal_Pingale_Original_Return.pdf" target="_blank" rel="noopener">ITR Acknowledgment AY 2025-26 (Original)</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/05_INCOME_TAX_RETURNS_DIRECTORS/02_Kunal_Pingale/ITR_Acknowledgment_AY2025-26_Kunal_Pingale_Revised_Return.pdf" target="_blank" rel="noopener">ITR Acknowledgment AY 2025-26 (Revised)</a></li>
+            </ul>
+          </article>
+
+          <!-- 06 GST Returns -->
+          <article class="docs-card docs-card-wide">
+            <div class="docs-card-header">
+              <span class="docs-cat-number">06</span>
+              <h3>GST Returns</h3>
+            </div>
+            <p class="docs-note">3 GSTINs across 2 financial years. FY 2024-25 includes GSTR-1 + GSTR-3B; FY 2025-26 contains GSTR-3B (Apr 2025–Feb 2026 per state).</p>
+            <div class="docs-gst-grid">
+              <div class="docs-gst-state">
+                <p class="docs-gst-state-label">Maharashtra — 27AAHCK3551A1ZV</p>
+                <ul class="docs-list docs-list-compact">
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2024-25_Apr2024_to_Mar2025/Maharashtra_GSTIN_27AAHCK3551A1ZV/GSTR3B/GSTR3B_Mar2025_Maharashtra_27AAHCK3551A1ZV.pdf" target="_blank" rel="noopener">GSTR-3B Mar-25</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2024-25_Apr2024_to_Mar2025/Maharashtra_GSTIN_27AAHCK3551A1ZV/GSTR3B/GSTR3B_Feb2025_Maharashtra_27AAHCK3551A1ZV.pdf" target="_blank" rel="noopener">GSTR-3B Feb-25</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2025-26_Apr2025_to_Apr2026/Maharashtra_GSTIN_27AAHCK3551A1ZV/GSTR3B_Feb2026_Maharashtra_27AAHCK3551A1ZV.pdf" target="_blank" rel="noopener">GSTR-3B Feb-26</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2025-26_Apr2025_to_Apr2026/Maharashtra_GSTIN_27AAHCK3551A1ZV/GSTR3B_Jan2026_Maharashtra_27AAHCK3551A1ZV.pdf" target="_blank" rel="noopener">GSTR-3B Jan-26</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2025-26_Apr2025_to_Apr2026/Maharashtra_GSTIN_27AAHCK3551A1ZV/GSTR3B_Dec2025_Maharashtra_27AAHCK3551A1ZV.pdf" target="_blank" rel="noopener">GSTR-3B Dec-25</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2025-26_Apr2025_to_Apr2026/Maharashtra_GSTIN_27AAHCK3551A1ZV/GSTR3B_Apr2025_Maharashtra_27AAHCK3551A1ZV.pdf" target="_blank" rel="noopener">GSTR-3B Apr-25</a></li>
+                </ul>
+              </div>
+              <div class="docs-gst-state">
+                <p class="docs-gst-state-label">Punjab — 03AAHCK3551A1Z5</p>
+                <ul class="docs-list docs-list-compact">
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2024-25_Apr2024_to_Mar2025/Punjab_GSTIN_03AAHCK3551A1Z5/GSTR3B/GSTR3B_Mar2025_Punjab_03AAHCK3551A1Z5.pdf" target="_blank" rel="noopener">GSTR-3B Mar-25</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2024-25_Apr2024_to_Mar2025/Punjab_GSTIN_03AAHCK3551A1Z5/GSTR3B/GSTR3B_Feb2025_Punjab_03AAHCK3551A1Z5.pdf" target="_blank" rel="noopener">GSTR-3B Feb-25</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2025-26_Apr2025_to_Apr2026/Punjab_GSTIN_03AAHCK3551A1Z5/GSTR3B_Jan2026_Punjab_03AAHCK3551A1Z5.pdf" target="_blank" rel="noopener">GSTR-3B Jan-26</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2025-26_Apr2025_to_Apr2026/Punjab_GSTIN_03AAHCK3551A1Z5/GSTR3B_Dec2025_Punjab_03AAHCK3551A1Z5.pdf" target="_blank" rel="noopener">GSTR-3B Dec-25</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2025-26_Apr2025_to_Apr2026/Punjab_GSTIN_03AAHCK3551A1Z5/GSTR3B_Apr2025_Punjab_03AAHCK3551A1Z5.pdf" target="_blank" rel="noopener">GSTR-3B Apr-25</a></li>
+                </ul>
+              </div>
+              <div class="docs-gst-state">
+                <p class="docs-gst-state-label">Andhra Pradesh — 37AAHCK3551A1ZU</p>
+                <ul class="docs-list docs-list-compact">
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2024-25_Apr2024_to_Mar2025/Andhra_Pradesh_GSTIN_37AAHCK3551A1ZU/GSTR3B/GSTR3B_Mar2025_Andhra_Pradesh_37AAHCK3551A1ZU.pdf" target="_blank" rel="noopener">GSTR-3B Mar-25</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2024-25_Apr2024_to_Mar2025/Andhra_Pradesh_GSTIN_37AAHCK3551A1ZU/GSTR3B/GSTR3B_Feb2025_Andhra_Pradesh_37AAHCK3551A1ZU.pdf" target="_blank" rel="noopener">GSTR-3B Feb-25</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2025-26_Apr2025_to_Apr2026/Andhra_Pradesh_GSTIN_37AAHCK3551A1ZU/GSTR3B_Jan2026_Andhra_Pradesh_37AAHCK3551A1ZU.pdf" target="_blank" rel="noopener">GSTR-3B Jan-26</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2025-26_Apr2025_to_Apr2026/Andhra_Pradesh_GSTIN_37AAHCK3551A1ZU/GSTR3B_Dec2025_Andhra_Pradesh_37AAHCK3551A1ZU.pdf" target="_blank" rel="noopener">GSTR-3B Dec-25</a></li>
+                  <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/06_GST_RETURNS/FY_2025-26_Apr2025_to_Apr2026/Andhra_Pradesh_GSTIN_37AAHCK3551A1ZU/GSTR3B_Apr2025_Andhra_Pradesh_37AAHCK3551A1ZU.pdf" target="_blank" rel="noopener">GSTR-3B Apr-25</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- 07 Bank Statements -->
+          <article class="docs-card">
+            <div class="docs-card-header">
+              <span class="docs-cat-number">07</span>
+              <h3>Bank Statements</h3>
+            </div>
+            <ul class="docs-list">
+              <li class="docs-subgroup">Company Current Account</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/07_BANK_STATEMENTS/Company_Current_Account/Account_Summary_Current_Account_XXXX3860_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Account Summary (XXXX3860)</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/07_BANK_STATEMENTS/Company_Current_Account/Bank_Statement_Kropbook_Agritech_FY2025-26_Part1.pdf" target="_blank" rel="noopener">Bank Statement FY 2025-26 — Part 1</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/07_BANK_STATEMENTS/Company_Current_Account/Bank_Statement_Kropbook_Agritech_FY2025-26_Part2.pdf" target="_blank" rel="noopener">Bank Statement FY 2025-26 — Part 2</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/07_BANK_STATEMENTS/Company_Current_Account/Bank_Statement_Kropbook_Agritech_FY2025-26_Part3.pdf" target="_blank" rel="noopener">Bank Statement FY 2025-26 — Part 3</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/07_BANK_STATEMENTS/Company_Current_Account/Bank_Statement_Kropbook_Agritech_FY2025-26_Part4.pdf" target="_blank" rel="noopener">Bank Statement FY 2025-26 — Part 4</a></li>
+              <li class="docs-subgroup">Director Personal Accounts</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/07_BANK_STATEMENTS/Dr_Kiran_Avhad_Personal_Account/Personal_Bank_Statement_Dr_Kiran_Avhad.pdf" target="_blank" rel="noopener">Personal Bank Statement — Dr. Kiran Avhad</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/07_BANK_STATEMENTS/Kunal_Pingale_Personal_Account/Personal_Bank_Statement_Kunal_Pingale.pdf" target="_blank" rel="noopener">Personal Bank Statement — Kunal Pingle</a></li>
+            </ul>
+          </article>
+
+          <!-- 08 Director Net Worth -->
+          <article class="docs-card">
+            <div class="docs-card-header">
+              <span class="docs-cat-number">08</span>
+              <h3>Director Net Worth</h3>
+            </div>
+            <ul class="docs-list">
+              <li class="docs-subgroup">Dr. Kiran Chandar Avhad</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/08_DIRECTOR_NET_WORTH/01_Dr_Kiran_Avhad/Net_Worth_Certificate_Dr_Kiran_Avhad.pdf" target="_blank" rel="noopener">Net Worth Certificate</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/08_DIRECTOR_NET_WORTH/01_Dr_Kiran_Avhad/Property_House_Agreement_Dr_Kiran_Avhad.pdf" target="_blank" rel="noopener">Property / House Agreement</a></li>
+              <li class="docs-subgroup">Kunal Subhash Pingle</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/08_DIRECTOR_NET_WORTH/02_Kunal_Pingale/Net_Worth_Certificate_Kunal_Pingale.pdf" target="_blank" rel="noopener">Net Worth Certificate</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/08_DIRECTOR_NET_WORTH/02_Kunal_Pingale/Electricity_Bill_Address_Proof_Kunal_Pingale.pdf" target="_blank" rel="noopener">Electricity Bill (Address Proof)</a></li>
+            </ul>
+          </article>
+
+          <!-- 09 Office Premises -->
+          <article class="docs-card">
+            <div class="docs-card-header">
+              <span class="docs-cat-number">09</span>
+              <h3>Office &amp; Premises Agreements</h3>
+            </div>
+            <ul class="docs-list">
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/09_OFFICE_AND_PREMISES_AGREEMENTS/Rent_Agreement_Head_Office_Ahmednagar.pdf" target="_blank" rel="noopener">Rent Agreement — Head Office (Ahmednagar)</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/09_OFFICE_AND_PREMISES_AGREEMENTS/Rent_Agreement_Branch_Office_Mumbai.pdf" target="_blank" rel="noopener">Rent Agreement — Branch Office (Mumbai)</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/09_OFFICE_AND_PREMISES_AGREEMENTS/Rent_Agreement_Branch_Office_Punjab_Sep2024_Scanned.pdf" target="_blank" rel="noopener">Rent Agreement — Branch Office (Punjab, Sep 2024)</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/09_OFFICE_AND_PREMISES_AGREEMENTS/Rent_Agreement_Branch_Office_Andhra_Pradesh_Nov2024.pdf" target="_blank" rel="noopener">Rent Agreement — Branch Office (Andhra Pradesh)</a></li>
+            </ul>
+          </article>
+
+          <!-- 10 Operational Data -->
+          <article class="docs-card">
+            <div class="docs-card-header">
+              <span class="docs-cat-number">10</span>
+              <h3>Operational Data</h3>
+            </div>
+            <ul class="docs-list">
+              <li class="docs-subgroup">Sales &amp; Purchase Reports</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/10_OPERATIONAL_DATA/Sales_and_Purchase_Data/Monthly_Sales_Summary_FY2025-26_Alternate_Report_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Monthly Sales Summary FY 2025-26</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/10_OPERATIONAL_DATA/Sales_and_Purchase_Data/Purchase%20data/Month-wise%20Purchase%20Data.pdf" target="_blank" rel="noopener">Month-wise Purchase Data</a></li>
+              <li class="docs-subgroup">Debtors &amp; Creditors</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/10_OPERATIONAL_DATA/Debtors_and_Creditors/Debtors_Ageing_Report_FIFO_Basis_Detailed_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Debtors Ageing Report (FIFO, Detailed)</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/10_OPERATIONAL_DATA/Debtors_and_Creditors/Creditors_Ageing_Report_FIFO_Basis_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Creditors Ageing Report (FIFO)</a></li>
+              <li class="docs-subgroup">Inventory</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/10_OPERATIONAL_DATA/Stock_Statement/Stock_Status_Statement_as_on_31MARCH2026_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Stock Status Statement — 31 March 2026</a></li>
+            </ul>
+          </article>
+
+          <!-- 11 Company & Director Profiles + Director Reports -->
+          <article class="docs-card">
+            <div class="docs-card-header">
+              <span class="docs-cat-number">11</span>
+              <h3>Company &amp; Director Profiles</h3>
+            </div>
+            <ul class="docs-list">
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/11_COMPANY_AND_DIRECTOR_PROFILES/Company_Profile_Kropbook_Agritech_Pvt_Ltd_Full.pdf" target="_blank" rel="noopener">Company Profile (Full)</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/11_COMPANY_AND_DIRECTOR_PROFILES/Director_Profile_Dr_Kiran_Avhad.pdf" target="_blank" rel="noopener">Director Profile — Dr. Kiran Chandar Avhad</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/11_COMPANY_AND_DIRECTOR_PROFILES/Director_Profile_Kunal_Pingale.pdf" target="_blank" rel="noopener">Director Profile — Kunal Subhash Pingle</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/11_COMPANY_AND_DIRECTOR_PROFILES/Kropbook%20Patient.pdf" target="_blank" rel="noopener">Patent Document — No. 363155</a></li>
+              <li class="docs-subgroup">Director Reports (Annual)</li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/11_COMPANY_AND_DIRECTOR_PROFILES/Director%20report/fy%2022-%2023%20director%20report%20.pdf" target="_blank" rel="noopener">Director Report — FY 2022-23</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/11_COMPANY_AND_DIRECTOR_PROFILES/Director%20report/FY%2023-%2024%20directors%20Report.pdf" target="_blank" rel="noopener">Director Report — FY 2023-24</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/11_COMPANY_AND_DIRECTOR_PROFILES/Director%20report/Fy%202024-25%20Kropbook%20Director%20Report.pdf" target="_blank" rel="noopener">Director Report — FY 2024-25</a></li>
+            </ul>
+          </article>
+
+          <!-- 12 Credit Presentations & Reports -->
+          <article class="docs-card">
+            <div class="docs-card-header">
+              <span class="docs-cat-number">12</span>
+              <h3>Credit Presentations &amp; Reports</h3>
+            </div>
+            <ul class="docs-list">
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/12_CREDIT_PRESENTATIONS_AND_REPORTS/Credit_Presentation_Kropbook_Agritech.pdf" target="_blank" rel="noopener">Credit Presentation</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/12_CREDIT_PRESENTATIONS_AND_REPORTS/Kropbook_Master_Operations_Report_FY2025-26.pdf" target="_blank" rel="noopener">Master Operations Report FY 2025-26</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/12_CREDIT_PRESENTATIONS_AND_REPORTS/Kropbook_Sales_Analysis_FY2025-26final.pdf" target="_blank" rel="noopener">Sales Analysis Report FY 2025-26</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/12_CREDIT_PRESENTATIONS_AND_REPORTS/Kropbook_Purchase_Distribution_Analysis_FY2025-26.pdf" target="_blank" rel="noopener">Purchase Distribution Analysis FY 2025-26</a></li>
+              <li><a href="../KROPBOOK_AGRITECH_PRIVATE_LIMITED%20%E2%80%94%20Master%20Credit%20File/12_CREDIT_PRESENTATIONS_AND_REPORTS/Kropbook_Sales_Distribution_Analysis_FY2025-26.pdf" target="_blank" rel="noopener">Sales Distribution Analysis FY 2025-26</a></li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div id="footer-container"></div>
@@ -1494,5 +1411,6 @@
   <script src="../js/shared.js"></script>
   <script src="../js/animations.js"></script>
   <script src="../js/corporate-profile.js"></script>
+  <script src="../js/crop-scroll.js"></script>
 </body>
 </html>

@@ -1242,3 +1242,103 @@
 .ex-troporganic-14 { margin-top:2.5rem; }
 
 .ex-troporganic-15 { max-width:var(--max-w);margin:0 auto; }
+
+/* ─── 3D Crop Model Feature Section ─── */
+.to-model-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #0d2418 0%, #1b4d3e 60%, #0d2418 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.to-model-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.to-model-viewer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-xl, 34px);
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(201, 162, 39, 0.2),
+    0 24px 80px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(201, 162, 39, 0.06) inset;
+}
+
+.to-model-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.to-model-content {
+  color: #fff;
+}
+
+.to-model-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a227;
+  margin: 0 0 12px;
+}
+
+.to-model-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 20px;
+}
+
+.to-model-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 32px;
+}
+
+.to-model-stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.to-model-stats li {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.to-model-stats li strong {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #c9a227;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+  .to-model-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 20px;
+  }
+
+  .to-model-heading {
+    font-size: 1.8rem;
+  }
+}
