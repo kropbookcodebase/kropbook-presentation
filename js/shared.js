@@ -327,4 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
   injectPdfModal();
   initDocumentTriggers();
   initLocalScrollTargets();
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../service-worker.js').catch(() => {});
+  }
 });

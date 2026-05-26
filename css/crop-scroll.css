@@ -1,29 +1,34 @@
+/* ── Crop Scroll Animation Panel ─────────────────────────────── */
+
 .crop-scroll-anchor {
   position: relative;
-  height: 700px;
-  overflow: visible;
-  margin-top: 2rem;
+  /* Tall enough for full animation + entry/exit scroll */
+  height: 2000px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .crop-scroll-panel {
   position: sticky;
-  top: calc(50vh - 210px);
-  float: right;
-  width: 260px;
-  height: 420px;
-  margin-right: 2rem;
-  pointer-events: none;
+  top: calc(50vh - 270px); /* vertically centered in viewport */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 540px;
   z-index: 3;
-  border-radius: var(--radius-xl, 34px);
+  border-radius: 28px;
   overflow: hidden;
   box-shadow:
-    0 16px 48px rgba(10,26,20,0.22),
-    0 4px 12px rgba(10,26,20,0.12),
-    inset 0 1px 0 rgba(255,255,255,0.15);
+    0 20px 60px rgba(10,26,20,0.28),
+    0 4px 16px rgba(10,26,20,0.14),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+  /* panel should sit centered, not floated */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .crop-scroll-canvas {
   display: block;
-  width: 260px;
-  height: 420px;
+  width: 300px;
+  height: 540px;
 }

@@ -13,6 +13,10 @@ function initScrollAnimations() {
         const delay = el.dataset.delay || 0;
         setTimeout(() => {
           el.classList.add('anim-visible');
+          // Clear will-change after transition to free compositor resources
+          el.addEventListener('transitionend', () => {
+            el.style.willChange = 'auto';
+          }, { once: true });
         }, delay * 1000);
         observer.unobserve(el);
       }
@@ -20,6 +24,8 @@ function initScrollAnimations() {
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
   document.querySelectorAll('.anim-hidden, .anim-left, .anim-right').forEach(el => {
+    // Promote to GPU layer before animation begins to prevent jitter
+    el.style.willChange = 'transform, opacity';
     observer.observe(el);
   });
 }

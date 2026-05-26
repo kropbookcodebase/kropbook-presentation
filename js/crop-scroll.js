@@ -2,8 +2,8 @@
   'use strict';
 
   var STAGE_COUNT = 5;
-  var CANVAS_W = 260;
-  var CANVAS_H = 420;
+  var CANVAS_W = 300;
+  var CANVAS_H = 540;
 
   function easeInOut(t) {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
@@ -261,13 +261,17 @@
     var ctx = canvas.getContext('2d');
     renderFrame(ctx, 0, cropType);
 
-    var scrollZoneHeight = Math.max(anchor.offsetHeight, 600);
+    // Use the full anchor height so progress spans 0→1 across the entire
+    // scroll zone, giving the animation room to complete before the section
+    // scrolls away. We subtract the viewport height so that progress reaches
+    // 1.0 exactly when the bottom of the anchor hits the bottom of the
+    // viewport (i.e. when the section is about to leave).
+    var scrollZoneHeight = anchor.offsetHeight - window.innerHeight;
 
     function update() {
       var rect = anchor.getBoundingClientRect();
-      var total = scrollZoneHeight;
       var passed = -rect.top;
-      var progress = Math.max(0, Math.min(passed / total, 1));
+      var progress = Math.max(0, Math.min(passed / scrollZoneHeight, 1));
       renderFrame(ctx, progress, cropType);
     }
 

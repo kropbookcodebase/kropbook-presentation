@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   drawBarChart('revenue-chart', {
     groups: ['FY 22-23', 'FY 23-24', 'FY 24-25', 'FY 25-26*'],
     series: [
-      { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 75.49], label: 'Revenue' },
-      { color: '#2d6b55', values: [1.47, 6.43, 21.70, 37.00],   label: 'Gross Profit' },
-      { color: '#C9A227', values: [0.61, 4.72, 7.80, 13.20],    label: 'Net Profit' }
+      { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 73.26], label: 'Revenue' },
+      { color: '#2d6b55', values: [1.47, 6.43, 21.70, 9.89],   label: 'Gross Profit' },
+      { color: '#C9A227', values: [0.61, 4.72, 7.80, 7.87],    label: 'Net Profit' }
     ]
   }, {
     legend: [
@@ -19,15 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
       { color: '#2d6b55', label: 'Gross Profit' },
       { color: '#C9A227', label: 'Net Profit' }
     ],
-    maxVal: 110
+    maxVal: 100
   });
 
   /* ── Area Chart — Revenue & Net Profit trajectory ──────────── */
   drawAreaChart('asset-chart', {
     labels: ['FY 22-23', 'FY 23-24', 'FY 24-25', 'FY 25-26*'],
     series: [
-      { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 75.49], label: 'Revenue' },
-      { color: '#C9A227', values: [0.61, 4.72, 7.80, 13.20],    label: 'Net Profit' }
+      { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 73.26], label: 'Revenue' },
+      { color: '#C9A227', values: [0.61, 4.72, 7.80, 7.87],    label: 'Net Profit' }
     ]
   });
 
@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
       drawBarChart('revenue-chart', {
         groups: ['FY 22-23', 'FY 23-24', 'FY 24-25', 'FY 25-26*'],
         series: [
-          { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 75.49], label: 'Revenue' },
-          { color: '#2d6b55', values: [1.47, 6.43, 21.70, 37.00],   label: 'Gross Profit' },
-          { color: '#C9A227', values: [0.61, 4.72, 7.80, 13.20],    label: 'Net Profit' }
+          { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 73.26], label: 'Revenue' },
+          { color: '#2d6b55', values: [1.47, 6.43, 21.70, 9.89],   label: 'Gross Profit' },
+          { color: '#C9A227', values: [0.61, 4.72, 7.80, 7.87],    label: 'Net Profit' }
         ]
       }, {
         legend: [
@@ -49,14 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
           { color: '#2d6b55', label: 'Gross Profit' },
           { color: '#C9A227', label: 'Net Profit' }
         ],
-        maxVal: 110
+        maxVal: 100
       });
 
       drawAreaChart('asset-chart', {
         labels: ['FY 22-23', 'FY 23-24', 'FY 24-25', 'FY 25-26*'],
         series: [
-          { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 75.49], label: 'Revenue' },
-          { color: '#C9A227', values: [0.61, 4.72, 7.80, 13.20],    label: 'Net Profit' }
+          { color: '#1B4D3E', values: [24.47, 27.90, 59.18, 73.26], label: 'Revenue' },
+          { color: '#C9A227', values: [0.61, 4.72, 7.80, 7.87],    label: 'Net Profit' }
         ]
       });
     }, 250);
