@@ -837,9 +837,22 @@
 
   <script src="../js/shared.js"></script>
   <script src="../js/animations.js"></script>
+  <script src="../js/glb-viewer.js"></script>
   <script src="../js/overview.js"></script>
   <script src="../js/globe.js"></script>
   <script src="../js/crop-scroll.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.initGLBViewer) {
+        window.initGLBViewer('earth-canvas', '../3D_model/Earth_1_12756.glb', {
+          bg: [0, 0, 0, 0],
+          camDistFactor: 2.2,
+          color: [0.3, 0.5, 0.9],
+          light: [1.0, 1.0, 2.0]
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>

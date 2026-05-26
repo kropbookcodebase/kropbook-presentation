@@ -250,16 +250,7 @@
     <section class="to-model-section">
       <div class="to-model-inner">
         <div class="to-model-viewer">
-          <iframe
-            class="to-model-frame"
-            src="https://sketchfab.com/models/3b208e05ac924d0d9f28bf56ca2e53e2/embed?autostart=1&preload=1&transparent=0&ui_infos=0&ui_controls=0&ui_hint=0&ui_stop=0&dnt=1"
-            title="Low Poly Corn Stalk — Crop Visualization"
-            frameborder="0"
-            allowfullscreen
-            mozallowfullscreen="true"
-            webkitallowfullscreen="true"
-            allow="autoplay; fullscreen; xr-spatial-tracking"
-          ></iframe>
+          <canvas id="crop-model-canvas" style="width: 100%; height: 100%;"></canvas>
         </div>
         <div class="to-model-content">
           <p class="to-model-label">Precision Agri-Logistics</p>
@@ -592,7 +583,20 @@
 
   <script src="../js/shared.js"></script>
   <script src="../js/animations.js"></script>
+  <script src="../js/glb-viewer.js"></script>
   <script src="../js/troporganic.js"></script>
   <script src="../js/crop-scroll.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.initGLBViewer) {
+        window.initGLBViewer('crop-model-canvas', '../3D_model/70%20meter%20dish.glb', {
+          bg: [0, 0, 0, 0],
+          camDistFactor: 2.0,
+          color: [0.55, 0.72, 0.62],
+          light: [1.4, 2.0, 1.8]
+        });
+      }
+    });
+  </script>
 </body>
 </html>
