@@ -262,4 +262,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  /* ── 15. Download All Documents ─────────────────────────── */
+  var dlBtn = document.getElementById('btn-download-all');
+  if (dlBtn) {
+    dlBtn.addEventListener('click', function () {
+      var links = document.querySelectorAll('.docs-list a[href]');
+      links.forEach(function (link, i) {
+        setTimeout(function () {
+          var a = document.createElement('a');
+          a.href = link.href;
+          a.download = '';
+          a.target = '_blank';
+          a.rel = 'noopener';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        }, i * 350);
+      });
+    });
+  }
+
 });

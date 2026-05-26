@@ -98,6 +98,18 @@
   line-height: 1.7;
 }
 
+.profile-hero-tagline {
+  max-width: 580px;
+  margin: 0.75rem auto 0;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  font-style: italic;
+  line-height: 1.6;
+}
+
 /* ── Hero 4-slot info grid ────────────────────────────────── */
 .profile-hero-grid {
   display: grid;
@@ -999,6 +1011,18 @@
   background: linear-gradient(135deg, #2d6b55 0%, #1b4d3e 100%);
 }
 
+/* Director photo (real image, replaces initials avatar) */
+.cp-dir-photo {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid rgba(201,162,39,0.55);
+  box-shadow: 0 8px 28px rgba(10,26,20,0.28);
+  display: block;
+}
+
 .cp-dir-name {
   font-family: var(--font-display, Georgia, serif);
   font-size: 1.05rem;
@@ -1380,6 +1404,127 @@
 }
 
 .docs-list-compact li a { font-size: 0.74rem; padding: 2px 0; }
+
+/* ── Document index header — centred ────────────────────── */
+.docs-section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.docs-section-header h2 { margin-bottom: 0.4rem; }
+
+.docs-section-header .profile-lede-sm {
+  max-width: 640px;
+  margin: 0 auto 1.25rem;
+}
+
+/* ── Download All button ─────────────────────────────────── */
+.btn-download-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.6rem;
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark, #0f3d2e) 100%);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius-lg, 21px);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(27,77,62,0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-download-all:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(27,77,62,0.35);
+  background: linear-gradient(135deg, #1d6b4f 0%, #0a2e22 100%);
+}
+
+.btn-download-all:active { transform: translateY(0); }
+
+.btn-download-all svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* ── Patent embed card ───────────────────────────────────── */
+.patent-embed-card {
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: var(--radius-xl, 34px);
+  box-shadow: 0 12px 40px rgba(10,26,20,0.1), inset 2px 2px 2px rgba(255,255,255,0.7);
+  padding: 1.75rem;
+  margin-top: 1.5rem;
+}
+
+.patent-embed-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.patent-embed-meta { flex: 1; min-width: 0; }
+
+.patent-embed-meta h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.3rem;
+  color: var(--brand-green);
+}
+
+.patent-tagline {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.patent-embed-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: flex-start; }
+
+.patent-iframe-wrap {
+  border-radius: var(--radius-lg, 21px);
+  overflow: hidden;
+  border: 1px solid rgba(27,77,62,0.15);
+  box-shadow: 0 4px 16px rgba(10,26,20,0.08);
+  background: #f5f5f5;
+}
+
+.patent-iframe-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 520px;
+  border: none;
+}
+
+.btn-view-patent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.25rem;
+  background: rgba(201,162,39,0.1);
+  color: var(--accent-gold);
+  border: 1px solid rgba(201,162,39,0.4);
+  border-radius: var(--radius-lg, 21px);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.btn-view-patent:hover {
+  background: rgba(201,162,39,0.2);
+  transform: translateY(-1px);
+}
 
 /* ═══════════════════════════════════════════════════════════════
    CREDIT PROPOSAL SECTION
