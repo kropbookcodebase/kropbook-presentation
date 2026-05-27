@@ -298,6 +298,18 @@
   margin: 0 auto;
 }
 
+/* ── FY 2024-25 previous-year block ─────────────────────────── */
+.fy25-prev-section {
+  background: var(--bg-primary);
+  padding-bottom: 4rem;
+}
+
+.fy25-prev-grid {
+  max-width: 960px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
 /* Gold-tinted metric value */
 .metric-value-gold span {
   background: linear-gradient(135deg, #C9A227, #E8C84A, #C9A227);

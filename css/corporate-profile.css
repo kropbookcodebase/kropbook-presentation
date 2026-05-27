@@ -1678,6 +1678,19 @@
   --float-delay: 0.4s;
 }
 
+/* ── Section 05 — centered heading ─────────────────────────── */
+#operations .section-label,
+#operations h2 {
+  text-align: center;
+}
+
+/* ── CAGR / 4-Year metrics — centered 2-column ──────────────── */
+.profile-cagr-center {
+  grid-template-columns: repeat(2, minmax(0, 360px));
+  justify-content: center;
+  text-align: center;
+}
+
 /* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════════════════════ */

@@ -5,19 +5,17 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── Bar Chart — Revenue / Gross Profit / Net Profit (Post-Funding) ── */
+  /* ── Bar Chart — Revenue / Net Profit (Post-Funding) ────────────────── */
   drawBarChart('funding-chart', {
     groups: ['FY 25-26*', 'FY 26-27 (Post-Fund)', 'FY 27-28'],
     series: [
-      { color: '#1B4D3E', values: [75.49, 170.00, 300.00], label: 'Revenue' },
-      { color: '#2d6b55', values: [9.89,  70.00,  130.00], label: 'Gross Profit' },
-      { color: '#C9A227', values: [0,     25.00,  52.50],  label: 'Net Profit (projected)' }
+      { color: '#1B4D3E', values: [75.48, 170.00, 300.00], label: 'Revenue' },
+      { color: '#C9A227', values: [7.87,  25.00,  52.50],  label: 'Net Profit' }
     ]
   }, {
     legend: [
       { color: '#1B4D3E', label: 'Revenue' },
-      { color: '#2d6b55', label: 'Gross Profit' },
-      { color: '#C9A227', label: 'Net Profit (projected)' }
+      { color: '#C9A227', label: 'Net Profit' }
     ],
     maxVal: 360
   });
@@ -30,15 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
       drawBarChart('funding-chart', {
         groups: ['FY 25-26*', 'FY 26-27 (Post-Fund)', 'FY 27-28'],
         series: [
-          { color: '#1B4D3E', values: [75.49, 170.00, 300.00], label: 'Revenue' },
-          { color: '#2d6b55', values: [9.89,  70.00,  130.00], label: 'Gross Profit' },
-          { color: '#C9A227', values: [0,     25.00,  52.50],  label: 'Net Profit (projected)' }
+          { color: '#1B4D3E', values: [75.48, 170.00, 300.00], label: 'Revenue' },
+          { color: '#C9A227', values: [7.87,  25.00,  52.50],  label: 'Net Profit' }
         ]
       }, {
         legend: [
           { color: '#1B4D3E', label: 'Revenue' },
-          { color: '#2d6b55', label: 'Gross Profit' },
-          { color: '#C9A227', label: 'Net Profit (projected)' }
+          { color: '#C9A227', label: 'Net Profit' }
         ],
         maxVal: 360
       });
