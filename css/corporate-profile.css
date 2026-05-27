@@ -785,9 +785,9 @@
 /* ── Donut chart (shareholding / revenue composition) ──────── */
 .donut-wrap {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-top: 0.75rem;
 }
 
@@ -1508,7 +1508,7 @@
 .patent-iframe-wrap iframe {
   display: block;
   width: 100%;
-  height: 520px;
+  height: 860px;
   border: none;
 }
 

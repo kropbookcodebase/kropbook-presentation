@@ -587,6 +587,11 @@
 
 /* ── SECTION 7.7 · BALANCE SHEET ────────────────────────── */
 
+.finance-ratios-section .grid-4 {
+  grid-template-columns: repeat(2, minmax(0, 320px));
+  justify-content: center;
+}
+
 .finance-bs-section {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-light);
