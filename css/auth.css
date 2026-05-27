@@ -1,0 +1,916 @@
+/* ──────────────────────────────────────────────────────────────
+   KROPBOOK — Auth styles (login page + admin panel + auth bar)
+   ────────────────────────────────────────────────────────────── */
+
+/* ── Auth bar (injected by auth-gate.js on every protected page) */
+
+.kb-auth-bar {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  background: rgba(10, 26, 20, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.03em;
+}
+
+.kb-auth-bar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.kb-auth-bar-user svg { opacity: 0.7; flex-shrink: 0; }
+
+.kb-auth-role {
+  font-style: normal;
+  font-size: 0.6rem;
+  background: rgba(201,162,39,0.2);
+  color: #C9A227;
+  border: 1px solid rgba(201,162,39,0.35);
+  border-radius: 100px;
+  padding: 0.05em 0.45em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.kb-auth-bar-link {
+  color: #C9A227;
+  text-decoration: none;
+  padding: 0.2em 0.55em;
+  border: 1px solid rgba(201,162,39,0.35);
+  border-radius: 100px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.kb-auth-bar-link:hover { background: rgba(201,162,39,0.15); }
+
+.kb-auth-bar-btn {
+  padding: 0.25em 0.65em;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.kb-auth-bar-btn:hover { background: rgba(255,255,255,0.16); color: #fff; }
+
+/* ── Login page — dark glass redesign ──────────────────────────── */
+
+.login-svg-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Full-screen dark background */
+.login-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #040d08;
+}
+
+/* Background layer */
+.login-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Infinite scrolling grid — base (dim) */
+.login-grid-base {
+  position: absolute;
+  inset: -80px;
+  background-image:
+    linear-gradient(rgba(27,77,62,0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27,77,62,0.18) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-drift 12s linear infinite;
+}
+
+/* Grid reveal — mouse-follow bright layer */
+.login-grid-reveal {
+  position: absolute;
+  inset: -80px;
+  background-image:
+    linear-gradient(rgba(201,162,39,0.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,162,39,0.45) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-drift 12s linear infinite;
+  mask-image: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.login-grid-reveal.active { opacity: 1; }
+
+@keyframes grid-drift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(40px, 40px); }
+}
+
+/* Glow orbs */
+.login-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+.login-orb-1 {
+  width: 520px; height: 520px;
+  top: -12%; left: -8%;
+  background: radial-gradient(circle, rgba(27,77,62,0.55) 0%, transparent 70%);
+  animation: orb-drift-1 18s ease-in-out infinite alternate;
+}
+.login-orb-2 {
+  width: 400px; height: 400px;
+  bottom: -10%; right: -6%;
+  background: radial-gradient(circle, rgba(201,162,39,0.2) 0%, transparent 70%);
+  animation: orb-drift-2 22s ease-in-out infinite alternate;
+}
+.login-orb-3 {
+  width: 300px; height: 300px;
+  top: 40%; right: 15%;
+  background: radial-gradient(circle, rgba(27,77,62,0.3) 0%, transparent 70%);
+  animation: orb-drift-3 15s ease-in-out infinite alternate;
+}
+
+@keyframes orb-drift-1 { from { transform: translate(0,0) scale(1); } to { transform: translate(40px, 30px) scale(1.1); } }
+@keyframes orb-drift-2 { from { transform: translate(0,0) scale(1); } to { transform: translate(-30px,-20px) scale(1.08); } }
+@keyframes orb-drift-3 { from { transform: translate(0,0); } to { transform: translate(-20px, 25px); } }
+
+/* Elegant floating pill shapes */
+.login-shape {
+  position: absolute;
+  border-radius: 100px;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.login-shape-1 {
+  width: 420px; height: 90px;
+  top: 18%; left: -6%;
+  transform: rotate(12deg);
+  background: linear-gradient(90deg, rgba(27,77,62,0.12) 0%, transparent 100%);
+  animation: shape-float-1 14s ease-in-out infinite;
+}
+.login-shape-2 {
+  width: 340px; height: 70px;
+  bottom: 20%; right: -4%;
+  transform: rotate(-10deg);
+  background: linear-gradient(90deg, rgba(201,162,39,0.08) 0%, transparent 100%);
+  animation: shape-float-2 18s ease-in-out infinite;
+}
+.login-shape-3 {
+  width: 180px; height: 50px;
+  top: 8%; right: 22%;
+  transform: rotate(20deg);
+  background: linear-gradient(90deg, rgba(27,77,62,0.1) 0%, transparent 100%);
+  animation: shape-float-3 11s ease-in-out infinite;
+}
+
+@keyframes shape-float-1 {
+  0%,100% { transform: rotate(12deg) translateY(0); }
+  50%      { transform: rotate(12deg) translateY(14px); }
+}
+@keyframes shape-float-2 {
+  0%,100% { transform: rotate(-10deg) translateY(0); }
+  50%      { transform: rotate(-10deg) translateY(-12px); }
+}
+@keyframes shape-float-3 {
+  0%,100% { transform: rotate(20deg) translateY(0); }
+  50%      { transform: rotate(20deg) translateY(10px); }
+}
+
+/* Card centring */
+.login-page {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Glass card */
+.login-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(8, 22, 15, 0.55);
+  backdrop-filter: blur(32px) saturate(1.4);
+  -webkit-backdrop-filter: blur(32px) saturate(1.4);
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow:
+    0 0 0 1px rgba(27,77,62,0.2),
+    0 32px 80px rgba(0,0,0,0.55),
+    inset 1px 1px 0 rgba(255,255,255,0.08),
+    inset 0 0 40px rgba(27,77,62,0.06);
+}
+
+/* Distortion glass overlay */
+.login-glass-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  filter: url(#glass-distortion);
+  opacity: 0.35;
+  pointer-events: none;
+  background: rgba(255,255,255,0.04);
+}
+
+/* Card header */
+.login-card-header {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 2.5rem 1.75rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Logo */
+.login-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.login-logo-img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(201,162,39,0.25));
+}
+
+.login-card-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+/* Gooey morphing subtitle */
+.login-morph-wrap {
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+.login-morph-inner {
+  position: relative;
+  height: 1.6rem;
+  width: 100%;
+  filter: url(#gooey-morph);
+}
+.login-morph-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(201,162,39,0.85);
+  line-height: 1.6rem;
+  white-space: nowrap;
+}
+
+/* Card body */
+.login-card-body {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 2.5rem 2.25rem;
+}
+
+.login-field { margin-bottom: 1.2rem; }
+
+.login-label {
+  display: block;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 0.45rem;
+}
+
+.login-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-input-icon {
+  position: absolute;
+  left: 0.85rem;
+  color: rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.6rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.9);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.login-input::placeholder { color: rgba(255,255,255,0.22); }
+.login-input:focus {
+  border-color: rgba(27,77,62,0.7);
+  background: rgba(27,77,62,0.15);
+  box-shadow: 0 0 0 3px rgba(27,77,62,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* Password field — right padding for toggle */
+#login-password { padding-right: 3rem; }
+
+.login-toggle-pass {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.3);
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+  z-index: 1;
+}
+.login-toggle-pass:hover { color: rgba(255,255,255,0.7); }
+
+.login-error {
+  display: block;
+  padding: 0.65rem 1rem;
+  background: rgba(220,38,38,0.1);
+  border: 1px solid rgba(220,38,38,0.3);
+  border-radius: 10px;
+  color: #fca5a5;
+  font-size: 0.78rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Submit button */
+.login-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(135deg, #1B4D3E 0%, #2d6b55 50%, #1B4D3E 100%);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-position 0.4s, box-shadow 0.25s, transform 0.15s;
+  margin-top: 0.5rem;
+}
+.login-submit:hover:not(:disabled) {
+  background-position: 100% 100%;
+  box-shadow: 0 8px 28px rgba(27,77,62,0.45), 0 0 0 1px rgba(201,162,39,0.15);
+  transform: translateY(-1px);
+}
+.login-submit:active:not(:disabled) { transform: translateY(0); }
+.login-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.login-submit-arrow { display: flex; align-items: center; opacity: 0.7; }
+
+/* Footer note */
+.login-footer-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.85rem 1rem;
+  background: rgba(201,162,39,0.05);
+  border: 1px solid rgba(201,162,39,0.15);
+  border-radius: 10px;
+  color: rgba(255,255,255,0.3);
+}
+.login-footer-note svg { flex-shrink: 0; margin-top: 0.05rem; }
+.login-footer-note p {
+  margin: 0;
+  font-size: 0.73rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.5;
+}
+.login-footer-note strong { color: rgba(201,162,39,0.8); font-weight: 600; }
+
+/* ── Babu Rao wrong-password meme ─────────────────────────────── */
+
+.babu-wrap {
+  position: fixed;
+  bottom: 0;
+  left: calc(50% - 268px);
+  z-index: 200;
+  pointer-events: none;
+  transform: translateY(110%);
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.babu-img {
+  display: block;
+  height: 720px;
+  width: auto;
+  filter:
+    drop-shadow(-6px 0 18px rgba(0,0,0,0.6))
+    drop-shadow(0 -4px 24px rgba(0,0,0,0.4));
+}
+
+/* Spring entrance — simulates mass-spring physics */
+@keyframes babu-spring-up {
+  0%   { transform: translateY(110%)  rotate(4deg)  scaleX(1);   }
+  30%  { transform: translateY(-36px) rotate(-3deg) scaleX(0.97); }
+  46%  { transform: translateY(14px)  rotate(1.5deg) scaleX(1.02); }
+  59%  { transform: translateY(-18px) rotate(-1.5deg) scaleX(0.99); }
+  70%  { transform: translateY(8px)   rotate(0.8deg) scaleX(1.01); }
+  79%  { transform: translateY(-8px)  rotate(-0.5deg) scaleX(1);  }
+  86%  { transform: translateY(4px)   rotate(0.3deg) scaleX(1);   }
+  92%  { transform: translateY(-3px)  rotate(0deg);  }
+  96%  { transform: translateY(2px);  }
+  100% { transform: translateY(0)     rotate(0deg)  scaleX(1);    }
+}
+
+/* Exit — tiny hop then drops out */
+@keyframes babu-slide-down {
+  0%   { transform: translateY(0)     rotate(0deg);  }
+  14%  { transform: translateY(-22px) rotate(-2deg); }
+  100% { transform: translateY(115%)  rotate(5deg);  }
+}
+
+.babu-wrap.babu-in {
+  animation: babu-spring-up 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.babu-wrap.babu-out {
+  animation: babu-slide-down 0.48s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+@media (max-width: 560px) {
+  .babu-wrap { left: -10px; }
+  .babu-img  { height: 300px; }
+}
+
+/* ── Admin panel ──────────────────────────────────────────────── */
+
+.admin-page {
+  min-height: 100vh;
+  background: #F7F9F8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 2rem;
+  height: 56px;
+  background: #1B4D3E;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.admin-topbar-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.1) drop-shadow(0 2px 6px rgba(201,162,39,0.3));
+}
+
+.admin-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-topbar-user {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+}
+
+.admin-topbar-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 100px;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.72rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.admin-topbar-back:hover { background: rgba(255,255,255,0.1); }
+
+.admin-topbar-logout {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 100px;
+  background: none;
+  color: rgba(255,255,255,0.85);
+  font-family: inherit;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-topbar-logout:hover { background: rgba(255,255,255,0.1); }
+
+.admin-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.admin-page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0A1A14;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.25rem;
+}
+
+.admin-page-subtitle {
+  font-size: 0.85rem;
+  color: #7A9690;
+  margin: 0 0 2rem;
+}
+
+/* Tabs */
+.admin-tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(27,77,62,0.1);
+  padding-bottom: 0;
+}
+
+.admin-tab {
+  padding: 0.65rem 1.25rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #7A9690;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  border-radius: 6px 6px 0 0;
+}
+.admin-tab:hover { color: #1B4D3E; }
+.admin-tab.admin-tab-active { color: #1B4D3E; font-weight: 700; border-bottom-color: #1B4D3E; }
+
+/* Sections */
+.admin-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0A1A14;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(27,77,62,0.1);
+}
+
+/* Table */
+.admin-table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(27,77,62,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 2rem;
+  background: #fff;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.admin-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7A9690;
+  background: #F7F9F8;
+  border-bottom: 1px solid rgba(27,77,62,0.08);
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(27,77,62,0.06);
+  color: #0A1A14;
+  vertical-align: middle;
+}
+
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tr:hover td { background: rgba(27,77,62,0.02); }
+.admin-row-me td { background: rgba(201,162,39,0.04); }
+
+.admin-username { font-weight: 600; }
+.admin-you-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(27,77,62,0.08);
+  color: #1B4D3E;
+  border-radius: 100px;
+  padding: 0.1em 0.5em;
+  margin-left: 0.35rem;
+}
+
+.admin-role-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  padding: 0.2em 0.65em;
+}
+.admin-role-admin  { background: rgba(201,162,39,0.12); color: #B8860B; border: 1px solid rgba(201,162,39,0.3); }
+.admin-role-viewer { background: rgba(27,77,62,0.08); color: #1B4D3E; border: 1px solid rgba(27,77,62,0.15); }
+
+.admin-status-on  { color: #15803d; font-weight: 600; }
+.admin-status-off { color: #b91c1c; font-weight: 600; }
+
+.admin-cell-date  { font-family: "SFMono-Regular", Consolas, monospace; font-size: 0.75rem; color: #7A9690; white-space: nowrap; }
+.admin-cell-muted { color: #7A9690; font-size: 0.8rem; }
+.admin-cell-user  { min-width: 140px; }
+.admin-cell-actions { white-space: nowrap; }
+
+.admin-empty {
+  text-align: center;
+  padding: 2.5rem !important;
+  color: #7A9690;
+  font-style: italic;
+}
+
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+.admin-btn + .admin-btn { margin-left: 0.35rem; }
+.admin-btn-sm { padding: 0.25rem 0.65rem; font-size: 0.72rem; }
+
+.admin-btn-toggle {
+  background: rgba(27,77,62,0.07);
+  color: #1B4D3E;
+  border-color: rgba(27,77,62,0.2);
+}
+.admin-btn-toggle:hover { background: rgba(27,77,62,0.14); }
+
+.admin-btn-pw {
+  background: rgba(201,162,39,0.08);
+  color: #B8860B;
+  border-color: rgba(201,162,39,0.25);
+}
+.admin-btn-pw:hover { background: rgba(201,162,39,0.15); }
+
+.admin-btn-del {
+  background: rgba(220,38,38,0.06);
+  color: #b91c1c;
+  border-color: rgba(220,38,38,0.2);
+}
+.admin-btn-del:hover { background: rgba(220,38,38,0.12); }
+
+.admin-btn-primary {
+  background: linear-gradient(135deg, #1B4D3E, #2d6b55);
+  color: #fff;
+  border-color: transparent;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.85rem;
+  border-radius: 8px;
+}
+.admin-btn-primary:hover { box-shadow: 0 4px 12px rgba(27,77,62,0.25); transform: translateY(-1px); }
+
+.admin-btn-danger {
+  background: rgba(220,38,38,0.08);
+  color: #b91c1c;
+  border-color: rgba(220,38,38,0.25);
+  padding: 0.55rem 1.25rem;
+  font-size: 0.82rem;
+  border-radius: 8px;
+}
+.admin-btn-danger:hover { background: rgba(220,38,38,0.14); }
+
+/* Add user form */
+.admin-form-card {
+  background: #fff;
+  border: 1px solid rgba(27,77,62,0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 160px auto;
+  gap: 0.75rem;
+  align-items: end;
+}
+
+.admin-form-field label {
+  display: block;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7A9690;
+  margin-bottom: 0.4rem;
+}
+
+.admin-form-input,
+.admin-form-select {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid rgba(27,77,62,0.18);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: #0A1A14;
+  background: #F7F9F8;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.admin-form-input:focus,
+.admin-form-select:focus {
+  border-color: #1B4D3E;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(27,77,62,0.1);
+}
+
+.admin-form-msg {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+.admin-form-msg-ok  { background: rgba(21,128,61,0.08); color: #15803d; border: 1px solid rgba(21,128,61,0.2); }
+.admin-form-msg-err { background: rgba(220,38,38,0.06); color: #b91c1c; border: 1px solid rgba(220,38,38,0.18); }
+
+/* Section title inline (used in log + registry headers — no bottom border) */
+.admin-section-title-inline {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0A1A14;
+}
+
+/* Spacer label to vertically align Add User button with other fields */
+.admin-label-spacer {
+  visibility: hidden;
+  display: block;
+  font-size: 0.62rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Registry panel */
+.admin-registry-note {
+  font-size: 0.82rem;
+  color: #7A9690;
+  margin: 0 0 1.25rem;
+  line-height: 1.55;
+}
+
+.admin-registry-note strong { color: #1B4D3E; }
+
+.admin-registry-box {
+  background: #fff;
+  border: 1px solid rgba(27,77,62,0.1);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  overflow: auto;
+  max-height: 520px;
+}
+
+.admin-registry-pre {
+  margin: 0;
+  padding: 1.5rem;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #0A1A14;
+  white-space: pre;
+  tab-size: 2;
+}
+
+/* Log tab header */
+.admin-log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(27,77,62,0.1);
+}
+
+.admin-action-badge {
+  display: inline-block;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  padding: 0.2em 0.6em;
+  background: rgba(27,77,62,0.08);
+  color: #1B4D3E;
+}
+.admin-action-login { background: rgba(21,128,61,0.1); color: #15803d; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-form-grid { grid-template-columns: 1fr 1fr; }
+  .admin-topbar { padding: 0 1rem; }
+  .admin-content { padding: 1.25rem 1rem 3rem; }
+  .kb-auth-bar { bottom: 0.75rem; right: 0.75rem; }
+  .login-shape { display: none; }
+  .login-orb-3 { display: none; }
+}
+
+@media (max-width: 560px) {
+  .admin-form-grid { grid-template-columns: 1fr; }
+  .login-card { border-radius: 20px; }
+  .login-card-body { padding: 1.5rem 1.5rem 2rem; }
+  .login-card-header { padding: 2rem 1.5rem 1.5rem; }
+  .login-logo-img { height: 52px; }
+}
