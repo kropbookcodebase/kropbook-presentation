@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const clearLogBtn     = document.getElementById('clear-log-btn');
   const registryPre     = document.getElementById('registry-pre');
   const exportRegBtn    = document.getElementById('export-registry-btn');
+  const exportSeedBtn   = document.getElementById('export-seed-btn');
+  const registryMsg     = document.getElementById('registry-msg');
   const tabs            = document.querySelectorAll('[data-tab]');
   const panels          = document.querySelectorAll('[data-panel]');
 
@@ -178,6 +180,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const json = JSON.stringify({ exportedAt: new Date().toISOString(), users }, null, 2);
     registryPre.textContent = json;
   }
+
+  exportSeedBtn.addEventListener('click', () => {
+    const users = KbAuth.getUsers().map(u => ({
+      id:           u.id,
+      username:     u.username,
+      passwordHash: u.passwordHash,
+      role:         u.role,
+      active:       u.active,
+      createdAt:    u.createdAt || null
+    })).filter(u => u.active !== false); // only active users in seed
+
+    const lines = [
+      '/* KROPBOOK — Auth Seed',
+      '   Generated: ' + new Date().toISOString(),
+      '   Save this file as js/auth-seed.js and redeploy to Netlify.',
+      '   All listed users will be available on every browser and device. */',
+      'window.KB_AUTH_SEED = ' + JSON.stringify(users, null, 2) + ';',
+      ''
+    ].join('\n');
+
+    const blob = new Blob([lines], { type: 'application/javascript' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'auth-seed.js';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showMsg(registryMsg, 'Seed file downloaded. Replace js/auth-seed.js and redeploy to Netlify.', 'ok');
+  });
 
   exportRegBtn.addEventListener('click', () => {
     const users = KbAuth.getUsers().map(u => ({

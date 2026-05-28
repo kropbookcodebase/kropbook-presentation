@@ -139,16 +139,25 @@
 
       <div class="admin-log-header">
         <h2 class="admin-section-title admin-section-title-inline">User Registry</h2>
-        <button type="button" class="admin-btn admin-btn-primary" id="export-registry-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Export as JSON
-        </button>
+        <div class="admin-log-header-actions">
+          <button type="button" class="admin-btn admin-btn-primary" id="export-seed-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export Seed File
+          </button>
+          <button type="button" class="admin-btn admin-btn-secondary" id="export-registry-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export as JSON
+          </button>
+        </div>
       </div>
 
       <p class="admin-registry-note">
-        This is the live user registry stored in your browser. All fields are shown except password hashes.
-        Use <strong>Export as JSON</strong> to save a copy. Share the JSON file with your IT contact to re-import on another device.
+        <strong>To make users available on all browsers and devices:</strong>
+        click <strong>Export Seed File</strong>, save the downloaded file as
+        <code>js/auth-seed.js</code> in the project, then redeploy to Netlify.
+        After redeployment every browser — including incognito — will have these users.
       </p>
+      <p class="admin-form-msg" id="registry-msg" hidden></p>
 
       <div class="admin-registry-box">
         <pre id="registry-pre" class="admin-registry-pre">Loading…</pre>

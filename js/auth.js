@@ -51,20 +51,58 @@ var KbAuth = (function () {
   // ── First-run init ────────────────────────────────────────────
 
   async function ensureInitialised() {
-    var store = getStore();
-    if (store && store.users && store.users.length > 0) return;
-    store = store || blank();
-    var hash = await hashPassword('Kropbook@2025');
-    store.users = [{
-      id:           'usr_admin_default',
-      username:     'admin',
-      passwordHash: hash,
-      role:         'admin',
-      createdAt:    new Date().toISOString(),
-      lastLogin:    null,
-      active:       true
-    }];
-    saveStore(store);
+    var store   = getStore() || blank();
+    var seeds   = Array.isArray(window.KB_AUTH_SEED) ? window.KB_AUTH_SEED : [];
+    var changed = false;
+
+    // Merge seed users — runs on every login page load.
+    // Seed is authoritative: new users are added, changed passwords/roles are updated.
+    for (var i = 0; i < seeds.length; i++) {
+      var s = seeds[i];
+      if (!s.username || !s.passwordHash) continue;
+      var idx = -1;
+      for (var j = 0; j < store.users.length; j++) {
+        if (store.users[j].username === s.username) { idx = j; break; }
+      }
+      if (idx === -1) {
+        store.users.push({
+          id:           s.id || ('usr_seed_' + s.username),
+          username:     s.username,
+          passwordHash: s.passwordHash,
+          role:         s.role || 'viewer',
+          createdAt:    s.createdAt || new Date().toISOString(),
+          lastLogin:    null,
+          active:       true
+        });
+        changed = true;
+      } else {
+        if (store.users[idx].passwordHash !== s.passwordHash) {
+          store.users[idx].passwordHash = s.passwordHash;
+          changed = true;
+        }
+        if (s.role && store.users[idx].role !== s.role) {
+          store.users[idx].role = s.role;
+          changed = true;
+        }
+      }
+    }
+
+    // Fallback: create default admin only when no seed and store is empty
+    if (seeds.length === 0 && store.users.length === 0) {
+      var hash = await hashPassword('Kropbook@2025');
+      store.users.push({
+        id:           'usr_admin_default',
+        username:     'admin',
+        passwordHash: hash,
+        role:         'admin',
+        createdAt:    new Date().toISOString(),
+        lastLogin:    null,
+        active:       true
+      });
+      changed = true;
+    }
+
+    if (changed) saveStore(store);
   }
 
   // ── Session helpers ───────────────────────────────────────────

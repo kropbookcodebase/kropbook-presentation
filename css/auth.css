@@ -770,6 +770,22 @@
 }
 .admin-btn-danger:hover { background: rgba(220,38,38,0.14); }
 
+.admin-btn-secondary {
+  background: rgba(27,77,62,0.06);
+  color: #1B4D3E;
+  border-color: rgba(27,77,62,0.2);
+  padding: 0.6rem 1.25rem;
+  font-size: 0.85rem;
+  border-radius: 8px;
+}
+.admin-btn-secondary:hover { background: rgba(27,77,62,0.12); }
+
+.admin-log-header-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 /* Add user form */
 .admin-form-card {
   background: #fff;
